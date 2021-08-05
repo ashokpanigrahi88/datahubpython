@@ -1,0 +1,13 @@
+{% extends 'common/confirm_delete.html' %}
+
+{% block title %} Delete PaymentMethod - {{object}} {% endblock %}
+
+{% block moduletitle %}
+<h2> Delete Payment Method </h2>
+{%  endblock %}
+
+{% block postform %}
+<a href="/setup/pmntmentod_list/">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% endblock %}

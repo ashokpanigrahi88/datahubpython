@@ -1,0 +1,117 @@
+{% extends 'common/generic_list_post.html' %}
+{% block moduletitle %}
+    Sales Order Query
+    <br>
+    {{ errormessage }}
+{% endblock %}
+{% block findaction %} {% endblock %}
+{% block getpost %}post{% endblock %}
+{% block findform %}
+    {{ form }}
+     <input type="submit" class="btn btn-info" value="Search">
+{% endblock %}
+{% block tableheader %}
+    <th>ID</th>
+    <th>Number</th>
+    <th>Date </th>
+    <th>Status</th>
+    <th>Phase </th>
+    <th>Customer </th>
+    <th>Account </th>
+
+ {% endblock %}
+{% block tablerow %}
+    <td>{{row.order_header_id }}</td>
+    {% comment %}
+        <a href="{%  url 'mobile:salesorderquery' %} {{row.order_header_id }} "><span class="glyphicon glyphicon-pencil" >{{row.order_header_id }}</span></a>
+             </td>
+             {% endcomment %}
+          <td>{{row.order_number }}</td>
+    <td>{{row.order_status_date }}</td>
+    <td>{{row.order_status }}</td>
+    <td>{{row.order_phase_code }}</td>
+    <td>{{row.customer_id.customer_name }}</td>
+    <td>{{row.customer_id.customer_number }}</td>
+{% endblock %}
+{% block rowaction %}
+{% endblock %}
+    {% block postlist %}
+  {% endblock %}
+
+        <div> <h3> {% block table2title %}Quantity Summary {% endblock  %}  </h3> </div>
+        {% block tableheader2 %}
+                <th> ID </th>
+                 <th> Ordered </th>
+                 <th> Accepted </th>
+                 <th> Picked </th>
+                 <th> Delivered </th>
+                 <th> Invoiced </th>
+                 <th> Cancelled</th>
+        {% endblock %}
+    {% block tablerow2 %}
+            <td>{{row2.ORDER_HEADER_ID }}</td>
+            <td>{{row2.QTY_ORDERED_UNITS }}</td>
+            <td>{{row2.QTY_ACCEPTED_UNITS }}</td>
+            <td>{{row2.QTY_USERPICKED_UNITS }}</td>
+            <td>{{row2.QTY_DELIVERED_UNITS }}</td>
+            <td>{{row2.QTY_INVOICED_UNITS }}</td>
+            <td>{{row2.QTY_CANCELLED_UNITS }}</td>
+        {% endblock %}
+{% block table3title %} Line Summary  {% endblock  %}
+        {% block tableheader3 %}
+                <th>Lines</th>
+                <th>New</th>
+                <th>Approved</th>
+                <th>Picked</th>
+                <th>Invoiced</th>
+                <th>Delivered</th>
+                <th>Ready to Pick</th>
+                <th>Ready to Deliver</th>
+                <th>No. Of Web Order</th>
+        {% endblock %}
+       {% block tablerow3 %}
+
+           <td>{{row3.TOTAL_LINES }}</td>
+	<td>{{row3.NEW_COUNT }}</td>
+	<td>{{row3.APPROVED_COUNT }}</td>
+	<td>{{row3.PICKED_COUNT }}</td>
+	<td>{{row3.NVOICED_COUNT }}</td>
+	<td>{{row3.DELIVERED_COUNT }}</td>
+	<td>{{row3.READYTOPICK_COUNT }}</td>
+	<td>{{row3.READYTODELIVER_COUNT }}</td>
+	<td>{{row3.WEORDER_COUNT }}</td>
+        {% endblock %}
+{% block table4title %} Lines  {% endblock  %}
+        {% block tableheader4%}
+                <th>Sl No</th>
+                <th>Item Number</th>
+                <th>Ordered</th>
+                <th>Accepted</th>
+                <th>Picked</th>
+                <th>Delivered</th>
+                <th>Status</th>
+                <th>Phase</th>
+                <th>Web Order#</th>
+                <th>Delivery Status</th>
+                <th>Delivered On</th>
+                <th>Item Name</th>
+        {% endblock %}
+       {% block tablerow4 %}
+            <td>{{row4.SL_NO }}</td>
+            <td>{{row4.ITEM_NUMBER  }}</td>
+            <td>{{row4.QTY_ORDERED_UNITS  }}</td>
+            <td>{{row4.QTY_PICKED_UNITS }}</td>
+            <td>{{row4.QTY_USERPICKED_UNITS  }}</td>
+            <td>{{row4.QTY_DELIVERED_UNITS  }}</td>
+            <td>{{row4.LINESTATUS }}</td>
+             <td>{{row4.LINEPHASECODE }}</td>
+            <td>{{row4.T_ORDERNUMBER }}</td>
+            <td>{{row4.DELIVERY_STATUS }}</td>
+            <td>{{row4.DELIVERY_DATE  }}</td>
+            <td>{{row4.ITEM_NAME  }}</td>
+        {% endblock %}
+{% block createaction %}
+
+{% endblock %}
+
+

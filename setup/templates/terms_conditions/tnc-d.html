@@ -1,0 +1,13 @@
+{% extends 'common/confirm_delete.html' %}
+
+{% block title %} Delete TnC - {{object}} {% endblock %}
+
+{% block moduletitle %}
+<h2> Delete {{object}} </h2>
+{%  endblock %}
+
+{% block postform %}
+<a href="/setup/termcond_list/" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% endblock %}

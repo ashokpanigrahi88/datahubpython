@@ -1,0 +1,20 @@
+{% extends 'common/model_form.html' %}
+
+{% block moduletitle %}
+<h2> Add {% if model %} {{model}} {% else %} Payment Term {% endif %}</h2>
+{%  endblock %}
+
+{% block postform %}
+{% if model %}
+<a href="/setup/pmntterms_list/?paymentterm_id={{paymentterm_id}}" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% else %}
+<a href="/setup/pmntterms_list/" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% endif %}
+
+
+
+{% endblock %}

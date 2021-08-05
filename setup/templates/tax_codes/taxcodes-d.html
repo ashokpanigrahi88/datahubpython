@@ -1,0 +1,18 @@
+{% extends 'common/confirm_delete.html' %}
+
+{% block moduletitle %}
+<h2> Delete {{model}} - {{object}} </h2>
+{%  endblock %}
+
+{% block postform %}
+{% if model == "Tax Code" %}
+<a href="/setup/taxcodes_list/" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% elif model == "Tax Breakup" %}
+<a href="/setup/taxcodes_list/?taxcode_id={{taxcode_id}}" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,192 @@
+{% extends 'common/masterdetail_edit.html' %}
+{% block title %} Categry {% endblock %}
+{% block findaction %} /inventory/locations/ {% endblock %}
+{% block findform %}
+{% endblock %}
+{% block findformaction  %}/inventory/locations/{% endblock %}
+{% block parenttitle %}Location (<a href={% url 'inventory:locations' %}?operation=parent_new><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>)
+{%  endblock %}
+{% block parentrowsbody %}
+<th scope="row"><a href={% url 'inventory:locations' %}?parentid={{ row.location_id }}&nm={{row.location_name|safe}}&childnm={{ childnm }}>{{row.location_name}}</a></th>
+
+{% endblock %}
+{% block childtitle %}
+     Sub Location
+                {%  if parentid %}
+                 (<a href={% url 'inventory:locations' %}?parentid={{ parentid }}&operation=child_new><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>)
+                {% endif %}
+{% endblock %}
+{% block childrowsbody %}
+        <th scope="row"><a href={% url 'inventory:locations' %}?parentid={{ row.il_location_id.location_id }}&childid={{ row.sub_location_id }}&nm={{row.il_location_id}}&childnm={{childnm }}>{{ row.sub_location }}</a></th>
+        <td> {{ row.sub_loc_group_code }}</td>
+
+{% endblock %}
+{% block parentdelete %}
+  <a href={% url 'inventory:location_delete' parentid %}></a><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a>
+
+
+{% endblock %}
+    {% block parentbody %}
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-general" role="tab" aria-controls="nav-home" aria-selected="true">General</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-address" role="tab" aria-controls="nav-profile" aria-selected="false">Address</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-others" role="tab" aria-controls="nav-contact" aria-selected="false">Others</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-general" role="tabpanel" aria-labelledby="nav-general-tab">
+      <table cellspacing="0" cellpadding="0" >
+              <tr>
+              <th class="text-right t-head"> Location Name </th> <td> {{ parentform.location_name }} </td>
+              <th class="text-right t-head"> Location Type </th> <td> {{ parentform.location_type }} </td>
+              <th class="text-right t-head"> Location Number </th> <td> {{ parentform.location_number }} </td>
+      </tr>
+          <tr>
+              <th class="text-right t-head"> Description </th> <td> {{ parentform.location_desc }} </td>
+                  <th class="text-right t-head">Account Code </th> <td> {{ parentform.gl_account_id }} </td>
+          <th class="text-right t-head"> Location ID</th> <td> {{ parentid }}</td>
+          </tr>
+          <tr>
+              <th class="text-right t-head"> Stockable? </th> <td> {{ parentform.stockable }} </td>
+              <th class="text-right t-head"> Ship To? </th> <td> {{ parentform.ship_to }} </td>
+              <th class="text-right t-head"> Bill To? </th> <td> {{ parentform.bill_to }} </td>
+          </tr><tr>
+               <th class="text-right t-head"> Active? </th> <td> {{ parentform.active }} </td>
+              <th class="text-right t-head">Take Snapshot? </th> <td> {{ parentform.take_snapshot }} </td>
+              <th class="text-right t-head"> Area Code</th> <td> {{ parentform.location_area_code }} </td>
+          </tr>
+
+      </table>
+  </div>
+  <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
+  <table cellspacing="0" cellpadding="0" >
+          <tr> <th class="text-right t-head"> Address</th> <td> {{ parentform.address }}</td><th class="text-right t-head"> City </th> <td> {{ parentform.city }} </td>
+              <th class="text-right t-head"> county</th> <td> {{ parentform.county }} </td> <th class="text-right t-head"> Post code </th> <td> {{ parentform.post_code }} </td>
+          </tr>
+              <tr>
+              <th class="text-right t-head"> Country </th> <td> {{ parentform.country_code }} </td>  <th class="text-right t-head">Phone1 </th> <td> {{ parentform.phone1 }} </td>
+              <th class="text-right t-head"> Phone2</th> <td> {{ parentform.phone2 }} </td>
+      </tr>
+          <tr>
+              <th class="text-right t-head"> Fax </th> <td> {{ parentform.fax }} </td> <th class="text-right t-head"> email </th> <td> {{ parentform.email}} </td>
+              <th class="text-right t-head"> contact </th> <td> {{ parentform.location_contact }} </td>
+          </tr>
+
+      </table>
+  </div>
+  <div class="tab-pane fade" id="nav-others" role="tabpanel" aria-labelledby="nav-others-tab">
+
+    <table cellspacing="0" cellpadding="0" >
+          <tr> <th class="text-right t-head"> Comments</th> <td> {{ parentform.location_comment }}</td><th class="text-right t-head"> Currency </th> <td> {{ parentform.currency_code }} </td>
+              <th class="text-right t-head"> Tax Rate</th> <td> {{ parentform.tax_code_id }} </td>
+          </tr>
+              <tr>
+              <th class="text-right t-head"> No of Levels </th> <td> {{ parentform.noof_levels }} </td>
+              <th class="text-right t-head"> Replenished From</th> <td> {{ parentform.replenish_location_id  }} </td>
+                  <th class="text-right t-head">Loc Separator </th> <td> {{ parentform.sub_loc_separator }} </td>
+      </tr>
+          <tr>
+              <th class="text-right t-head"> Sub Location Hint </th> <td> {{ parentform.item_sub_location_hint }} </td><th class="text-right t-head"> Reference </th> <td> {{ parentform.orig_system_ref }} </td>
+          </tr>
+        <tr><th class="text-right t-head">Weee GL Code </th> <td> {{ parentform.weee_gl_account_id }} </td></tr>
+
+      </table>
+  </div>
+</div>
+{% endblock %}
+{% block childdelete %}
+     <a href={% url 'inventory:sublocation_delete' childid %}><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a>
+    <!--img src="/static/admin/img/icon-deletelink.svg" alt="Delete"-->
+{% endblock %}
+
+    {% block childbody %}
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-childgeneral-tab" data-toggle="tab" href="#nav-childgeneral" role="tab" aria-controls="nav-childgeneral" aria-selected="true">General</a>
+    <a class="nav-item nav-link" id="nav-childpropertiese-tab" data-toggle="tab" href="#nav-childproperties" role="tab" aria-controls="nav-childproperties" aria-selected="false">Properties</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-childgeneral" role="tabpanel" aria-labelledby="nav-childgeneral-tab">
+      <table cellspacing="0" cellpadding="0" >
+<tr>
+              <th class="text-right t-head"> Sub Location </th> <td> {{ childform.sub_location }} </td>
+              <th class="text-right t-head"> Sub Location Type </th> <td> {{ childform.sub_location_type }} </td>
+          <th class="text-right t-head"> Sub Location ID</th> <td> {{ childid }}</td>
+          </tr>
+              <tr>
+                  <th class="text-right t-head">Group Code </th> <td> {{ childform.sub_loc_group_code }} </td>
+              <th class="text-right t-head"> Number </th> <td> {{ childform.sub_location_number }} </td>
+      </tr>
+          <tr>
+              <th class="text-right t-head"> Primary </th> <td> {{ childform.primary }} </td>
+              <th class="text-right t-head"> Active </th> <td> {{ childform.active}} </td>
+              <th class="text-right t-head"> Auto Stock Take </th> <td> {{ parentform.stktake }} </td>
+          </tr><tr>
+              <th class="text-right t-head"> Stockable </th> <td> {{ childform.stockable }} </td>
+              <th class="text-right t-head"> Valuable </th> <td> {{ childform.valuable}} </td>
+              <th class="text-right t-head"> Include </th> <td> {{ childform.include_stock }} </td>
+          </tr>
+          </tr><tr>
+              <th class="text-right t-head"> Snapshot </th> <td> {{ childform.take_snapshot }} </td>
+              <th class="text-right t-head"> Oickable </th> <td> {{ childform.pickable}} </td>
+              <th class="text-right t-head"> Adjust Stock </th> <td> {{ childform.adjustable }} </td>
+          </tr>
+
+      </table>
+  </div>
+  <div class="tab-pane fade" id="nav-childproperties" role="tabpanel" aria-labelledby="nav-childproperties-tab">
+  <table cellspacing="0" cellpadding="0" >
+          <tr> <th class="text-right t-head"> Storage Area1</th> <td> {{ childform.storage_area1 }}</td>
+              <th class="text-right t-head"> Storage Area2 </th> <td> {{ childform.storage_area2 }} </td>
+          </tr>
+              <tr>
+               <th class="text-right t-head"> Storage Area3</th> <td> {{ childform.storage_area3 }} </td>
+              <th class="text-right t-head"> Min Qty </th> <td> {{ childform.min_qty}} </td>
+              <th class="text-right t-head"> Max Qty </th> <td> {{ childform.max_qty}} </td>
+                </tr>
+
+          </tr><tr>
+              <th class="text-right t-head"> No of Units </th> <td> {{ childform.noof_units }} </td>
+              <th class="text-right t-head"> Level0 Hierarchy </th> <td> {{ childform.level0_hierarchy.value}} </td>
+          </tr>
+          </tr><tr>
+              <th class="text-right t-head"> Hierarchy1 </th> <td> {{ childform.hierarchy1.value }} </td>
+              <th class="text-right t-head"> Hierarchy2 </th> <td> {{ childform.hierarchy2.value }} </td>
+              <th class="text-right t-head"> Hierarchy2 </th> <td> {{ childform.hierarchy3.value }} </td>
+          </tr>
+
+      </table>
+  </div>
+  <div class="tab-pane fade" id="nav-others" role="tabpanel" aria-labelledby="nav-others-tab">
+
+    <table cellspacing="0" cellpadding="0" >
+          <tr> <th class="text-right t-head"> Comments</th> <td> {{ parentform.location_comment }}</td><th class="text-right t-head"> Currency </th> <td> {{ parentform.currency_code }} </td>
+              <th class="text-right t-head"> Tax Rate</th> <td> {{ parentform.tax_code_id }} </td>
+          </tr>
+              <tr>
+              <th class="text-right t-head"> No of Levels </th> <td> {{ parentform.noof_levels }} </td>
+              <th class="text-right t-head"> Replenished From</th> <td> {{ parentform.replenish_location_id  }} </td>
+                  <th class="text-right t-head">Loc Separator </th> <td> {{ parentform.sub_loc_separator }} </td>
+      </tr>
+          <tr>
+              <th class="text-right t-head"> Sub Location Hint </th> <td> {{ parentform.item_sub_location_hint }} </td><th class="text-right t-head"> Reference </th> <td> {{ parentform.orig_system_ref }} </td>
+          </tr>
+        <tr><th class="text-right t-head">Weee GL Code </th> <td> {{ parentform.weee_gl_account_id }} </td></tr>
+
+      </table>
+  </div>
+</div>
+{% endblock %}
+{% block tableheader %}
+ {% endblock %}
+{% block tablerow %}
+{% endblock %}
+{% block rowaction %}
+
+{% endblock %}
+{% block createaction %}
+{% endblock %}
+
+

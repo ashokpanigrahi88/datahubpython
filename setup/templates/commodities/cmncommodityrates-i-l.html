@@ -1,0 +1,17 @@
+{% extends 'common/model_list.html' %}
+{% load query_transform %}
+
+{% block content_block %}
+<div class="row">
+    <div class="col-md-12">
+
+        {% load render_table from django_tables2 %}
+
+        {% render_table table %}
+
+    </div>
+</div>
+{% endblock %}
+
+{% block pagination %}
+{% endblock %}

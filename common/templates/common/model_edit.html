@@ -1,0 +1,43 @@
+{% extends 'common/menu.html' %}
+{# model_form.html #}
+{% load modelform_title %}
+
+{% block content_block %}
+  <h2>{% if form %}{% else %}Create{% endif %} {{  form_modelform_title }}</h2>
+  {% block moduletitle %}    {% endblock %}
+  {% block preform %}
+      {% endblock %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    {% cycle '<div class="row">' '' %}
+
+        <div class="col-md-2 pull-right text-right d-label font-weight-normal">
+            {{ field.label_tag }}
+
+            {% if field.help_text %}
+            <sup>{{ field.help_text }}</sup>
+            {% endif %}
+            {% for error in field.errors %}
+            <div class="row">
+                <div class="alert alert-danger">{{error}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-3 pull-left">
+            {{ field }}
+        </div>
+    {% cycle '' '</div>' %}
+
+    {% endfor %}
+    <br>
+    <div class="col-md-12">
+        <button class="btn btn-success">Submit</button>
+        {% block postform %}
+
+        {% endblock %}
+    </div>
+  </form>
+    {% block modulefooter %}
+        {% endblock %}
+{% endblock %}

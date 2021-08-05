@@ -1,0 +1,104 @@
+{% extends 'common/menu.html' %}
+{% load getverbose %}
+
+{% block title %} {{  MYCONTEXT.title }}{% endblock %}
+
+{% block content_block %}
+<br>
+<div class="container-fluid">
+    <form method="get">
+        {% csrf_token %}
+        <table class="table table-striped table-bordered table-sm">
+            <td>
+                <a href="{{ MYCONTEXT.create }}" style="text-decoration: none;">
+                    <button class="new-btn new-button" type="button">
+                        New Payment Method</button></a>
+
+                <a href="/setup/pmntmentod_list/">
+                    <button class="cancel-btn cancel-button" type="button">
+                        All Payment Methods</button></a>
+
+                {% for field in search_form %}
+                {{field.label_tag}}
+                {{field}}
+                {% endfor %}
+
+                <input type="submit" class="btn btn-info" value="Search" name="list_filter">
+            </td>
+        </table>
+    </form>
+
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="bg-info">
+        <tr>
+            {% for field,attrs in listview_filed_dict.items %}
+            <th>{{attrs}}</th>
+            {% endfor %}
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for row in terms_list %}
+        <tr>
+            {% for field in listview_filed_dict %}
+            {% if field in href_fields %}
+            <td><a href="?paymentterm_id={{row.cpt_id}}">{{ row|get_instance_field_value:field }}</a></td>
+            {% else %}
+            <td>{{ row|get_instance_field_value:field }}</td>
+            {% endif %}
+            {% endfor %}
+            <td>
+                <a href="/setup/paymentterms_update/{{ row.cpt_id }}/">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="container">
+        {% if request.GET.paymentterm_id %}
+        <h3>Payment Break-ups</h3>
+        <br>
+        <a href="/setup/paymentterms_breakup_create/" style="text-decoration: none;">
+            <button class="new-btn new-button" type="button">New Term Break-up</button></a>
+        <br>
+        {% endif %}
+        {% if details %}
+        <br>
+        <table class="table table-striped table-bordered table-sm">
+            <thead class="bg-info">
+            <tr>
+                {% for field,attrs in breakup_field_dict.items %}
+                <th>{{attrs}}</th>
+                {% endfor %}
+                <th>Actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            {% for row in details %}
+            <tr>
+                {% for field in breakup_field_dict %}
+                <td>{{ row|get_instance_field_value:field }}</td>
+                {% endfor %}
+                <td>
+                    <a href="/setup/paymentterms_breakup_update/{{ row.cpb_id }}/">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% elif details.count == 0%}
+        <br>
+        <h5>No Breaks-ups</h5>
+        {% endif %}
+    </div>
+
+</div>
+
+
+
+{% endblock %}

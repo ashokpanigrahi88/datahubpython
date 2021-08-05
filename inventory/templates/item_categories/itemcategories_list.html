@@ -1,0 +1,107 @@
+{% extends 'common/menu.html' %}
+{% load getverbose %}
+{% block title %} {{  MYCONTEXT.title }}{% endblock %}
+{% block content_block %}
+
+<div class="container-fluid">
+    <br>
+    <div class="row">
+
+        <div class="col-2" style="border-style:ridge;">
+            <div class="container">
+
+                <div class="container" style="text-align: center">
+                    <h3>Categories</h3>
+                </div>
+
+                <div class="container">
+                    <label for="find_category">Find Category: </label>
+                    <input id="find_category" type="text" name="find_category" placeholder="Category Name">
+                </div>
+                <br>
+                <div class="container" style="overflow:scroll; height: 72vh;">
+                    <div class="list-group">
+                        {% for cat in categories_list %}
+                        <a href="?category_id={{cat.category_id}}"
+                           class="list-group-item list-group-item-action {% if category.category_id == cat.category_id %} active {% endif %} py-2"
+                           style="font-size:14px;">
+                            {{cat.category_name}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-8" style="border-style:ridge;">
+
+                <div class="container" style="border-bottom: 2px solid lightgrey;">
+                    {% if category_details %}
+                    <h3>Category Details</h3>
+                    <br>
+                    <div class="row">
+                        {% for field in category_details %}
+                        {% include '_model_form2.html' %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <br>
+                </div>
+
+                    <div class="container-fluid">
+                        <h3>Sub-Categories</h3>
+                        <table class="table table-striped table-bordered table-sm" style="display: block;
+                        overflow-x: auto;overflow-y: auto;white-space: nowrap;height:46vh;">
+                            <thead class="bg-info">
+                            <tr>
+                                <th>Actions</th>
+                                {% for field,attrs in subcategories_listview_filed_dict.items %}
+                                <th>{{attrs}}</th>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+
+                            <tbody>
+
+                            {% for row in subcategories_list %}
+                            <tr>
+                                <td>
+                                    <a href="/setup/paymentterms_breakup_update/{{ row.cpb_id }}/">
+                                        <button><span class="fa fa-pencil" style="color: blue;"></span></button>
+                                    </a>
+                                    <a href="/setup/paymentterms_breakup_delete/{{ row.cpb_id}}/">
+                                        <button><span class="fa fa-trash" style="color: red;"></span></button>
+                                    </a>
+                                </td>
+                                {% for field in subcategories_listview_filed_dict %}
+                                <td>{{ row|get_instance_field_value:field }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+        </div>
+
+        <div class="col-2" style="border-style:ridge;">
+
+            <div class="container">
+                <h3>Actions</h3>
+            </div>
+
+            <div class="container" style="text-align: center; height:38vh;border-bottom: 2px solid lightgrey;">
+                <strong>Category Actions</strong>
+            </div>
+
+            <div class="container" style="text-align: center; height:38vh;">
+                <strong>Sub Category Actions</strong>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,9 @@
+{% extends 'common/model_form.html' %}
+{% block moduletitle %}
+<h2> Lookup Types </h2>
+{%  endblock %}
+
+{% block cancelaction %}/setup/lookup_list/{% endblock %}
+{% block deleteaction %}
+    <a href="/setup/lookup_delete/{{ row.lookup_type}}/" class="delete-btn delete-button">Delete</a>
+    {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'common/model_form.html' %}
+
+{% block moduletitle %}
+<h2> Update Currency Rate</h2>
+{%  endblock %}
+
+{% block postform %}
+<a href="/setup/currencyrates_list/" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+
+<a href="/setup/currencyrates_delete/{{ object.from_currency_code}}/{{ object.to_currency_code }}/">
+    <button class="delete-btn btn-delete" type="button">Delete</button>
+</a>
+{% endblock %}

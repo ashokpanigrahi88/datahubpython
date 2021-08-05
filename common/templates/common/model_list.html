@@ -1,0 +1,74 @@
+{% extends 'common/menu.html' %}
+{% block title %} List {% endblock %}
+{% block content_block %}
+    {% block prelist %}
+        {% endblock %}
+<form action="{% block findaction %} {% endblock %}" method="get">
+    {% csrf_token %}
+  {% block findform %}
+
+  {% endblock %}
+    <input type="submit" class="btn btn-info" id="find_search" name="find_search" value="Search">
+</form>
+    <div class="content" >
+
+    {% block createaction %} {% endblock %}
+    </div>
+   <div class="d-flex">
+
+            <table class="table table-striped table-bordered table-sm" >
+          <thead class="bg-info">
+            <tr>
+             {% block tableheader %}
+
+             {% endblock %}
+
+                <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          {%   for row in rows %}
+           <tr>
+              {% block tablerow %}
+               {% endblock %}
+
+               {% block rowaction  %}
+           {% endblock %}
+
+            </tr>
+          {%   endfor %}
+          </tbody>
+        </table>
+   </div>
+    {% block postlist %}
+        {% endblock %}
+
+        {% if  detailform  %}
+  <div class="content">
+  <h3> {{ detailform_title }} </h3>
+          {% for field in detailform %}
+              {% if  field.value   %}
+    {% cycle '<div class="row">' '' %}
+
+        <div class="col-md-2 pull-right text-right d-label font-weight-normal">
+            {{ field.label_tag }}
+
+            {% if field.help_text %}
+            <sup>{{ field.help_text }}</sup>
+            {% endif %}
+            {% for error in field.errors %}
+            <div class="row">
+                <div class="alert alert-danger">{{error}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-3 pull-left">
+           <strong>{{ field.value  }} </strong>
+        </div>
+    {% cycle '' '</div>' %}
+    {% endif  %}
+    {% endfor %}
+        </div>
+            {% endif %}
+{% endblock %}

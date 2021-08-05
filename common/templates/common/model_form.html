@@ -1,0 +1,96 @@
+{% extends 'common/menu.html' %}
+{# model_form.html #}
+{% load modelform_title %}
+{% load getverbose %}
+
+{% block content_block %}
+  <h2>{% if form %}{% else %}Create{% endif %} {{  form_modelform_title }}</h2>
+  {% block preform %}
+      {% endblock %}
+
+    <div class="content" >
+
+<div class="row">
+        <div class="col-sm-1">
+        </div>
+    {% block moduletitle %}    {% endblock %} <br>
+</div>
+    </br>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    {% cycle '<div class="row">' '<div class="row">' %}
+
+
+        <div class="col-sm-2 pull-right text-right d-label">
+
+            {{ field.label_tag  }}
+            {% comment %}
+             {{ field.name|verbosename }}
+             {% endcomment %}
+            {% if field.help_text %}
+            <sup>{{ field.help_text }}</sup>
+            {% endif %}
+            {% for error in field.errors %}
+            <div class="row">
+                <div class="alert alert-danger">{{error}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-3 pull-left">
+            {{ field }}
+        </div>
+    {% cycle '</div>' '</div>' %}
+
+    {% endfor %}
+  </form>
+    </div>
+    </br>
+
+      <div class="row">
+          <div class="col-sm-1">
+          </div>
+          <div class="col-sm-1">
+          </div>
+          <div class="col-md-3">
+              {% comment %}
+              Sample Delete Button
+              <a href="/app/model_delete/{{ object.pk }}/" style="text-decoration: none;">
+                  <button class="delete-btn btn-delete" type="button">Delete</button>
+              </a>
+              {% endcomment %}
+              {% block deleteaction %} {% endblock %}
+              <a href="{% block cancelaction %} {% endblock %}" style="text-decoration: none;">
+                  <button class="cancel-btn cancel-button" type="button">Cancel</button>
+              </a>
+              <a href="" style="text-decoration: none;">
+                  <button class="save-btn">Save</button>
+              </a>
+          </div>
+      </div>
+
+  </form>
+        {% block postform %}
+        {% endblock %}
+    </div>
+    {% block modulefooter %}
+        {% endblock %}
+{% endblock %}
+    {%  comment %}
+<div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-1">
+        </div>
+    <div class="col-md-3">
+        {% block postform %}
+   {% block deleteaction %} {% endblock %}
+        <a href="{% block cancelaction %} {% endblock %}" class="cancel-btn cancel-button">Cancel</a>
+        {% endblock %}
+        <button class="btn btn-success">Save</button>
+    </div>
+</div>
+    {% block modulefooter %}
+        {% endblock %}
+{% endblock %}
+    {% endcomment %}

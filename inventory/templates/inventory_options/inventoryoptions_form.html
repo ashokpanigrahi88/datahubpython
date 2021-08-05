@@ -1,0 +1,50 @@
+{% extends 'common/menu.html' %}
+{% load getverbose %}
+
+{% block title %} Update Inventory Options {% endblock %}
+
+{% block content_block %}
+<h3> Inventory Options </h3>
+<div class="row" style="height:5px;"></div>
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        {% for tab_name in tab_fields %}
+        <a class="nav-item nav-link {% if forloop.first %}active{% endif %}"
+           id="{{tab_name}}-tab" data-toggle="tab" href="#{{tab_name}}" role="tab"
+           aria-controls="{{tab_name}}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
+            {% cycle 'General' 'UOM' 'GL Codes' 'Decisions' %}
+        </a>
+        {% endfor %}
+    </div>
+</nav>
+
+<form method="POST">{% csrf_token %}
+    <div class="tab-content" id="myTabContent">
+        {% for tab_name, field_list in tab_fields.items %}
+        <div class="tab-pane fade show {% if forloop.first %}active{% endif %}"
+             id="{{tab_name}}" role="tabpanel" aria-labelledby="{{tab_name}}-tab">
+            <div class="container-fluid" style="padding-left:2%;">
+                {% for field in form %}
+                {% if field.name in field_list %}
+                <div class="row">
+                    {% include '_model_form2.html' %}
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <div class="row">
+        <div class="container-fluid">
+            <div class="col-md-3">
+                <a href="/inventory/options/" class="cancel-btn cancel-button">Cancel</a>
+                <button class="save-btn">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{%  endblock %}
+

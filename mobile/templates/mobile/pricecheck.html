@@ -1,0 +1,135 @@
+{% extends 'common/generic_list.html' %}
+{% block moduletitle %}
+    Price Check
+    <br>
+    {{ errormessage }}
+{% endblock %}
+{% block findaction %} {% endblock %}
+{% block findform %}
+    {{ form }}
+     <input type="submit" class="btn btn-info" value="Submit">
+{% endblock %}
+{% block tableheader %}
+    <th>Item Number</th>
+    <th>In Stock </th>
+    <th>Item Name</th>
+    <th>Bin </th>
+ {% endblock %}
+{% block tablerow %}
+
+    <td>
+        <a href="/mobile/pricecheck/?&fuzzy_search=N&item_number={{ row.ITEM_NUMBER }}"><span class="glyphicon glyphicon-pencil" >{{row.ITEM_NUMBER }}</span></a>
+       </td>
+    <td>{{row.INSTOCK }}</td>
+    <td>{{row.ITEM_NAME }}</td>
+    <td>{{row.SU_BIN }}</td>
+{% endblock %}
+{% block rowaction %}
+{% endblock %}
+
+
+    {% block postlist %}
+{% if item %}
+<div class="row col-md-10 px-4 py-3 font-weight-bold ">
+<h3> Item Details </h3>
+   <table id="ServiceTable" class="table table-hover table-striped font-weight-bold">
+        <tr><td> Item:</td> <td>{{ item.item_number }} &emsp;{{ item.item_name }} </td> </tr>
+       {% if itemdict.INSTOCK %}
+        <tr><td> Available Stock :</td><td>{{ itemdict.INSTOCK }}  &emsp; </td> </tr>
+           {% endif %}
+        <tr> <td> Quantities :</td><td> Case : {{ item.case_unit }} Inner : {{ item.inner_qty }} </td></tr>
+        <tr> <td> Primary :</td><td> Location: {{ itemdict.SUBLOCATION }} BIN: {{ itemdict.SUBIN }} </td> </tr>
+       <tr><td> Price Break:</td><td>{{ itemdict.PBTEXT }} </td> </tr>
+       {% if itemdict.PRICE %}
+        <tr><td> PRICE :</td><td>{{ itemdict.PRICE }}  &emsp; {{ itemdict.PRICETYPE }} </td></tr>
+           {% endif %}
+    {% if itemdict.PRICE1_IN %}
+        <tr> <td> Price 1 :</td><td>IncTax: {{ itemdict.PRICE1_IN }}  &emsp; ExlTax: {{ itemdict.PRICE1_EX }} </td></tr>
+           {% endif %}
+    {% if itemdict.PRICE2_IN %}
+        <tr><td> Price 2 :</td><td>IncTax:  {{ itemdict.PRICE2_IN }}  &emsp; ExlTax:  {{ itemdict.PRICE2_EX }} </td> </tr>
+           {% endif %}
+    {% if itemdict.PRICE3_IN %}
+        <tr><td> Price 3 :</td><td>IncTax:  {{ itemdict.PRICE3_IN }}  &emsp; ExlTax:  {{ itemdict.PRICE3_EX }} </td> </tr>
+           {% endif %}
+    {% if itemdict.PRICE4_IN %}
+        <tr><td> Price 4 :</td><td>IncTax: {{ itemdict.PRICE4_IN }}  &emsp; ExlTax:  {{ itemdict.PRICE4_EX }} </td> </tr>
+           {% endif %}
+     {% if itemdict.PRICE5_IN %}
+        <tr><td> Price 5 :</td><td>IncTax: {{ itemdict.PRICE5_IN }}  &emsp; ExlTax:  {{ itemdict.PRICE5_EX }} </td> </tr>
+           {% endif %}
+     {% if itemdict.RETPRICE_IN %}
+        <tr><td> Retail PRICE :</td><td>IncTax: {{ itemdict.RETPRICE_IN }}  &emsp; ExlTax:  {{ itemdict.RETPRICE_EX }} </td> </tr>
+           {% endif %}
+       {% if itemdict.ITEMFLAGS %}
+        <tr><td> Flags :</td><td>{{ itemdict.ITEMFLAGS }}  &emsp; </td> </tr>
+           {% endif %}
+       {% if itemdict.POBALANCE_QTY %}
+        <tr><td> In Purchase Order :</td><td>{{ itemdict.POBALANCE_QTY }}  &emsp; </td> </tr>
+           {% endif %}
+       {% if itemdict.SOALLOC_QTY %}
+        <tr><td> In Sales Order :</td><td>{{ itemdict.SOALLOC_QTY }}  &emsp; </td> </tr>
+           {% endif %}
+    </table>
+    </div>
+{% endif %}
+  {% endblock %}
+
+        <div> <h3> {% block table2title %} Sub Location Stock {% endblock  %}  </h3> </div>
+        {% block tableheader2 %}
+            <th>Location</th>
+            <th>Primary Sub Location</th>
+            <th>Quantity </th>
+            <th>Cases </th>
+            <th>Min Qty </th>
+            <th>Max Qty </th>
+            <th>Group code </th>
+        {% endblock %}
+    {% block tablerow2 %}
+            <td>{{row2.LOCATION_NAME }}</td>
+            <td>{{row2.SUB_LOCATION }}</td>
+            <td>{{row2.QUANTITY }}</td>
+            <td>{{row2.QTY_CASES }}</td>
+            <td>{{row2.MIN_QTY }}</td>
+            <td>{{row2.MAX_QTY }}</td>
+            <td>{{row2.GROUP_CODE }}</td>
+        {% endblock %}
+{% block table3title %} Items in Purchase Order  {% endblock  %}
+        {% block tableheader3 %}
+            <th>PO Number</th>
+            <th>PO Date</th>
+            <th>Promised </th>
+            <th>Need By </th>
+            <th>Balance  </th>
+        {% endblock %}
+       {% block tablerow3 %}
+            <td>{{row3.PO_NUMBER }}</td>
+            <td>{{row2.ORDER_STATUS_DATE }}</td>
+            <td>{{row2.LINEPROMISED_DATE}}</td>
+            <td>{{row2.LINENEEDBY_DATE }}</td>
+            <td>{{row2.QTY_BALANCE }}</td>
+        {% endblock %}
+{% block table4title %} Items in Sales Order {% endblock  %}
+        {% block tableheader4%}
+            <th>Order Number</th>
+            <th>Order Date</th>
+            <th>Order Type </th>
+            <th>Ordered </th>
+            <th>Balance  </th>
+            <th>Ordered Cases </th>
+            <th>Balance Cases </th>
+        {% endblock %}
+       {% block tablerow4 %}
+            <td>{{row4.ORDER_NUMBER }}</td>
+            <td>{{row4.ORDER_STATUS_DATE }}</td>
+            <td>{{row4.ORDER_TYPE}}</td>
+            <td>{{row4.QTY_ORDERED_UNITS }}</td>
+            <td>{{row4.QQTY_PICKOUTSTANDING_UNITS }}</td>
+            <td>{{row4.QTY_ORDERED_CASES }}</td>
+            <td>{{row4.QQTY_PICKOUTSTANDING_CASES }}</td>
+        {% endblock %}
+{% block createaction %}
+
+{% endblock %}
+
+

@@ -1,0 +1,779 @@
+Declare
+Destrow CMN_LOOKUP_TYPES%RowType;
+retstat number;
+BEGIN
+DestRow.Lookup_Type := 'TEST_ASHOK';
+DestRow.Lookup_desc := 'Testing lookups';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SALES_ORDER_WORKFLOW';
+DestRow.Lookup_desc := 'SALES ORDER WORKFLOW';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'AUTO_EMAIL_OPTIONS';
+DestRow.Lookup_desc := 'AUTO EMAIL OPTIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_EXPORT_ATTRIBUTES';
+DestRow.Lookup_desc := 'ITEM EXPORT ATTRIBUTES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'COUNTRY_MAPPING_CODE';
+DestRow.Lookup_desc := 'MAPPES COUNTRY TABLE WITH USER COUNTRY CODE FOR REPORTING';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'DISPLAY_ITEM_PRICES';
+DestRow.Lookup_desc := 'DISPLAY PRICE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'DEFAULT_CONTAINER_TYPE';
+DestRow.Lookup_desc := 'DEFAULT CONTAINER TYPE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_DEFAULT_BATCHES';
+DestRow.Lookup_desc := 'BATCHES YOU LIKE TO CREATE WHEN AN ITEM IS CHANGED';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'LANGUAGE_ITEMS';
+DestRow.Lookup_desc := 'ALL CLOUMNS MAY REQUIRE LANGUAGE TRANSLATION';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PALLET_SOURCES';
+DestRow.Lookup_desc := 'PALLET SOURCES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PURGE_TABLES';
+DestRow.Lookup_desc := 'LIST OF TABLES NEEDS PURGING, VALUE=DAYS, DESCIPTION=SQL';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'REPORT_PARAMETERS';
+DestRow.Lookup_desc := 'VARIABLES USED IN REPORTS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'TRANSACTION_SOURCES';
+DestRow.Lookup_desc := 'TRANSACTION SOURCES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'TRANSACTION_TYPES';
+DestRow.Lookup_desc := 'TRANSACTION TYPES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WWW_BARCODE_TYPE';
+DestRow.Lookup_desc := 'WWW BARCODE TYPE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WWW_DESIGN_PATTERN';
+DestRow.Lookup_desc := 'WWW DESIGN PATTERN';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WWW_PARENTAGE';
+DestRow.Lookup_desc := 'WWW PARENTAGE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WWW_RELATIONSHIP_TYPE';
+DestRow.Lookup_desc := 'WWW RELATIONSHIP TYPE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WWW_VARIATION_THEME';
+DestRow.Lookup_desc := 'WWW VARIATION THEME';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CONTAINER_CATEGORY';
+DestRow.Lookup_desc := 'USED WHILE SETTING UP CONTAINER CATEGORY';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CONTAINER_RECYCLE_CODE';
+DestRow.Lookup_desc := 'USED WHILE SETTING UP CONTAINERS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CONTAINER_TYPE';
+DestRow.Lookup_desc := 'USED WHILE SETTING UP CONTAINER';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'OFFER_TYPE_CODE';
+DestRow.Lookup_desc := 'USED FOR DEFINING SPECIAL OFFERS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'STORAGE_AREA2';
+DestRow.Lookup_desc := 'USED IN SUB LOCATIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'STORAGE_AREA3';
+DestRow.Lookup_desc := 'USED IN SUB LOCATIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'STORAGE_AREAS';
+DestRow.Lookup_desc := 'USED IN ITEMS AND SUB LOCATIONS TO ASSIGN STORAGE TYPES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'STP_ATTRIBUTES';
+DestRow.Lookup_desc := 'USED IN STYLE/PATTERNS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'STP_CATEGORY';
+DestRow.Lookup_desc := 'USED IN SYLE AND PATTERNS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'STP_LEVELS';
+DestRow.Lookup_desc := 'USED IN STYLE / PATTERNS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_CONDITION';
+DestRow.Lookup_desc := 'USED FOR ITEM CONDITION';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PARTY_GROUP_CODE';
+DestRow.Lookup_desc := 'PARTY GROUP CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PARTY_TYPE_CODE';
+DestRow.Lookup_desc := 'PARTY TYPE CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SCHEDULE_INTERVALS';
+DestRow.Lookup_desc := 'USED IN SCHEDULE A JOB';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ADDITIONAL_INFO_CATEGORY';
+DestRow.Lookup_desc := 'USED FOR ADDITIONAL INFO TO ANY OBJECT';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ADDITIONAL_INFO_POSITION';
+DestRow.Lookup_desc := 'USED FOR ADDITIONAL INFO TO ANY OBJECT';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ADDITIONAL_INFO_TYPE';
+DestRow.Lookup_desc := 'USED FOR ADDITIONAL INFO TO ANY OBJECT';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'DATE_FORMAT';
+DestRow.Lookup_desc := 'USED IN DATE FORMAT';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WEB_SITE_DEFAULTS';
+DestRow.Lookup_desc := 'USED FOR SETTING WEB SITE DEFAULTS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'AUTO_EMAIL';
+DestRow.Lookup_desc := 'AUTO EMAIL FOLLOWING TRANSACTIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'EU_DIRECTIVE_WARNINGS';
+DestRow.Lookup_desc := 'THIS LOOK UP IS FOR EU DIRECTIVE WARNINGS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'EXPORT_GRID_DEFAULTS';
+DestRow.Lookup_desc := 'USED IN EXPORT THE GRID LOGIC';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_EXTRAS_CATEGORY';
+DestRow.Lookup_desc := 'USED TO FILL IN OTHER ADDITIONAL DETAILS AGAINST THE ITEMS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'MOBILE_DEFAULTS';
+DestRow.Lookup_desc := 'USED IN MOBILE APPLICATIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'INV_REQUISITION_CATEGORY';
+DestRow.Lookup_desc := 'INVENTORY REQUSITION CATEGORIES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'INV_REQUISITION_SOURCE';
+DestRow.Lookup_desc := 'INVENTORY REQUISITION SOURCE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'INV_REQUISITION_TYPE';
+DestRow.Lookup_desc := 'INVENTORY REQUISITION TYPES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_DELETE_PRECHECK';
+DestRow.Lookup_desc := 'ALL TABLES ARE CHECKED BEFORE DELETING AN ITEM';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PRIORITY_CODES';
+DestRow.Lookup_desc := 'PRIORITY CODES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ADDRESS_TYPES';
+DestRow.Lookup_desc := 'ADDRESS TYPES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_DEFAULTS';
+DestRow.Lookup_desc := 'USED WHILE CREATING NEW ITEMS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'AMAZON_DEFAULTS';
+DestRow.Lookup_desc := 'USED FOR AMAZON RELATED DEFAULTS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'DISPLAY_IMAGE';
+DestRow.Lookup_desc := 'DECIDES WHETHER TO DISPLAY IMAGE IN TRANSACTION SCREENS OR NOT';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SAGE_DEFAULTS';
+DestRow.Lookup_desc := 'USED FOR EXPORTING SAGE MASTERS AND TRANSACTIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'STKTAKE_SOURCE_CODE';
+DestRow.Lookup_desc := 'STOCK TAKE COURCE CODE USED IN ITEM COUNT';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SALES_UNIT_BARCODE_SUFFIX';
+DestRow.Lookup_desc := 'USED WHILE CREATING BARCODE FOR SALES UNITS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'COUNTRY_REGION_CODE';
+DestRow.Lookup_desc := 'USED IN COUNTRY SCREEN';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_SEARCH_QUERIES';
+DestRow.Lookup_desc := 'USED IN ITEM SEARCH QUERIES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CUSTOMER_TYPE_CODE';
+DestRow.Lookup_desc := 'USED TO DIFFERENTIATE CUSTOMER TYPES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WEB_EXPORT_HINT_CODES';
+DestRow.Lookup_desc := 'USED IN WEB SITE SETUP';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WWW_UPLOAD_PREFERENCE';
+DestRow.Lookup_desc := 'USED IN WEB SITE SETUP SCREEN';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PRICE_BREAK_TEXT_TYPES';
+DestRow.Lookup_desc := 'USED WHILE PRINTING ITEM LABELS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'AUTODBN_CREATE_FOR';
+DestRow.Lookup_desc := 'USED FOR CREATING AUTO DEBIT NOTE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CASHINGUP_DIFFERENCE_CODE';
+DestRow.Lookup_desc := 'USED FOR CASHING UP DIFFERENCE REASON';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'GL_PAYMENT_CATEGORY';
+DestRow.Lookup_desc := 'USED FOR GL PAYMENT CATEGORY';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'GL_PAYMENT_SOURCE';
+DestRow.Lookup_desc := 'USED FOR GL PAYMENT SOURCE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'QUICKCODE_CATEGORIES';
+DestRow.Lookup_desc := 'USED FOR SETTING ITEM QUICK CODES OR MENUS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WWW_CUSTOMER_CATEGORY';
+DestRow.Lookup_desc := 'USED IN CUSTOMER SCREEN';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WWW_SUBSCRIPTION_PREFERENCE';
+DestRow.Lookup_desc := '';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SIMILAR_ITEM_CATEGORY';
+DestRow.Lookup_desc := 'SIMILAR ITEM CATEGORY';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SUPPLIER_CATEGORY_CODE';
+DestRow.Lookup_desc := 'USED IN SUPPLIER SCREEN';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CUSTOMER_CLASS_CODE';
+DestRow.Lookup_desc := 'USED IN CUSTOMER SCREEN TO CLASSIFY A CUSTOMER';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'MATRIX_REPORT_COLUMNS';
+DestRow.Lookup_desc := 'USED FOR SETTING UP MATRIX REPORT COLUMNS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'USER_EXPORTS';
+DestRow.Lookup_desc := 'PLEASE ENTER YOUR OBJECTS TO BE EXPORTED';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'USER_GROUP';
+DestRow.Lookup_desc := 'USED ALONG USER SECURITY';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ALERT_CATEGORY_CODE';
+DestRow.Lookup_desc := 'USED IN CMN_ALERT01 FUNCTIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ALERT_EVENTS';
+DestRow.Lookup_desc := 'ALERT EVENTS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ALERT_METHOD_CODE';
+DestRow.Lookup_desc := 'ALERT METHODS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ALERT_NAMES';
+DestRow.Lookup_desc := 'ALERT NAMES USED IN CMN_ALERTS01';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'COMMUNICATION_CATEGORY_CODE';
+DestRow.Lookup_desc := 'USED FOR CATEGORISING COMMUNICATIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'COMMUNICATION_TYPE_CODE';
+DestRow.Lookup_desc := 'ENTER VARIUOS TYPES OF COMMUNICATIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PRICE_BREAK_QUANTITY_SOURCE';
+DestRow.Lookup_desc := 'PRICE BREAK QUANTITY SOURCE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PRICE_BREAK_SOURCE_TYPE';
+DestRow.Lookup_desc := 'PRICE BREAK SOURCE TYPE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'MINUS_STOCK_OPTIONS';
+DestRow.Lookup_desc := 'MINUS STOCK OPTIONS SET ATTRIBUTE1 VALUE TO Y/N';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'RESP_CATEGORY_CODE';
+DestRow.Lookup_desc := 'RESPONSIBILITY CATEGORY CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'AP_INVOICE_CATEGORY';
+DestRow.Lookup_desc := 'USED IN AP INVOICE CATEGORY';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'AP_INVOICE_LINE_TYPE';
+DestRow.Lookup_desc := 'PAYABLES INVOICE LINE TYPE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'AR_INVOICE_TYPE';
+DestRow.Lookup_desc := '';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'AR_PAYMENT_SOURCES';
+DestRow.Lookup_desc := 'USED IN AR PAYMENT';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'AR_RETURN_REASON_CODE';
+DestRow.Lookup_desc := 'USED IN SALES CREDIT MEMO';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'BATCH_FORMAT';
+DestRow.Lookup_desc := 'FORMULA FOR VARIOUS BATCH FORMAT FOR DIFFERENT MODULES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'COLOUR';
+DestRow.Lookup_desc := 'COLOUR';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CONTACT_GROUP_CODE';
+DestRow.Lookup_desc := 'CONTACT GROUP CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CONTACT_METHOD_CODE';
+DestRow.Lookup_desc := 'CONTACT_METHOD_CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CONTACT_TYPE_CODE';
+DestRow.Lookup_desc := '';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CREDIT_INV_ACTION_CODE';
+DestRow.Lookup_desc := 'USED IN CREDIT NOTE TO DECIDE THE ACTION';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CREDIT_ITEM_STATUS_CODE';
+DestRow.Lookup_desc := 'USED IN CREDIT NOTE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'CUSTOMER_HOLD_REASON';
+DestRow.Lookup_desc := 'CUSTOMER HOLD REASON';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'DIM_SALES_CRITERIA';
+DestRow.Lookup_desc := 'USED IN DIMENSION FOR SALES CRITERIA';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'DIM_STOCK_UPDATE_CRITERIA';
+DestRow.Lookup_desc := 'USED IN ITEM DIMENSIONS FOR STOCK UPDATE CONDITIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'FITTINGS';
+DestRow.Lookup_desc := 'FITTINGS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'GL_QUALIFIER_CODE1';
+DestRow.Lookup_desc := 'USED IN GENERAL LEDGER';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'GL_QUALIFIER_CODE2';
+DestRow.Lookup_desc := 'USED IN GENERAL LEDGER ACCOUNTING';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'INVOICE_RELEASE_CODES';
+DestRow.Lookup_desc := 'INVOICE RELEASE CODES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_CLASS_CATEGORY';
+DestRow.Lookup_desc := 'ITEM CLASS CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_DIMENSION_TYPE';
+DestRow.Lookup_desc := 'USED FOR ITEM DIMENSIONS';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_EXTERNAL_LOCATIONS';
+DestRow.Lookup_desc := 'LOCATIONS USED FOR TRANSFERRING ITEMS FROM/TO OFFICES/DEPOT';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_GROUP1';
+DestRow.Lookup_desc := 'MAJOR GROUP';
+DestRow.Lookup_Module := 'INVENTORY';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_GROUP2';
+DestRow.Lookup_desc := 'MINOR GROUP';
+DestRow.Lookup_Module := 'INVENTORY';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_GROUP3';
+DestRow.Lookup_desc := 'ITEM GROUP3';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_GROUP4';
+DestRow.Lookup_desc := 'ITEM GROUP4';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_MOVEMENT_CATEGORY';
+DestRow.Lookup_desc := 'INVENTORY ITEM MOVEMENT CATEGORY';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'ITEM_SNAPSHOT_TYPE';
+DestRow.Lookup_desc := 'ITEM SNAPSHOT TYPES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'LOCATION_REGION_CODE';
+DestRow.Lookup_desc := 'LOCATION REGION CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PAYMENT_CARD_TYPES';
+DestRow.Lookup_desc := 'PAYMENT CARD TYPES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PAYMENT_TRANS_CATEGORY';
+DestRow.Lookup_desc := 'PAYMENT TRANSACTION CATEGORY';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PERSON_TITLES';
+DestRow.Lookup_desc := 'TITLES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PO_TRANS_CATEGORY';
+DestRow.Lookup_desc := 'PURCHASE ORDER TRANSACTION CATEGORY';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PRICELIST_GROUP_CODE';
+DestRow.Lookup_desc := 'PRICE LIST GROUP CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'PRICELIST_USAGE_CODE';
+DestRow.Lookup_desc := 'PRICE LIST USAGE CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'REASON_FOR_REJECTION';
+DestRow.Lookup_desc := 'REASON FOR REJECTION USED IN GRN';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SALES_ORDER_CATEGORY_CODE';
+DestRow.Lookup_desc := 'USED IN SALES ORDER CATEGORY CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SALES_ORDER_SOURCE';
+DestRow.Lookup_desc := 'USED IN SALES ORDER SOURCE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SIZE';
+DestRow.Lookup_desc := 'SIZE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'STOCK_TAKE_CATEGORY';
+DestRow.Lookup_desc := 'STOCK TAKE CATEGORY';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'STYLE';
+DestRow.Lookup_desc := 'STYLE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SUB_LOCATION_GROUP_CODE';
+DestRow.Lookup_desc := 'SUB LOCATION GROUP CODE';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SUB_LOCATION_TYPES';
+DestRow.Lookup_desc := 'SUB LOCATION TYPES';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'USER';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'SUPPLIER_HOLD_REASON';
+DestRow.Lookup_desc := 'SUPPLIER HOLD REASON';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+DestRow.Lookup_Type := 'WHOSEFOR';
+DestRow.Lookup_desc := '';
+DestRow.Lookup_Module := 'ALL';
+DestRow.Security_Level := 'SYSTEM';
+CMN_LOOKUP_TYPESAPI('INSERT',DestRow);
+-------------------------------------
+END;

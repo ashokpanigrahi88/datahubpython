@@ -1,0 +1,213 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'INVENTORY REQUISITION GROUP'
+,p_eventtype=>'NOTIFICATIONGROUP'
+,p_active=>'Y'
+,p_description=>'INVENTORY REQUISITION GROUP'
+,p_tableviewname=>'INV_REQUISITION_HEADERS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'INVENTORYREQUISITION'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>'FIRES WHENEVER AN INVENTORY REQUISTION IS CREATED/AMMENDED/DELETED'
+,p_tableviewname=>'INV_REQUISITION_HEADERS'
+,p_subjectprefix =>'REQUISITION:'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'MONITOR LAYAWAY'
+,p_eventtype=>'NOTIFICATIONGROUP'
+,p_active=>'Y'
+,p_description=>'ADD RECIPIENTS'
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'SALES DISCOUNT APPLIED'
+,p_eventtype=>'WORKLIST'
+,p_active=>'N'
+,p_description=>'FIRES WHEN DISCOUNT /PRICE OVER APPLIED'
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'CUSTOMERADD/DELETE'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>'FIRES WHEN CUSTOMER IS CREATED / DELETED'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'GRNRESERVED'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>'FIRES WHEN A RESERVED ITEM IS GRNED'
+,p_tableviewname=>'PO_GRN_HEADERS'
+,p_subjectprefix =>'PLEASE FULFILL THE ITEM'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'INVENTORY GROUP'
+,p_eventtype=>'NOTIFICATIONGROUP'
+,p_active=>'Y'
+,p_description=>'ADD RECIPENTS'
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMGONETOMINUSSTOCK'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>'FIRES WHEN INSTOCK GOES TO MINUS FOR FIRST TIME'
+,p_tableviewname=>''
+,p_subjectprefix =>'ITEMGONETOMINUSSTOCK'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMINNERQTY'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>''
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMINSTOCK<MINQTY'
+,p_eventtype=>'WORKLIST'
+,p_active=>'N'
+,p_description=>'FIRES WHEN INSTOCK GOES BELOW MIN QTY'
+,p_tableviewname=>'INV_ITEM_LOCATIONS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMINSTOCK>MAXQTY'
+,p_eventtype=>'WORKLIST'
+,p_active=>'N'
+,p_description=>'FIRES WHEN INSTOCK GOES ABOVE MAX QTY'
+,p_tableviewname=>'INV_ITEM_LOCATIONS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMINSTOCK>REORDERQTY'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>'FIRES WHEN INSTOCK GOES ABOVE REORDER QTY'
+,p_tableviewname=>'INV_ITEM_LOCATIONS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMMAXQTY'
+,p_eventtype=>'WORKLIST'
+,p_active=>'N'
+,p_description=>'WHEN MAX QTY AMENDED'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMMINQTY'
+,p_eventtype=>'WORKLIST'
+,p_active=>'N'
+,p_description=>'WHEN MIN QTY AMENDED'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMPALLETQTY'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>''
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMPRICEBREAK'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>''
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMREORDERQTY'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>''
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMSTATUSCHANGED'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>'FIRES WHEN ITEM STATUS IS CHANGED'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMSTOCKADJSUTED'
+,p_eventtype=>'WORKLIST'
+,p_active=>'N'
+,p_description=>'FIRES WHEN AN ITEM IS ADJUSTED'
+,p_tableviewname=>''
+,p_subjectprefix =>'ITEMSTOCKADJSUTED'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'ITEMUNITCP'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>''
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'OWNER GROUP'
+,p_eventtype=>'NOTIFICATIONGROUP'
+,p_active=>'Y'
+,p_description=>'USE THIS GROUP FOR SENDING EMAILS'
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'PURCHASE GROUP'
+,p_eventtype=>'NOTIFICATIONGROUP'
+,p_active=>'Y'
+,p_description=>'ADD RECIPENTS'
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'RESERVEDITEMCREATED'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>'FIRES WHEN A RESERVED ITEM IS CREATED'
+,p_tableviewname=>'AR_SALESORDER_LINES'
+,p_subjectprefix =>'RESERVE ITEM CREATED'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'SALES GROUP'
+,p_eventtype=>'NOTIFICATIONGROUP'
+,p_active=>'Y'
+,p_description=>'ADD RECIPENTS'
+,p_tableviewname=>''
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'SUPPLIERADD/DELETE'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>'FIRES WHEN SUPPLIER IS CREATED OR DELETED'
+,p_tableviewname=>'AP_SUPPLIERS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_NotifEvents(p_identifier=>'USERADD/UPDATE/DELETE'
+,p_eventtype=>'WORKLIST'
+,p_active=>'Y'
+,p_description=>'FIRES WHEN USER DATA CHANGES'
+,p_tableviewname=>'CMN_USERS'
+,p_subjectprefix =>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

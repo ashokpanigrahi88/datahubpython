@@ -1,0 +1,767 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'PALLETNOTE_ATTACHMENT_BODY'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'THIS TEMPLATE IS USED WHILE EMAILING PALLET NOTE'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'Dear $CUSTOMERNAME$
+
+Please find the pallet note attached
+
+Thanks
+From : $LOCATIONNAME$'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'SALES_ORDER_FOOTER'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'THIS TEXT IS PRINTED IN SALES ORDER REPORTS'
+,p_tableviewname=>'AR_INVOICE_HEADERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'Items delivered by pallets/cartons are sealed.If tampered with recipients must inform <b>CANNON TOOLS LIMITED</b>
+on the same day of receipt.Discrepancies and Non-Delivery of goods must be notified in writing within three days of Invoice
+Date.Title of goods will remain with <b>CANNON TOOLS LIMITED</b> until payment is received in full.
+On overdue accounts <b>CANNON TOOLS LIMITED</b> reserve the right to charge interest at the rate of 12% over base rate of lending at
+Lloyds Bank Plc. Inc. VAT at line level is a guide only.
+Account Number 00637201
+Sort Code 30 00 03
+IBAN GB95 LOYD 3000 0300 637201
+BIC LOYDGB21003'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'REPORT_ATTACHMENT_BODY'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'THIS TEMPLATE WILL BE USED WHILE EMAILING ANY REPORT'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'Hello,
+
+Please find the invoice attached
+
+Thanks
+From : $LOCATIONNAME$'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'COMMUNICATION_-_CUSTOMER'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'COMMUNICATION - CUSTOMER'
+,p_tableviewname=>'CMN_COMMUNICATIONS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'Dear $CUSTOMERNAME$
+
+Subject : $SUBJECT$
+
+$COMMUNICATIONBODY$
+
+Ref :$COMMUNICATIONID$/$COMMUNICATIONTYPECODE$/$COMMUNICATIONCATEGORYCODE$/$LASTUPDATEDATE$
+Thanks
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'DELIVERY_NOTE_FOOTER'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'THIS TEXT IS PRINTED IN DELIVERY NOTE - WEB ORDERS ONLY'
+,p_tableviewname=>'AR_SALESORDER_HEADERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'DELIVERY NOTE TERMS AND CONDITIONS'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'INVOICE_ATTACHMENT_BODY'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'THIS TEMPLATE WILL BE USED WHILE EMAILING INVOICES'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'Dear $CUSTOMERNAME$
+
+Please find the invoice attached
+
+Thanks
+From : 
+$COMPANYNAME$
+$LOCATIONNAME$'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'SALES_INVOICE_FOOTER'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'THIS TEXT IS PRINTED IN SALES INVOICE'
+,p_tableviewname=>'AR_INVOICE_HEADERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'Items delivered by pallets/cartons are sealed.If tampered with recipients must inform <b>CANNON TOOLS LIMITED</b>
+on the same day of receipt.Discrepancies and Non-Delivery of goods must be notified in writing within three days of Invoice
+Date.Title of goods will remain with <b>CANNON TOOLS LIMITED</b> until payment is received in full.
+On overdue accounts <b>CANNON TOOLS LIMITED</b> reserve the right to charge interest at the rate of 12% over base rate of lending at
+Lloyds Bank Plc. Inc. VAT at line level is a guide only.
+Account Number 00637201
+Sort Code 30 00 03
+IBAN GB95 LOYD 3000 0300 637201
+BIC LOYDGB21003'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_BOX_LABEL'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER BOX LABEL'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'GOODS FOR :                             Customer Ref:$CUSTOMERNUMBER$
+<FONT SIZE=6 FACE="COURIER">
+$CUSTOMERNAME$
+$BILLTOADDRESSLINE1$
+$BILLTOCITY$
+$BILLTOCOUNTY$
+$BILLTOPOSTCODE$</FONT>
+_________________________________________
+<FONT SIZE=7 FACE="COURIER">Carton No. : $NOOFBOXES$</FONT>
+_________________________________________
+
+<FONT SIZE=8 FACE="COURIER"> Notes:$FREETEXT$</FONT>
+
+
+<FONT SIZE=5 FACE="COURIER">Dispatched By:
+$COMPANYNAME$
+$LOCADDRESS$
+$LOCCITY$
+$LOCCOUNTY$
+$LOCPOSTCODE$
+Tel:$LOCPHONE1$
+Fax:$LOCFAX1$
+e-mail:$LOCEMAIL$
+Date:$SYSDATE$
+</FONT>
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'ITEM_ALL_COLUMNS'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'ITEM ALL COLUMNS'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'$ALTERNATECASECP$,$ALTERNATEUNITCP$,$APPLYOFFER$,$AVERAGEUNITCP$,$BALANCESHEETGLACCOUNTID$,$BUID$,$CASECP$,$CASEHEIGHT$,$CASELENGTH$,$CASEUNIT$,$CASEVOLUME$,$CASEWIDTH$,$CCCID$,$CLOSINGBALANCE$,$CMCPCID$,$COSTOFSALESGLACCOUNTID$,$CREATEDBY$,$CREATIONDATE$,$CTCTAXCODEID$,$CUSTOMERNOTES1$,$CUSTOMERNOTES2$,$CUSTOMERNOTES3$,$DEFAULTLABELNAME$,$DELETEFLAG$,$DELIVERYCHARGES$,$DEMOVIDEOFILE$,$ENDDATEACTIVE$,$ENFORCEREORDERQTY$,$ENFORCETAXCODE$,$EXTERNALREFERENCE$,$FLAGINDATEFROM$,$FLAGINDATETO$,$FLAGINWEBEXPORT$,$FREIGHT$,$FREIGHTPRICECRITERIA$,$GACGLACCOUNTID$,$GOODSINLOCATIONID$,$GROSSCASEWEIGHT$,$GROSSUNITWEIGHT$,$GROUP1$,$GROUP2$,$GROUP3$,$GROUP4$,$IICCATEGORYID$,$IISCSUBCATEGORYID$,$IMMANFID$,$INNERQTY$,$IPBHPRICEBREAKID$,$ITEMCLASSCATEGORY$,$ITEMCOLOUR$,$ITEMCOMMENT$,$ITEMDIMENSION$,$ITEMDIMENSIONTYPE$,$ITEMFITTING$,$ITEMID$,$ITEMNAME$,$ITEMNUMBER$,$ITEMSIZE$,$ITEMSPECIFICATIONS$,$ITEMSTATUS$,$ITEMSTYLE$,$IWCCHARGEID$,$KEYWORDS$,$LASTBOUGHTUNITCP$,$LASTUPDATEDBY$,$LASTUPDATEDATE$,$LONGDESC$,$MAXQTY$,$MINPBQTY$,$MINQTY$,$MKUPTEMPID$,$NETCASEWEIGHT$,$NETINGREDIENT$,$NETUNITWEIGHT$,$OPENINGBALANCE$,$PALLETQTY$,$PICTURENAME$,$PICTURENAME1$,$PICTURENAME2$,$PICTURENAME3$,$PICTURETYPE$,$PNLGLACCOUNTID$,$PRICEVARIANCEGLACCOUNTID$,$PRINTPICTURE$,$PUBLISHTOWEB$,$PURCHASEABLE$,$QTYINSTOCK$,$RECORDSTATUS$,$REORDERINTERVAL$,$REORDERQTY$,$REORDERUOMID$,$REPLENISHEDFROMLOCATION$,$REPLENISHMENTOPTIONS$,$RESERVABLE$,$SALEABLE$,$SALESGLACCOUNTID$,$SALESLOCATIONID$,$SALESLOCATIONQTY$,$SEASONCODEID$,$SERIALNUMBERED$,$SERVICEDITEM$,$SHORTDESC$,$SIMILARITEMCONCATED$,$SIMILARITEMID$,$STARTDATEACTIVE$,$STOCKABLE$,$STOCKHOLDINGUNIT$,$STOCKTAKECATEGORY$,$SUPPLIERCASECP$,$SUPPLIERNOTES1$,$SUPPLIERNOTES2$,$SUPPLIERNOTES3$,$SUPPLIERPRODUCTCODE$,$SUPPLIERUNITCP$,$SUPSUPPLIERID$,$TAKESNAPSHOT$,$TECHNICALSPECS$,$TECHNICALSPECSFILE$,$TRACKUSAGE$,$TRADINGCASECP$,$TRADINGUNITCP$,$UNITCP$,$UNITHEIGHT$,$UNITLENGTH$,$UNITVOLUME$,$UNITWIDTH$,$UPDATESOURCE$,$VALUABLE$,$VOLUMEUOMID$,$WARRANTIED$,$WARRANTYPERIOD$,$WEIGHEDITEM$,$WEIGHTUOMID$,$WHOSEFOR$,'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_REGISTRATION'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'TEMPLATE FOR INFORMING REGISTRATION'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'Dear $CUSTOMERNAME$
+
+Thanks for registering with $LOCNAME$
+Please login using following details
+User name: $LOGINNAME$
+Password : $CUSTPASSWORD$
+
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_USER_NAME_PASSWORD'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'TEMPLATE FOR INFORMING CUSTOMER USER NAME AND PASSWORD'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'Dear $CUSTOMERNAME$
+
+Thanks for registering with $LOCNAME$
+Please login using following details
+User name: $LOGINNAME$
+Password : $CUSTPASSWORD$
+
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_LABEL'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER LABEL'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'$CUSTOMERNAME$($CUSTOMERNUMBER$)
+$BILLTOADDRESSLINE1$
+$BILLTOCITY$
+$BILLTOCOUNTY$
+$BILLTOPOSTCODE$'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'SUPPLIER_LABEL'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'SUPPLIER LABEL'
+,p_tableviewname=>'AP_SUPPLIERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'$SUPPLIERNAME$($SUPPLIERNUMBER$)
+$ADDRESSLINE1$
+$CITY$
+$COUNTY$
+$POSTCODE$'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'PRICE_DROP'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'PRICE DROP'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>'ITEMNUMBER'
+,p_salesunit =>'1'
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'<FONT SIZE=6 FACE="COURIER">     PRICE CRASH</FONT>
+<FONT SIZE=4 FACE="COURIER">    $ITEMNAME$</FONT>
+
+
+
+
+<FONT SIZE=9 FACE="COURIER">                  $PRICEEXLMIN/5$</FONT>
+
+
+
+
+
+<FONT SIZE=3 FACE="COURIER">Normal Price                      $PRICEEXLMIN/1$</FONT>
+<FONT SIZE=2 FACE="COURIER">$ITEMNUMBER$                 $SUPPLIERPRODUCTCODE$               $CASEUNIT$</FONT>'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'PRICE_DROP_MULTIBY'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'PRICE DOP MULTIBUY'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>'ITEMNUMBER'
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'<FONT SIZE=6 FACE="COURIER">    $SPOFFERNAME$</FONT>
+<FONT SIZE=4 FACE="COURIER">     $ITEMNAME$</FONT>
+
+
+
+
+$SPOFFERTEXT$
+
+
+
+<FONT SIZE=10 FACE="COURIER">    $PRICEEXLMIN/5$</FONT>
+
+
+
+
+
+
+              Average Net Price
+<FONT SIZE=3 FACE="COURIER">Normal Price                      $PRICEEXLMIN/1$</FONT>
+<FONT SIZE=2 FACE="COURIER">$ITEMNUMBER$                 $SUPPLIERPRODUCTCODE$               $CASEUNIT$</FONT>'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'SHELF_LABEL_SPECIAL_OFFER'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'SHELF LABEL SPECIAL OFFER'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>'ITEMNUMBER'
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'
+<FONT SIZE=6 FACE="COURIER">    Special Offer</FONT>
+________________________________________________________________
+<FONT SIZE=4 FACE="COURIER">     $ITEMNAME$</FONT>
+
+________________________________________________________
+Min Qty <FONT SIZE=3 FACE="COURIER"> $SUBOX$</FONT>|Normal Price<FONT SIZE=3 FACE="COURIER"> $PRICEEXLMIN/1$</FONT>
+---------------------------------------
+
+<FONT SIZE=20 FACE="COURIER">                  $PRICEEXLMIN/5$</FONT>
+
+
+______________________________________________________________________
+<FONT SIZE=2 FACE="COURIER">$ITEMNUMBER$           $SUPPLIERPRODUCTCODE$          $CASEUNIT$        $INNERQTY$</FONT>
+____________________________________________________________________
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'UNIT_LABEL'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'UNIT LABEL'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>'ITEMNUMBER'
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'
+<FONT SIZE=4 FACE="COURIER">           $ITEMNAME$</FONT>
+
+
+
+                 Pack Price <FONT SIZE=10 FACE="COURIER">        $PRICEEXLMIN/1$</FONT>
+<FONT SIZE=2 FACE="COURIER">
+-----------------------------------------------
+This item is only sold in              Average
+full packs. The average                  Price
+price shown is only an</FONT><FONT SIZE=4 FACE="COURIER">            $PRICEEXLMIN/4$</FONT><FONT SIZE=2 FACE="COURIER">
+indication for costing
+calculations</FONT>
+---------------------------------------
+<FONT SIZE=3 FACE="COURIER">                                   $BINMIN$</FONT>
+---------------------------------------
+<FONT SIZE=2 FACE="COURIER">$ITEMNUMBER$              $SUPPLIERPRODUCTCODE$                  $CASEUNIT$</FONT>'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'BARCODE_LABEL3'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'BARCODE LABEL3'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'$ITEMNUMBER$
+$ITEMNAME30$
+$PRICEEXLMIN/1$ $PRICEINCMIN/1$(inc)
+$PRICEEXLMIN/2$ $PRICEINCMIN/2$(inc) Buy 20 or more
+$PRICEEXLMIN/3$ $PRICEINCMIN/3$(inc) Buy 100 or more
+Inner:$INNERQTY$ Case:$CASEUNIT$ Pallet:$PALLETQTY$'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_COVER_LETTER'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER COVER LETTER'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'<FONT SIZE=6 FACE="COURIER">$LOCNAME$</FONT> <font size=2 >
+$LOCNAME$Tel:$LOCPHONE1$
+$LOCADDRESS$Fax:$LOCFAX1$
+$LOCCITY$e-mail:$LOCEMAIL$
+$LOCCOUNTY$Date:$SYSDATE$
+$LOCPOSTCODE$
+
+Dear  $CUSTOMERNAME$
+</font>
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_COVER_LETTER'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER COVER LETTER'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>2
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'<font size=2 >Thank you for your order. For your convenience we have attached herewith a latest stock list for
+<b>$FREETEXT$</b>
+This new list shows many new items that have arrived since our main price list was printed.The list shows a list of items that are currently in stock. If you cannot see what you need, just give us a ring and ask, as it may have arrived after the list was printed.
+
+All images shown on our web site and leaflets are to give an indication of colour, design and packaging. The goods supplied may vary from the images shown.We would be obliged if you could check the name and address details on the invoice and let us know if there are any mistakes.</font>
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_COVER_LETTER'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER COVER LETTER'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>3
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'<font size=5 >
+           ******************************************
+           *    Why not order on-line and check     *
+           *      out our WEB-ONLY Special          *
+           *       offers on our web site.          *
+           *    www.oratechsols.co.uk               *
+           ******************************************
+</font>
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_ORDER_FORM'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER ORDER FORM'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'<FONT SIZE=4 FACE="COURIER">$LOCNAME$</FONT><FONT SIZE=4 FACE="COURIER">ORDER FORM</FONT>
+<font size=2 >
+To
+$LOCNAME$$LOCEMAIL$
+$LOCADDRESS$
+$LOCCITY$Tel:$LOCPHONE1$
+$LOCCOUNTY$Fax:$LOCFAX1$
+$LOCPOSTCODE$
+</font>'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_ORDER_FORM'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER ORDER FORM'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>5
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'<font size=2 FACE="COURIER">
+From : -                                          Date  :
+-------------------------------------------------------------------------------------
+$CUSTOMERNAME$<font size="2.5">Account Number:$CUSTACCOUNTNUMBER$ </font>
+-------------------------------------------------------------------------------------
+$CUSTADDRESS$email:$CUSTEMAIL$
+-------------------------------------------------------------------------------------
+ $CUSTCITY$Tel:$CUSTPHONE1$
+-------------------------------------------------------------------------------------
+$CUSTCOUNTY$Fax:$CUSTFAX1$
+-------------------------------------------------------------------------------------
+$CUSTPOSTCODE$ Mobile:$CUSTMOBILE$
+--------------------------------------------------------------------------------------
+</font>
+<font size=3 FACE="COURIER">
+PLEASE SUPPLY THE FOLLOWING GOODS          SUB TOTAL CARRIED FORWARD TO OTHER SIDE
+-----------------------------------------------------------------------------------
+SL# |CODE  |   QTY  |           DESCRIPTION               | UNIT COST| TOTAL COST |
+-----------------------------------------------------------------------------------</font>'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_ORDER_FORM'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER ORDER FORM'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>10
+,p_lineactive=>'Y'
+,p_variable=>'N'
+,p_linetext=>'<font size=3 FACE="COURIER">1.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+2.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+3.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+4.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+5.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+6.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+7.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+8.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+9.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+10. |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+11. |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+C1  |      |        |   <b>CARRIAGE PER CARTOON (25KG)</b>       |    8.00  |            |
+-----------------------------------------------------------------------------------
+    Orders can also be placed by phone for faster delivery| Net Value|            |
+-----------------------------------------------------------------------------------
+   If you need help making up the order please call       |  V.A.T   |            |
+-----------------------------------------------------------------------------------
+   Do not forget starter packs are a good way to get going|   TOTAL  |            |
+-----------------------------------------------------------------------------------</font>'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_ORDER_FORM'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER ORDER FORM'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>15
+,p_lineactive=>'Y'
+,p_variable=>'N'
+,p_linetext=>'INSTRUCTIONS FOR PAYMENT BY TRNSCASH                    SUPPLEMENT TERMS AND CONDITIONS FOR MAIL ORDERS
+
+Payment can be made by cash at any U.K. Post Office,  1) If items are out of stock, the order will be made up with
+using the enclosed TRANSACTION FORM                      similar items or extras of those already ordered,
+enclosed with the order.                                 unless there is a list of substitutes
+
+1) Complete the enclosed Transaction form             2) ALL CHINA AND GLASSWARE ARE SENT AT THE BUYERS RISK.
+with the TOTAL amount of payment
+(including VAT and P&P).                              3) Goods once sold cannot be returned .
+2) Ensure the Transcash form is dated and signed and
+ that both counter foils have the total amount shown. 4) All prices subject to change without notice and
+3) Take the form with the cash to any Post                VAT at the appropriate rate
+Office for payment.
+4) You will be charged a standard fee for the service.5) All goods offered subject to vailability.
+5)The Post Office will stamp both counterfoils as
+ confirmation of payment and retain the payment form.
+6) Retain one counterfoil for your own record          6) All orders subject to our normal Terms & Conditions
+  return the second with the order form.                   (copy available on request).
+
+IMPORTANT: Failure to include a counterfoil            7) All carriage charges (including returns)
+ will delay your order.                                     are to be paid for by the buyer.
+
+We will dispatch the goods upon receiving the order form and stamped counterfoil.
+
+PAYMENT BY DEBIT/CREDIT CARD   Please remember there is a £50 minimum on all orders.
+
+ Please debit my debit card, VISA / MASTERCARD / ACCESS / DELTA / SWITCH (delete as appropriate).
+
+ Card No.                                            Exp Date        Issue No. (switch)
+ -------------------------------------------------   ----------       -----------
+ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |   |  |  |  |       |    |    |
+ -------------------------------------------------   -----------      -----------
+
+ Amount__________________________________ Signed _________________________________
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'CUSTOMER_STATEMENT'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'CUSTOMER STATEMENT'
+,p_tableviewname=>'AR_CUSTOMERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'N'
+,p_linetext=>'<font size=2 ><b>*********************
+Your transactions ends here
+*********************</b></font>'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'BARCODE_LABEL2'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'BARCODE LABEL2'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>'PRIMARY'
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'            $SHORTDESC$
+             QTY         Price
+              $SUMIN$£$PRICEINCMIN/1$'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'BARCODE_LABEL1'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'BARCODE LABEL1'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>'PRIMARY'
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'<FONT SIZE=4 FACE="COURIER">$ITEMNAME$ </FONT>
+<FONT SIZE=1.5 FACE="COURIER">Quantity  Price</FONT>
+  $SUMIN$£$PRICEINCMIN/1$
+ $BARCODEMIN$             $BINMIN$'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'BARCODE_LABEL1'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'BARCODE LABEL1'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>'PRIMARY'
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>2
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'             QTY         Price
+              $SUMIN$£$PRICEINCMIN/1$'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MailMergeTemplate(p_identifier=>'ITEM_TEMPLATE_1'
+,p_mergetype=>'HTML'
+,p_mergeowner=>'SYSTEM'
+,p_active=>'Y'
+,p_description=>'ITEM TEMPLATE 1'
+,p_tableviewname=>'INV_ITEM_MASTERS'
+,p_barcodetext =>''
+,p_salesunit =>''
+,p_barcodeslno =>''
+,p_lineslno=>1
+,p_lineactive=>'Y'
+,p_variable=>'Y'
+,p_linetext=>'<FONT SIZE=4 FACE="COURIER">       $ITEMNUMBER$   $ITEMNAME$ </FONT>
+<FONT SIZE=1.5 FACE="COURIER">Quantity  Price</FONT>
+  $SUMIN$£$PRICEINCMIN/1$
+  $SUBOX$£$PRICEINCBOX/1$
+  $SUMAX$£$PRICEINCMAX/1$
+----------------------------------------------------------
+ $BARCODEMIN$             $BINMIN$
+'
+,p_linetype=>'HTML'
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

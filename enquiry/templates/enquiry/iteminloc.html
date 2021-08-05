@@ -1,0 +1,53 @@
+{% extends 'common/enquiry_list.html' %}
+{% block moduletitle %}
+    Item In Location
+{% endblock %}
+{% comment %}
+{% block findaction %}{% url 'enquiry:iteminsublocation' %}{% endblock %}
+{% endcomment %}
+{% block getpost %}get{% endblock %}
+{% block tableheader %}
+    <th>Location</th>
+    <th>Item Number </th>
+    <th>Item Name </th>
+    <th data-field="quantity" data-searchable="true" data-class="tdDetails" data-footer-formatter="TotalFormatter">Quantity </th>
+    <th>Category</th>
+    <th>Actions </th>
+
+ {% endblock %}
+{% block tablerow %}
+    <td>{{row.location_id.location_name }}</td>
+    <td>{{row.item_id.item_number }}</td>
+    <td>{{row.item_id.item_name }}</td>
+    <td>{{row.quantity }}</td>
+    <td>{{row.item_id.iic_category_id.category_name }}</td>
+    <td> <a href={% url 'enquiry:iteminsublocation' %}?location={{ row.location_id.location_id }}&item_number={{ row.item_id.item_number }}>Sub Loc Stock </a></td>
+{% endblock %}
+{% block rowaction %}
+{% endblock %}
+    {% block postlist %}
+  {% endblock %}
+
+        <div> <h3> {% block tabletitle2 %} {% endblock  %}  </h3> </div>
+        {% block tableheader2 %}
+
+        {% endblock %}
+    {% block tablerow2 %}
+        {% endblock %}
+{% block tabletitle3 %}   {% endblock  %}
+        {% block tableheader3 %}
+        {% endblock %}
+       {% block tablerow3 %}
+
+        {% endblock %}
+{% block tabletitle4 %}   {% endblock  %}
+        {% block tableheader4%}
+
+        {% endblock %}
+       {% block tablerow4 %}
+        {% endblock %}
+{% block createaction %}
+
+{% endblock %}
+
+

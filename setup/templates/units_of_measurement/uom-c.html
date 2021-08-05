@@ -1,0 +1,13 @@
+{% extends 'common/model_form.html' %}
+
+{% block title %} New Units {% endblock %}
+
+{% block moduletitle %}
+<h2> Add Unit Of Measurement</h2>
+{%  endblock %}
+
+{% block postform %}
+<a href="/setup/uom_list/" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% endblock %}

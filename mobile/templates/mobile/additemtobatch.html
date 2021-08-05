@@ -1,0 +1,37 @@
+{% extends 'common/generic_list_post.html' %}
+{% block moduletitle %}
+    Add Item to Batch
+{% endblock %}
+{% block findaction %} {% endblock %}
+{% block getpost %}post{% endblock %}
+{% block findform %}
+    {{ form }}
+     <input type="submit" class="btn btn-info" value="Submit">
+{% endblock %}
+Items in Batch
+{% block rowaction %}
+{% endblock %}
+    {% block postlist %}
+  {% endblock %}
+
+        <div> <h3> {% block table2title %}Quantity Summary {% endblock  %}  </h3> </div>
+        {% block tableheader2 %}
+        {% endblock %}
+    {% block tablerow2 %}
+        {% endblock %}
+{% block table3title %} Line Summary  {% endblock  %}
+        {% block tableheader3 %}
+        {% endblock %}
+       {% block tablerow3 %}
+
+        {% endblock %}
+{% block table4title %} Lines  {% endblock  %}
+        {% block tableheader4%}
+        {% endblock %}
+       {% block tablerow4 %}
+        {% endblock %}
+{% block createaction %}
+
+{% endblock %}
+
+

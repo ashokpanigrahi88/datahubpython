@@ -1,0 +1,173 @@
+{% extends 'common/model_list.html' %}
+{% load query_transform %}
+{% load getverbose %}
+{% block title %} {{ MYCONTEXT.title }} {% endblock %}
+{% block content_block %}
+
+        <h2> COMMODITY CODES </h2>
+
+        <div class="container-fluid" >
+            <form method="get">
+                {% csrf_token %}
+                <table class="table table-striped table-bordered table-sm">
+                    <td>
+                        <a href="{{ MYCONTEXT.create }}" style="text-decoration: none;">
+                            <button type="button" class="new-btn new-button">New Code</button>
+                        </a>
+
+                        <a href="/setup/commcodes_list/">
+                            <button type="button" class="cancel-btn cancel-button">
+                                All Codes </button></a>
+
+                        {% for field in cc_search_form %}
+                        {{field.label_tag}}
+                        {{field}}
+                        {% endfor %}
+                        <input type="submit" class="btn btn-info" value="Search" name="cc_filter"
+                        style="padding: 9px;
+    font-size: 16px;
+    line-height: 18px;">
+                    </td>
+                </table>
+            </form>
+        </div>
+
+<br>
+
+        <div class="container-fluid">
+            <table class="table table-striped table-bordered table-sm">
+                <thead class="bg-info">
+                <tr>
+                    {% for field,attrs in ccc_listview_filed_dict.items %}
+                    <th>{{attrs}}</th>
+                    {% endfor %}
+                    <th>Actions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for row in comm_codes %}
+                <tr>
+                    {% for field in ccc_listview_filed_dict %}
+                    {% if field == 'commodity_code' %}
+                    <td><a href="?commoditycode={{row.commodity_code}}">{{ row|get_instance_field_value:field }}</a></td>
+                    {% else %}
+                    <td>{{ row|get_instance_field_value:field }}</td>
+                    {% endif %}
+                    {% endfor %}
+                    <td>
+                        <a href="{{ MYCONTEXT.update }}{{ row.ccc_id }}/">Edit
+<!--                            <button><span class="fa fa-pencil" style="color: black;"></span></button>-->
+                        </a>
+
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+{% if comm_codes.paginator.num_pages > 1 %}
+<nav aria-label="Pagination Nav">
+    <ul class="pagination justify-content-center">
+        {% if comm_codes.has_previous %}
+            <a href="?{% param_replace CCpage=1 %}"
+               class="page-link page-item">
+                &laquo; First</a>
+            <a href="?{% param_replace CCpage=comm_codes.previous_page_number %}"
+               class="page-link page-item">
+                Previous</a>
+        {% endif %}
+
+        <span class="current page-link page-item">
+            Page {{ comm_codes.number }} of {{ comm_codes.paginator.num_pages }}
+        </span>
+
+        {% if comm_codes.has_next %}
+            <a href="?{% param_replace CCpage=comm_codes.next_page_number %}"
+               class="page-link page-item ">
+                Next</a>
+            <a href="?{% param_replace CCpage=comm_codes.paginator.num_pages %}"
+               class="page-link page-item">
+                Last&raquo;</a>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+<br>
+
+{% if cc_details %}
+<div class="container">
+    <h5>Commodity Code Details</h5>
+    <div class="row">
+        {% for field in cc_details %}
+        {% include '_model_form2.html' %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<br>
+
+<div class="container">
+
+    {% if comm_codes.count == 1 %}
+    <h3>Commodity Rates
+        <a href="/setup/commodityrates_create/?commoditycode={{commcode.commodity_code}}">
+            <button class="btn btn-info" type="button">
+                Add Rate
+            </button>
+        </a></h3>
+
+    {% endif %}
+
+    {% if comm_rates %}
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="bg-info">
+        <tr>
+            {% for field,attrs in ccr_listview_filed_dict.items %}
+            <th>{{attrs}}</th>
+            {% endfor %}
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in comm_rates %}
+        <tr>
+            {% for field in ccr_listview_filed_dict %}
+            {% if field == 'ccr_id' %}
+            <td><a href="?commodityrate_id={{row.cpt_id}}">{{ row|get_instance_field_value:field }}</a></td>
+            {% else %}
+            <td>{{ row|get_instance_field_value:field }}</td>
+            {% endif %}
+            {% endfor %}
+            <td>
+                <a href="/setup/commodityrates_update/{{ row.ccc_id }}/">Edit
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <br>
+
+    {% if cr_details %}
+    <div class="container">
+        <h5>Commodity Rate Details</h5>
+
+        <div class="row">
+            {% for field in cr_details %}
+            {% include '_model_form2.html' %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block pagination %}
+{% endblock %}

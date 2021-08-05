@@ -1,0 +1,15 @@
+{% extends 'common/menu.html' %}
+
+{% block body_block %}
+
+<h1>Do you want to delete: {{form}}?</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Delete">
+
+    <div style="text-align: center;"><a href="/setup/cmnsysoptionslistview/" class="btn btn-primary">Cancel</a></div>
+
+</form>
+
+{% endblock %}

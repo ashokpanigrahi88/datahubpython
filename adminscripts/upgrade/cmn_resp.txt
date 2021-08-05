@@ -1,0 +1,95 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'IMPORT EXPORT'
+,p_description=>'Export'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'WAREHOUSE'
+,p_description=>'Warehouse'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'MOBILE MENU'
+,p_description=>'Mobile'
+,p_categorycode=>'SYSTEM'
+,p_slno=>902
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'SECURITY'
+,p_description=>'Security'
+,p_categorycode=>'SYSTEM'
+,p_slno=>901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'GENERAL LEDGER'
+,p_description=>'Account'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'MY WEB SITES'
+,p_description=>'My Web Sites'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'ADVANCE PRICING'
+,p_description=>'Pricing'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'ENQUIRY'
+,p_description=>'Enquiry'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'HUMAN RESOURCES'
+,p_description=>'People'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'INVENTORY'
+,p_description=>'Inventory'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'MASTER SETUPS'
+,p_description=>'Setup'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'PURCHASES'
+,p_description=>'Purchases'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'REPORTS'
+,p_description=>'Reports'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'SALES'
+,p_description=>'Sales'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Responsibility(p_Name=>'SYSADMIN'
+,p_description=>'Sysadmin'
+,p_categorycode=>'SYSTEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

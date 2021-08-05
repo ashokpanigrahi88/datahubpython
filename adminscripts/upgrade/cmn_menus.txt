@@ -1,0 +1,2723 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'MAIN MENU'
+,p_menuname=>'MAIN MENU'
+,p_menutype=>'M'
+,p_menuid=>1
+,p_slno=>0
+,p_parentmenuid=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'SETUP'
+,p_menuname=>'SETUP'
+,p_menutype=>'M'
+,p_menuid=>2
+,p_slno=>0
+,p_parentmenuid=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'RECEIVABLES'
+,p_menuname=>'RECEIVABLES'
+,p_menutype=>'M'
+,p_menuid=>4
+,p_slno=>0
+,p_parentmenuid=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'PAYABLES'
+,p_menuname=>'PAYABLES'
+,p_menutype=>'M'
+,p_menuid=>5
+,p_slno=>0
+,p_parentmenuid=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'PRICING'
+,p_menuname=>'ADVANCE PRICING'
+,p_menutype=>'M'
+,p_menuid=>6
+,p_slno=>0
+,p_parentmenuid=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'ENQUIRY'
+,p_menuname=>'ENQUIRY'
+,p_menutype=>'M'
+,p_menuid=>7
+,p_slno=>0
+,p_parentmenuid=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'SECURITY'
+,p_menuname=>'SECURITY'
+,p_menutype=>'M'
+,p_menuid=>10
+,p_slno=>0
+,p_parentmenuid=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'INVENTORY'
+,p_menuname=>'INVENTORY'
+,p_menutype=>'M'
+,p_menuid=>30
+,p_slno=>0
+,p_parentmenuid=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'MOBILE MENU'
+,p_menuname=>'MOBILE MENU'
+,p_menutype=>'M'
+,p_menuid=>99
+,p_slno=>9
+,p_parentmenuid=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'MOBILE MOVEMENTS'
+,p_menuname=>'MOBILE MOVEMENTS'
+,p_menutype=>'S'
+,p_menuid=>9901
+,p_slno=>1
+,p_parentmenuid=>99
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'MOBILE REQUISITIONS'
+,p_menuname=>'MOBILE REQUISITIONS'
+,p_menutype=>'S'
+,p_menuid=>9902
+,p_slno=>2
+,p_parentmenuid=>99
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'MOBILE ENQUIRY'
+,p_menuname=>'MOBILE ENQUIRY'
+,p_menutype=>'S'
+,p_menuid=>9903
+,p_slno=>3
+,p_parentmenuid=>99
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'MOBILE INVENTORY'
+,p_menuname=>'MOBILE INVENTORY'
+,p_menutype=>'S'
+,p_menuid=>9904
+,p_slno=>4
+,p_parentmenuid=>99
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>''
+,p_description=>'MOBILE SALES'
+,p_menuname=>'MOBILE SALES'
+,p_menutype=>'S'
+,p_menuid=>9905
+,p_slno=>5
+,p_parentmenuid=>99
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_AC01'
+,p_description=>'GL ACCOUNT CODES'
+,p_menuname=>'GL ACCOUNT CODES'
+,p_menutype=>'I'
+,p_menuid=>20
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_LOOKUP01'
+,p_description=>'LOOKUPS'
+,p_menuname=>'LOOKUPS'
+,p_menutype=>'I'
+,p_menuid=>201
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_COMP01'
+,p_description=>'COMPANY'
+,p_menuname=>'COMPANY'
+,p_menutype=>'I'
+,p_menuid=>202
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_BUS01'
+,p_description=>'BUSINESS UNITS'
+,p_menuname=>'BUSINESS UNITS'
+,p_menutype=>'I'
+,p_menuid=>205
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_UOM01'
+,p_description=>'UNIT OF MEASUREMENTS'
+,p_menuname=>'UNIT OF MEASUREMENTS'
+,p_menutype=>'I'
+,p_menuid=>206
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PMT01'
+,p_description=>'PAYMENT METHODS'
+,p_menuname=>'PAYMENT METHODS'
+,p_menutype=>'I'
+,p_menuid=>207
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_CUR01'
+,p_description=>'CURRENCIES'
+,p_menuname=>'CURRENCIES'
+,p_menutype=>'I'
+,p_menuid=>208
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_TAXCODE01'
+,p_description=>'TAX CODES'
+,p_menuname=>'TAX CODES'
+,p_menutype=>'I'
+,p_menuid=>209
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_BANK01'
+,p_description=>'BANKS'
+,p_menuname=>'BANKS'
+,p_menutype=>'I'
+,p_menuid=>210
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_SEASON01'
+,p_description=>'SEASONS'
+,p_menuname=>'SEASONS'
+,p_menutype=>'I'
+,p_menuid=>212
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_COUNTRY01'
+,p_description=>'COUNTRIES'
+,p_menuname=>'COUNTRIES'
+,p_menutype=>'I'
+,p_menuid=>213
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PMNTTERM01'
+,p_description=>'PAYMENT TERMS'
+,p_menuname=>'PAYMENT TERMS'
+,p_menutype=>'I'
+,p_menuid=>214
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_CONTAINER01'
+,p_description=>'CONTAINERS'
+,p_menuname=>'CONTAINERS'
+,p_menutype=>'I'
+,p_menuid=>215
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_REASONS01'
+,p_description=>'REASONS'
+,p_menuname=>'REASONS'
+,p_menutype=>'I'
+,p_menuid=>216
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PRINTER01'
+,p_description=>'PRINTERS'
+,p_menuname=>'PRINTERS'
+,p_menutype=>'I'
+,p_menuid=>217
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_OPTIONS01'
+,p_description=>'SYSTEM OPTIONS'
+,p_menuname=>'SYSTEM OPTIONS'
+,p_menutype=>'I'
+,p_menuid=>218
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_SEQUENCE01'
+,p_description=>'SEQUENCES'
+,p_menuname=>'SEQUENCES'
+,p_menutype=>'I'
+,p_menuid=>219
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_CURRATE01'
+,p_description=>'CURRENCY RATES'
+,p_menuname=>'CURRENCY RATES'
+,p_menutype=>'I'
+,p_menuid=>220
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_TERMS01'
+,p_description=>'TERMS AND CONDITIONS'
+,p_menuname=>'TERMS AND CONDITIONS'
+,p_menutype=>'I'
+,p_menuid=>221
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PRROUND01'
+,p_description=>'PRICE ROUNDINGS'
+,p_menuname=>'PRICE ROUNDINGS'
+,p_menutype=>'I'
+,p_menuid=>222
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_IMPORT01'
+,p_description=>'IMPORT'
+,p_menuname=>'IMPORT'
+,p_menutype=>'I'
+,p_menuid=>223
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PROPERTY01'
+,p_description=>'OBJECT PROPERTIES'
+,p_menuname=>'OBJECT PROPERTIES'
+,p_menutype=>'I'
+,p_menuid=>224
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PROPERTYVAL01'
+,p_description=>'OBJECT PROPERTY VALUES'
+,p_menuname=>'OBJECT PROPERTY VALUES'
+,p_menutype=>'I'
+,p_menuid=>225
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_LOG01'
+,p_description=>'SYSTEM LOG'
+,p_menuname=>'SYSTEM LOG'
+,p_menutype=>'I'
+,p_menuid=>226
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_RUNPROCESS01'
+,p_description=>'RUN A PROCESS'
+,p_menuname=>'RUN APROCESS'
+,p_menutype=>'I'
+,p_menuid=>227
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_SCHEDULE01'
+,p_description=>'SCHEDULE SETUP'
+,p_menuname=>'SCHEDULE SETUP'
+,p_menutype=>'I'
+,p_menuid=>228
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_SCHJOB01'
+,p_description=>'BACKGROUND JOBS'
+,p_menuname=>'BACKGROUND JOBS'
+,p_menutype=>'I'
+,p_menuid=>229
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PERIOD01'
+,p_description=>'PERIODS'
+,p_menuname=>'PERIODS'
+,p_menutype=>'I'
+,p_menuid=>230
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PROF01'
+,p_description=>'Profiles'
+,p_menuname=>'PROFILES'
+,p_menutype=>'I'
+,p_menuid=>240
+,p_slno=>30
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PROFVAL01'
+,p_description=>'PROFILE VALUES'
+,p_menuname=>'PROFILE VALUES'
+,p_menutype=>'I'
+,p_menuid=>250
+,p_slno=>31
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_PRIV01'
+,p_description=>'PRIVILEGES'
+,p_menuname=>'PRIVILEGES'
+,p_menutype=>'I'
+,p_menuid=>260
+,p_slno=>32
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_GRANTPRIV01'
+,p_description=>'GRANTED PRIVILEGES'
+,p_menuname=>'GRANTED PRIVILEGES'
+,p_menutype=>'I'
+,p_menuid=>270
+,p_slno=>33
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_TERMINAL01'
+,p_description=>'TERMINALS'
+,p_menuname=>'TERMINALS'
+,p_menutype=>'I'
+,p_menuid=>280
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_WORKLIST01'
+,p_description=>'CREATE WORKLIST'
+,p_menuname=>'CREATE WORKLIST'
+,p_menutype=>'I'
+,p_menuid=>290
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_UICONFIG01'
+,p_description=>'UI CONFIGURATION'
+,p_menuname=>'UI CONFIGURATION'
+,p_menutype=>'I'
+,p_menuid=>291
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_EXPTEMPLATE01'
+,p_description=>'EXPORT TEMPLATES'
+,p_menuname=>'EXPORT TEMPLATES'
+,p_menutype=>'I'
+,p_menuid=>292
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_SCHEDULEDJOB01'
+,p_description=>'SCHEDULE A JOB'
+,p_menuname=>'SCHEDULE A JOB'
+,p_menutype=>'I'
+,p_menuid=>293
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_PROGRAM01'
+,p_description=>'DEFAULT PROGRAMS'
+,p_menuname=>'DEFAULT PROGRAMS'
+,p_menutype=>'I'
+,p_menuid=>294
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_TERMINAL01'
+,p_description=>'SALES TERMINALS'
+,p_menuname=>'SALES TERMINALS'
+,p_menutype=>'I'
+,p_menuid=>295
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_MAILMERGE01'
+,p_description=>'MAIL MERGE TEMPLATE'
+,p_menuname=>'MAIL MERGE TEMPLATE'
+,p_menutype=>'I'
+,p_menuid=>296
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_WEBSITES01'
+,p_description=>'WEB SITES SETUP'
+,p_menuname=>'WEB SITES SETUP'
+,p_menutype=>'I'
+,p_menuid=>297
+,p_slno=>0
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_ALERT01'
+,p_description=>'ALERTS'
+,p_menuname=>'ALERTS'
+,p_menutype=>'I'
+,p_menuid=>298
+,p_slno=>43
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_BUSECT01'
+,p_description=>'BUSINESS SECTORS'
+,p_menuname=>'BUSINESS SECTORS'
+,p_menutype=>'I'
+,p_menuid=>299
+,p_slno=>44
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_CATEGORY01'
+,p_description=>'ITEM CATEGORIES'
+,p_menuname=>'ITEM CATEGORIES'
+,p_menutype=>'I'
+,p_menuid=>301
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_PRTYPE01'
+,p_description=>'PRICE TYPES'
+,p_menuname=>'PRICE TYPE'
+,p_menutype=>'I'
+,p_menuid=>302
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEM01'
+,p_description=>'ITEMS'
+,p_menuname=>'ITEMS'
+,p_menutype=>'I'
+,p_menuid=>303
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_OPTIONS01'
+,p_description=>'INVENTORY OPTIONS'
+,p_menuname=>'INV OPTIONS'
+,p_menutype=>'I'
+,p_menuid=>304
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_MANF01'
+,p_description=>'MANUFACTURERS'
+,p_menuname=>'MANUFACTURERS'
+,p_menutype=>'I'
+,p_menuid=>305
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_LOCATION01'
+,p_description=>'INVENTORY LOCATIONS'
+,p_menuname=>'INVENTORY LOCATIONS'
+,p_menutype=>'I'
+,p_menuid=>306
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_SERIALNUM01'
+,p_description=>'ITEM SERIAL NUMBERS'
+,p_menuname=>'ITEM SERIAL NUMBERS'
+,p_menutype=>'I'
+,p_menuid=>307
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_SIMITEM01'
+,p_description=>'SIMILAR ITEMS'
+,p_menuname=>'SIMILAR ITEMS'
+,p_menutype=>'I'
+,p_menuid=>308
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_WEEE01'
+,p_description=>'WEEE CHARGES'
+,p_menuname=>'WEEE CHARGES'
+,p_menutype=>'I'
+,p_menuid=>309
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_STKADJUST01'
+,p_description=>'STOCK ADJUSTMENT'
+,p_menuname=>'STOCK ADJUSTMENT'
+,p_menutype=>'I'
+,p_menuid=>310
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMMOVEMENT01'
+,p_description=>'ITEM MOVEMENTS'
+,p_menuname=>'ITEM MOVEMENTS'
+,p_menutype=>'I'
+,p_menuid=>311
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_PREFSUPITEM01'
+,p_description=>'PREFERRED SUPPLIER LIST'
+,p_menuname=>'PREFERRED SUPPLIER LIST'
+,p_menutype=>'I'
+,p_menuid=>312
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_STKTAKETYPE01'
+,p_description=>'STOCK TAKE TYPES'
+,p_menuname=>'STOCK TAKE TYPES'
+,p_menutype=>'I'
+,p_menuid=>313
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_STKTAKEITEM01'
+,p_description=>'STOCK TAKE ITEMS'
+,p_menuname=>'STOCK TAKE ITEMS'
+,p_menutype=>'I'
+,p_menuid=>314
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_STKCOUNT01'
+,p_description=>'ITEM COUNTS'
+,p_menuname=>'ITEM COUNTS'
+,p_menutype=>'I'
+,p_menuid=>315
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMADDTOLOC01'
+,p_description=>'ADD ITEM TO LOCATION'
+,p_menuname=>'ADD ITEM TO LOCATION'
+,p_menutype=>'I'
+,p_menuid=>316
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMDIM01'
+,p_description=>'ITEM DIMENSIONS'
+,p_menuname=>'ITEM DIMENSIONS'
+,p_menutype=>'I'
+,p_menuid=>317
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMMASS01'
+,p_description=>'ITEM MASS UPDATE'
+,p_menuname=>'ITEM MASS UPDATE'
+,p_menutype=>'I'
+,p_menuid=>327
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMQKMVMNT01'
+,p_description=>'ITEM QUICK MOVEMENT'
+,p_menuname=>'ITEM QUICK MOVEMENT'
+,p_menutype=>'I'
+,p_menuid=>339
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMBATCH01'
+,p_description=>'ITEM BATCH'
+,p_menuname=>'ITEM BATCH'
+,p_menutype=>'I'
+,p_menuid=>367
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_INTMOVEMENT01'
+,p_description=>'INTERNAL MOVEMENTS'
+,p_menuname=>'INTERNAL MOVEMENTS'
+,p_menutype=>'I'
+,p_menuid=>368
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_SLOCASSIGN01'
+,p_description=>'SUB LOCATION ASSIGNMENTS'
+,p_menuname=>'SUB LOCATION ASSIGNMENTS'
+,p_menutype=>'I'
+,p_menuid=>369
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_PREFSUPITEM01'
+,p_description=>'PREFERRED SUPPLIER'
+,p_menuname=>'PREFERRED SUPPLIERS'
+,p_menutype=>'I'
+,p_menuid=>377
+,p_slno=>1
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_STYLEPATTERN01'
+,p_description=>'STYLE / DESIGN / PATTERN'
+,p_menuname=>'STYLE / DESIGN / PATTERN'
+,p_menutype=>'I'
+,p_menuid=>379
+,p_slno=>0
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_LOCATION01'
+,p_description=>'LOCATIONS'
+,p_menuname=>'LOCATIONS'
+,p_menutype=>'I'
+,p_menuid=>387
+,p_slno=>2
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_PRTYPE01'
+,p_description=>'PRICE TYPES'
+,p_menuname=>'PRICE TYPES'
+,p_menutype=>'I'
+,p_menuid=>397
+,p_slno=>3
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CUSTPROF01'
+,p_description=>'CUSTOMER PROFILES'
+,p_menuname=>'CUSTOMER PROFILES'
+,p_menutype=>'I'
+,p_menuid=>401
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CUST01'
+,p_description=>'CUSTOMER'
+,p_menuname=>'CUSTOMER'
+,p_menutype=>'I'
+,p_menuid=>402
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_OPTIONS01'
+,p_description=>'AR OPTIONS'
+,p_menuname=>'AR OPTIONS'
+,p_menutype=>'I'
+,p_menuid=>403
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CUSTPM01'
+,p_description=>'CUSTOMER PAYMENT OPTIONS'
+,p_menuname=>'CUSTOMER PAYMENT OPTIONS'
+,p_menutype=>'I'
+,p_menuid=>404
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CUSTPL01'
+,p_description=>'CUSTOMER PRICE LIST'
+,p_menuname=>'CUSTOMER PRICE LIST'
+,p_menutype=>'I'
+,p_menuid=>405
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALESPERSON01'
+,p_description=>'SALES PERSONS'
+,p_menuname=>'SALES PERSONS'
+,p_menutype=>'I'
+,p_menuid=>406
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALCRGROUP01'
+,p_description=>'SALES CREDIT GROUPS'
+,p_menuname=>'SALES CREDIT GROUPS'
+,p_menutype=>'I'
+,p_menuid=>407
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALORD01'
+,p_description=>'SALES ORDERS'
+,p_menuname=>'SALES ORDERS'
+,p_menutype=>'I'
+,p_menuid=>408
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_INVOICE01'
+,p_description=>'SALES INVOICE'
+,p_menuname=>'SALES INVOICE'
+,p_menutype=>'I'
+,p_menuid=>418
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_DELNOTE01'
+,p_description=>'DELIVERY NOTE'
+,p_menuname=>'DELIVERY NOTE'
+,p_menutype=>'I'
+,p_menuid=>428
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_FREIGHT01'
+,p_description=>'FREIGHT SETUP'
+,p_menuname=>'FREIGHT SETUP'
+,p_menutype=>'I'
+,p_menuid=>438
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_PMNTBYMETHOD01'
+,p_description=>'SALES PAYMENTS'
+,p_menuname=>'SALES PAYMENTS'
+,p_menutype=>'I'
+,p_menuid=>439
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CRNOTE01'
+,p_description=>'SALES CREDIT NOTE'
+,p_menuname=>'CREDIT NOTE'
+,p_menutype=>'I'
+,p_menuid=>449
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_PMNTBYINV01'
+,p_description=>'SALES PAYMENT BY INVOICE'
+,p_menuname=>'SALES PAYMENT BY INVOICE'
+,p_menutype=>'I'
+,p_menuid=>450
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_INVOICE02'
+,p_description=>'MAIN SALES SCREEN'
+,p_menuname=>'MAIN SALES SCREEN'
+,p_menutype=>'I'
+,p_menuid=>451
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_IMPORTTRANS01'
+,p_description=>'IMPORT INVOCIES'
+,p_menuname=>'IMPORT INVOCIES'
+,p_menutype=>'I'
+,p_menuid=>452
+,p_slno=>0
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_RESERVE01'
+,p_description=>'RESERVED ITEMS'
+,p_menuname=>'RESERVED ITEMS'
+,p_menutype=>'I'
+,p_menuid=>453
+,p_slno=>17
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_PMNT01'
+,p_description=>'PAYIN / PAYOUT'
+,p_menuname=>'PAYIN / PAYOUT'
+,p_menutype=>'I'
+,p_menuid=>454
+,p_slno=>18
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_IMPORTTRANS01'
+,p_description=>'IMPORT INVOICES'
+,p_menuname=>'IMPORT INVOICES'
+,p_menutype=>'I'
+,p_menuid=>463
+,p_slno=>18
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_INVOICE02'
+,p_description=>'SALES INVOICE 02'
+,p_menuname=>'SALES INVOICE 02'
+,p_menutype=>'I'
+,p_menuid=>473
+,p_slno=>19
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CUST01'
+,p_description=>'CUSTOMERS'
+,p_menuname=>'CUSTOMERS'
+,p_menutype=>'I'
+,p_menuid=>483
+,p_slno=>20
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CUSTPM01'
+,p_description=>'CUSTOMER PAYMENT METHODS'
+,p_menuname=>'CUSTOMER PAYMENT METHODS'
+,p_menutype=>'I'
+,p_menuid=>493
+,p_slno=>21
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_INVMANUAL01'
+,p_description=>'MANUAL SALES INVOICE'
+,p_menuname=>'MANUAL SALES INVOICE'
+,p_menutype=>'I'
+,p_menuid=>494
+,p_slno=>22
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_SUPPROF01'
+,p_description=>'SUPPLIER PROFILES'
+,p_menuname=>'SUPPLIER PROFILES'
+,p_menutype=>'I'
+,p_menuid=>501
+,p_slno=>0
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_SUP01'
+,p_description=>'SUPPLIERS'
+,p_menuname=>'SUPPLIERS'
+,p_menutype=>'I'
+,p_menuid=>502
+,p_slno=>0
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_PO01'
+,p_description=>'PURCHASE ORDER'
+,p_menuname=>'PURCHASE ORDER'
+,p_menutype=>'I'
+,p_menuid=>503
+,p_slno=>0
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_OPTIONS01'
+,p_description=>'AP OPTIONS'
+,p_menuname=>'AP OPTIONS'
+,p_menutype=>'I'
+,p_menuid=>505
+,p_slno=>0
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_BUYERS01'
+,p_description=>'PO BUYERS'
+,p_menuname=>'PO BUYERS'
+,p_menutype=>'I'
+,p_menuid=>506
+,p_slno=>0
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_GRN01'
+,p_description=>'GOODS RECEIPT'
+,p_menuname=>'GOODS RECEIPT'
+,p_menutype=>'I'
+,p_menuid=>507
+,p_slno=>0
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_INV01'
+,p_description=>'INVOICE'
+,p_menuname=>'INVOICE'
+,p_menutype=>'I'
+,p_menuid=>508
+,p_slno=>0
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_PAYMENT01'
+,p_description=>'PAYMENTS'
+,p_menuname=>'PAYMENTS'
+,p_menutype=>'I'
+,p_menuid=>509
+,p_slno=>0
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_DBNOTE01'
+,p_description=>'DEBIT NOTE'
+,p_menuname=>'DEBIT NOTE'
+,p_menutype=>'I'
+,p_menuid=>510
+,p_slno=>0
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_MANUALPO01'
+,p_description=>'PO INTERNAL USAGE'
+,p_menuname=>'PURCHASE ORDER (INTERNAL USAGE'
+,p_menutype=>'I'
+,p_menuid=>511
+,p_slno=>10
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_ORDERPAD01'
+,p_description=>'PURCHASE ORDERPAD'
+,p_menuname=>'PURCHASE ORDERPAD'
+,p_menutype=>'I'
+,p_menuid=>512
+,p_slno=>11
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_DBNOTE01'
+,p_description=>'DEBIT NOTES'
+,p_menuname=>'DEBIT NOTES'
+,p_menutype=>'I'
+,p_menuid=>520
+,p_slno=>1
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_PRICEBREAK01'
+,p_description=>'PRICE BREAK'
+,p_menuname=>'PRICE BREAK'
+,p_menutype=>'I'
+,p_menuid=>601
+,p_slno=>0
+,p_parentmenuid=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PRICE_OFFER01'
+,p_description=>'ITEM OFFERS'
+,p_menuname=>'ITEM OFFERS'
+,p_menutype=>'I'
+,p_menuid=>602
+,p_slno=>0
+,p_parentmenuid=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_SUPPL01'
+,p_description=>'SUPPLIER PRICE LIST'
+,p_menuname=>'SUPPLIER PRICE LIST'
+,p_menutype=>'I'
+,p_menuid=>603
+,p_slno=>0
+,p_parentmenuid=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PRICE_LIST01'
+,p_description=>'PRICE LIST'
+,p_menuname=>'PRICE LIST'
+,p_menutype=>'I'
+,p_menuid=>605
+,p_slno=>0
+,p_parentmenuid=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PRICE_UPDATECP01'
+,p_description=>'BULK UPDATE CP'
+,p_menuname=>'BULK UPDATE CP'
+,p_menutype=>'I'
+,p_menuid=>606
+,p_slno=>0
+,p_parentmenuid=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PRICE_UPDATESP01'
+,p_description=>'BULK UPDATE SP'
+,p_menuname=>'BULK UPDATE SP'
+,p_menutype=>'I'
+,p_menuid=>626
+,p_slno=>0
+,p_parentmenuid=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_PRICEBREAK01'
+,p_description=>'PRICE BREAKS'
+,p_menuname=>'PRICE BREAKS'
+,p_menutype=>'I'
+,p_menuid=>636
+,p_slno=>1
+,p_parentmenuid=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMSEARCH01'
+,p_description=>'ITEM SEARCH'
+,p_menuname=>'ITEM SEARCH'
+,p_menutype=>'I'
+,p_menuid=>701
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMLOCQRY01'
+,p_description=>'ITEM BY LOCATION'
+,p_menuname=>'ITEM BY LOCATION'
+,p_menutype=>'I'
+,p_menuid=>702
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMINLOC01'
+,p_description=>'ITEM IN LOCATIONS'
+,p_menuname=>'ITEM IN LOCATIONS'
+,p_menutype=>'I'
+,p_menuid=>703
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMSLOCSNAP01'
+,p_description=>'ITEM BY LOCATION SNAPSHOT'
+,p_menuname=>'ITEM BY LOCATION SNAPSHOT'
+,p_menutype=>'I'
+,p_menuid=>704
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMHIST01'
+,p_description=>'TRANSACTION HISTOTRY'
+,p_menuname=>'TRANSACTION HISTORY'
+,p_menutype=>'I'
+,p_menuid=>705
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_SUMITEMCOUNT01'
+,p_description=>'ITEM COUNT SUMMARY'
+,p_menuname=>'ITEM COUNT SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>706
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_SUMPO01'
+,p_description=>'PO SUMMRY'
+,p_menuname=>'PO SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>707
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_SUMGRN01'
+,p_description=>'GRN SUMMARY'
+,p_menuname=>'GRN SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>708
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMCPHIST01'
+,p_description=>'ITEM COST PRICE HISTOR'
+,p_menuname=>'ITEM COST PRICE HISTORY'
+,p_menutype=>'I'
+,p_menuid=>709
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_SUMMOVEMENT01'
+,p_description=>'ITEM MOVEMENT SUMMARY'
+,p_menuname=>'ITEM MOVEMENT SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>710
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AUD_MINUSSTOCK01'
+,p_description=>'MINUS STOCK AUDIT'
+,p_menuname=>'MINUS STOCK AUDIT'
+,p_menutype=>'I'
+,p_menuid=>712
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'HTTP://WWW.ORATECHSOLUTIONS.BIZ'
+,p_description=>'ORATECH SOLUTIONS'
+,p_menuname=>'ORATECH SOLUTIONS'
+,p_menutype=>'I'
+,p_menuid=>714
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SUMINVOICE01'
+,p_description=>'SALES INVOICE SUMMARY'
+,p_menuname=>'SALES INVOICE SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>812
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_INVBATCH01'
+,p_description=>'INVOICE BATCH AUDIT'
+,p_menuname=>'INVOICE BATCH AUDIT'
+,p_menutype=>'I'
+,p_menuid=>882
+,p_slno=>0
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PRICE_CHECK01'
+,p_description=>'PRICE CHECK'
+,p_menuname=>'PRICE CHECK'
+,p_menutype=>'I'
+,p_menuid=>943
+,p_slno=>16
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_SUMDBNOTE01'
+,p_description=>'DEBIT NOTE SUMMARY'
+,p_menuname=>'DEBIT NOTE SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>944
+,p_slno=>17
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'EXP_MANAGE01'
+,p_description=>'MANAGE EXPORTS'
+,p_menuname=>'MANAGE EXORTS'
+,p_menutype=>'I'
+,p_menuid=>974
+,p_slno=>37
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMDRILLDOWN01'
+,p_description=>'ITEM DRILLDOWN'
+,p_menuname=>'ITEM DRILLDOWN'
+,p_menutype=>'I'
+,p_menuid=>982
+,p_slno=>1
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_REPORTS01'
+,p_description=>'REPORTS'
+,p_menuname=>'REPORTS'
+,p_menutype=>'I'
+,p_menuid=>983
+,p_slno=>1
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMLOCQRY01'
+,p_description=>'ITEM BY LOCATIONS'
+,p_menuname=>'ITEM BY LOCATIONS'
+,p_menutype=>'I'
+,p_menuid=>993
+,p_slno=>2
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_USER01'
+,p_description=>'USER'
+,p_menuname=>'USER'
+,p_menutype=>'I'
+,p_menuid=>1001
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_MENU01'
+,p_description=>'MENUS'
+,p_menuname=>'MENUS'
+,p_menutype=>'I'
+,p_menuid=>1002
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_FUNCTION01'
+,p_description=>'FUNCTIONS'
+,p_menuname=>'FUNCTIONS'
+,p_menutype=>'I'
+,p_menuid=>1003
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_RESP01'
+,p_description=>'RESPONSIBILITY'
+,p_menuname=>'RESPONSIBILITY'
+,p_menutype=>'I'
+,p_menuid=>1004
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_ADMIN01'
+,p_description=>'UPGRADE/INSTALL'
+,p_menuname=>'UPGRADE/INSTALL'
+,p_menutype=>'I'
+,p_menuid=>1005
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_LOGAUDIT01'
+,p_description=>'LOGIN AUDIT'
+,p_menuname=>'LOGIN AUDIT'
+,p_menutype=>'I'
+,p_menuid=>1006
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_FUNCAUDIT01'
+,p_description=>'FUNCTION AUDIT'
+,p_menuname=>'FUNCTION AUDIT'
+,p_menutype=>'I'
+,p_menuid=>1007
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_REPGROUP01'
+,p_description=>'REPORT GROUP'
+,p_menuname=>'REPORT GROUP'
+,p_menutype=>'I'
+,p_menuid=>1008
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_COMPILE01'
+,p_description=>'COMPILE OBJECTS'
+,p_menuname=>'COMPILE OBJECTS'
+,p_menutype=>'I'
+,p_menuid=>1011
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_CLOCKINAUDIT01'
+,p_description=>'CLOCK IN /OUT AUDIT'
+,p_menuname=>'CLOCK IN/OUT AUDIT'
+,p_menutype=>'I'
+,p_menuid=>1012
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_CONTROL01'
+,p_description=>'SYSTEM CONTROLS'
+,p_menuname=>'SYSTEM CONTROLS'
+,p_menutype=>'I'
+,p_menuid=>1128
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_USERCTRL01'
+,p_description=>'USER CONTROLS'
+,p_menuname=>'USER CONTROLS'
+,p_menutype=>'I'
+,p_menuid=>1268
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_NOTIFEVENT01'
+,p_description=>'NOTIFICATION MANAGER'
+,p_menuname=>'NOTIFICATION MANAGER'
+,p_menutype=>'I'
+,p_menuid=>1269
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_WLMNTN01'
+,p_description=>'WORKLIST MAINTENACE'
+,p_menuname=>'WORKLIST MAINTAINANCE'
+,p_menutype=>'I'
+,p_menuid=>1270
+,p_slno=>0
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_CLOCKINAUDIT01'
+,p_description=>'CLOCK IN / OUR AUDIT'
+,p_menuname=>'CLOCK IN / OUT AUDIT'
+,p_menutype=>'I'
+,p_menuid=>1288
+,p_slno=>2
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_RESP01'
+,p_description=>'RESPONSIBILITIES'
+,p_menuname=>'RESPONSIBILITIES'
+,p_menutype=>'I'
+,p_menuid=>1298
+,p_slno=>3
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_USER01'
+,p_description=>'USERS'
+,p_menuname=>'USERS'
+,p_menutype=>'I'
+,p_menuid=>1308
+,p_slno=>4
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_WLMNTN01'
+,p_description=>'WORKLIST MAINTENANCE'
+,p_menuname=>'WORKLIST MAINTENANCE'
+,p_menutype=>'I'
+,p_menuid=>1318
+,p_slno=>5
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_MULTILANG01'
+,p_description=>'MULTILANGUAGE TEXTS'
+,p_menuname=>'MULTILANGUAGE TEXTS'
+,p_menutype=>'I'
+,p_menuid=>2001
+,p_slno=>46
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_REPORTS01'
+,p_description=>'REPORTS'
+,p_menuname=>'REPORTS'
+,p_menutype=>'I'
+,p_menuid=>4010
+,p_slno=>0
+,p_parentmenuid=>40
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'EMP_JOB01'
+,p_description=>'JOS'
+,p_menuname=>'JOBS'
+,p_menutype=>'I'
+,p_menuid=>5001
+,p_slno=>0
+,p_parentmenuid=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'EMP_DEPT01'
+,p_description=>'DEPARTMENTS'
+,p_menuname=>'DEPARTMENTS'
+,p_menutype=>'I'
+,p_menuid=>5002
+,p_slno=>0
+,p_parentmenuid=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'EMP_POS01'
+,p_description=>'POSITIONS'
+,p_menuname=>'POSITIONS'
+,p_menutype=>'I'
+,p_menuid=>5003
+,p_slno=>0
+,p_parentmenuid=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'EMP_JOBTYPE01'
+,p_description=>'JOB TYPES'
+,p_menuname=>'JOB TYPES'
+,p_menutype=>'I'
+,p_menuid=>5004
+,p_slno=>0
+,p_parentmenuid=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'EMP_WDAY01'
+,p_description=>'WORKING DAYS'
+,p_menuname=>'WORKING DAYS'
+,p_menutype=>'I'
+,p_menuid=>5005
+,p_slno=>0
+,p_parentmenuid=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'EMP_EMP01'
+,p_description=>'EMPLOYEES'
+,p_menuname=>'EMPLOYEES'
+,p_menutype=>'I'
+,p_menuid=>5006
+,p_slno=>0
+,p_parentmenuid=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_CLOCKINOUT01'
+,p_description=>'CLOCK IN / OUT'
+,p_menuname=>'CLOCK IN / OUT'
+,p_menutype=>'I'
+,p_menuid=>5016
+,p_slno=>0
+,p_parentmenuid=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'HTTP://WWW.BBC.CO.UK'
+,p_description=>'BBC'
+,p_menuname=>'BBC'
+,p_menutype=>'I'
+,p_menuid=>6001
+,p_slno=>0
+,p_parentmenuid=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'HTTP://WWW.ORACLE.COM'
+,p_description=>'ORACLE'
+,p_menuname=>'ORACLE'
+,p_menutype=>'I'
+,p_menuid=>6002
+,p_slno=>0
+,p_parentmenuid=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'HTTP://TECHNET.ORACLE.COM'
+,p_description=>'TECHNET'
+,p_menuname=>'TECHNET'
+,p_menutype=>'I'
+,p_menuid=>6003
+,p_slno=>0
+,p_parentmenuid=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'HTTP://WWW.ORATECHSOLUTIONS.BIZ'
+,p_description=>'ORATECH'
+,p_menuname=>'ORATECH'
+,p_menutype=>'I'
+,p_menuid=>6004
+,p_slno=>0
+,p_parentmenuid=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'/reports/rwservlet/showjobs?server=rep_svr-oratech2'
+,p_description=>'REPORT LOG'
+,p_menuname=>'REPORT LOG'
+,p_menutype=>'I'
+,p_menuid=>6005
+,p_slno=>0
+,p_parentmenuid=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_AC01'
+,p_description=>'GL ACCOUNT CODES'
+,p_menuname=>'GL ACCOUNT CODES'
+,p_menutype=>'I'
+,p_menuid=>8010
+,p_slno=>1
+,p_parentmenuid=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_CASHINGUP01'
+,p_description=>'GL CASHING UP'
+,p_menuname=>'GL CASHING UP'
+,p_menutype=>'I'
+,p_menuid=>8011
+,p_slno=>2
+,p_parentmenuid=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_CASHINGUP01'
+,p_description=>'CASHING UP'
+,p_menuname=>'CASHING UP'
+,p_menutype=>'I'
+,p_menuid=>8020
+,p_slno=>2
+,p_parentmenuid=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_JE01'
+,p_description=>'JOURNAL ENTRIES'
+,p_menuname=>'JOURNAL ENTRIES'
+,p_menutype=>'I'
+,p_menuid=>8021
+,p_slno=>3
+,p_parentmenuid=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_TEMPLATETRANS01'
+,p_description=>'GL TEMPLATE TRANS'
+,p_menuname=>'GL TEMPLATE TRANS'
+,p_menutype=>'I'
+,p_menuid=>8022
+,p_slno=>4
+,p_parentmenuid=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_TEMPLATE01'
+,p_description=>'GL TEMPLATES'
+,p_menuname=>'GL TEMPLATES'
+,p_menutype=>'I'
+,p_menuid=>8023
+,p_slno=>5
+,p_parentmenuid=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_ALERT01'
+,p_description=>'DUMMY'
+,p_menuname=>'DUMMY'
+,p_menutype=>'I'
+,p_menuid=>20001
+,p_slno=>45
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_BANK01'
+,p_description=>'BANK ACCOUNTS'
+,p_menuname=>'BANK ACCOUNTS'
+,p_menutype=>'I'
+,p_menuid=>20002
+,p_slno=>46
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_AC01'
+,p_description=>'GL ACCOUNT CODE'
+,p_menuname=>'GL ACCOUNT CODE'
+,p_menutype=>'I'
+,p_menuid=>20003
+,p_slno=>47
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_RUNPROCESS01'
+,p_description=>'RUN A PROCESS'
+,p_menuname=>'RUN A PORCESS'
+,p_menutype=>'I'
+,p_menuid=>20004
+,p_slno=>48
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_COMMODITY01'
+,p_description=>'COMMODITY CODES'
+,p_menuname=>'COMMODITY CODES'
+,p_menutype=>'I'
+,p_menuid=>20005
+,p_slno=>49
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'WEB_SOURCES01'
+,p_description=>'WEB SOURCES'
+,p_menuname=>'WEB SOURCES'
+,p_menutype=>'I'
+,p_menuid=>20006
+,p_slno=>50
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_MULTILANG01'
+,p_description=>'MULTILANGUAGE TEXTS'
+,p_menuname=>'MULTI LANGUAGE TEXTS'
+,p_menutype=>'I'
+,p_menuid=>20007
+,p_slno=>51
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_LANGUAGE01'
+,p_description=>'LANGUAGES'
+,p_menuname=>'LANGUAGES'
+,p_menutype=>'I'
+,p_menuid=>20008
+,p_slno=>52
+,p_parentmenuid=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_ALERT01'
+,p_description=>'DUMMY'
+,p_menuname=>'DUMMY'
+,p_menutype=>'I'
+,p_menuid=>40001
+,p_slno=>22
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALORD01'
+,p_description=>'SALES ORDER'
+,p_menuname=>'SALES ORDER'
+,p_menutype=>'I'
+,p_menuid=>40002
+,p_slno=>23
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_INVMANUAL01'
+,p_description=>'MANUAL SALES INVOIE'
+,p_menuname=>'MANUALSALES  INVOICE'
+,p_menutype=>'I'
+,p_menuid=>40003
+,p_slno=>24
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALORDIMP01'
+,p_description=>'IMPORT SALES ORDERS'
+,p_menuname=>'IMPORT SALES ORDERS'
+,p_menutype=>'I'
+,p_menuid=>40004
+,p_slno=>25
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CUSTIMP01'
+,p_description=>'IMPORT CUSTOMERS'
+,p_menuname=>'IMPORT CUSTOMERS'
+,p_menutype=>'I'
+,p_menuid=>40005
+,p_slno=>26
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALDLV01'
+,p_description=>'SALES ORDER DELIVERY'
+,p_menuname=>'SALES ORDER DELIVERY'
+,p_menutype=>'I'
+,p_menuid=>40006
+,p_slno=>27
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALPICK01'
+,p_description=>'SALES ORDER PICKING'
+,p_menuname=>'SALES ORDER PICKING'
+,p_menutype=>'I'
+,p_menuid=>40007
+,p_slno=>28
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALORDERPAD01'
+,p_description=>'SALES ORDER PAD'
+,p_menuname=>'SALES ORDER PAD'
+,p_menutype=>'I'
+,p_menuid=>40008
+,p_slno=>29
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALORDQK01'
+,p_description=>'QUICK SALES ORDER'
+,p_menuname=>'QUICK SALES ORDER'
+,p_menutype=>'I'
+,p_menuid=>40009
+,p_slno=>30
+,p_parentmenuid=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_ALERT01'
+,p_description=>'DUMMY'
+,p_menuname=>'DUMMY'
+,p_menutype=>'I'
+,p_menuid=>50001
+,p_slno=>11
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_MANUALPO01'
+,p_description=>'PURCHASE ORDER INTERNAL USAGE'
+,p_menuname=>'PUCHASE ORDER (INTERNAL USAGE)'
+,p_menutype=>'I'
+,p_menuid=>50002
+,p_slno=>12
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GRN_SUMORDPAD01'
+,p_description=>'RECEIVE EXTERNAL PO'
+,p_menuname=>'RECEIVE EXTERNAL PO'
+,p_menutype=>'I'
+,p_menuid=>50003
+,p_slno=>13
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_ORDERPAD01'
+,p_description=>'PURCHASE ORDER PAD'
+,p_menuname=>'PURCHASE ORDER PAD'
+,p_menutype=>'I'
+,p_menuid=>50004
+,p_slno=>14
+,p_parentmenuid=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_ALERT01'
+,p_description=>'DUMMY'
+,p_menuname=>'DUMMY'
+,p_menutype=>'I'
+,p_menuid=>60001
+,p_slno=>10
+,p_parentmenuid=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PRICE_TEMPLATE01'
+,p_description=>'PRICE TEMPLATE'
+,p_menuname=>'PRICE TEMPLATE'
+,p_menutype=>'I'
+,p_menuid=>60002
+,p_slno=>11
+,p_parentmenuid=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_palletqry01?p_userid=$USERID$'
+,p_description=>'M. FIND PALLETS'
+,p_menuname=>'M. FIND PALLETS'
+,p_menutype=>'I'
+,p_menuid=>99601
+,p_slno=>1
+,p_parentmenuid=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_pallmoveitem01?p_userid=$USERID$'
+,p_description=>'M. MOVE ITEM'
+,p_menuname=>'M. MOVE ITEM'
+,p_menutype=>'I'
+,p_menuid=>99602
+,p_slno=>2
+,p_parentmenuid=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_palletsplit?p_userid=$USERID$'
+,p_description=>'M. SPLIT PALLET'
+,p_menuname=>'M.SPLIT PALLET'
+,p_menutype=>'I'
+,p_menuid=>99603
+,p_slno=>3
+,p_parentmenuid=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_palletmerge?p_userid=$USERID$'
+,p_description=>'M. MERGE PALLET'
+,p_menuname=>'M.MERGE PALLET'
+,p_menutype=>'I'
+,p_menuid=>99604
+,p_slno=>4
+,p_parentmenuid=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_dispatches?p_userid=$USERID$'
+,p_description=>'M.MANAGE DISPATCHES'
+,p_menuname=>'M.MANAGE DISPATCHES'
+,p_menutype=>'I'
+,p_menuid=>99605
+,p_slno=>5
+,p_parentmenuid=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_pallmoveitem01?p_userid=$USERID$'
+,p_description=>'M.MOVE ITEMS'
+,p_menuname=>'M.MOVE ITEMS'
+,p_menutype=>'I'
+,p_menuid=>99606
+,p_slno=>6
+,p_parentmenuid=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_palletqry01?p_userid=$USERID$'
+,p_description=>'M.FIND PALLETS'
+,p_menuname=>'M:FIND PALLETS'
+,p_menutype=>'I'
+,p_menuid=>99607
+,p_slno=>7
+,p_parentmenuid=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_ALERT01'
+,p_description=>'DUMMY'
+,p_menuname=>'DUMMY'
+,p_menutype=>'I'
+,p_menuid=>700001
+,p_slno=>23
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMCPHIST01'
+,p_description=>'ITEM PRICE HISTORY'
+,p_menuname=>'ITEM PRICE HISTORY'
+,p_menutype=>'I'
+,p_menuid=>700002
+,p_slno=>24
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_SUMCASHINGUP01'
+,p_description=>'GL CASHINGUP SUMMARY'
+,p_menuname=>'GL CASHINGUP SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700003
+,p_slno=>25
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_SUMINV01'
+,p_description=>'AP INVOICE SUMMARY'
+,p_menuname=>'AP INVOICE SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700004
+,p_slno=>26
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AP_SUPDRILLDOWN01'
+,p_description=>'SUPPLIER DRILLDOWN'
+,p_menuname=>'SUPPLIER DRILLDOWN'
+,p_menutype=>'I'
+,p_menuid=>700005
+,p_slno=>27
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CUSTDRILLDOWN01'
+,p_description=>'CUSTOMER DRILLDOWN'
+,p_menuname=>'CUSTOMER DRILLDOWN'
+,p_menutype=>'I'
+,p_menuid=>700006
+,p_slno=>28
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_INTRASTATE01'
+,p_description=>'INTRA TRADE  STATISTICS'
+,p_menuname=>'INTRA TRADE  STATISTICS'
+,p_menutype=>'I'
+,p_menuid=>700007
+,p_slno=>29
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SUMSALORD01'
+,p_description=>'SALES ORDER SUMMARY'
+,p_menuname=>'SALES ORDER SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700008
+,p_slno=>30
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_SUMRQSTION01'
+,p_description=>'REQUISITION SUMMARY'
+,p_menuname=>'REQUISITION SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700009
+,p_slno=>31
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'http://www.oratechsolutions.biz/oratechhelp/oratechmain.html'
+,p_description=>'HELP ORATECH'
+,p_menuname=>'HELP ORATECH'
+,p_menutype=>'I'
+,p_menuid=>700010
+,p_slno=>32
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_SUMSTKTAKE01'
+,p_description=>'STOCK TAKE AUDIT'
+,p_menuname=>'STOCK TAKE AUDIT'
+,p_menutype=>'I'
+,p_menuid=>700011
+,p_slno=>33
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMINSUBLOC01'
+,p_description=>'ITEM IN SUB LOCATIONS'
+,p_menuname=>'ITEM IN SUB LOCATIONS'
+,p_menutype=>'I'
+,p_menuid=>700012
+,p_slno=>34
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALORDLINEHIST01'
+,p_description=>'SALES ORDER LINES'
+,p_menuname=>'SALES ORDER LINES'
+,p_menutype=>'I'
+,p_menuid=>700013
+,p_slno=>35
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SAGEEXPORT01'
+,p_description=>'SAGE EXPORT'
+,p_menuname=>'SAGE EXPORT'
+,p_menutype=>'I'
+,p_menuid=>700014
+,p_slno=>36
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_INVLINEHIST01'
+,p_description=>'SALES INVOICE LINES'
+,p_menuname=>'SALES INVOICE LINES'
+,p_menutype=>'I'
+,p_menuid=>700015
+,p_slno=>37
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMFREIGHTS01'
+,p_description=>'ITEM FREIGHTS'
+,p_menuname=>'ITEM FREIGHTS'
+,p_menutype=>'I'
+,p_menuid=>700016
+,p_slno=>38
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GL_TRANSSUM01'
+,p_description=>'GL SUMMARY'
+,p_menuname=>'GL SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700017
+,p_slno=>39
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_SUMADJUST01'
+,p_description=>'STOCK ADJUSTMENT SUMMARY'
+,p_menuname=>'STOCK ADJUSTMENT SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700018
+,p_slno=>40
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'WH_SUMDISPATCH01'
+,p_description=>'DISPATCH SUMMARY'
+,p_menuname=>'DISPATCH SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700019
+,p_slno=>41
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALORDDASH01'
+,p_description=>'SALES ORDER DASH BOARD'
+,p_menuname=>'SALES ORDER DASH BOARD'
+,p_menutype=>'I'
+,p_menuid=>700020
+,p_slno=>42
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SUMORDPAD01'
+,p_description=>'ORDER PAD SUMMARY'
+,p_menuname=>'ORDER PAD SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700021
+,p_slno=>43
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'EXP_MANAGE01'
+,p_description=>'MANAGE EXPORT'
+,p_menuname=>'MANAGE EXPORTS'
+,p_menutype=>'I'
+,p_menuid=>700022
+,p_slno=>44
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMSTATUS01'
+,p_description=>'ITEM STATUS QUERY'
+,p_menuname=>'ITEM STATUS QUERY'
+,p_menutype=>'I'
+,p_menuid=>700023
+,p_slno=>45
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'TP_FEEDS01'
+,p_description=>'THIRD PARTY FEEDS'
+,p_menuname=>'THIRD PARTY FEEDS'
+,p_menutype=>'I'
+,p_menuid=>700024
+,p_slno=>46
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_ITEMCPHIST02'
+,p_description=>'COST PRICE HISTORY'
+,p_menuname=>'COST PRICE HISTORY'
+,p_menutype=>'I'
+,p_menuid=>700025
+,p_slno=>47
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'GRN_SUMORDPAD01'
+,p_description=>'EXTERNAL GRN SUMMARY'
+,p_menuname=>'EXTERNAL GRN SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700026
+,p_slno=>48
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PO_SUMORDPAD01'
+,p_description=>'PURCHASE ORDERPAD SUMMARY'
+,p_menuname=>'PURCHASE ORDERPAD SUMMARY'
+,p_menutype=>'I'
+,p_menuid=>700027
+,p_slno=>49
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_INVLINESUM01'
+,p_description=>'SALES INVOICE DRILLDOWN'
+,p_menuname=>'SALES INVOICE DRILLDOWN'
+,p_menutype=>'I'
+,p_menuid=>700028
+,p_slno=>50
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SUMPICKLIST01'
+,p_description=>'SALES ORDER PICKING ENQUIRY'
+,p_menuname=>'SALES ORDER PICKING ENQUIRY'
+,p_menutype=>'I'
+,p_menuid=>700029
+,p_slno=>51
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_CATEGORYQRY01'
+,p_description=>'ITEM CATEGORY ENQUIRY'
+,p_menuname=>'ITEM CATEGORY ENQUIRY'
+,p_menutype=>'I'
+,p_menuid=>700030
+,p_slno=>52
+,p_parentmenuid=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'IMPEXP_SETUP01'
+,p_description=>'IMPORT EXPORT SETUP'
+,p_menuname=>'IMPORT EXPORT SETUP'
+,p_menutype=>'I'
+,p_menuid=>810811
+,p_slno=>2
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_EXPTEMPLATE01'
+,p_description=>'EXPORT TEMPLATE'
+,p_menuname=>'EXPORT TEMPLATE'
+,p_menutype=>'I'
+,p_menuid=>810813
+,p_slno=>4
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SAGEEXPORT01'
+,p_description=>'EXPORT TO SAGE'
+,p_menuname=>'EXPORT TO SAGE'
+,p_menutype=>'I'
+,p_menuid=>810814
+,p_slno=>5
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_IMPORT01'
+,p_description=>'IMPORT DATA'
+,p_menuname=>'IMPORT DATA'
+,p_menutype=>'I'
+,p_menuid=>810815
+,p_slno=>6
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_IMPORTTRANS01'
+,p_description=>'IMPORT SALES INVOICE'
+,p_menuname=>'IMPORT SALES INVOICE'
+,p_menutype=>'I'
+,p_menuid=>810816
+,p_slno=>7
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALORDIMP01'
+,p_description=>'IMPORT SALES ORDER'
+,p_menuname=>'IMPORT SALES ORDER'
+,p_menutype=>'I'
+,p_menuid=>810817
+,p_slno=>8
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_CUSTIMP01'
+,p_description=>'IMPORT CUSTOMER'
+,p_menuname=>'IMPORT CUSTOMER'
+,p_menutype=>'I'
+,p_menuid=>810818
+,p_slno=>9
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_EXPORT01'
+,p_description=>'EXPORT DATA'
+,p_menuname=>'EXPORT DATA'
+,p_menutype=>'I'
+,p_menuid=>810819
+,p_slno=>10
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'EXP_MANAGE01'
+,p_description=>'EXPORT MAINTENANCE'
+,p_menuname=>'EXPORT MAINTENANCE'
+,p_menutype=>'I'
+,p_menuid=>810820
+,p_slno=>11
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'IMPEXP_SETUP01'
+,p_description=>'IMPORT / EXPORT SETUP'
+,p_menuname=>'IMPORT / EXPORT SETUP'
+,p_menutype=>'I'
+,p_menuid=>810821
+,p_slno=>12
+,p_parentmenuid=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PALLET_CR01'
+,p_description=>'MANAGE PALLET'
+,p_menuname=>'MANAGE PALLET'
+,p_menutype=>'I'
+,p_menuid=>820820
+,p_slno=>1
+,p_parentmenuid=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'PALLET_BOX01'
+,p_description=>'MANAGE BOX'
+,p_menuname=>'MANAGE BOX'
+,p_menutype=>'I'
+,p_menuid=>820821
+,p_slno=>2
+,p_parentmenuid=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'WH_DISPATCH01'
+,p_description=>'MANAGE DISPATCHES'
+,p_menuname=>'MANAGE DISPATCHES'
+,p_menutype=>'I'
+,p_menuid=>820822
+,p_slno=>3
+,p_parentmenuid=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SALORDASSIGN01'
+,p_description=>'PICKING ASSIGNMENTS'
+,p_menuname=>'PICKING ASSIGNMENTS'
+,p_menutype=>'I'
+,p_menuid=>820823
+,p_slno=>4
+,p_parentmenuid=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'AR_SPLITORDER01'
+,p_description=>'SPLIT GOODS IN'
+,p_menuname=>'SPLIT GOODS IN'
+,p_menutype=>'I'
+,p_menuid=>820824
+,p_slno=>5
+,p_parentmenuid=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_STOCKSPLIT01'
+,p_description=>'SPLIT STOCK'
+,p_menuname=>'SPLIT STOCK'
+,p_menutype=>'I'
+,p_menuid=>820825
+,p_slno=>6
+,p_parentmenuid=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_intmovement?p_userid=$USERID$'
+,p_description=>'M. INTERNAL MOVEMENT'
+,p_menuname=>'M. INTERNAL MOVEMENT'
+,p_menutype=>'I'
+,p_menuid=>990101
+,p_slno=>1
+,p_parentmenuid=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_exttointmovement?p_userid=$USERID$'
+,p_description=>'M. EXT TO INT MOVEMENT'
+,p_menuname=>'M. EXT TO INT MOVEMENT'
+,p_menutype=>'I'
+,p_menuid=>990102
+,p_slno=>2
+,p_parentmenuid=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_GRN01?p_userid=$USERID$'
+,p_description=>'M. GOODS IN'
+,p_menuname=>'M. GOODS IN'
+,p_menutype=>'I'
+,p_menuid=>990103
+,p_slno=>3
+,p_parentmenuid=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_exttointmovement?p_userid=$USERID$'
+,p_description=>''
+,p_menuname=>'M. EXTERNAL MOVEMENT'
+,p_menutype=>'I'
+,p_menuid=>990104
+,p_slno=>4
+,p_parentmenuid=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_grndistribute01?p_userid=$USERID$'
+,p_description=>'M.GRN DISTRIBUTION'
+,p_menuname=>'M.GRN DISTRIBUTION'
+,p_menutype=>'I'
+,p_menuid=>990105
+,p_slno=>5
+,p_parentmenuid=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_movetoprimary?p_userid=$USERID$'
+,p_description=>'M. MOVE TO PRIMARY SALES'
+,p_menuname=>'M.MOVE TO PRIMARY SALES'
+,p_menutype=>'I'
+,p_menuid=>990106
+,p_slno=>6
+,p_parentmenuid=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SPM_MOVESUBLOCS?p_userid=$USERID$'
+,p_description=>'M.MOVE UNIT4 TO NDC'
+,p_menuname=>'M.MOVE UNIT4 TO NDC'
+,p_menutype=>'I'
+,p_menuid=>990107
+,p_slno=>7
+,p_parentmenuid=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_interofficemovement?p_userid=$USERID$'
+,p_description=>'M.INTER OFFICE MOVEMENT'
+,p_menuname=>'M.INTER OFFICE MOVEMENT'
+,p_menutype=>'I'
+,p_menuid=>990108
+,p_slno=>8
+,p_parentmenuid=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_rqstionfl01?p_userid=$USERID$'
+,p_description=>'M. FULFILL REQUISITION'
+,p_menuname=>'M. FULFILL REQUISITION'
+,p_menutype=>'I'
+,p_menuid=>990201
+,p_slno=>1
+,p_parentmenuid=>9902
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_rqstiongrn01?p_userid=$USERID$'
+,p_description=>'M. RECEIVE REQUISITION'
+,p_menuname=>'M. RECEIVE REQUISITION'
+,p_menutype=>'I'
+,p_menuid=>990202
+,p_slno=>2
+,p_parentmenuid=>9902
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_rqstiongrn01?p_userid=$USERID$'
+,p_description=>''
+,p_menuname=>'M. RECIEVE REQUISITION'
+,p_menutype=>'I'
+,p_menuid=>990203
+,p_slno=>3
+,p_parentmenuid=>9902
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_pricecheck?p_userid=$USERID$'
+,p_description=>'M. PRICE CHECK'
+,p_menuname=>'M. PRICE CHECK'
+,p_menutype=>'I'
+,p_menuid=>990301
+,p_slno=>1
+,p_parentmenuid=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_locateitem?p_userid=$USERID$'
+,p_description=>'M. LOCATE AN ITEM'
+,p_menuname=>'M. LOCATE AN ITEM'
+,p_menutype=>'I'
+,p_menuid=>990302
+,p_slno=>1
+,p_parentmenuid=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_sublocitem?p_userid=$USERID$'
+,p_description=>'M. ITEMS IN SUBLOCATION'
+,p_menuname=>'M. ITEMS IN SUB LOCATION'
+,p_menutype=>'I'
+,p_menuid=>990303
+,p_slno=>2
+,p_parentmenuid=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_iteminsubloc?p_userid=$USERID$'
+,p_description=>'M. ITEM BY SUBLOCATION'
+,p_menuname=>'M. ITEM BY SUBLOCATION'
+,p_menutype=>'I'
+,p_menuid=>990304
+,p_slno=>3
+,p_parentmenuid=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_arfindorder?p_userid=$USERID$'
+,p_description=>'M.FIND SALES ORDER'
+,p_menuname=>'M.FIND SALES ORDER'
+,p_menutype=>'I'
+,p_menuid=>990305
+,p_slno=>4
+,p_parentmenuid=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_arordqry?p_userid=$USERID$'
+,p_description=>'M.SALES ORDER QUERY'
+,p_menuname=>'M.SALES ORDER QUERY'
+,p_menutype=>'I'
+,p_menuid=>990306
+,p_slno=>5
+,p_parentmenuid=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_spacecheck?p_userid=$USERID$'
+,p_description=>'M.SPACE CHECK'
+,p_menuname=>'M.SPACE CHECK'
+,p_menutype=>'I'
+,p_menuid=>990307
+,p_slno=>6
+,p_parentmenuid=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_itemadjustment?p_userid=$USERID$'
+,p_description=>'M. STOCK ADJUSTMENT'
+,p_menuname=>'M. STOCK ADJUSTMENT'
+,p_menutype=>'I'
+,p_menuid=>990401
+,p_slno=>1
+,p_parentmenuid=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_itemcount?p_userid=$USERID$'
+,p_description=>'M. ITEM COUNT'
+,p_menuname=>'M. ITEM COUNT'
+,p_menutype=>'I'
+,p_menuid=>990402
+,p_slno=>2
+,p_parentmenuid=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_inistktake?p_userid=$USERID$'
+,p_description=>'M. INITIAL STOCK TAKE'
+,p_menuname=>'M. INITIAL STOCK TAKE'
+,p_menutype=>'I'
+,p_menuid=>990403
+,p_slno=>3
+,p_parentmenuid=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_sublocminmax?p_userid=$USERID$'
+,p_description=>'M. UPDATE SUB LOC MIN/MAX'
+,p_menuname=>'M. UPDATE SUB LOC MIN/MAX'
+,p_menutype=>'I'
+,p_menuid=>990404
+,p_slno=>4
+,p_parentmenuid=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_additemtobatch?p_userid=$USERID$'
+,p_description=>'M. ADD ITEM TO BATCH'
+,p_menuname=>'M. ADD ITEM TO BATCH'
+,p_menutype=>'I'
+,p_menuid=>990405
+,p_slno=>5
+,p_parentmenuid=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_setplbyitem?p_userid=$USERID$'
+,p_description=>'M. SET PRIMARY SALES'
+,p_menuname=>'M. SET PRIMARY SALES'
+,p_menutype=>'I'
+,p_menuid=>990406
+,p_slno=>6
+,p_parentmenuid=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_updatebin?p_userid=$USERID$'
+,p_description=>'M. UPDATE BIN'
+,p_menuname=>'M. UPDATE BIN'
+,p_menutype=>'I'
+,p_menuid=>990407
+,p_slno=>7
+,p_parentmenuid=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_annstktake?p_userid=$USERID$'
+,p_description=>''
+,p_menuname=>'M. ANNUAL STOCK TAKE'
+,p_menutype=>'I'
+,p_menuid=>990408
+,p_slno=>8
+,p_parentmenuid=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_arordpicklist?p_userid=$USERID$'
+,p_description=>'M. SALES ORDER PICK LIST'
+,p_menuname=>'M. SALES ORDER PICK LIST'
+,p_menutype=>'I'
+,p_menuid=>990501
+,p_slno=>1
+,p_parentmenuid=>9905
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_arordpicklist?p_userid=$USERID$'
+,p_description=>'UNDER DEVELOPMENT'
+,p_menuname=>'M. PICK LIST FOR SALES ORDER'
+,p_menutype=>'I'
+,p_menuid=>990502
+,p_slno=>2
+,p_parentmenuid=>9905
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'spm_arorddlv?p_userid=$USERID$'
+,p_description=>'M. SO CONFIRM DELIVERY'
+,p_menuname=>'M. SO CONFIRM DELIVERY'
+,p_menutype=>'I'
+,p_menuid=>990503
+,p_slno=>3
+,p_parentmenuid=>9905
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_ALERT01'
+,p_description=>'DUMMY'
+,p_menuname=>'DUMMY'
+,p_menutype=>'I'
+,p_menuid=>1000001
+,p_slno=>23
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_MISCTASK01'
+,p_description=>'MISCELLANEOUS TASK'
+,p_menuname=>'MISCELLANEOUS TASK'
+,p_menutype=>'I'
+,p_menuid=>1000002
+,p_slno=>24
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'SYS_JOBQUEUE01'
+,p_description=>'JOB QUEUE'
+,p_menuname=>'JOB QUEUE'
+,p_menutype=>'I'
+,p_menuid=>1000003
+,p_slno=>25
+,p_parentmenuid=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_ALERT01'
+,p_description=>'DUMMY'
+,p_menuname=>'DUMMY'
+,p_menutype=>'I'
+,p_menuid=>3000001
+,p_slno=>26
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_QKCODE01'
+,p_description=>'QUICK CODE SETUP'
+,p_menuname=>'QUICK CODE SETUP'
+,p_menutype=>'I'
+,p_menuid=>3000002
+,p_slno=>27
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_SLOCASSIGNBATCH01'
+,p_description=>'SUB LOC ASSIGNMENT BATCH'
+,p_menuname=>'SUB LOC ASSIGNMENT BATCH'
+,p_menutype=>'I'
+,p_menuid=>3000003
+,p_slno=>28
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_BOM01'
+,p_description=>'BILL OF MATERIALS'
+,p_menuname=>'BILL OF MATERIALS'
+,p_menutype=>'I'
+,p_menuid=>3000004
+,p_slno=>29
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_MKUPTEMP01'
+,p_description=>'MARKUP TEMPLATE'
+,p_menuname=>'MARKUP TEMPLATE'
+,p_menutype=>'I'
+,p_menuid=>3000005
+,p_slno=>30
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_RQSTIONCR01'
+,p_description=>'CREATE REQUISITION'
+,p_menuname=>'CREATE REQUISITION'
+,p_menutype=>'I'
+,p_menuid=>3000006
+,p_slno=>31
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_RQSTIONFL01'
+,p_description=>'FULFILL REQUISITION'
+,p_menuname=>'FULFILL REQUISITION'
+,p_menutype=>'I'
+,p_menuid=>3000007
+,p_slno=>32
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_RQSTIONGRN01'
+,p_description=>'RECEIVE REQUISITION'
+,p_menuname=>'RECEIVE REQUISITION'
+,p_menutype=>'I'
+,p_menuid=>3000008
+,p_slno=>33
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_BARREPOSITORY01'
+,p_description=>'BARCODE REPOSITORY'
+,p_menuname=>'BARCODE REPOSITORY'
+,p_menutype=>'I'
+,p_menuid=>3000009
+,p_slno=>34
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'INV_BINIDENTIFIER01'
+,p_description=>'UPDATE BIN IDENTIFIER'
+,p_menuname=>'UPDATE BIN IDENTIFIER'
+,p_menutype=>'I'
+,p_menuid=>3000010
+,p_slno=>35
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_menu(p_funcname=>'CMN_STYLEPATTERN01'
+,p_description=>'STYLE / DESIGN / PATTERNS'
+,p_menuname=>'STYLE / DESIGN / PATTERNS'
+,p_menutype=>'I'
+,p_menuid=>3000011
+,p_slno=>36
+,p_parentmenuid=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

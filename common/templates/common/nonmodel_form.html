@@ -1,0 +1,59 @@
+{% extends 'common/menu.html' %}
+{# model_form.html #}
+
+    {% block content_block %}
+<h3> {% block moduletitle %}  {% endblock %} </h3>
+  {% block preform %}
+      {% endblock %}
+<div class="container">
+
+{% if itemdict.errormessage %}
+    <p class="p-3 mb-2 text-danger  font-weight-bolder ">
+       {% block errormessage %}  {% endblock %}
+    </p>
+{% endif %}
+{% if itemdict.successmessage %}
+    <p class="p-3 mb-2 bg-primary text-white font-weight-bolder ">
+     {% block successmessage %}  {% endblock %}
+    </p>
+{% endif %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+    {% for field in form.visible_fields %}
+      {% if field.label_tag %}
+        <div class="row">
+        <div class="col-md-3">
+            <b>{{ field.label_tag }}</b>
+            {% if field.help_text %}
+            <sup>{{ field.help_text }}</sup>
+            {% endif %}
+            {% for error in field.errors %}
+                <div class="row">
+                 <div class="alert alert-danger">{{error}}</div>
+                </div>
+                {% endfor %}
+        </div>
+        <div class="col-md-3 pull-left">
+                 <b>{{ field }}</b>
+        </div>
+      </div>
+        {% endif %}
+    {% endfor %}
+
+    <br>
+   <div class="col-md-3">
+    <div class="col-md-3 pull-left ">
+        <button class="btn btn-success">Submit</button>
+        {% block postform %}
+
+        {% endblock %}
+    </div>
+   </div>
+  </div>
+  </form>
+    {% block modulefooter %}
+        {% endblock %}
+{% endblock %}

@@ -1,0 +1,2375 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_interofficemovement?p_userid=$USERID$'
+,p_FuncShortName=>'M.INTER OFFICE MOVEMENT'
+,p_FuncDispName=>'M.INTER OFFICE MOVEMENT'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/INTERDEPOTMOVEMENT/'
+,p_MENUID=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'SPM_MOVESUBLOCS?p_userid=$USERID$'
+,p_FuncShortName=>'M.MOVE UNIT4 SUB LOC'
+,p_FuncDispName=>'M.MOVE UNIT4 SUB LOC'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_INVLINESUM01'
+,p_FuncShortName=>'SALES INVOICE DRILLDOWN'
+,p_FuncDispName=>'SALES INVOICE DRILLDOWN'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/ARINVOICESUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_SUMPICKLIST01'
+,p_FuncShortName=>'SALES ORDER PICKING ENQUIRY'
+,p_FuncDispName=>'SALES ORDER PICKING ENQUIRY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/SALESORDERPICKLIST/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'GRN_SUMORDPAD01'
+,p_FuncShortName=>'EXTERNAL GRN SUMMARY'
+,p_FuncDispName=>'EXTERNAL GRN SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_CATEGORYQRY01'
+,p_FuncShortName=>'ITEM CATEGORY ENQUIRY'
+,p_FuncDispName=>'ITEM CATEGORY ENQUIRY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/ITEMCATEGORY/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'WAREHOUSE'
+,p_FuncName=>'INV_STOCKSPLIT01'
+,p_FuncShortName=>'SPLIT STOCK'
+,p_FuncDispName=>'SPLIT STOCK'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SPLIT STOCK'
+,p_MENUID=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'PO_ORDERPAD01'
+,p_FuncShortName=>'PURCAHSE ORDER PAD'
+,p_FuncDispName=>'PURCHASE ORDER PAD'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PURCHASE ORDER PAD'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'PO_SUMORDPAD01'
+,p_FuncShortName=>'PURCHASE ORDERPAD SUMMARY'
+,p_FuncDispName=>'PURCHASE ORDERPAD SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_annstktake?p_userid=$USERID$'
+,p_FuncShortName=>'M. ANNUAL STOCK TAKE'
+,p_FuncDispName=>'M. ANNUAL STOCK TAKE'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/MANUALSTKTAKE/'
+,p_MENUID=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_dispatches?p_userid=$USERID$'
+,p_FuncShortName=>'M.MANAGE DISPATCHES'
+,p_FuncDispName=>'M.MANAGE DISPATCHES'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/DISPATCHES/'
+,p_MENUID=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'WAREHOUSE'
+,p_FuncName=>'AR_SALORDASSIGN01'
+,p_FuncShortName=>'PICKING ASSIGNMENTS'
+,p_FuncDispName=>'PICKING ASSIGNMENTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PICKING ASSIGNMENTS'
+,p_MENUID=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_SALORDDASH01'
+,p_FuncShortName=>'SALES ORDER DASH BOARD'
+,p_FuncDispName=>'SALES ORDER DASH BOARD'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_SALORDERPAD01'
+,p_FuncShortName=>'SALES ORDER PAD'
+,p_FuncDispName=>'SALES ORDER PAD'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES ORDER PAD'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_SALORDQK01'
+,p_FuncShortName=>'QUICK SALES ORDER'
+,p_FuncDispName=>'QUICK SALES ORDER'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'QUICK SALES ORDER'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'WAREHOUSE'
+,p_FuncName=>'AR_SPLITORDER01'
+,p_FuncShortName=>'SPLIT GOODS IN'
+,p_FuncDispName=>'SPLIT GOODS IN'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SPLIT GOODS IN'
+,p_MENUID=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_SUMORDPAD01'
+,p_FuncShortName=>'ORDER PAD SUMMARY'
+,p_FuncDispName=>'ORDER PAD SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_LANGUAGE01'
+,p_FuncShortName=>'LANGUAGES'
+,p_FuncDispName=>'LANGUAGES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/LANGUAGES_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_MULTILANG01'
+,p_FuncShortName=>'MULTI LANGUAGE TEXTS'
+,p_FuncDispName=>'MULTI LANGUAGE TEXTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'IMPORT EXPORT'
+,p_FuncName=>'EXP_MANAGE01'
+,p_FuncShortName=>'EXPORT MAINTENANCE'
+,p_FuncDispName=>'EXPORT MAINTENANCE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'EXPORT MAINTENANCE'
+,p_MENUID=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'GENERAL LEDGER'
+,p_FuncName=>'GL_JE01'
+,p_FuncShortName=>'JOURNAL ENTRIES'
+,p_FuncDispName=>'JOURNAL ENTRIES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'JOURNAL ENTRIES'
+,p_MENUID=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'GENERAL LEDGER'
+,p_FuncName=>'GL_TEMPLATE01'
+,p_FuncShortName=>'GL TEMPLATES'
+,p_FuncDispName=>'GL TEMPLATES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'GL TEMPLATES'
+,p_MENUID=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'GENERAL LEDGER'
+,p_FuncName=>'GL_TEMPLATETRANS01'
+,p_FuncShortName=>'GL TEMPLATE TRANS'
+,p_FuncDispName=>'GL TEMPLATE TRANS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'GL TEMPLATE TRANS'
+,p_MENUID=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'IMPORT EXPORT'
+,p_FuncName=>'IMPEXP_SETUP01'
+,p_FuncShortName=>'IMPORT / EXPORT SETUP'
+,p_FuncDispName=>'IMPORT / EXPORT SETUP'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'IMPORT / EXPORT SETUP'
+,p_MENUID=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMCPHIST02'
+,p_FuncShortName=>'COST PRICE HISTORY'
+,p_FuncDispName=>'COST PRICE HISTORY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/COSTPRICEHIST/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMSTATUS01'
+,p_FuncShortName=>'ITEM STATUS QUERY'
+,p_FuncDispName=>'ITEM STATUS QUERY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/ITEMSTATUS/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_SUMADJUST01'
+,p_FuncShortName=>'STOCK ADJUSTMENT SUMMARY'
+,p_FuncDispName=>'STOCK ADJUSTMENT SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/ITEMADJUSTMENT/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'WAREHOUSE'
+,p_FuncName=>'PALLET_BOX01'
+,p_FuncShortName=>'MANAGE BOX'
+,p_FuncDispName=>'MANAGE BOX'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'MANAGE BOX'
+,p_MENUID=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'WAREHOUSE'
+,p_FuncName=>'PALLET_CR01'
+,p_FuncShortName=>'MANAGE PALLET'
+,p_FuncDispName=>'MANAGE PALLET'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'MANAGE PALLET'
+,p_MENUID=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'IMPORT EXPORT'
+,p_FuncName=>'SYS_EXPORT01'
+,p_FuncShortName=>'EXPORT DATA'
+,p_FuncDispName=>'EXPORT DATA'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'EXPORT DATA'
+,p_MENUID=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'TP_FEEDS01'
+,p_FuncShortName=>'THIRD PARTY FEEDS'
+,p_FuncDispName=>'THIRD PARTY FEEDS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'WEB_SOURCES01'
+,p_FuncShortName=>'WEB SOURCES'
+,p_FuncDispName=>'WEB SOURCES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/WEBSOURCES_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'WAREHOUSE'
+,p_FuncName=>'WH_DISPATCH01'
+,p_FuncShortName=>'MANAGE DISPATCHES'
+,p_FuncDispName=>'MANAGE DISPATCHES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'MANAGE DISPATCHES'
+,p_MENUID=>82
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'WH_SUMDISPATCH01'
+,p_FuncShortName=>'DISPATCH SUMMARY'
+,p_FuncDispName=>'DISPATCH SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/DISPATCHSUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_palletmerge?p_userid=$USERID$'
+,p_FuncShortName=>'M.MERGE PALLET'
+,p_FuncDispName=>'M.MERGE PALLET'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/MERGEPALLET/'
+,p_MENUID=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_palletqry01?p_userid=$USERID$'
+,p_FuncShortName=>'M.FIND PALLETS'
+,p_FuncDispName=>'M:FIND PALLETS'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/FINDPALLETS/'
+,p_MENUID=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_palletsplit?p_userid=$USERID$'
+,p_FuncShortName=>'M.SPLIT PALLET'
+,p_FuncDispName=>'M.SPLIT PALLET'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/SPLIT/PALLET/'
+,p_MENUID=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_pallmoveitem01?p_userid=$USERID$'
+,p_FuncShortName=>'M.MOVE ITEMS'
+,p_FuncDispName=>'M.MOVE ITEMS'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/PALLETMOVE/'
+,p_MENUID=>9906
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_updatebin?p_userid=$USERID$'
+,p_FuncShortName=>'M. UPDATE BIN'
+,p_FuncDispName=>'M. UPDATE BIN'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/UPDATEBIN/'
+,p_MENUID=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_SALDLV01'
+,p_FuncShortName=>'SALES ORDER DELIVERY'
+,p_FuncDispName=>'SALES ORDER DELIVERY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES ORDER DELIVERY'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_SALPICK01'
+,p_FuncShortName=>'SALES ORDER PICKING'
+,p_FuncDispName=>'SALES ORDER PICKING'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES ORDER PICKING'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'GL_TRANSSUM01'
+,p_FuncShortName=>'GL SUMMARY'
+,p_FuncDispName=>'GL SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMFREIGHTS01'
+,p_FuncShortName=>'ITEM FREIGHTS'
+,p_FuncDispName=>'ITEM FREIGHTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_movetoprimary?p_userid=$USERID$'
+,p_FuncShortName=>'M.MOVE TO PRIMARY SALES'
+,p_FuncDispName=>'M.MOVE TO PRIMARY SALES'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/MOVEITEM/'
+,p_MENUID=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_spacecheck?p_userid=$USERID$'
+,p_FuncShortName=>'M.SPACE CHECK'
+,p_FuncDispName=>'M.SPACE CHECK'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'CMN_STYLEPATTERN01'
+,p_FuncShortName=>'STYLE /  DESIGN / PATTERNS'
+,p_FuncDispName=>'STYLE / DESIGN / PATTERNS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'STYLE / DESIGN / PATTERNS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_JOBQUEUE01'
+,p_FuncShortName=>'JOB QUEUE'
+,p_FuncDispName=>'JOB QUEUE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_CUSTIMP01'
+,p_FuncShortName=>'IMPORT CUSTOMERS'
+,p_FuncDispName=>'IMPORT CUSTOMERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'IMPORT CUSTOMERS'
+,p_MENUID=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_INVLINEHIST01'
+,p_FuncShortName=>'SALES INVOICE LINES'
+,p_FuncDispName=>'SALES INVOICE LINES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/SALESINVOICELINES/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_SAGEEXPORT01'
+,p_FuncShortName=>'SAGE EXPORT'
+,p_FuncDispName=>'SAGE EXPORT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/SAGEQUERY/'
+,p_MENUID=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_grndistribute01?p_userid=$USERID$'
+,p_FuncShortName=>'M.GRN DISTRIBUTION'
+,p_FuncDispName=>'M.GRN DISTRIBUTION'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/GOODSDISTRIBUTE/'
+,p_MENUID=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_SALORDLINEHIST01'
+,p_FuncShortName=>'SALES ORDER LINES'
+,p_FuncDispName=>'SALES ORDER LINES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/SALESORDERLINES/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_arfindorder?p_userid=$USERID$'
+,p_FuncShortName=>'M.FIND SALES ORDER'
+,p_FuncDispName=>'M.FIND SALES ORDER'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/FINDSALESORDER/'
+,p_MENUID=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_arordqry?p_userid=$USERID$'
+,p_FuncShortName=>'M. SALES ORDER QUERY'
+,p_FuncDispName=>'M.SALES ORDER QUERY'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/SALESORDERQUERY/'
+,p_MENUID=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_setplbyitem?p_userid=$USERID$'
+,p_FuncShortName=>'M. SET PRIMARY SALES'
+,p_FuncDispName=>'M. SET PRIMARY SALES'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/SETPRIMARYSALES/'
+,p_MENUID=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMINSUBLOC01'
+,p_FuncShortName=>'ITEM IN SUB LOCATIONS'
+,p_FuncDispName=>'ITEM IN SUB LOCATIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/ITEMINSUBLOC/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_iteminsubloc?p_userid=$USERID$'
+,p_FuncShortName=>'M. ITEM BY SUBLOCATION'
+,p_FuncDispName=>'M. ITEM BY SUBLOCATION'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/ITEMINSUBLOC/'
+,p_MENUID=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_BINIDENTIFIER01'
+,p_FuncShortName=>'UPDATE BIN IDENTIFIER'
+,p_FuncDispName=>'UPDATE BIN IDENTIFIER'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'UPDATE BIN IDENTIFIER'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_sublocitem?p_userid=$USERID$'
+,p_FuncShortName=>'M. ITEMS IN SUB LOCATION'
+,p_FuncDispName=>'M. ITEMS IN SUB LOCATION'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/ITEMSINSUBLOC/'
+,p_MENUID=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_SUMSTKTAKE01'
+,p_FuncShortName=>'STOCK TAKE AUDIT'
+,p_FuncDispName=>'STOCK TAKE AUDIT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/STKTAKESUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'OTHERS'
+,p_FuncName=>'http://www.oratechsolutions.biz/oratechhelp/oratechmain.html'
+,p_FuncShortName=>'HELP ORATECH'
+,p_FuncDispName=>'HELP ORATECH'
+,p_FuncType=>'W'
+,p_FuncPath=>''
+,p_FuncDesc=>'HELP ORATECH'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_additemtobatch?p_userid=$USERID$'
+,p_FuncShortName=>'M. ADD ITEM TO BATCH'
+,p_FuncDispName=>'M. ADD ITEM TO BATCH'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/ADDITEMTOBATCH/'
+,p_MENUID=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_arorddlv?p_userid=$USERID$'
+,p_FuncShortName=>'M. SO CONFIRM DELIVERY'
+,p_FuncDispName=>'M. SO CONFITM DELIVERY'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/SODELVCONFIRMATION/'
+,p_MENUID=>9905
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_SALORDIMP01'
+,p_FuncShortName=>'IMPORT SALES ORDERS'
+,p_FuncDispName=>'IMPORT SALES ORDERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'IMPORT SALES ORDERS'
+,p_MENUID=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_BARREPOSITORY01'
+,p_FuncShortName=>'BARCODE REPOSITORY'
+,p_FuncDispName=>'BARCODE REPOSITORY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/INVENTORY/BARCODEREP/'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_GRN01?p_userid=$USERID$'
+,p_FuncShortName=>'M. GOODS IN'
+,p_FuncDispName=>'M. GOODS IN'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/CREATEGRN/'
+,p_MENUID=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_arordpicklist?p_userid=$USERID$'
+,p_FuncShortName=>'M. PICK LIST FOR SALES ORDER'
+,p_FuncDispName=>'M. PICK LIST FOR SALES ORDER'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/PICKSALESORDER/'
+,p_MENUID=>9905
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_exttointmovement?p_userid=$USERID$'
+,p_FuncShortName=>'M. EXTERNAL MOVEMENT'
+,p_FuncDispName=>'M. EXTERNAL MOVEMENT'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/EXTMOVEMENT/'
+,p_MENUID=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_inistktake?p_userid=$USERID$'
+,p_FuncShortName=>'M. INITIAL STOCK TAKE'
+,p_FuncDispName=>'M. INITIAL STOCK TAKE'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/INITIALSTKTAKE/'
+,p_MENUID=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_intmovement?p_userid=$USERID$'
+,p_FuncShortName=>'M. INTERNAL MOVEMENT'
+,p_FuncDispName=>'M. INTERNAL MOVEMENT'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/MOVEITEM/'
+,p_MENUID=>9901
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_itemadjustment?p_userid=$USERID$'
+,p_FuncShortName=>'M. STOCK ADJUSTMENT'
+,p_FuncDispName=>'M. STOCK ADJUSTMENT'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/STOCKADJUSTMENT/'
+,p_MENUID=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_itemcount?p_userid=$USERID$'
+,p_FuncShortName=>'M. ITEM COUNT'
+,p_FuncDispName=>'M. ITEM COUNT'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/ITEMCOUNT/'
+,p_MENUID=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_locateitem?p_userid=$USERID$'
+,p_FuncShortName=>'M. LOCATTE AN ITEM'
+,p_FuncDispName=>'M. LOCATE AN ITEM'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/LOCATEANITEM/'
+,p_MENUID=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_pricecheck?p_userid=$USERID$'
+,p_FuncShortName=>'M. PRICE CHECK'
+,p_FuncDispName=>'M. PRICE CHECK'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/PRICECHECK/'
+,p_MENUID=>9903
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_rqstionfl01?p_userid=$USERID$'
+,p_FuncShortName=>'M. FULFILL REQUISITION'
+,p_FuncDispName=>'M. FULFILL REQUISITION'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/FULFILLREQUISITION/'
+,p_MENUID=>9902
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_rqstiongrn01?p_userid=$USERID$'
+,p_FuncShortName=>'M. RECEIVE REQUISITION'
+,p_FuncDispName=>'M. RECIEVE REQUISITION'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/RECEIVEREQUISITION/'
+,p_MENUID=>9902
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'MOBILE'
+,p_FuncName=>'spm_sublocminmax?p_userid=$USERID$'
+,p_FuncShortName=>'M. UPDATE SUB LOC MIN/MAX'
+,p_FuncDispName=>'M. UPDATE SUB LOC MIN/MAX'
+,p_FuncType=>'MOBILE'
+,p_FuncPath=>''
+,p_FuncDesc=>'/MOBILE/UPDATESUBLOCMINMAX/'
+,p_MENUID=>9904
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_RQSTIONCR01'
+,p_FuncShortName=>'CREATE REQUISITION'
+,p_FuncDispName=>'CREATE REQUISITION'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'CREATE REQUISITION'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_RQSTIONFL01'
+,p_FuncShortName=>'FULFILL REQUISITION'
+,p_FuncDispName=>'FULFILL REQUISITION'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'FULFILL REQUISITION'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_RQSTIONGRN01'
+,p_FuncShortName=>'RECEIVE REQUISITION'
+,p_FuncDispName=>'RECEIVE REQUISITION'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'RECEIVE REQUISITION'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_SUMRQSTION01'
+,p_FuncShortName=>'REQUISITION SUMMARY'
+,p_FuncDispName=>'REQUISITION SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/REQSUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_SUMSALORD01'
+,p_FuncShortName=>'SALES ORDER SUMMARY'
+,p_FuncDispName=>'SALES ORDER SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/SALESORDERSUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_INTRASTATE01'
+,p_FuncShortName=>'INTRA TRADE SUMMARY'
+,p_FuncDispName=>'INTRA TRADE SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/INTRATRADESUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AP_SUMINV01'
+,p_FuncShortName=>'AP INVOICE SUMMARY'
+,p_FuncDispName=>'AP INVOICE SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/APINVOICESUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AP_SUPDRILLDOWN01'
+,p_FuncShortName=>'SUPPLIER DRILLDOWN'
+,p_FuncDispName=>'SUPPLIER DRILLDOWN'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/SUPPLIERDRILLDOWN/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_CUSTDRILLDOWN01'
+,p_FuncShortName=>'CUSTOMER DRILLDOWN'
+,p_FuncDispName=>'CUSTOMER DRILLDOWN'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/CUSTOMERDRILLDOWN/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ADVANCE PRICING'
+,p_FuncName=>'PRICE_TEMPLATE01'
+,p_FuncShortName=>'PRICE TEMPLATE'
+,p_FuncDispName=>'PRICE TEMPLATE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PRICE TEMPLATE'
+,p_MENUID=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'PO_MANUALPO01'
+,p_FuncShortName=>'PURCHASE ORDER (INTERNAL USAGE'
+,p_FuncDispName=>'PUCHASE ORDER (INTERNAL USAGE)'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PURCHASE ORDER INTERNAL USAGE'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_INVMANUAL01'
+,p_FuncShortName=>'MANUALSALES  INVOICE'
+,p_FuncDispName=>'MANUALSALES  INVOICE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'MANUAL SALES INVOIE'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_BOM01'
+,p_FuncShortName=>'BILL OF MATERIALS'
+,p_FuncDispName=>'BILL OF MATERIALS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'BILL OF MATERIALS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_MKUPTEMP01'
+,p_FuncShortName=>'MARKUP TEMPLATE'
+,p_FuncDispName=>'MARKUP TEMPLATE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'MARKUP TEMPLATE'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'GL_SUMCASHINGUP01'
+,p_FuncShortName=>'GL CASHINGUP SUMMARY'
+,p_FuncDispName=>'GL CASHINGUP SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_SLOCASSIGNBATCH01'
+,p_FuncShortName=>'SUB LOC ASSIGNMENT BATCH'
+,p_FuncDispName=>'SUB LOC ASSIGNMENT BATCH'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SUB LOC ASSIGNMENT BATCH'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_MISCTASK01'
+,p_FuncShortName=>'MISCELLANEOUS TASK'
+,p_FuncDispName=>'MISCELLANEOUS TASK'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_COMMODITY01'
+,p_FuncShortName=>'COMMODITY CODES'
+,p_FuncDispName=>'COMMODITY CODES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/COMMCODE_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_QKCODE01'
+,p_FuncShortName=>'QUICK CODE SETUP'
+,p_FuncDispName=>'QUICK CODE SETUP'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'QUICK CODE SETUP'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_SLOCASSIGN01'
+,p_FuncShortName=>'SUB LOCATION ASSIGNMENTS'
+,p_FuncDispName=>'SUB LOCATION ASSIGNMENTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SUB LOCATION ASSIGNMENTS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AP_SUMDBNOTE01'
+,p_FuncShortName=>'DEBIT NOTE SUMMARY'
+,p_FuncDispName=>'DEBIT NOTE SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/DBNOTESUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'GENERAL LEDGER'
+,p_FuncName=>'GL_CASHINGUP01'
+,p_FuncShortName=>'CASHING UP'
+,p_FuncDispName=>'CASHING UP'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'CASHING UP'
+,p_MENUID=>80
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'GL_PMNT01'
+,p_FuncShortName=>'PAYIN / PAYOUT'
+,p_FuncDispName=>'PAYIN / PAYOUT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PAYINN / PAYOUT'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_INTMOVEMENT01'
+,p_FuncShortName=>'INTERNAL MOVEMENTS'
+,p_FuncDispName=>'INTERNAL MOVEMENTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'INTERNAL MOVEMENTS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'PRICE_CHECK01'
+,p_FuncShortName=>'PRICE CHECK'
+,p_FuncDispName=>'PRICE CHECK'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_WLMNTN01'
+,p_FuncShortName=>'WORKLIST MAINTENANCE'
+,p_FuncDispName=>'WORKLIST MAINTENANCE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_NOTIFEVENT01'
+,p_FuncShortName=>'NOTIFICATION MANAGER'
+,p_FuncDispName=>'NOTIFICATION MANAGER'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_RESERVE01'
+,p_FuncShortName=>'RESERVED ITEMS'
+,p_FuncDispName=>'RESERVED ITEMS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'RESERVED ITEMS'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMDRILLDOWN01'
+,p_FuncShortName=>'ITEM DRILLDOWN'
+,p_FuncDispName=>'ITEM DRILLDOWN'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_CLOCKINAUDIT01'
+,p_FuncShortName=>'CLOCK IN / OUT AUDIT'
+,p_FuncDispName=>'CLOCK IN / OUT AUDIT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'HUMAN RESOURCE'
+,p_FuncName=>'CMN_CLOCKINOUT01'
+,p_FuncShortName=>'CLOCK IN / OUT'
+,p_FuncDispName=>'CLOCK IN / OUT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'CLOCK IN / OUT'
+,p_MENUID=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'SYS_IMPORTTRANS01'
+,p_FuncShortName=>'IMPORT INVOICES'
+,p_FuncDispName=>'IMPORT INVOICES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'IMPORT INVOICES'
+,p_MENUID=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_WEBSITES01'
+,p_FuncShortName=>'WEB SITES SETUP'
+,p_FuncDispName=>'WEB SITES SETUP'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/WEBSITES_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ADVANCE PRICING'
+,p_FuncName=>'PRICE_UPDATESP01'
+,p_FuncShortName=>'BULK UPDATE SP'
+,p_FuncDispName=>'BULK UPDATE SP'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'BULK UPDATE SP'
+,p_MENUID=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_ITEMQKMVMNT01'
+,p_FuncShortName=>'ITEM QUICK MOVEMENT'
+,p_FuncDispName=>'ITEM QUICK MOVEMENT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ITEM QUICK MOVEMENT'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_INVBATCH01'
+,p_FuncShortName=>'IVOICE BATCH AUDIT'
+,p_FuncDispName=>'INVOICE BATCH AUDIT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_COMPILE01'
+,p_FuncShortName=>'COMPILE OBJECTS'
+,p_FuncDispName=>'COMPILE OBJECTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'OTHERS'
+,p_FuncName=>'/reports/rwservlet/showjobs?server=rep_svr-oratech2'
+,p_FuncShortName=>'REPORT LOG'
+,p_FuncDispName=>'REPORT LOG'
+,p_FuncType=>'W'
+,p_FuncPath=>''
+,p_FuncDesc=>'REPORT LOG'
+,p_MENUID=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_INVOICE02'
+,p_FuncShortName=>'SALES INVOICE 02'
+,p_FuncDispName=>'SALES INVOICE 02'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES INVOICE 02'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_PMNTBYINV01'
+,p_FuncShortName=>'SALES PAYMENT BY INVOICE'
+,p_FuncDispName=>'SALES PAYMENT BY INVOICE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES PAYMENT BY INVOICE'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_MAILMERGE01'
+,p_FuncShortName=>'MAIL MERGE TEMPLATE'
+,p_FuncDispName=>'MAIL MERGE TEMPLATE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/MAILMERGE_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'OTHERS'
+,p_FuncName=>'HTTP://TECHNET.ORACLE.COM'
+,p_FuncShortName=>'TECHNET'
+,p_FuncDispName=>'TECHNET'
+,p_FuncType=>'W'
+,p_FuncPath=>''
+,p_FuncDesc=>'TECHNET'
+,p_MENUID=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'OTHERS'
+,p_FuncName=>'HTTP://WWW.BBC.CO.UK'
+,p_FuncShortName=>'BBC'
+,p_FuncDispName=>'BBC'
+,p_FuncType=>'W'
+,p_FuncPath=>''
+,p_FuncDesc=>'BBC'
+,p_MENUID=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'OTHERS'
+,p_FuncName=>'HTTP://WWW.ORACLE.COM'
+,p_FuncShortName=>'ORACLE'
+,p_FuncDispName=>'ORACLE'
+,p_FuncType=>'W'
+,p_FuncPath=>''
+,p_FuncDesc=>'ORACLE'
+,p_MENUID=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'OTHERS'
+,p_FuncName=>'HTTP://WWW.ORATECHSOLUTIONS.BIZ'
+,p_FuncShortName=>'ORATECH'
+,p_FuncDispName=>'ORATECH'
+,p_FuncType=>'W'
+,p_FuncPath=>''
+,p_FuncDesc=>'ORATECH'
+,p_MENUID=>60
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_CONTROL01'
+,p_FuncShortName=>'SYSTEM CONTROLS'
+,p_FuncDispName=>'SYSTEM CONTROLS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_PROGRAM01'
+,p_FuncShortName=>'DEFAULT PROGRAM'
+,p_FuncDispName=>'DEFAULT PROGRAMS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ADMIN/COMMON/SYSPROGRAMS/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_SCHEDULEDJOB01'
+,p_FuncShortName=>'SCHEDULE A JOB'
+,p_FuncDispName=>'SCHEDULE A JOB'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_USERCTRL01'
+,p_FuncShortName=>'USER CONTROLS'
+,p_FuncDispName=>'USER CONTROLS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_ALERT01'
+,p_FuncShortName=>'ALERTS'
+,p_FuncDispName=>'ALERTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/ALERTS_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_ITEMBATCH01'
+,p_FuncShortName=>'ITEM BATCH'
+,p_FuncDispName=>'ITEM BATCH'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ITEM BATCH'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_EXPTEMPLATE01'
+,p_FuncShortName=>'EXPORT TEMPLATES'
+,p_FuncDispName=>'EXPORT TEMPLATES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AR_SUMINVOICE01'
+,p_FuncShortName=>'SALES INVOICE SUMMARY'
+,p_FuncDispName=>'SALES INVOICE SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/ARINVOICESUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'AP_INV01'
+,p_FuncShortName=>'INVOICE'
+,p_FuncDispName=>'INVOICE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'INVOICE'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'AP_OPTIONS01'
+,p_FuncShortName=>'AP OPTIONS'
+,p_FuncDispName=>'AP OPTIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/PURCHASE/OPTIONS/'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'AP_PAYMENT01'
+,p_FuncShortName=>'PAYMENTS'
+,p_FuncDispName=>'PAYMENTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PAYMENTS'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'AP_PREFSUPITEM01'
+,p_FuncShortName=>'PREFERRED SUPPLIERS'
+,p_FuncDispName=>'PREFERRED SUPPLIERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PREFERRED SUPPLIER'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'AP_SUP01'
+,p_FuncShortName=>'SUPPLIERS'
+,p_FuncDispName=>'SUPPLIERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SUPPLIERS'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'AP_SUPPL01'
+,p_FuncShortName=>'SUPPLIER PRICE LIST'
+,p_FuncDispName=>'SUPPLIER PRICE LIST'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SUPPLUER PRICE LIST'
+,p_MENUID=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'AP_SUPPROF01'
+,p_FuncShortName=>'SUPPLIER PROFILES'
+,p_FuncDispName=>'SUPPLIER PROFILES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SUPPLIER PROFILES'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_CUST01'
+,p_FuncShortName=>'CUSTOMER'
+,p_FuncDispName=>'CUSTOMERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'CUSTOMERS'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_CUSTPL01'
+,p_FuncShortName=>'CUSTOMER PRICE LIST'
+,p_FuncDispName=>'CUSTOMER PRICE LIST'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'CUSTOMER PRICE LIST'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_CUSTPM01'
+,p_FuncShortName=>'CUSTOMER PAYMENT METHODS'
+,p_FuncDispName=>'CUSTOMER PAYMENT METHODS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'CUSTOMER PAYMENT METHODS'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_CUSTPROF01'
+,p_FuncShortName=>'CUSTOMER PROFILES'
+,p_FuncDispName=>'CUSTOMER PROFILES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'CUSTOMER PROFILES'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_OPTIONS01'
+,p_FuncShortName=>'AR OPTIONS'
+,p_FuncDispName=>'AR OPTIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SALES/OPTIONS/'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_BANK01'
+,p_FuncShortName=>'BANK ACCOUNTS'
+,p_FuncDispName=>'BANK ACCOUNTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/BANKS_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_BUS01'
+,p_FuncShortName=>'BUSINESS UNITS'
+,p_FuncDispName=>'BUSINESS UNITS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/BU_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_BUSECT01'
+,p_FuncShortName=>'BUSINESS SECTORS'
+,p_FuncDispName=>'BUSINESS SECTORS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/BUSECTOR_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_COMP01'
+,p_FuncShortName=>'COMPANY'
+,p_FuncDispName=>'COMPANY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/COMPANY_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_CONTAINER01'
+,p_FuncShortName=>'CONTAINERS'
+,p_FuncDispName=>'CONTAINERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/CONTAINERS_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_COUNTRY01'
+,p_FuncShortName=>'COUNTRIES'
+,p_FuncDispName=>'COUNTRIES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/COUNTRIES_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_CUR01'
+,p_FuncShortName=>'CURRENCIES'
+,p_FuncDispName=>'CURRENCIES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/CURRENCIES_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_CURRATE01'
+,p_FuncShortName=>'CURRENCY RATES'
+,p_FuncDispName=>'CURRENCY RATES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/CURRENCYRATES_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_FUNCTION01'
+,p_FuncShortName=>'FUNCTIONS'
+,p_FuncDispName=>'FUNCTIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_LOOKUP01'
+,p_FuncShortName=>'LOOKUPS'
+,p_FuncDispName=>'LOOKUPS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/LOOKUP_LIST'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_MENU01'
+,p_FuncShortName=>'MENUS'
+,p_FuncDispName=>'MENUS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_PMNTTERM01'
+,p_FuncShortName=>'PAYMENT TERMS'
+,p_FuncDispName=>'PAYMENT TERMS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/PMNTTERMS_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_PMT01'
+,p_FuncShortName=>'PAYMENT METHODS'
+,p_FuncDispName=>'PAYMENT METHODS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/PMNTMENTOD_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_PRINTER01'
+,p_FuncShortName=>'PRINTERS'
+,p_FuncDispName=>'PRINTERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_PROPERTY01'
+,p_FuncShortName=>'OBJECT PROPERTIES'
+,p_FuncDispName=>'OBJECT PROPERTIES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_PROPERTYVAL01'
+,p_FuncShortName=>'OBJECT PROPERTY VALUES'
+,p_FuncDispName=>'OBJECT PROPERTY VALUES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_PRROUND01'
+,p_FuncShortName=>'PRICE ROUNDINGS'
+,p_FuncDispName=>'PRICE ROUNDINGS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_REASONS01'
+,p_FuncShortName=>'REASONS'
+,p_FuncDispName=>'REASONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/REASONS_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_RESP01'
+,p_FuncShortName=>'RESPONSIBILITY'
+,p_FuncDispName=>'RESPONSIBILITIES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_SEASON01'
+,p_FuncShortName=>'SEASONS'
+,p_FuncDispName=>'SEASONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/SEASONS_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_SEQUENCE01'
+,p_FuncShortName=>'SEQUENCES'
+,p_FuncDispName=>'SEQUENCES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_TAXCODE01'
+,p_FuncShortName=>'TAX CODES'
+,p_FuncDispName=>'TAX CODES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/TAXCODES_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_TERMS01'
+,p_FuncShortName=>'TERMS AND CONDITIONS'
+,p_FuncDispName=>'TERMS AND CONDITIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/TERMCOND_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_UOM01'
+,p_FuncShortName=>'UNIT OF MEASUREMENTS'
+,p_FuncDispName=>'UNIT OF MEASUREMENTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/UOM_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_USER01'
+,p_FuncShortName=>'USERS'
+,p_FuncDispName=>'USERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/COMMON/LISTUSERS/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'HUMAN RESOURCE'
+,p_FuncName=>'EMP_DEPT01'
+,p_FuncShortName=>'DEPARTMENTS'
+,p_FuncDispName=>'DEPARTMENTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'DEPARTMENTS'
+,p_MENUID=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'HUMAN RESOURCE'
+,p_FuncName=>'EMP_EMP01'
+,p_FuncShortName=>'EMPLOYEES'
+,p_FuncDispName=>'EMPLOYEES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'EMPLOYEES'
+,p_MENUID=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'HUMAN RESOURCE'
+,p_FuncName=>'EMP_JOB01'
+,p_FuncShortName=>'JOBS'
+,p_FuncDispName=>'JOBS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'JOBS'
+,p_MENUID=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'HUMAN RESOURCE'
+,p_FuncName=>'EMP_JOBTYPE01'
+,p_FuncShortName=>'JOB TYPES'
+,p_FuncDispName=>'JOB TYPES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'JOB TYPES'
+,p_MENUID=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'HUMAN RESOURCE'
+,p_FuncName=>'EMP_POS01'
+,p_FuncShortName=>'POSITIONS'
+,p_FuncDispName=>'POSITIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'POSITIONS'
+,p_MENUID=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'HUMAN RESOURCE'
+,p_FuncName=>'EMP_WDAY01'
+,p_FuncShortName=>'WORKING DAYS'
+,p_FuncDispName=>'WORKING DAYS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'WORKING DAYS'
+,p_MENUID=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'GL_AC01'
+,p_FuncShortName=>'GL ACCOUNT CODE'
+,p_FuncDispName=>'GL ACCOUNT CODE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/GLCODES_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_CATEGORY01'
+,p_FuncShortName=>'ITEM CATEGORIES'
+,p_FuncDispName=>'ITEM CATEGORIES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/INVENTORY/ITEMCATEGORY/'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_ITEM01'
+,p_FuncShortName=>'ITEMS'
+,p_FuncDispName=>'ITEMS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/INVENTORY/ITEMS/'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_ITEMADDTOLOC01'
+,p_FuncShortName=>'ADD ITEM TO LOCATION'
+,p_FuncDispName=>'ADD ITEM TO LOCATION'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADD ITEM TO LOCATION'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMINLOC01'
+,p_FuncShortName=>'ITEM IN LOCATIONS'
+,p_FuncDispName=>'ITEM IN LOCATIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/ITEMINLOC/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMLOCQRY01'
+,p_FuncShortName=>'ITEM BY LOCATION'
+,p_FuncDispName=>'ITEM BY LOCATIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_ITEMMOVEMENT01'
+,p_FuncShortName=>'ITEM MOVEMENTS'
+,p_FuncDispName=>'ITEM MOVEMENTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ITEM MOVEMENTS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMSEARCH01'
+,p_FuncShortName=>'ITEM SEARCH'
+,p_FuncDispName=>'ITEM SEARCH'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/INVENTORY/ITEMSEARCH/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_LOCATION01'
+,p_FuncShortName=>'LOCATIONS'
+,p_FuncDispName=>'LOCATIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/INVENTORY/LOCATIONS/'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_MANF01'
+,p_FuncShortName=>'MANUFACTURERS'
+,p_FuncDispName=>'MANUFACTURERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'MANUFACTURERS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_OPTIONS01'
+,p_FuncShortName=>'INV OPTIONS'
+,p_FuncDispName=>'INV OPTIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/INVENTORY/OPTIONS/'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ADVANCE PRICING'
+,p_FuncName=>'INV_PRICEBREAK01'
+,p_FuncShortName=>'PRICE BREAKS'
+,p_FuncDispName=>'PRICE BREAKS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PRICE BREAKS'
+,p_MENUID=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_PRTYPE01'
+,p_FuncShortName=>'PRICE TYPES'
+,p_FuncDispName=>'PRICE TYPES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PRICE TYPES'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_SERIALNUM01'
+,p_FuncShortName=>'ITEM SERIAL NUMBERS'
+,p_FuncDispName=>'ITEM SERIAL NUMBERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ITEM SERIAL NUMBERS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_SIMITEM01'
+,p_FuncShortName=>'SIMILAR ITEMS'
+,p_FuncDispName=>'SIMILAR ITEMS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SIMILAR ITEMS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_STKADJUST01'
+,p_FuncShortName=>'STOCK ADJUSTMENT'
+,p_FuncDispName=>'STOCK ADJUSTMENT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'STOCK ADJUSTMENT'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_STKCOUNT01'
+,p_FuncShortName=>'ITEM COUNTS'
+,p_FuncDispName=>'ITEM COUNTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ITEM COUNTS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_STKTAKEITEM01'
+,p_FuncShortName=>'STOCK TAKE ITEMS'
+,p_FuncDispName=>'STOCK TAKE ITEMS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'STOCK TAKE ITEMS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_STKTAKETYPE01'
+,p_FuncShortName=>'STOCK TAKE TYPES'
+,p_FuncDispName=>'STOCK TAKE TYPES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'STOCK TAKE TYPES'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_WEEE01'
+,p_FuncShortName=>'WEEE CHARGES'
+,p_FuncDispName=>'WEEE CHARGES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'WEEE CHARGES'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'PO_BUYERS01'
+,p_FuncShortName=>'PO BUYERS'
+,p_FuncDispName=>'PO BUYERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PO BUYERS'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'PO_GRN01'
+,p_FuncShortName=>'GOODS RECEIPT'
+,p_FuncDispName=>'GOODS RECEIPT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'GOODS RECEIPT'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'PO_PO01'
+,p_FuncShortName=>'PURCHASE ORDER'
+,p_FuncDispName=>'PURCHASE ORDER'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PURCHASE ORDER'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ADVANCE PRICING'
+,p_FuncName=>'PRICE_OFFER01'
+,p_FuncShortName=>'ITEM OFFERS'
+,p_FuncDispName=>'ITEM OFFERS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ITEM OFFERS'
+,p_MENUID=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_ADMIN01'
+,p_FuncShortName=>'UPGRADE/INSTALL'
+,p_FuncDispName=>'UPGRADE/INSTALL'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_IMPORT01'
+,p_FuncShortName=>'IMPORT'
+,p_FuncDispName=>'IMPORT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>81
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_LOG01'
+,p_FuncShortName=>'SYSTEM LOG'
+,p_FuncDispName=>'SYSTEM LOG'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_OPTIONS01'
+,p_FuncShortName=>'SYSTEM OPTIONS'
+,p_FuncDispName=>'SYSTEM OPTIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/SETUP/CMNSYSOPTIONS_LIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'REPORTS'
+,p_FuncName=>'SYS_REPORTS01'
+,p_FuncShortName=>'REPORTS'
+,p_FuncDispName=>'REPORTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'REPORTS'
+,p_MENUID=>40
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_RUNPROCESS01'
+,p_FuncShortName=>'RUN A PROCESS'
+,p_FuncDispName=>'RUN A PORCESS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'PAYABLES'
+,p_FuncName=>'AP_DBNOTE01'
+,p_FuncShortName=>'DEBIT NOTES'
+,p_FuncDispName=>'DEBIT NOTES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'DEBIT NOTES'
+,p_MENUID=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_CRNOTE01'
+,p_FuncShortName=>'CREDIT NOTE'
+,p_FuncDispName=>'CREDIT NOTE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES CREDIT NOTE'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_DELNOTE01'
+,p_FuncShortName=>'DELIVERY NOTE'
+,p_FuncDispName=>'DELIVERY NOTE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'DELIVERY NOTE'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_FREIGHT01'
+,p_FuncShortName=>'FRIEGHT SETUP'
+,p_FuncDispName=>'FREIGHT SETUP'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'FREIGHT SETUP'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_INVOICE01'
+,p_FuncShortName=>'SALES INVOICE'
+,p_FuncDispName=>'SALES INVOICE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES INVOICE'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_PMNTBYMETHOD01'
+,p_FuncShortName=>'SALES PAYMENTS'
+,p_FuncDispName=>'SALES PAYMENTS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES PAYMENTS'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_SALCRGROUP01'
+,p_FuncShortName=>'SALES CREDIT GROUPS'
+,p_FuncDispName=>'SALES CREDIT GROUPS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES CREDIT GROUPS'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_SALESPERSON01'
+,p_FuncShortName=>'SALES PEROSON'
+,p_FuncDispName=>'SALES PERSONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES PERSONS'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'RECEIVABLES'
+,p_FuncName=>'AR_SALORD01'
+,p_FuncShortName=>'SALES ORDER'
+,p_FuncDispName=>'SALES ORDER'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'SALES ORDER'
+,p_MENUID=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'AUD_MINUSSTOCK01'
+,p_FuncShortName=>'MINUS STOCK AUDIT'
+,p_FuncDispName=>'MINUS STOCK AUDIT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_GRANTPRIV01'
+,p_FuncShortName=>'GRANTED PRIVILEGES'
+,p_FuncDispName=>'GRANTED PRIVILEGES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'COMMON'
+,p_FuncName=>'CMN_PERIOD01'
+,p_FuncShortName=>'PERIODS'
+,p_FuncDispName=>'PERIODS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_PRIV01'
+,p_FuncShortName=>'PRIVILEGES'
+,p_FuncDispName=>'PRIVILEGES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_PROF01'
+,p_FuncShortName=>'PROFILES'
+,p_FuncDispName=>'PROFILES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_PROFVAL01'
+,p_FuncShortName=>'PROFILE VALUES'
+,p_FuncDispName=>'PROFILE VALUES'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_REPGROUP01'
+,p_FuncShortName=>'REPORT GROUP'
+,p_FuncDispName=>'REPORT GROUP'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'CMN_TERMINAL01'
+,p_FuncShortName=>'TERMINALS'
+,p_FuncDispName=>'TERMINALS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMCPHIST01'
+,p_FuncShortName=>'ITEM PRICE HISTORY'
+,p_FuncDispName=>'ITEM PRICE HISTORY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/COSTPRICEHIST/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_ITEMDIM01'
+,p_FuncShortName=>'ITEM DIMENSIONS'
+,p_FuncDispName=>'ITEM DIMENSIONS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ITEM DIMENSIONS'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMHIST01'
+,p_FuncShortName=>'TRANSACTION HISTORY'
+,p_FuncDispName=>'TRANSACTION HISTORY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/ITEMTRANSHIST/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'INVENTORY'
+,p_FuncName=>'INV_ITEMMASS01'
+,p_FuncShortName=>'ITEM MASS UPDATE'
+,p_FuncDispName=>'ITEM MASS UPDATE'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ITEM MASS UPDATE'
+,p_MENUID=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_ITEMSLOCSNAP01'
+,p_FuncShortName=>'ITEM BY LOCATION SNAPSHOT'
+,p_FuncDispName=>'ITEM BY LOCATION SNAPSHOT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_SUMITEMCOUNT01'
+,p_FuncShortName=>'ITEM COUNT SUMMARY'
+,p_FuncDispName=>'ITEM COUNT SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'INV_SUMMOVEMENT01'
+,p_FuncShortName=>'ITEM MOVEMENT SUMMARY'
+,p_FuncDispName=>'ITEM MOVEMENT SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/ITEMMOVEMENTS/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'PO_SUMGRN01'
+,p_FuncShortName=>'GRN SUMMARY'
+,p_FuncDispName=>'GRN SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/GRNSUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ENQUIRY'
+,p_FuncName=>'PO_SUMPO01'
+,p_FuncShortName=>'PO SUMMARY'
+,p_FuncDispName=>'PO SUMMARY'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ENQUIRY/POSUM/'
+,p_MENUID=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ADVANCE PRICING'
+,p_FuncName=>'PRICE_LIST01'
+,p_FuncShortName=>'PRICE LIST'
+,p_FuncDispName=>'PRICE LIST'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'PRICE LIST'
+,p_MENUID=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'ADVANCE PRICING'
+,p_FuncName=>'PRICE_UPDATECP01'
+,p_FuncShortName=>'BULK UPDATE CP'
+,p_FuncDispName=>'BULK UPDATE CP'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'BULK UPDATE CP'
+,p_MENUID=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_FUNCAUDIT01'
+,p_FuncShortName=>'FUNCTION AUDIT'
+,p_FuncDispName=>'FUNCTION AUDIT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_LOGAUDIT01'
+,p_FuncShortName=>'LOGIN AUDIT'
+,p_FuncDispName=>'LOGIN AUDIT'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_SCHEDULE01'
+,p_FuncShortName=>'SCHEDULE SETUP'
+,p_FuncDispName=>'SCHEDULE SETUP'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'ADMIN/COMMON/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_SCHJOB01'
+,p_FuncShortName=>'BACKGROUND JOBS'
+,p_FuncDispName=>'BACKGROUND JOBS'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ADMIN/COMMON/SYSSCHEDULEJOBS/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_UICONFIG01'
+,p_FuncShortName=>'UI CONFIGURATION'
+,p_FuncDispName=>'UI CONFIGURATION'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>''
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Function(p_module=>'SYSADMIN'
+,p_FuncName=>'SYS_WORKLIST01'
+,p_FuncShortName=>'CREATE WORKLIST'
+,p_FuncDispName=>'CREATE WORKLIST'
+,p_FuncType=>'F'
+,p_FuncPath=>''
+,p_FuncDesc=>'/ADMIN/COMMON/SYSWORKLIST/'
+,p_MENUID=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

@@ -1,0 +1,141 @@
+{% extends 'common/menu.html' %}
+{% block content_block %}
+<h2>  System Options </h2>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+     <li class="nav-item">
+        <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general"
+           aria-selected="true">GENERAL</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info"
+           aria-selected="false">INFO</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="attributes-tab" data-toggle="tab" href="#attributes" role="tab" aria-controls="attributes"
+           aria-selected="false">ATTRIBUTES</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="others-tab" data-toggle="tab" href="#others" role="tab" aria-controls="others"
+           aria-selected="false">OTHERS</a>
+    </li>
+    
+</ul>
+<form method="POST">{% csrf_token %}
+<div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+        <div class="container-fluid" style="padding-left:2%;">
+            {% for field in form %}
+            {% if field.name in general_field_list %}
+
+            <div class="row">
+                <div class="col-md-2 pull-right text-right font-weight-normal">
+                    {{ field.label_tag }}
+                    {% if field.help_text %}
+                    <sup>{{ field.help_text }}</sup>
+                    {% endif %}
+                    {% for error in field.errors %}
+                    <div class="row">
+                        <div class="alert alert-danger">{{error}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-3">
+                    {{ field }}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+    </div>
+    </div>
+    <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+        {% for field in form %}
+        {% if field.name in info_field_list %}
+        <div class="row">
+
+            <div class="col-md-3">
+                {{ field.label_tag }}
+                {% if field.help_text %}
+                <sup>{{ field.help_text }}</sup>
+                {% endif %}
+                {% for error in field.errors %}
+                <div class="row">
+                    <div class="alert alert-danger">{{error}}</div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-3">
+                {{ field }}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="tab-pane fade" id="attributes" role="tabpanel" aria-labelledby="attributes-tab">
+
+        <div class="container-fluid" style="padding-left:2%;">
+            {% for field in form %}
+            {% if field.name in attributes_field_list %}
+            <div class="row">
+                <div class="col-md-2">
+                    {{ field.label_tag }}
+                    {% if field.help_text %}
+                    <sup>{{ field.help_text }}</sup>
+                    {% endif %}
+                    {% for error in field.errors %}
+                    <div class="row">
+                        <div class="alert alert-danger">{{error}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-3">
+                    {{ field }}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="others" role="tabpanel" aria-labelledby="others-tab">
+        <div class="container-fluid" style="padding-left:2%;">
+            {% for field in form %}
+            {% if field.name in others_field_list %}
+            <div class="row">
+                <div class="col-md-2 pull-right text-right font-weight-normal">
+                    {{ field.label_tag }}
+                    {% if field.help_text %}
+                    <sup>{{ field.help_text }}</sup>
+                    {% endif %}
+                    {% for error in field.errors %}
+                    <div class="row">
+                        <div class="alert alert-danger">{{error}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-3">
+                    {{ field }}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    
+
+</div>
+<br>
+<div class="row" style="padding-left:3%">
+
+<!--<div class="col-md-3">-->
+    <button class="btn btn-success">Submit</button>
+    &nbsp;
+    <a href="/setup/commcode_list" class="btn btn-secondary">Cancel</a>
+<!--</div>-->
+</div>
+</form>
+{%  endblock %}
+

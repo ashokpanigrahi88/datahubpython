@@ -1,0 +1,19 @@
+{% extends 'common/model_form.html' %}
+
+{% block moduletitle %}
+<h2> Add {{model}}</h2>
+{%  endblock %}
+
+{% block postform %}
+
+{% if model == "Tax Code" %}
+<a href="/setup/taxcodes_list/" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% elif model == "Tax Breakup" %}
+<a href="/setup/taxcodes_list/?taxcode_id={{tax_code_id}}" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% endif %}
+
+{% endblock %}

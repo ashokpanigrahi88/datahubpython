@@ -1,0 +1,164 @@
+{% extends 'common/menu.html' %}
+{% load getverbose %}
+{% block title %} Edit GL Categories {% endblock %}
+{% block content_block %}
+
+<div class="row">
+
+    <div class="col-6">
+        <div class="container">
+        <br>
+            <h4>GL Categories</h4>
+            <table class="table table-striped table-bordered table-sm">
+                <td>
+                    <a href="?new_glcategory_form" style="text-decoration: none;">
+                        <button type="button" class="new-btn new-button">
+                            &nbsp;New Category
+                        </button>
+                    </a>
+                </td>
+            </table>
+            <table class="table table-striped table-bordered table-sm">
+                <thead class="bg-info">
+                <tr>
+                    <th>Name</th>
+                    <th>Qualifier Code1</th>
+                    <th>Qualifier Code2</th>
+                    <th>Active</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for row in gl_categories %}
+                <tr>
+                    <td><a href="?glcategory={{row.gl_category_id}}">{{ row.gl_category_name }}</a></td>
+                    <td>{{ row.gl_qualifier_code1 }}</td>
+                    <td>{{ row.gl_qualifier_code2 }}</td>
+                    <td>{{ row.active }}</td>
+                    <td>{{ row.gl_category_desc }}</td>
+                    <td>
+                        <a href="?edit_glcategory={{row.gl_category_id}}">
+                            Edit
+                        </a>
+
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+                {% if gl_category %}
+            <br>
+            <br>
+            <h4>{{gl_category.gl_category_name}} - Subcategories</h4>
+
+            <table class="table table-striped table-bordered table-sm">
+                <td>
+                    <a href="/setup/glcategories/?glcategory={{gl_category.gl_category_id}}&new_glsubcategory_form"
+                       style="text-decoration: none;">
+                       <button type="button" class="new-btn new-button">
+                           New GL Sub Category
+                       </button>
+                    </a>
+                </td>
+            </table>
+            {% endif %}
+            {% if gl_subcategories %}
+
+                    <table class="table table-striped table-bordered table-sm">
+                        <thead class="bg-info">
+                        <tr>
+                            <th>Name</th>
+                            <th>Qualifier Code1</th>
+                            <th>Qualifier Code2</th>
+                            <th>Active</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for row in gl_subcategories %}
+                        <tr>
+                            <td>
+                                <a href="/setup/glcodes_list/glsubcategory-{{row.gl_sub_category_id}}/">
+                                    {{row.gl_sub_category_name }}</a></td>
+                            <td>{{ row.gl_qualifier_code1 }}</td>
+                            <td>{{ row.gl_qualifier_code2 }}</td>
+                            <td>{{ row.active }}</td>
+                            <td>{{ row.gl_sub_category_desc }}</td>
+                            <td>
+                                <a href="?glcategory={{gl_category.gl_category_id}}&edit_glsubcategory={{row.gl_sub_category_id}}">
+                                    Edit
+                                </a>
+
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+            {% endif %}
+
+            </div>
+        </div>
+
+
+    <div class="col-6">
+        <div class="container">
+            <br>
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                {% if gl_category_form %}
+                {% if gl_category %}
+                <h4>Edit GL Category: {{gl_category}}</h4>
+                {% else %}
+                <h4>New GL Category</h4>
+                {% endif %}
+                <a href="/setup/glcategory_delete/{{gl_category.gl_category_id}}/" style="text-decoration: none;">
+                    <button class="delete-btn btn-delete" type="button">Delete</button>
+                </a>
+                <button class="save-btn">Save</button>
+                <br><br>
+                {% for field in gl_category_form %}
+                <div class="row">
+                    {% include '_model_form2.html' %}
+                </div>
+                {% endfor %}
+                <input type="hidden" value="Save" name="save_glcategory_form">
+                {% endif %}
+            </form>
+
+            <form method="POST">
+                {% csrf_token %}
+                {% if gl_subcategory_form %}
+                {% if gl_subcategory %}
+                <h4>Edit GL Sub Category: {{gl_subcategory}}</h4>
+                {% else %}
+                <h4>New GL Sub Category</h4>
+                {% endif %}
+                <a href="/setup/glsubcategory_delete/{{gl_subcategory.gl_sub_category_id}}/" style="text-decoration: none;">
+                    <button class="delete-btn btn-delete" type="button">Delete</button>
+                </a>
+                <button class="save-btn">Save</button>
+                <br><br>
+                {% for field in gl_subcategory_form %}
+                <div class="row">
+                    {% include '_model_form2.html' %}
+                </div>
+                {% endfor %}
+                <input type="hidden" class="save-btn" value="Save" name="save_glsubcategory_form">
+
+                {% endif %}
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+

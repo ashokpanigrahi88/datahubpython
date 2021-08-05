@@ -1,0 +1,33 @@
+{% extends 'common/model_list.html' %}
+{% block title %} System Options {% endblock %}
+{% block findaction %} /setup/lookup_list/ {% endblock %}
+{% block findform %}
+    <label for="nm">Lookup Type</label>
+    <input id="nm" type="text" name="nm" value="">
+{% endblock %}
+
+{% block tableheader %}
+    <th>Lookup Type</th>
+    <th>Lookup Module</th>
+    <th>Security Level</th>
+    <th>Description</th>
+ {% endblock %}
+{% block tablerow %}
+    <td>
+          <a href={% url 'setup:lookupcodes_list' %}?lookup_type={{ row.lookup_type  }} >{{ row.lookup_type  }} </a>
+    </td>
+    <td>{{ row.lookup_module }}</td>
+    <td>{{ row.security_level }}</td>
+    <td>{{ row.lookup_desc }}</td>
+{% endblock %}
+        {% block rowaction %}
+    <td>
+		<a href="/setup/lookup_update/{{ row.lookup_type }}/"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+    </td>
+{% endblock %}
+{% block createaction %}
+ <a href="/setup/lookup_create/" class="new-btn new-button" >Add Lookup Type </a>
+
+{% endblock %}
+
+

@@ -1,0 +1,61 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_module(p_name=>'WAREHOUSE'
+,p_description=>'WAREHOUSE'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'IMPORT EXPORT'
+,p_description=>'IMPORT EXPORT'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'MOBILE'
+,p_description=>'ONLY USED FOR MOBILE APPLICATION'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'GENERAL LEDGER'
+,p_description=>'GENERAL LEDGER'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'OTHERS'
+,p_description=>'OTHER FUNCTIONS'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'COMMON'
+,p_description=>'COMMON'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'INVENTORY'
+,p_description=>'INVENTORY'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'PAYABLES'
+,p_description=>'PAYABLES'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'ADVANCE PRICING'
+,p_description=>'ADVANCE PRICING'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'ENQUIRY'
+,p_description=>'ENQUIRY'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'RECEIVABLES'
+,p_description=>'RECEIVABLES'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'REPORTS'
+,p_description=>'REPORTS'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'HUMAN RESOURCE'
+,p_description=>'HUMAN RESOURCE'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_module(p_name=>'SYSADMIN'
+,p_description=>'SYSADMIN'
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

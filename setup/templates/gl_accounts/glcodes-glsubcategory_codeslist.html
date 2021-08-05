@@ -1,0 +1,137 @@
+{% extends 'common/menu.html' %}
+{% load getverbose %}
+{% block title %} GL Account Codes {% endblock %}
+{% block findaction %} {{ MYCONTEXT.list }} {% endblock %}
+{% block content_block %}
+{% block prelist %}
+{% endblock %}
+<div class="container-fluid">
+<br>
+
+
+<!--<div class="d-flex">-->
+<!--    <nav aria-label="breadcrumb">-->
+<!--        <ol class="breadcrumb">-->
+<!--            <li class="breadcrumb-item"><a href="/setup/glcodes_list/">-->
+<!--                All GL Categories</a></li>-->
+<!--            <li class="breadcrumb-item"><a href="/setup/glcodes_list/?glcategory={{gl_subcategory.gc_gl_category_id.gl_category_id}}">-->
+<!--                Category: {{gl_subcategory.gc_gl_category_id.gl_category_name}}</a></li>-->
+<!--            <li class="breadcrumb-item"><a href="/setup/glcodes_list/glsubcategory-{{gl_subcategory.gl_sub_category_id}}/">-->
+<!--                SubCategory: {{gl_subcategory.gl_sub_category_name}}</a></li>-->
+<!--            {% if details %}-->
+<!--            <li class="breadcrumb-item active" aria-current="page">-->
+<!--                GL Account Code: {{details.gl_account_code.value}} </li>-->
+<!--            {% else %}-->
+<!--            <li class="breadcrumb-item active" aria-current="page">GL Account Codes - All</li>-->
+<!--            {% endif %}-->
+
+<!--        </ol>-->
+<!--    </nav>-->
+<!--</div>-->
+
+</div>
+<div class="container-fluid">
+    <form method="get">
+        {% csrf_token %}
+        <table class="table table-striped table-bordered table-sm">
+            <td>
+                <a href="/setup/glcodes_list/glaccountcode_create/">
+                    <button type="button" class="new-btn new-button">New Account Code</button></a>
+
+                <a href="/setup/glcategories/">
+                    <button type="button" class="cancel-btn cancel-button">Edit GL Categories</button>
+                </a>
+
+                <a href="/setup/glcodes_list/">
+                    <button type="button" class="cancel-btn cancel-button">All Account Codes</button></a>
+
+                {% for field in glcodes_search_form %}
+                {{field.label_tag}}
+                {{field}}
+                {% endfor %}
+                <input type="submit" class="btn btn-info" value="Search" name="list_filter">
+            </td>
+        </table>
+    </form>
+
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="bg-info">
+        <tr>
+
+            <th>Category</th>
+            <th>SubCategory</th>
+            <th>Account Code</th>
+            <th>Short Name</th>
+            <th>Description</th>
+            <th>Active</th>
+            <th>Account Code Alpha</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for row in glcodes_list %}
+        <tr>
+            <td><a href="?gc_gl_category_id={{row.gc_gl_category_id.gl_category_id }}">
+                {{row.gc_gl_category_id}}</a></td>
+            <td><a href="?gsc_gl_sub_category_id={{row.gsc_gl_sub_category_id.gl_sub_category_id }}">
+                {{row.gsc_gl_sub_category_id}}</a></td>
+            <td>{{ row.gl_account_code }}</td>
+            <td><a href="?gl_account_code={{row.gl_account_code}}">
+                {{ row.short_name }}</a></td>
+            <td>{{ row.description }}</td>
+            <td>{{ row.active }}</td>
+            <td>{{ row.gl_code_char }}</td>
+            <td>
+                <a href="/setup/glaccountcode_update/{{ row.gl_account_id }}/">Edit</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+    {% if glcodes_list.paginator.num_pages > 1 %}
+    <nav aria-label="GL Account Codes Nav">
+        <ul class="pagination justify-content-center">
+            {% if glcodes_list.has_previous %}
+                <a href="?{% param_replace glaccountcodespage=1 %}"
+                   class="page-item page-link">
+                    &laquo; First</a>
+                <a href="?{% param_replace glaccountcodespage=glcodes_list.previous_page_number %}"
+                   class="page-item page-link">
+                    Previous</a>
+            {% endif %}
+
+            <span class="current page-item page-link">
+                Page {{ glcodes_list.number }} of {{ glcodes_list.paginator.num_pages }}
+            </span>
+
+            {% if glcodes_list.has_next %}
+                <a href="?{% param_replace glaccountcodespage=glcodes_list.next_page_number %}"
+                   class="page-item page-link">
+                    Next</a>
+                <a href="?{% param_replace glaccountcodespage=glcodes_list.paginator.num_pages %}"
+                   class="page-item page-link">
+                    Last&raquo;</a>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{% if details %}
+<div class="container-fluid">
+    <h3>GL Account Code Details</h3>
+    <br>
+    <div class="row">
+        {% for field in details %}
+        {% include '_model_form2.html' %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+
+{% endblock %}
+

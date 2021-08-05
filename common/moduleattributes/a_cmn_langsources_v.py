@@ -1,0 +1,7 @@
+CMN_LANGSOURCES_V={ 
+'source_object': {'background':'','datatype':'CHAR','datasegment':'BYTE','displayed':False,'enabled':False,'formatmask':'','insertallowed':True,'canvas':'','itemname':'SOURCE_OBJECT','tab':'','lov':'','maxlength':'24','multiline':False,'primarykey':True,'prompt':'Source Object','rangehight':'','rangelow':'','required':False,'updateallowed':True,'updateifnull':False,'visible':False,'xpos':'20.000','ypos':'65.000' }, 
+'source_object_id': {'background':'r255g255b255','datatype':'NUMBER','datasegment':'BYTE','displayed':True,'enabled':True,'formatmask':'FM999999999990','insertallowed':True,'canvas':'HEADERS_TAB','itemname':'SOURCE_OBJECT_ID','tab':'PARAMETERS','lov':'','maxlength':'11','multiline':False,'primarykey':True,'prompt':'ID','rangehight':'','rangelow':'0','required':False,'updateallowed':True,'updateifnull':False,'visible':True,'xpos':'1.000','ypos':'55.000' }, 
+'source_object_value': {'background':'r255g255b255','datatype':'CHAR','datasegment':'BYTE','displayed':True,'enabled':True,'formatmask':'','insertallowed':True,'canvas':'HEADERS_TAB','itemname':'SOURCE_OBJECT_VALUE','tab':'PARAMETERS','lov':'','maxlength':'153','multiline':False,'primarykey':False,'prompt':'Source Object Value','rangehight':'','rangelow':'','required':False,'updateallowed':True,'updateifnull':False,'visible':True,'xpos':'64.000','ypos':'55.000' }, 
+'fields':['source_object','source_object_id','source_object_value',],
+'headers':['Source Object','ID','Source Object Value',],
+}

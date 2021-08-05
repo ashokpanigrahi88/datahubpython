@@ -1,0 +1,20 @@
+
+    <div class="col-sm-1 pull-right">
+        {{ field.label_tag }}
+
+        {% if field.help_text %}
+        <sup>{{ field.help_text }}</sup>
+        {% endif %}
+        {% for error in field.errors %}
+        <div class="row">
+            <div class="alert alert-danger">{{error}}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-2 pull-left">
+        {{ field }}
+    </div>
+
+<!--    {% cycle '' '<div class="row" style="height: 50px;"></div>' %}-->
+
+

@@ -1,0 +1,26 @@
+{% extends 'common/model_form.html' %}
+
+{% block moduletitle %}
+<h2> Update {{model}} - {{object}}</h2>
+{%  endblock %}
+
+{% block postform %}
+
+{% if model == 'Tax Code' %}
+<a href="/setup/taxcodes_list/" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+<a href="/setup/taxcodes_delete/{{ object.tax_code_id}}/" style="text-decoration: none;">
+    <button type="button" class="delete-btn delete-button">Delete</button>
+</a>
+
+{% elif model == 'Tax Breakup' %}
+<a href="/setup/taxcodes_list/?taxcode_id={{taxcode_id}}" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+<a href="/setup/taxcodes_breakup_delete/{{ object.ctb_id}}/" style="text-decoration: none;">
+    <button type="button" class="delete-btn delete-button">Delete</button>
+</a>
+{% endif %}
+
+{% endblock %}

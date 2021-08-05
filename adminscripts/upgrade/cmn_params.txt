@@ -1,0 +1,691 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ADDITIONALINFO'
+,p_prompt=>'ADDITIONAL INFO'
+,p_description=>'ADDITIONAL INFO'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE,ID FROM SYS_YESNO_L'
+,p_DefaultValue=>'YES'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_BOMONLY'
+,p_prompt=>'BOM ONLY'
+,p_description=>'BOM ONLY'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE,ID FROM SYS_YESNO_L'
+,p_DefaultValue=>'NO'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_LABELTYPE'
+,p_prompt=>'LABEL TYPE'
+,p_description=>'LABEL TYPE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT '||''''||'OUTER'||''''||' IDVALUE,'||''''||'OUTER'||''''||' ID FROM DUAL UNION SELECT '||''''||'INNER'||''''||' IDVALUE,'||''''||'INNER'||''''||' ID FROM DUAL'
+,p_DefaultValue=>'OUTER'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_IMAGECHECK'
+,p_prompt=>'CHECK IMAGE'
+,p_description=>'CHECK IMAGE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE,ID FROM SYS_YESNO_L'
+,p_DefaultValue=>'NO'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CUSTOMERID'
+,p_prompt=>'CUSTOMER ID'
+,p_description=>'CUSTOMER ID'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CUSTOMER_NUMBER'
+,p_prompt=>'CUSTOMER NUMBER'
+,p_description=>'CUSTOMER NUMBER'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CUSTOMER_NUMBER_FROM'
+,p_prompt=>'CUSTOMER NUMBER FROM'
+,p_description=>'CUSTOMER NUMBER FROM'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CUSTOMER_NUMBER_TO'
+,p_prompt=>'CUSTOMER NUMBER TO'
+,p_description=>'CUSTOMER NUMBER TO'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_LINEPHASE'
+,p_prompt=>'LINE PHASE'
+,p_description=>'ORDER LINE PHASE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE, ID FROM SYS_TRANSSTATUS_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_LINESTATUS'
+,p_prompt=>'LINE STATUS'
+,p_description=>'ORDER LINE STATUS'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE, ID FROM SYS_TRANSSTATUS_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ORDLINEOTHERS'
+,p_prompt=>'OTHER CRITERIA'
+,p_description=>'OTHER CRITERIA'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE,ID FROM AR_ORDERLINEOTHERS_L'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ORDPHASE'
+,p_prompt=>'ORDER PHASE'
+,p_description=>'ORDER PHASE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE, ID FROM SYS_TRANSSTATUS_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ORDSTATUS'
+,p_prompt=>'ORDER STATUS'
+,p_description=>'ORDER STATUS'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE, ID FROM SYS_TRANSSTATUS_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_WEBORDERNUMBER'
+,p_prompt=>'WEB ORDER NUMBER'
+,p_description=>'WEB ORDER NUMBER'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_PMNTMETHODID'
+,p_prompt=>'PAYMENT METHOD'
+,p_description=>'PAYMENT METHOD'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT PMNT_METHOD IDVALUE, TO_CHAR(PMNT_METHOD_ID)  ID FROM CMN_PAYMENT_METHODS
+'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ARINVOICESTATUS'
+,p_prompt=>'INVOICE STATUS'
+,p_description=>'INVOICE STATUS'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT '||''''||'NEW'||''''||' IDVALUE,'||''''||'NEW'||''''||' ID FROM DUAL UNION SELECT '||''''||'APPROVED'||''''||' IDVALUE,'||''''||'APPROVED'||''''||' ID FROM DUAL'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ARINVOICETYPE'
+,p_prompt=>'INVOICE TYPE'
+,p_description=>'INVOICE TYPE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT '||''''||'INVOICE'||''''||' IDVALUE,'||''''||'INVOICE'||''''||' ID FROM DUAL UNION SELECT '||''''||'CREDIT NOTE'||''''||' IDVALUE,'||''''||'CREDIT NOTE'||''''||' ID FROM DUAL'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_COMMODITYCODE'
+,p_prompt=>'COMMODITY CODE'
+,p_description=>'COMMODITY CODE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_COUNTRYREGION'
+,p_prompt=>'COUNTRY REGION'
+,p_description=>'COUNTRY REGION'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT DISTINCT COUNTRY_REGION_CODE IDVALUE ,COUNTRY_REGION_CODE ID  FROM CMN_COUNTRIES  WHERE COUNTRY_REGION_CODE IS NOT NULL'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_STATUS'
+,p_prompt=>'STATUS'
+,p_description=>'STATUS'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT '||''''||'NEW'||''''||' IDVALUE,'||''''||'NEW'||''''||' ID FROM DUAL UNION SELECT '||''''||'APPROVED'||''''||' IDVALUE,'||''''||'APPROVED'||''''||' ID FROM DUAL'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_VATCRITERIA'
+,p_prompt=>'TAX CRITERIA'
+,p_description=>'TAX CRITERIA'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT IDVALUE, ID FROM SYS_TAXCRITERIA_L'
+,p_DefaultValue=>'ALL'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_QUOTATIONNO'
+,p_prompt=>'QUOTATION'
+,p_description=>'QUOTATION'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT ORDER_NUMBER IDVALUE, ORDER_NUMBER ID FROM AR_SALESORDER_HEADERS WHERE ORDER_TYPE = '||''''||'QUOTATION'||''''||'
+ORDER BY 1'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ACCOUNTONLY'
+,p_prompt=>'ACCOUNT ONLY'
+,p_description=>'ACCOUNT ONLY'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT '||''''||'YES'||''''||' IDVALUE,'||''''||'YES'||''''||' ID FROM DUAL UNION SELECT '||''''||'NO'||''''||' IDVALUE,'||''''||'NO'||''''||' ID FROM DUAL'
+,p_DefaultValue=>'YES'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_INCLUDEDATE'
+,p_prompt=>'INCLUDE DATE'
+,p_description=>'INCLUDE DATE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT '||''''||'YES'||''''||' IDVALUE,'||''''||'YES'||''''||' ID FROM DUAL UNION SELECT '||''''||'NO'||''''||' IDVALUE,'||''''||'NO'||''''||' ID FROM DUAL'
+,p_DefaultValue=>'NO'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_USERID'
+,p_prompt=>'USER'
+,p_description=>'USER NAME'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE,ID FROM CMN_USERS_L'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_PBTEXT1'
+,p_prompt=>'PB TEXT1'
+,p_description=>'PRICE BREAK TEXT1'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE,ID FROM INV_PBTEXT_L'
+,p_DefaultValue=>'TEXT01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_PBTEXT2'
+,p_prompt=>'PB TEXT2'
+,p_description=>'PRICE BREAK TEXT2'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE,ID FROM INV_PBTEXT_L'
+,p_DefaultValue=>'TEXT02'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_PBTEXT3'
+,p_prompt=>'PB TEXT3'
+,p_description=>'PRICE BREAK TEXT3'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE,ID FROM INV_PBTEXT_L'
+,p_DefaultValue=>'TEXT03'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_PBTEXT4'
+,p_prompt=>'PB TEXT4'
+,p_description=>'PRICE BREAK TEXT4'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE,ID FROM INV_PBTEXT_L'
+,p_DefaultValue=>'TEXT04'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CASHINGUPID'
+,p_prompt=>'CASHING UP'
+,p_description=>'CASHING UP'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT IDVALUE, ID FROM REP_CASHINGUPHEADERS_L'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_PRINTITEMS'
+,p_prompt=>'PRINT CRITERIA'
+,p_description=>'PRINT CRITERIA'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE, ID FROM SYS_GRNPRINTLINE_L'
+,p_DefaultValue=>'ALL'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH'
+,p_description=>'ITEM BATCH'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT IDVALUE, ID FROM INV_ITEMBATCHES_L'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ITEMTEMPLATE'
+,p_prompt=>'TEMPLATE'
+,p_description=>'TEMPLATE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT IDVALUE,ID FROM INV_ITEMTEMPLATE_L'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_INCLUDEPICTURE'
+,p_prompt=>'INCLUDE PICTURE'
+,p_description=>'INCLUDE PICTURE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT IDVALUE,ID FROM SYS_YESNO_L'
+,p_DefaultValue=>'NO'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_OUTSTANDINGONLY'
+,p_prompt=>'OUTSTANDING ONLY'
+,p_description=>'OUTSTANDING ONLY'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT IDVALUE,ID FROM SYS_YESNO_L'
+,p_DefaultValue=>'YES'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_PRICELISTID'
+,p_prompt=>'PRICE LIST'
+,p_description=>'PRICE LIST'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT IDVALUE,ID FROM PR_PRICELISTS_L'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_DBNNUMBER'
+,p_prompt=>'DBN NUMBER'
+,p_description=>'DEBIT NOTE NUMBER'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT DBNOTE_NUMBER IDVALUE,DBNOTE_NUMBER ID FROM AP_DBNOTE_HEADERS'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_DELIVERYNOTES'
+,p_prompt=>'DELIVERY INSTRUNCTION'
+,p_description=>'DELIVERY INSTRUNCTION'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_FREETEXT'
+,p_prompt=>'FREE TEXT(240 CHAR)'
+,p_description=>'FREE TEXT'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_INVOICESOURCE'
+,p_prompt=>'INVOICE SOURCE'
+,p_description=>'INVOICE SOURCE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT LOOKUP_MEANING IDVALUE, LOOKUP_CODE ID FROM REP_LOOKUPCODES_V WHERE LOOKUP_TYPE = '||''''||'SALES_ORDER_SOURCE'||''''||''
+,p_DefaultValue=>'MANUAL'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_INVOICETYPE'
+,p_prompt=>'INVOICE TYPE'
+,p_description=>'INVOICE TYPE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT LOOKUP_MEANING IDVALUE, LOOKUP_CODE ID FROM REP_LOOKUPCODES_V WHERE LOOKUP_TYPE = '||''''||'AR_INVOICE_TYPE'||''''||''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_MAILMERGETEMPLATE'
+,p_prompt=>'TEMPLATE NAME'
+,p_description=>'TEMPLATE NAME'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT IDVALUE, ID FROM SYS_MAILMERGETEMPLATES_L'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_NOOFBOXES'
+,p_prompt=>'NO OF BOXES'
+,p_description=>'NO OF BOXES'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>''
+,p_DefaultValue=>'1'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ATTACHMENTLINEID'
+,p_prompt=>'SAVED QUERY'
+,p_description=>'SAVED QUERY'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT H.NAME||'||''''||':'||''''||'||L.NAME IDVALUE,TO_CHAR(L.ATTACHMENT_LINE_ID) ID FROM SYS_ATTACHMENT_LINES L, SYS_ATTACHMENT_HEADERS H WHERE L.ATTACHMENT_ID = H.ATTACHMENT_ID'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ALLITEMS'
+,p_prompt=>'ALL ITEMS'
+,p_description=>'ALL ITEMS'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT '||''''||'YES'||''''||' IDVALUE,'||''''||'YES'||''''||' ID FROM DUAL UNION SELECT '||''''||'NO'||''''||' IDVALUE,'||''''||'NO'||''''||' ID FROM DUAL'
+,p_DefaultValue=>'NO'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM'
+,p_description=>'CATEGORY NAME'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT CATEGORY_NAME IDVALUE, CATEGORY_NAME ID FROM INV_ITEM_CATEGORIES_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO'
+,p_description=>'CATEGORY NAME'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT CATEGORY_NAME IDVALUE, CATEGORY_NAME ID FROM INV_ITEM_CATEGORIES_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CRNOTENUMBER'
+,p_prompt=>'CREDIT NOTE NUMBER'
+,p_description=>'CREDIT NOTE NUMBER'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT INVOICE_NUMBER IDVALUE,INVOICE_NUMBER ID FROM AR_INVOICE_HEADERS WHERE INVOICE_TYPE = '||''''||'CREDIT NOTE'||''''||''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CUSTOMER_FROM'
+,p_prompt=>'CUSTOMER FROM'
+,p_description=>'CUSTOMER FROM'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT CUSTOMER_NAME IDVALUE,CUSTOMER_NAME ID FROM AR_CUSTOMERS'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_CUSTOMER_TO'
+,p_prompt=>'CUSTOMER TO'
+,p_description=>'CUSTOMER TO'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT CUSTOMER_NAME IDVALUE,CUSTOMER_NAME ID FROM AR_CUSTOMERS'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_DAYSOLD'
+,p_prompt=>'DAYS OLD'
+,p_description=>'DAYS OLD'
+,p_datatype=>'NUMBER'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>''
+,p_DefaultValue=>'7'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_GRNNUMBER'
+,p_prompt=>'GRN NUMBER'
+,p_description=>'GRN NUMBER'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT G.GRN_NUMBER||'||''''||' '||''''||'||G.GRN_DATE||'||''''||' '||''''||'||S.SUPPLIER_NAME IDVALUE, GRN_NUMBER ID FROM PO_GRN_HEADERS G, AP_SUPPLIERS S WHERE G.SUP_SUPPLIER_ID = S.SUPPLIER_ID'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ICBATCHNAME'
+,p_prompt=>'BATCH NAME'
+,p_description=>'ITEM COUNT BATCH NAME'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT BATCH_NAME IDVALUE, BATCH_NAME ID FROM INV_ITEM_COUNT_HEADERS WHERE COUNT_STATUS = '||''''||'NEW'||''''||' AND LOCATION_ID = NVL($LOCATION_ID$,LOCATION_ID)'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ITEMMOVBATCHNAME'
+,p_prompt=>'BATCH NAME'
+,p_description=>'BATCH NAME'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT BATCH_NAME IDVALUE, BATCH_NAME ID FROM INV_ITEM_MOVEMENT_HEADERS'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ITEMNAME_FROM'
+,p_prompt=>'ITEM NAME FROM'
+,p_description=>'ITEM NAME FROM'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT ITEM_NAME IDVALUE, ITEM_NAME ID FROM INV_ITEM_MASTERS_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ITEMNAME_TO'
+,p_prompt=>'ITEM NAME TO'
+,p_description=>'ITEM NAME TO'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT ITEM_NAME IDVALUE, ITEM_NAME ID FROM INV_ITEM_MASTERS_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM'
+,p_description=>'ITEM NUMBER FROM'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO'
+,p_description=>'ITEM NUMBER TO'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_LOCATION_FROM'
+,p_prompt=>'SOURCE LOCATION FROM'
+,p_description=>'SOURCE LOCATION FROM'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'GLOBALVARIABLES'
+,p_Query=>'SELECT LOCATION_NAME IDVALUE, TO_CHAR(LOCATION_ID) ID FROM INV_LOCATIONS WHERE BU_ID = :PARAMETER.APP_BUID AND LOCATION_ID = NVL($LOCATIONID$,LOCATION_ID)'
+,p_DefaultValue=>'GLOBAL.LOCATIONID'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_LOCATION_TO'
+,p_prompt=>'DEST LOCATION NAME'
+,p_description=>'DEST. LOCATION NAME'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT LOCATION_NAME IDVALUE, TO_CHAR(LOCATION_ID) ID FROM INV_LOCATIONS WHERE BU_ID = :PARAMETER.APP_BUID'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_MOVEMENTTYPE'
+,p_prompt=>'MOVEMENT TYPE'
+,p_description=>'MOVEMENT TYPE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT IDVALUE, ID FROM MOVEMENT_TYPES_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_PONUMBER'
+,p_prompt=>'PO NUMBER'
+,p_description=>'PO NUMBER'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT P.PO_NUMBER||'||''''||' '||''''||'||P.PO_DATE||'||''''||' '||''''||'||S.SUPPLIER_NAME IDVALUE, PO_NUMBER ID FROM PO_HEADERS P, AP_SUPPLIERS S WHERE P.SUP_SUPPLIER_ID = S.SUPPLIER_ID AND P.ORDER_STATUS = '||''''||'APPROVED'||''''||''
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION'
+,p_description=>'LOCATION'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'GLOBALVARIABLES'
+,p_Query=>'SELECT LOCATION_NAME IDVALUE, TO_CHAR(LOCATION_ID) ID FROM INV_LOCATIONS WHERE BU_ID = :PARAMETER.APP_BUID AND LOCATION_ID =  NVL($LOCATIONID$,LOCATION_ID)'
+,p_DefaultValue=>'GLOBAL.LOCATIONID'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SALESINVNUMBER'
+,p_prompt=>'INVOICE NUMBER'
+,p_description=>'SALES INVOICE NUMBER'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT INVOICE_NUMBER IDVALUE,INVOICE_NUMBER ID FROM AR_INVOICE_HEADERS WHERE INVOICE_TYPE <> '||''''||'CREDIT NOTE'||''''||' AND INVOICE_STATUS_DATE > TRUNC(SYSDATE) - 30'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SONUMBER'
+,p_prompt=>'ORDER NUMBER'
+,p_description=>'SALES ORDER NUMBER'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT ORDER_NUMBER IDVALUE, ORDER_NUMBER ID FROM AR_SALESORDER_HEADERS'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_STKQTYQUERY'
+,p_prompt=>'QTY CRITERIA'
+,p_description=>'QTY CRITERIA'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT IDVALUE , ID FROM REP_STOCKQTY_CRITERIA_V'
+,p_DefaultValue=>'QTY_INSTOCK < MIN_QTY'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_STKTAKEDIFFQTY'
+,p_prompt=>'DIFF QTY'
+,p_description=>'DIFF QTY'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT IDVALUE, ID FROM REP_STKTAKEDIFFQTY_V'
+,p_DefaultValue=>'DIFFQTY < 0'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_STKTAKENAME'
+,p_prompt=>'STOCK TAKE TYPE'
+,p_description=>'STOCK TAKE TYPE'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT STKTAKE_NAME IDVALUE, STKTAKE_NAME ID FROM INV_STKTAKE_TYPES_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SUBLOCATIONID'
+,p_prompt=>'SUB LOCATION'
+,p_description=>'SUB LOCATION'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT SHORT_NAME IDVALUE, TO_CHAR(SUB_LOCATION_ID) ID FROM INV_SUB_LOCATIONS'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'SUB CATEGORY FROM'
+,p_description=>'SUB CATEGOY FROM'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT SUB_CATEGORY_NAME IDVALUE, SUB_CATEGORY_NAME ID FROM INV_ITEM_SUB_CATEGORIES_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'SUB CATEGORY TO'
+,p_description=>'SUB CATEGORY TO'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT SUB_CATEGORY_NAME IDVALUE, SUB_CATEGORY_NAME ID FROM INV_ITEM_SUB_CATEGORIES_V'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SUGGESTEDQTYFORMULA'
+,p_prompt=>'SUGGESTED FORMULA'
+,p_description=>'SUGGESTED FORMULA'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'SQLQUERY'
+,p_Query=>'SELECT IDVALUE , ID FROM SUGGESTED_QTY_FORMULA_V'
+,p_DefaultValue=>'SELECT AP_PKG.GET_OPTIONVAL('||''''||'SUGGESTED_QTY_FORMULA'||''''||') FROM DUAL'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SUMMARYONLY'
+,p_prompt=>'SUMMARY ONLY'
+,p_description=>'SUMMARY ONLY'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>'CONSTANT'
+,p_Query=>'SELECT '||''''||'YES'||''''||' IDVALUE,'||''''||'YES'||''''||' ID FROM DUAL UNION SELECT '||''''||'NO'||''''||' IDVALUE,'||''''||'NO'||''''||' ID FROM DUAL'
+,p_DefaultValue=>'YES'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SUPPLIERID'
+,p_prompt=>'SUPPLIER'
+,p_description=>'SUPPLIER ID'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT SUPPLIER_NAME IDVALUE, TO_CHAR(SUPPLIER_ID)  ID FROM AP_SUPPLIERS'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM'
+,p_description=>'SUPPLIER FROM'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT SUPPLIER_NAME IDVALUE,SUPPLIER_NAME ID FROM AP_SUPPLIERS'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Parameters(p_ParamName=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO'
+,p_description=>'SUPPLIER TO'
+,p_datatype=>'CHAR'
+,p_DefaultValueType=>''
+,p_Query=>'SELECT SUPPLIER_NAME IDVALUE,SUPPLIER_NAME ID FROM AP_SUPPLIERS'
+,p_DefaultValue=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

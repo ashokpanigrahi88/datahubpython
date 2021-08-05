@@ -1,0 +1,42 @@
+{% extends 'common/masterdetail_edit.html' %}
+{% block title %} Categry {% endblock %}
+{% block findaction %} /inv/category/ {% endblock %}
+{% block findform %}
+{% endblock %}
+{% block findformaction  %}/inventory/itemcategory/{% endblock %}
+{% block parenttitle %}Category <a href={% url 'inventory:itemcategory' %}?operation=parent_new><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>
+{%  endblock %}
+{% block parentrowsbody %}
+<th scope="row"><a href={% url 'inventory:itemcategory' %}?parentid={{ row.category_id }}&nm={{row.category_name|safe}}&childnm={{childnm}}>{{row.category_name}}</a></th>
+
+{% endblock %}
+{% block childtitle %}
+     Sub Category
+                {%  if parentid %}
+                 <a href={% url 'inventory:itemcategory' %}?parentid={{ parentid }}&operation=child_new><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>
+                {% endif %}
+{% endblock %}
+{% block childrowsbody %}
+        <th scope="row"><a href={% url 'inventory:itemcategory' %}?parentid={{ row.iic_category_id.category_id }}&childid={{ row.sub_category_id }}&nm={{nm}}&childnm={{childnm}}>{{ row.sub_category_name }}</a></th>
+
+{% endblock %}
+{% block parentdelete %}
+
+    <a href={% url 'inventory:itemcategory_delete' parentid %} class="delete-btn delete-button">Delete</a>
+{% endblock %}
+{% block childdelete %}
+    <td>
+    <a href={% url 'inventory:itemsubcategory_delete' childid %} class="delete-btn delete-button">Delete</a>
+
+{% endblock %}
+{% block tableheader %}
+ {% endblock %}
+{% block tablerow %}
+{% endblock %}
+{% block rowaction %}
+
+{% endblock %}
+{% block createaction %}
+{% endblock %}
+
+

@@ -1,0 +1,27 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_USER(p_Name=>'SYSADMIN'
+,p_description=>'System Administrator'
+,p_userfullname=>'System Administrator'
+,p_password=>'CDEC437FE961A0A425B4CFF48ACA09AC'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_userResp(p_UserName=>'SYSADMIN'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>''
+,p_read=>'Y'
+,p_write=>'Y'
+,p_delete=>'Y'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_userResp(p_UserName=>'SYSADMIN'
+,p_RespName=>'SYSADMIN'
+,p_description=>''
+,p_read=>'Y'
+,p_write=>'Y'
+,p_delete=>'Y'
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

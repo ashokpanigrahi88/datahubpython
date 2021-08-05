@@ -1,0 +1,215 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'CUSTOMER STATEMENT'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'CUSTOMER STATEMENT'
+,p_name=>'RAR_CUSTSTMNTNOSUM01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'SALES ITEM LIST'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'SALES ITEM LIST'
+,p_name=>'RAR_INVSIMPLEXX'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'DELIVERYNOTE BY ORDERLINE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'DELIVERY NOTE BY ORDER LINE'
+,p_name=>'RAR_DLNOTEORDLINE01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'CUSTOMER MAILMERGE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'CUSTOMER MAIL MERGE'
+,p_name=>'RAR_CUSTMAILMERGE01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'INV REQUISITION CREATE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'CALLS REPORTS FROM CREATE AN INVVENTORY REQUISITION SCREEN'
+,p_name=>'RINV_RQSTIONCR01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'INV REQUISITION DELIVERY NOTE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'PRINTS DELIVERY NOTE FOR INTERNAL REQUISITION'
+,p_name=>'RINV_RQSTIONDLNOTE01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'INV REQUISITION PICKLIST'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'PRINTS REQUISITION PICK LIST'
+,p_name=>'RINV_RQSTIONPICK01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'TILL RECEIPT PRINTER'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'FRONT OFFICE TILL RECEIPT PRINTER'
+,p_name=>'RAR_RECEIPT01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'INV REQUISITION GRN'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'REQUISITION GRN'
+,p_name=>'RINV_RQSTIONGRN01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'BO TILL RECEIPT'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'BACKOFFICE TILL RECEIPT'
+,p_name=>'RAR_RECEIPT01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'SALES INVOICE BATCH COUNT'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'SALES INVOICE BATCH COUNT'
+,p_name=>'RAR_BATCHCOUNT02'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'SALES INVOICE FC'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'SALES INVOICE FC'
+,p_name=>'RAR_INVSIMPLEFC02'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'RESERVENOTE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'RESERVER NOTE FROM SALES ORDER'
+,p_name=>'RAR_RESERVE01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'SALES QUOTATION'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'SALES QUOTATION'
+,p_name=>'RAR_QUOTATION01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'BARCODE TEMPLATE1'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'PRINTS BAROCDE'
+,p_name=>'RINV_BERCODE02'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'BARCODE TEMPLATE2'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'PRINTS BARCODE'
+,p_name=>'RINV_BARCODE02'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'MAIL MERGE TEMPLATE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'INVENTORY MAIL MERGE'
+,p_name=>'RINV_MAILMERGE01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'EXPORT TEMPLATE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'EXPORT DATA'
+,p_name=>'RSYS_EXPDATA01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'APINVOICE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'AP Invoice Report'
+,p_name=>'NONE'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'AR_INVOICE01'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Sales Invoice Screen'
+,p_name=>'AR_INVOICE01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'CREDITNOTE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Credit Note Report'
+,p_name=>'RAR_INVSIMPLE02'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'DEBITNOTE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Debit Note Report'
+,p_name=>'RAP_DBNPORT01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'DELIVERYNOTE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Delivery Note Report'
+,p_name=>'RAR_DELNOTE02'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'GOODSRECEIPTNOTE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Goods Receipt Note'
+,p_name=>'RPO_GRNPORT01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'PICKLIST'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Pick List Report'
+,p_name=>'RAR_PICKSUBLOC01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'PURCHASEORDER'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Purchase Order'
+,p_name=>'RPO_POPORT01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'SALES INVOICE DELIVERYNOTE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Delivery Note called from Sales Invoice'
+,p_name=>'RAR_INVDELNOTE02'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'SALES INVOICE PICKLIST'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Picklist called from sales Invoice'
+,p_name=>'RAR_INVPICKSUBLOC01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'SALESINVOICE'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Sales Invoice Report'
+,p_name=>'RAR_INVSIMPLE02'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_DfltPrograms(p_identifier=>'SALESORDER'
+,p_type=>'REPORTS'
+,p_category=>'STANDARD'
+,p_desc=>'Sales Order Report'
+,p_name=>'RAR_SOPORT01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

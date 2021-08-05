@@ -1,0 +1,41 @@
+{% extends 'common/enquiry_list.html' %}
+{% block moduletitle %}
+  Requisition  Summary
+{% endblock %}
+{% comment %}
+{% block findaction %}{% url 'enquiry:iteminsublocation' %}{% endblock %}
+{% endcomment %}
+
+    {% block findaddiotionalactions %}
+        {% endblock %}
+{% block getpost %}get{% endblock %}
+{% block tableheader %}
+ {% endblock %}
+{% block tablerow %}
+{% endblock %}
+{% block rowaction %}
+{% endblock %}
+
+{% block tablefooter %}
+{% endblock %}
+    {% block postlist %}
+  {% endblock %}
+
+        <div> <h3> {% block table2title %}{% endblock  %}  </h3> </div>
+        {% block tableheader2 %}
+            {{ rowset2_tableheader | safe }}
+        {% endblock %}
+    {% block tablerow2 %}
+          {{ roset2_tablecolumns | safe }}
+        {% endblock %}
+
+
+{% block table4title %}  {% endblock  %}
+        {% block tableheader4%}
+        {% endblock %}
+       {% block tablerow4 %}
+        {% endblock %}
+{% block createaction %}
+{% endblock %}
+
+

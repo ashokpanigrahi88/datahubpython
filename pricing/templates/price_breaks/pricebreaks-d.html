@@ -1,0 +1,12 @@
+{% extends 'common/confirm_delete.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block moduletitle %}
+<h2> {{class}} {{model}} </h2>
+{%  endblock %}
+
+{% block postform %}<a href="{{cancel_href}}" style="text-decoration: none;">
+    <button class="cancel-btn cancel-button" type="button">Cancel</button>
+</a>
+{% endblock %}

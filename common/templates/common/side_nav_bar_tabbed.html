@@ -1,0 +1,254 @@
+{% extends 'common/menu.html' %}
+{# model_form.html #}
+{% load modelform_title %}
+
+{% block content_block %}
+  {% block moduletitle %}    {% endblock %}
+  {% block preform %}
+      {% endblock %}
+     <!-- Container -->
+<div id="container">
+    <div class="main shifted" id="main">
+        <nav class="sticky" id="nav-sidebar">
+                <form action="{% block findformaction %} {% endblock %}" name="find_form" id="find_form" method="get">
+                        {% csrf_token %}
+                    <label >Top 15 records  </label></br>
+
+                    <table>
+                        <tr>
+                    <th><label for="nm">{{ parentlabel }} </label> </th> <td> <input id="nm" type="text" name="nm" value="{{ nm }}" size="10" > </td> </tr>
+                        {% if childlabel %}
+                    <tr>  <th><label for="nm">{{ childlabel }}  </label>  </th> <td> <input id="nm" type="text" name="childnm" value="{{ childnm }}" size="10"> </td>
+                        {% endif %}
+                        <td> <input type="submit" value="Find" name="_find" class="style:'width:50px'"></td>
+                    </tr>
+                        </table>
+                    <input type="hidden" value={{currentoperation}} name="lop">
+                </form>
+            <h6>{% block parenttitle %} {% endblock %} </h6>
+
+            <table>
+                {%  for row in parentrows %}
+                <tr class="model-cmnfunctions">
+                 {% block parentrowsbody %}
+                    {% endblock %}
+                    </tr>
+                    {% block parentrowaction  %}
+                    {% endblock %}
+
+                {% endfor %}
+                    <tr><td>----------------------</td></tr>
+            </table>
+
+            <h6>{% block childtitle %}  {% endblock %}
+            </h6>
+            <table>
+                {%  for row in childrows %}
+                   <tr class="model-cmnfunctions">
+                    {% block childrowsbody %} {% endblock %}
+                    </tr>
+                    {% block childrowaction  %}
+                    {% endblock %}
+                    {% endfor %}
+            </table>
+    </nav>
+    <div class="content">
+        {% if  parentform  %}
+            <div class="content">
+
+              <div class="col-md-12">
+              <form method="post"  id="parent_form", name="parent_form">
+              {% csrf_token %}
+              <br>
+                  {% if parentid %}
+                            {%  block parentdelete  %} {%  endblock %}
+                         {% endif %}
+                  <button type="submit" class="btn btn-success"  value="Save"  name="parent">Save {{ parentform_title }} </button>
+
+                 </br>
+              {% block parentbody %}
+                {% for field in parentform.visible_fields %}
+                        {% if  field.label_tag  %}
+                            {% cycle '<div class="row">' ''  %}
+                            <div class="col-md-1">
+                           <strong>{{ field.label_tag }} </strong>
+                            </div>
+                                {% if field.help_text %}
+                                    <sup>{{ field.help_text }}</sup>
+                                    {% endif %}
+                                {% for error in field.errors %}
+                            <div class="row">
+                                <div class="alert alert-danger">{{error}}</div>
+                                </div>
+                            {%  endfor %}
+                            <div class="col-md-2 pull-left">
+                                <strong>{{ field  }} </strong>
+                            </div>
+                            {% cycle '' '</div>' %}
+                        {% endif  %}
+                {% endfor %}
+              {% endblock %}
+                {% for field in parentform.hidden_fields %}
+                        {{ field }}
+                {% endfor %}
+                <input type="hidden" id="parentid" name="parentid" value="{{ parentid }}">
+                <input type="hidden" id="childid" name="childid" value="{{ childid }}">
+                <input type="hidden" id="nm" name="nm" value="{{ nm }}">
+                <input type="hidden" id="childnm" name="childnm" value="{{ childnm }}">
+                <input type="hidden" id="operation" name="operation" value="{{ operation }}">
+
+              </form>
+            </div>
+        {% endif %}
+
+         {% if  childform  %}
+            <div class="content">
+              <div class="col-md-12">
+              <form method="post" action=""  id="child_form", name="child_form">
+              <br>
+               {% if childid %}
+             {% block childdelete %}
+
+             {% endblock %}
+                   {% endif %}
+               <button type="submit" class="btn btn-success"  value="Save"  name="child">Save {{ childform_title }}</button>
+            <br>
+              {% csrf_token %}
+              {% block childbody %}
+                {% for field in childform.visible_fields %}
+                        {% if  field.label_tag  %}
+                            {% cycle '<div class="row">' ''  %}
+                            <div class="col-md-1">
+                            {{ field.label_tag }}
+                            </div>
+                            <div class="col-md-2 pull-left">
+                                <strong>{{ field  }} </strong>
+                            </div>
+                            {% cycle '' '</div>' %}
+                        {% endif  %}
+
+                {% endfor %}
+                {% endblock %}
+                {% for field in childform.hidden_fields %}
+                        {{ field }}
+                {% endfor %}
+
+                <input type="hidden" id="parentid" name="parentid" value="{{ parentid }}">
+                <input type="hidden" id="childid" name="childid" value="{{ childid }}">
+                <input type="hidden" id="nm" name="nm" value="{{ nm }}">
+                <input type="hidden" id="childnm" name="childnm" value="{{ childnm }}">
+                <input type="hidden" id="operation" name="operation" value="{{ operation }}">
+              </form>
+              </div>
+            </div>
+        {% endif %}
+        {% if masterform %}
+        <div id="content" class="colM">
+          <h1>Master form </h1>
+          <div id="content-main">
+
+        <form method="post" id="my_form" novalidate>
+              {% csrf_token %}
+    {% for field in masterform %}
+    {% cycle '<div class="row">' '' %}
+
+        <div class="col-md-2 pull-right text-right d-label font-weight-normal">
+            {{ field.label_tag }}
+
+            {% if field.help_text %}
+            <sup>{{ field.help_text }}</sup>
+            {% endif %}
+            {% for error in field.errors %}
+            <div class="row">
+                <div class="alert alert-danger">{{error}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-3 pull-left">
+            {{ field }}
+        </div>
+    {% cycle '' '</div>' %}
+
+    {% endfor %}
+
+                </div>
+        <div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save">
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+</div>
+            <script id="django-admin-form-add-constants"
+            src="/static/admin/js/change_form.js"  async>
+            </script>
+        <script id="django-admin-prepopulated-fields-constants"
+             src="/static/admin/js/prepopulate_init.js"
+                    data-prepopulated-fields="[]">
+        </script>
+        </div>
+
+</div>
+    {% endif  %}
+    <!-- end masterform -->
+
+    <!-- start detail -->
+        {% if detailform %}
+        <div id="content" class="colM">
+          <h1>Master form </h1>
+          <div id="content-main">
+
+        <form method="post" id="my_form" novalidate>
+              {% csrf_token %}
+    {% for field in detailform %}
+    {% cycle '<div class="row">' '' %}
+
+        <div class="col-md-2 pull-right text-right font-weight-normal">
+            {{ field.label_tag }}
+
+            {% if field.help_text %}
+            <sup>{{ field.help_text }}</sup>
+            {% endif %}
+            {% for error in field.errors %}
+            <div class="row">
+                <div class="alert alert-danger">{{error}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-3 pull-left">
+            {{ field }}
+        </div>
+    {% cycle '' '</div>' %}
+
+    {% endfor %}
+
+                </div>
+        <div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save">
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+</div>
+            <script id="django-admin-form-add-constants"
+            src="/static/admin/js/change_form.js"  async>
+            </script>
+        <script id="django-admin-prepopulated-fields-constants"
+             src="/static/admin/js/prepopulate_init.js"
+                    data-prepopulated-fields="[]">
+        </script>
+        </div>
+
+    </form>
+
+        {% block postform %}
+
+        {% endblock %}
+</div>
+    {% endif  %}
+ <!-- END Content -->
+        <div id="footer"></div>
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+
+    {% block modulefooter %}
+        {% endblock %}
+{% endblock %}

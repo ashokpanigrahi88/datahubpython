@@ -1,0 +1,679 @@
+,GL_ACCOUNT_ID,CLT_LOOKUP_TYPE,UPDATE_SOURCE,RECORD_STATUS,LAST_UPDATED_BY,LAST_UPDATE_DATE,CREATION_DATE,CREATED_BY,DELETE_FLAG,BU_ID,END_DATE,START_DATE,DESCRIPTION,LOOKUP_MEANING,LOOKUP_CODE,ATTRIBUTE12,ATTRIBUTE11,ATTRIBUTE10,ATTRIBUTE9,ATTRIBUTE8,ATTRIBUTE7,ATTRIBUTE6,ATTRIBUTE5,ATTRIBUTE4,ATTRIBUTE3,ATTRIBUTE2,ATTRIBUTE1,LOOKUP_DEFAULT,SL_NO,SECURITY_LEVEL
+0,nan,PRICE_BREAK_TEXT_TYPES,API,U,2.0,2011-01-21 09:52:21,2011-01-19 17:13:49,nan,None,1,NaT,NaT, $PRICEEXLTAX$ MIN $QTYFROM$,TEXTA4,TEXTA4,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+1,nan,PRICE_BREAK_TEXT_TYPES,API,I,nan,2011-01-19 17:13:49,2011-01-19 17:13:49,nan,None,None,NaT,NaT,"$PRICEEXLTAX$
+MIN $QTYFROM$
+",TEXTNORMAL,TEXTNORMAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+2,nan,SALES_ORDER_CATEGORY_CODE,API,I,nan,2011-01-20 21:04:58,2011-01-20 21:04:58,nan,None,None,NaT,NaT,None,MANUALLY ENTERED,MANUALLY ENTERED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+3,nan,SALES_ORDER_CATEGORY_CODE,API,I,nan,2011-01-20 21:04:58,2011-01-20 21:04:58,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+4,2.0,SALES_ORDER_SOURCE,None,U,2.0,2011-01-24 09:27:26,2011-01-20 21:09:11,2.0,None,1,NaT,NaT,BCP MIGRATED INVOICE,BCP,BCP,None,None,None,None,None,None,None,None,None,None,None,BCP.,N,nan,USER
+5,nan,WEB_EXPORT_HINT_CODES,API,I,nan,2011-02-10 21:11:46,2011-02-10 21:11:46,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,SYSTEM
+6,nan,WEB_EXPORT_HINT_CODES,API,I,nan,2011-02-10 21:11:46,2011-02-10 21:11:46,nan,None,None,NaT,NaT,None,SPECIAL OFFER,SPECIAL OFFER,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,SYSTEM
+7,nan,WWW_UPLOAD_PREFERENCE,API,I,nan,2011-02-10 21:11:46,2011-02-10 21:11:46,nan,None,None,NaT,NaT,None,1:HOME PAGE,1:HOME PAGE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+8,nan,WWW_UPLOAD_PREFERENCE,API,I,nan,2011-02-10 21:11:46,2011-02-10 21:11:46,nan,None,None,NaT,NaT,None,2:SLIDE SHOW,2:SLIDE SHOW,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+9,nan,WWW_UPLOAD_PREFERENCE,API,I,nan,2011-02-10 21:11:46,2011-02-10 21:11:46,nan,None,None,NaT,NaT,None,99:GENERAL,99:GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,SYSTEM
+10,nan,PO_TRANS_CATEGORY,API,I,nan,2011-02-10 21:11:46,2011-02-10 21:11:46,nan,None,None,NaT,NaT,None,INTERNAL USAGE,INTERNAL USAGE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+11,nan,CUSTOMER_TYPE_CODE,API,I,nan,2011-02-20 18:04:09,2011-02-20 18:04:09,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+12,nan,COUNTRY_REGION_CODE,API,I,nan,2011-02-20 18:04:09,2011-02-20 18:04:09,nan,None,None,NaT,NaT,None,EC,EC,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+13,nan,COUNTRY_REGION_CODE,API,I,nan,2011-02-20 18:04:09,2011-02-20 18:04:09,nan,None,None,NaT,NaT,None,NON-EC,NON-EC,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+14,nan,ITEM_SEARCH_QUERIES,API,I,nan,2011-02-20 18:04:09,2011-02-20 18:04:09,nan,None,None,NaT,NaT,PURCHASEABLE = 'Y',PURCHASEABLE=Y,PURCHASEABLE=Y,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+15,nan,ITEM_EXTERNAL_LOCATIONS,None,I,5.0,2011-03-03 12:10:26,2011-03-03 12:10:26,5.0,None,1,NaT,NaT,None,UNIT 4,UNIT 4,None,None,None,None,None,None,None,None,None,None,None,None,Y,1.0,SYSTEM
+16,nan,SALES_UNIT_BARCODE_SUFFIX,API,I,nan,2011-03-07 21:17:47,2011-03-07 21:17:47,nan,None,None,NaT,NaT,None,A,1,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+17,nan,SALES_UNIT_BARCODE_SUFFIX,API,I,nan,2011-03-07 21:17:47,2011-03-07 21:17:47,nan,None,None,NaT,NaT,None,C,12,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+18,nan,SALES_UNIT_BARCODE_SUFFIX,API,I,nan,2011-03-07 21:17:47,2011-03-07 21:17:47,nan,None,None,NaT,NaT,None,D,24,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+19,nan,SALES_UNIT_BARCODE_SUFFIX,API,I,nan,2011-03-07 21:17:47,2011-03-07 21:17:47,nan,None,None,NaT,NaT,None,E,36,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+20,nan,SALES_UNIT_BARCODE_SUFFIX,API,I,nan,2011-03-07 21:17:47,2011-03-07 21:17:47,nan,None,None,NaT,NaT,None,F,48,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+21,nan,SALES_UNIT_BARCODE_SUFFIX,API,I,nan,2011-03-07 21:17:47,2011-03-07 21:17:47,nan,None,None,NaT,NaT,None,B,6,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+22,nan,SALES_UNIT_BARCODE_SUFFIX,API,I,nan,2011-03-07 21:17:47,2011-03-07 21:17:47,nan,None,None,NaT,NaT,None,H,72,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+23,nan,STKTAKE_SOURCE_CODE,API,I,nan,2011-03-11 20:54:56,2011-03-11 20:54:56,nan,None,None,NaT,NaT,None,MOBILE,MOBILE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+24,nan,STKTAKE_SOURCE_CODE,API,I,nan,2011-03-11 20:54:56,2011-03-11 20:54:56,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,SYSTEM
+25,nan,DISPLAY_IMAGE,API,U,29.0,2011-10-26 15:34:57,2011-04-15 22:47:17,nan,None,1,NaT,NaT,None,GOODS RECEIPT,GRN,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+26,nan,SAGE_DEFAULTS,API,I,nan,2011-03-22 20:18:43,2011-03-22 20:18:43,nan,None,None,NaT,NaT,None,DEAPRTMENR,DEPARTMENT,None,None,None,None,None,None,None,None,None,None,None,01,N,nan,SYSTEM
+27,nan,SAGE_DEFAULTS,API,I,nan,2011-03-22 20:18:43,2011-03-22 20:18:43,nan,None,None,NaT,NaT,None,PUCHASE CREDIT NOTES,PC,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+28,nan,SAGE_DEFAULTS,API,I,nan,2011-03-22 20:18:43,2011-03-22 20:18:43,nan,None,None,NaT,NaT,None,PURCAHSE INVOICE,PI,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+29,156.0,SAGE_DEFAULTS,API,U,29.0,2012-03-21 17:26:18,2011-03-22 20:18:43,nan,None,1,NaT,NaT,None,SALES RECEIPT,SA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+30,48.0,SAGE_DEFAULTS,API,U,29.0,2012-03-21 17:43:58,2011-03-22 20:18:43,nan,None,1,NaT,NaT,None,SALES CREDIT,SC,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+31,48.0,SAGE_DEFAULTS,API,U,29.0,2012-03-21 17:41:18,2011-03-22 20:18:43,nan,None,1,NaT,NaT,None,SALES INVOICE,SI,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+32,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2011-03-22 20:18:43,2011-03-22 20:18:43,nan,None,None,NaT,NaT,None,PRIMARY DAMAGED,PRIMARY DAMAGED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+33,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2011-03-22 20:18:43,2011-03-22 20:18:43,nan,None,None,NaT,NaT,None,PRIMARY REFUND,PRIMARY REFUND,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+34,nan,DISPLAY_IMAGE,API,I,nan,2011-04-15 22:47:17,2011-04-15 22:47:17,nan,None,None,NaT,NaT,None,DEBIT NOTE,DBN,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+35,nan,DISPLAY_IMAGE,API,U,29.0,2011-04-15 22:50:27,2011-04-15 22:47:17,nan,None,1,NaT,NaT,None,PURCHASE ORDER,PO,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+36,nan,DISPLAY_IMAGE,API,U,29.0,2015-10-07 09:41:31,2011-04-15 22:47:17,nan,None,1,NaT,NaT,None,SALES INVOICE,SI,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+37,nan,DISPLAY_IMAGE,API,I,nan,2011-04-15 22:47:17,2011-04-15 22:47:17,nan,None,None,NaT,NaT,None,SALES ORDER,SO,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+38,nan,AMAZON_DEFAULTS,API,I,nan,2011-04-15 22:47:17,2011-04-15 22:47:17,nan,None,None,NaT,NaT,None,CUSTOMER NUMBER,CUSTOMER NUMBER,None,None,None,None,None,None,None,None,None,None,None,Z0063,N,nan,SYSTEM
+39,nan,AMAZON_DEFAULTS,API,I,nan,2011-04-15 22:47:17,2011-04-15 22:47:17,nan,None,None,NaT,NaT,None,FREIGHT ITEM,FREIGHT ITEM,None,None,None,None,None,None,None,None,None,None,None,99901,N,nan,SYSTEM
+40,nan,SUB_LOCATION_TYPES,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,EXTERNAL,EXTERNAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+41,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,APPLY_OFFER,APPLY_OFFER,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+42,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,ENFORCE_REORDER_QTY,ENFORCE_REORDER_QTY,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+43,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,ENFORCE_TAX_CODE,ENFORCE_TAX_CODE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+44,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,FLAGINWEBEXPORT,FLAGINWEBEXPORT,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+45,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,FREIGHT,FREIGHT,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+46,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,ITEM_STATUS,ITEM_STATUS,None,None,None,None,None,None,None,None,None,None,None,ACTIVE,N,nan,SYSTEM
+47,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,PRINT_PICTURE,PRINT_PICTURE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+48,nan,ITEM_DEFAULTS,API,U,29.0,2015-02-25 07:54:58,2011-04-24 21:32:37,nan,None,1,NaT,NaT,None,PUBLISH_TO_WEB,PUBLISH_TO_WEB,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+49,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,PURCHASEABLE,PURCHASEABLE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+50,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,RESERVABLE,RESERVABLE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+51,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,SALEABLE,SALEABLE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+52,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,SERIAL_NUMBERED,SERIAL_NUMBERED,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+53,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,SERVICEDITEM,SERVICEDITEM,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+54,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,STOCKABLE,STOCKABLE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+55,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,TAKE_SNAPSHOT,TAKE_SNAPSHOT,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+56,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,TRACK_USAGE,TRACK_USAGE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+57,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,VALUABLE,VALUABLE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+58,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,WARRANTIED,WARRANTIED,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+59,nan,ITEM_DEFAULTS,API,I,nan,2011-04-24 21:32:37,2011-04-24 21:32:37,nan,None,None,NaT,NaT,None,WEIGHED_ITEM,WEIGHED_ITEM,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+60,nan,ADDRESS_TYPES,API,I,nan,2021-01-17 10:25:56,2011-05-14 10:21:34,nan,None,None,2021-01-01 00:00:00,2021-01-01 00:00:00,None,BUSINESS,BUSINESS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+61,nan,ADDRESS_TYPES,API,I,nan,2011-05-14 10:21:34,2011-05-14 10:21:34,nan,None,None,NaT,NaT,None,RESIDENTIAL,RESIDENTIAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+62,nan,ITEM_DEFAULTS,API,I,nan,2011-06-08 10:22:23,2011-06-08 10:22:23,nan,None,None,NaT,NaT,None,IMAGE_HINT,IMAGE_HINT,None,None,None,None,None,None,None,None,None,None,None,AVAILABLE,N,nan,SYSTEM
+63,nan,ITEM_DELETE_PRECHECK,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,INV_ITEM_MOVEMENT_LINES,INV_ITEM_MOVEMENT_LINES,None,None,None,None,None,None,None,None,None,None,None,INV02_PKG.ITEM_MOVEMENTSTATUS(:P_ITEMID) = 'NEW',N,nan,SYSTEM
+64,nan,ITEM_DELETE_PRECHECK,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,AP_DBNOTE_LINES,AP_DBNOTE_LINES,None,None,None,None,None,None,None,None,None,None,None,ITEM_ID = :P_ITEMID AND DBNOTE_STATUS = 'NEW',N,nan,SYSTEM
+65,nan,ITEM_DELETE_PRECHECK,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,AR_DELIVERY_LINES,AR_DELIVERY_LINES,None,None,None,None,None,None,None,None,None,None,None,ITEM_ID = :P_ITEMID AND DELIVERY_LINE_STATUS = 'NEW',N,nan,SYSTEM
+66,nan,ITEM_DELETE_PRECHECK,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,AR_INVOICE_LINES,AR_INVOICE_LINES,None,None,None,None,None,None,None,None,None,None,None,ITEM_ID = :P_ITEMID AND INVOICE_LINE_STATUS = 'NEW',N,nan,SYSTEM
+67,nan,ITEM_DELETE_PRECHECK,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,AR_SALESORDER_LINES,AR_SALESORDER_LINES,None,None,None,None,None,None,None,None,None,None,None,ITEM_ID = :P_ITEMID AND ORDER_LINE_STATUS = 'NEW',N,nan,SYSTEM
+68,nan,ITEM_DELETE_PRECHECK,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,INV_ITEMCOUNT_INTERFACE,INV_ITEMCOUNT_INTERFACE,None,None,None,None,None,None,None,None,None,None,None,ITEM_ID = :P_ITEMID AND STATUS = 'NEW',N,nan,SYSTEM
+69,nan,ITEM_DELETE_PRECHECK,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,INV_ITEM_COUNT_LINES,INV_ITEM_COUNT_LINES,None,None,None,None,None,None,None,None,None,None,None,ITEM_ID = :P_ITEMID AND COUNT_STATUS = 'NEW',N,nan,SYSTEM
+70,nan,ITEM_DELETE_PRECHECK,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,INV_QUICKCODE_LINES,INV_QUICKCODE_LINES,None,None,None,None,None,None,None,None,None,None,None,ITEM_ID = :P_ITEMID,N,nan,SYSTEM
+71,nan,ITEM_DELETE_PRECHECK,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,PO_GRN_LINES,PO_GRN_LINES,None,None,None,None,None,None,None,None,None,None,None,ITEM_ID = :P_ITEMID AND GRN_STATUS = 'NEW',N,nan,SYSTEM
+72,nan,INV_REQUISITION_CATEGORY,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+73,nan,INV_REQUISITION_SOURCE,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,AUTOMATIC,AUTOMATIC,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+74,nan,INV_REQUISITION_SOURCE,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,MANUAL,MANUAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+75,nan,INV_REQUISITION_TYPE,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,REPLENISHMENT,REPLENISHMENT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+76,nan,PRIORITY_CODES,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,01:URGENT,01:URGENT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+77,nan,PRIORITY_CODES,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,02:HIGH,02:HIGH,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+78,nan,PRIORITY_CODES,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,03:MEDIUM,03:MEDIUM,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+79,nan,PRIORITY_CODES,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,04:LOW,04:LOW,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+80,nan,PRIORITY_CODES,API,I,nan,2011-06-08 10:22:24,2011-06-08 10:22:24,nan,None,None,NaT,NaT,None,05:NORMAL,05:NORMAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+81,nan,SIMILAR_ITEM_CATEGORY,None,I,7.0,2011-06-15 15:20:46,2011-06-15 15:20:46,7.0,None,1,NaT,NaT,None,SPARE PARTS,SPARE PARTS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+82,nan,SALES_ORDER_SOURCE,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,IMPORT,IMPORT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+83,nan,SALES_ORDER_CATEGORY_CODE,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,EBAY,EBAY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+84,nan,SALES_ORDER_CATEGORY_CODE,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,WEB,WEB,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+85,nan,MOBILE_DEFAULTS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,PRICE CHECK SUB LOCATIONS,PC:SUBLOCSTOCK,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+86,nan,MOBILE_DEFAULTS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,PRICE CHECK IN STOCK,PC:INSTOCK,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+87,nan,MOBILE_DEFAULTS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,PRICE CHECK FLAGS,PC:FLAGS,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+88,nan,MOBILE_DEFAULTS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,PC:PB,PC:PB,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+89,nan,MOBILE_DEFAULTS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,PRICE CHECK PRICE1,PC:PRICE1,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+90,nan,MOBILE_DEFAULTS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,PRICE CHECK PRICE2,PC:PRICE2,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+91,nan,MOBILE_DEFAULTS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,PRICE CHECK PRICE3,PC:PRICE3,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+92,nan,MOBILE_DEFAULTS,API,U,29.0,2021-01-16 04:40:21,2011-09-10 11:25:49,nan,None,1,NaT,NaT,None,PRICE CHECK PRICE4,PC:PRICE4,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+93,nan,MOBILE_DEFAULTS,API,U,29.0,2021-01-16 04:40:21,2011-09-10 11:25:49,nan,None,1,NaT,NaT,None,PRICE CHECK PRICE5,PC:PRICE5,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+94,nan,EU_DIRECTIVE_WARNINGS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+95,nan,ITEM_EXTRAS_CATEGORY,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,EU_DIRECTIVE_WARNINGS,EU_DIRECTIVE_WARNINGS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+96,nan,EXPORT_GRID_DEFAULTS,API,U,29.0,2021-01-15 09:23:57,2011-09-10 11:25:49,nan,None,1,NaT,NaT,None,EMAIL OUTPUT,EMAIL OUTPUT,None,None,None,None,None,None,None,None,None,None,None,NO,N,nan,SYSTEM
+97,nan,EXPORT_GRID_DEFAULTS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,DIR_ALIAS,DIR_ALIAS,None,None,None,None,None,None,None,None,None,None,None,/FORMS/HTML/,N,nan,SYSTEM
+98,nan,EXPORT_GRID_DEFAULTS,API,I,nan,2011-09-10 11:25:49,2011-09-10 11:25:49,nan,None,None,NaT,NaT,None,FILE EXTENSION,FILE EXTENSION,None,None,None,None,None,None,None,None,None,None,None,.XLS,N,nan,SYSTEM
+99,nan,EXPORT_GRID_DEFAULTS,API,U,29.0,2021-01-15 09:23:57,2011-09-10 11:25:49,nan,None,1,NaT,NaT,None,VIEW OUTPUT,VIEW OUTPUT,None,None,None,None,None,None,None,None,None,None,None,NO,N,nan,SYSTEM
+100,nan,AUTO_EMAIL,API,I,nan,2011-10-17 18:19:57,2011-10-17 18:19:57,nan,None,None,NaT,NaT,None,GOODS RECEIPT,GOODS RECEIPT,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+101,nan,AUTO_EMAIL,API,I,nan,2011-10-17 18:19:57,2011-10-17 18:19:57,nan,None,None,NaT,NaT,None,PURCHASE ORDER,PURCHASE ORDER,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+102,nan,AUTO_EMAIL,API,I,nan,2011-10-17 18:19:57,2011-10-17 18:19:57,nan,None,None,NaT,NaT,None,SALES INVOICE,SALES INVOICE,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+103,nan,AUTO_EMAIL,API,I,nan,2011-10-17 18:19:57,2011-10-17 18:19:57,nan,None,None,NaT,NaT,None,SALES ORDER,SALES ORDER,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+104,nan,MOBILE_DEFAULTS,API,I,nan,2011-10-17 18:19:57,2011-10-17 18:19:57,nan,None,None,NaT,NaT,None,PC: ITEM IN PO,PC:ITEMINPO,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+105,nan,AUTO_EMAIL,API,I,nan,2011-10-19 15:52:14,2011-10-19 15:52:14,nan,None,None,NaT,NaT,None,SALES INVOICE FC,SALES INVOICE FC,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+106,nan,AUTO_EMAIL,API,I,nan,2011-10-19 15:52:14,2011-10-19 15:52:14,nan,None,None,NaT,NaT,None,DELIVERYNOTE,DELIVERYNOTE,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+107,nan,AUTO_EMAIL,API,I,nan,2011-10-19 15:52:14,2011-10-19 15:52:14,nan,None,None,NaT,NaT,None,GOODSRECEIPT,GOODSRECEIPT,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+108,nan,AUTO_EMAIL,API,I,nan,2011-10-19 15:52:14,2011-10-19 15:52:14,nan,None,None,NaT,NaT,None,PURCAHSEORDER,PURCAHSEORDER,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+109,nan,AUTO_EMAIL,API,I,nan,2011-10-19 15:52:14,2011-10-19 15:52:14,nan,None,None,NaT,NaT,None,SALESINVOICE,SALESINVOICE,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+110,nan,AUTO_EMAIL,API,I,nan,2011-10-19 15:52:14,2011-10-19 15:52:14,nan,None,None,NaT,NaT,None,SALESORDER,SALESORDER,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+111,nan,AMAZON_DEFAULTS,API,I,nan,2011-10-22 18:05:37,2011-10-22 18:05:37,nan,None,None,NaT,NaT,None,DISCOUNT ITEM,DISCOUNT ITEM,None,None,None,None,None,None,None,None,None,None,None,99901,N,nan,SYSTEM
+112,nan,WEB_SITE_DEFAULTS,API,I,nan,2011-11-02 20:17:07,2011-11-02 20:17:07,nan,None,None,NaT,NaT,None,STOCK PUBLISH PERCENTAGE,STOCK PUBLISH PERCENTAGE,None,None,None,None,None,None,None,None,None,None,None,90%,N,nan,SYSTEM
+113,nan,AUTO_EMAIL,API,I,nan,2011-11-08 18:41:50,2011-11-08 18:41:50,nan,None,None,NaT,NaT,None,SALES INVOICE DELIVERYNOTE,SALES INVOICE DELIVERYNOTE,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+114,nan,DATE_FORMAT,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,DD/MM/YY,DD/MM/YY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+115,nan,DATE_FORMAT,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,DD/MM/YY HH24:MI:SS,DD/MM/YY HH24:MI:SS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+116,nan,DATE_FORMAT,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,DD/MM/YYYY,DD/MM/YYYY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+117,nan,DATE_FORMAT,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,DD/MM/YYYY HH24:MI:SS,DD/MM/YYYY HH24:MI:SS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+118,nan,DATE_FORMAT,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,FMDD MONTH YYYY,FMDD MONTH YYYY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+119,nan,DATE_FORMAT,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,YYYY/MM/DD,YYYY/MM/DD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+120,nan,DATE_FORMAT,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,YYYY/MM/DD HH24:MI:SS,YYYY/MM/DD HH24:MI:SS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+121,157.0,SAGE_DEFAULTS,API,U,29.0,2012-03-21 17:26:18,2011-12-31 12:44:12,nan,None,1,NaT,NaT,None,PURCHASE RECEIPT,PA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+122,nan,ITEM_SEARCH_QUERIES,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,SALEABLE = 'Y',SALEABLE,SALEABLE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+123,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,DOC,DOC,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+124,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,PDF,PDF,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+125,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,XLS,XLS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+126,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,SYMBOL,SYMBOL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+127,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,MOVIE,MOVIE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+128,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2021-01-17 10:51:49,2011-12-31 12:44:12,nan,None,None,2021-01-01 00:00:00,2021-01-01 00:00:00,None,COMMENT,COMMENT,None,None,None,None,None,None,None,None,None,None,None,None,N,2.0,SYSTEM
+129,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2021-01-17 10:41:36,2011-12-31 12:44:12,nan,None,None,2021-01-01 00:00:00,2021-01-01 00:00:00,None,KEY WORDS,KEY WORDS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+130,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,NOTES,NOTES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+131,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,TECHNICAL SPECS,TECHNICAL SPECS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+132,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,USER MANUAL,USER MANUAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+133,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,VIDEO,VIDEO,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+134,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,BOTTM RIGHT,BOTTM RIGHT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+135,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,BOTTOM CENTER,BOTTOM CENTER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+136,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,BOTTOM LEFT,BOTTOM LEFT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+137,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,CENTER CENTER,CENTER CENTER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+138,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,CENTER LEFT,CENTER LEFT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+139,nan,SUB_LOCATION_TYPES,API,I,nan,2009-12-28 11:29:10,2009-12-28 11:29:10,nan,None,None,NaT,NaT,None,VAN,VAN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+140,nan,SUB_LOCATION_TYPES,API,I,nan,2009-12-28 11:29:10,2009-12-28 11:29:10,nan,None,None,NaT,NaT,None,INTERNAL,INTERNAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+141,nan,PRICELIST_USAGE_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,LOCATION,LOCATION,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+142,nan,CREDIT_ITEM_STATUS_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,DAMAGED,DAMAGED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+143,nan,CREDIT_ITEM_STATUS_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,DEFECTIVE,DEFECTIVE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+144,nan,CREDIT_ITEM_STATUS_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,DID NOT ORDER,DID NOT ORDER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+145,nan,CREDIT_ITEM_STATUS_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,NOT HAPPY,NOT HAPPY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+146,nan,CREDIT_ITEM_STATUS_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,UNKNOWN,UNKNOWN,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+147,nan,CREDIT_ITEM_STATUS_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,WRONG ITEM PICKED,WRONG ITEM PICKED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+148,nan,CREDIT_INV_ACTION_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,ADD TO STOCK,ADD TO STOCK,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+149,nan,CREDIT_INV_ACTION_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,DO NOT ADD TO STOCK,DO NOT ADD TO STOCK,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+150,nan,CREDIT_INV_ACTION_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,RECYCLE,RECYCLE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+151,nan,CREDIT_INV_ACTION_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,RETURN TO SUPPLIER,RETURN TO SUPPLIER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+152,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,UNKNOWN,UNKNOWN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+153,nan,SALES_ORDER_CATEGORY_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,SHOP CREDIT,SHOP CREDIT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+154,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,CONTRACT CANCELLED,CONTRACT CANCELLED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+155,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,DENIED PAYMENT,DENIED PAYMENT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+156,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,DISPUTE,DISPUTE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+157,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:01,2009-12-28 11:29:01,nan,None,None,NaT,NaT,None,GOODWILL,GOODWILL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+158,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,UNIT PRICE OVERCHARGED,OVERCHARGED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+159,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,UNDERSHIPPED,UNDERSHIPPED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+160,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,UNHAPPY CUSTOMER,UNHAPPY CUSTOMER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+161,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,WRITEOFF,WRITEOFF,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+162,nan,AR_RETURN_REASON_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,WRONGLY INVOICED,WRONGLYINVOICED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+163,nan,GL_QUALIFIER_CODE2,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,BALANCE SHEET,BS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+164,nan,GL_QUALIFIER_CODE2,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,"BALANCE SHEET , PROFIT AND LOS","BS,PL",None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+165,nan,GL_QUALIFIER_CODE2,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,NOMINAL CODE,NM,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+166,nan,GL_QUALIFIER_CODE2,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,PROFIT AND LOSS,PL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+167,nan,GL_QUALIFIER_CODE1,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,ASSET,ASSET,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+168,nan,GL_QUALIFIER_CODE1,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,EXPENSES,EXPENSES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+169,nan,GL_QUALIFIER_CODE1,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,LIABILITY,LIABILITY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+170,nan,GL_QUALIFIER_CODE1,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,REVENUE,REVENUE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+171,nan,AR_INVOICE_TYPE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,CREDIT NOTE,CREDIT NOTE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+172,nan,AR_INVOICE_TYPE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,INVOICE,INVOICE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+173,nan,AR_INVOICE_TYPE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+174,nan,SALES_ORDER_SOURCE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,MANUAL,MANUAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+175,nan,SALES_ORDER_CATEGORY_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,SHOP SALES,SHOP SALES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+176,nan,SALES_ORDER_SOURCE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,SHOP SALES,SHOP SALES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+177,nan,SALES_ORDER_SOURCE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,WEB ORDER,WEB ORDER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+178,nan,AR_PAYMENT_SOURCES,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,CREDIT NOTE,CREDIT NOTE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+179,nan,AR_PAYMENT_SOURCES,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,INVOICE,INVOICE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+180,nan,AR_PAYMENT_SOURCES,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,RETURN,RETURN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+181,nan,AR_PAYMENT_SOURCES,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,BANK,BANK,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+182,nan,AR_PAYMENT_SOURCES,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,RECEIVABLES,RECEIVABLES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+183,nan,AR_PAYMENT_SOURCES,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,TAX REFUND,TAX REFUND,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+184,nan,AR_PAYMENT_SOURCES,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,WEB,WEB,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+185,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,NO EMAIL,NO EMAIL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+186,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,NO FAX,NO FAX,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+187,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,NO MAILSHOT,NO MAILSHOT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+188,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,NO PHONE,NO PHONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+189,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,MAILSHOT,MAILSHOT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+190,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+191,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,ANY,ANY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+192,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,EMAIL,EMAIL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+193,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,FAX,FAX,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+194,nan,CONTACT_METHOD_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,PHONE,PHONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+195,nan,PRICELIST_USAGE_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,SUPPLIER,SUPPLIER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+196,nan,PRICELIST_USAGE_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,CUSTOMER,CUSTOMER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+197,nan,PRICELIST_GROUP_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+198,nan,CONTACT_TYPE_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,ACCOUNT PAYABLE,ACCOUNT PAYABLE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+199,nan,CONTACT_TYPE_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,ACCOUNTS RECEIVABLES,ACCOUNTS RECEIVABLES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+200,nan,CONTACT_TYPE_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,PHONE,PHONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+201,nan,CONTACT_TYPE_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+202,nan,CONTACT_GROUP_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,MARKETING,MARKETING,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+203,nan,CONTACT_GROUP_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,PERSONAL,PERSONAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+204,nan,CONTACT_GROUP_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,SHIP_TO,SHIP_TO,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+205,nan,CONTACT_GROUP_CODE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,BILL_TO,BILL_TO,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+206,nan,ITEM_CLASS_CATEGORY,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,SUNDRY ITEMS,SUNDRY ITEMS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+207,nan,ITEM_SNAPSHOT_TYPE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,ALL ITEMS,ALL ITEMS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+208,nan,ITEM_SNAPSHOT_TYPE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,STOCKABLE ITEMS,STOCKABLE ITEMS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+209,nan,ITEM_SNAPSHOT_TYPE,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,ONLY VALUABLE ITEMS,VALUABLE ITEMS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+210,nan,STOCK_TAKE_CATEGORY,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,COUNT CLASS A,COUNT CLASS A,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+211,nan,STOCK_TAKE_CATEGORY,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,COUNT CLASS B,COUNT CLASS B,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+212,nan,STOCK_TAKE_CATEGORY,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,COUNT CLASS C,COUNT CLASS C,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+213,nan,ITEM_CLASS_CATEGORY,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,A CATEGORY,A CATEGORY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+214,nan,ITEM_CLASS_CATEGORY,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,B CATEGORY,B CATEGORY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+215,nan,ITEM_CLASS_CATEGORY,API,I,nan,2009-12-28 11:29:02,2009-12-28 11:29:02,nan,None,None,NaT,NaT,None,C CATEGORY,C CATEGORY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+216,nan,ITEM_CLASS_CATEGORY,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,D CATEGORY,D CATEGORY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+217,nan,ITEM_CLASS_CATEGORY,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,E CATEGORY,E CATEGORY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+218,nan,SIZE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+219,nan,SIMILAR_ITEM_CATEGORY,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,LINKED ITEMS,LINKED ITEMS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+220,nan,PO_TRANS_CATEGORY,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+221,nan,LOCATION_REGION_CODE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+222,nan,COLOUR,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,BLACK,BLACK,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+223,nan,COLOUR,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,BLUE,BLUE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+224,nan,DIM_SALES_CRITERIA,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+225,nan,DIM_STOCK_UPDATE_CRITERIA,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,ON CREATION,ON CREATION,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+226,nan,DIM_STOCK_UPDATE_CRITERIA,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,ON SALE,ON SALE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+227,nan,ITEM_DIMENSION_TYPE,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,COLOUR SIZE AND STYLE,COLOUR SIZE AND STYLE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+228,nan,ITEM_DIMENSION_TYPE,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,COLOURE AND SIZE,COLOURE AND SIZE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+229,nan,ITEM_DIMENSION_TYPE,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,FURNITURE,FURNITURE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+230,nan,ITEM_DIMENSION_TYPE,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,INGREDIENTS,INGREDIENTS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+231,nan,ITEM_DIMENSION_TYPE,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,PACKAGED GOODS,PACKAGED GOODS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+232,nan,PERSON_TITLES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,DAME,DAME,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+233,nan,PERSON_TITLES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,DOCTOR,DOCTOR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+234,nan,PERSON_TITLES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,MASTER,MASTER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+235,nan,PERSON_TITLES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,MRS,MRS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+236,nan,PERSON_TITLES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,MISS,MISS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+237,nan,PERSON_TITLES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,MR,MR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+238,nan,CUSTOMER_HOLD_REASON,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,OUTSTANDING,OUTSTANDING INVOICES,None,None,None,None,None,None,None,None,None,None,NO,OVERRIDE,N,nan,None
+239,nan,CUSTOMER_HOLD_REASON,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,POOR CREDIT RATING,POOR CREDIT RATING,None,None,None,None,None,None,None,None,None,None,YES,OVERRIDE,N,nan,None
+240,nan,CUSTOMER_HOLD_REASON,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,REQUIRES PROOF OF IDENTIFICAT,REQUIRES PROOF OF IDENTIFICAT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+241,nan,INVOICE_RELEASE_CODES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,RELEASED BY MANAGER,RELEASED BY MANAGER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+242,nan,INVOICE_RELEASE_CODES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,VERBALLY CHECKED,VERBALLY CHECKED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+243,nan,SUPPLIER_HOLD_REASON,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,HOLD INVOICES,HOLD INVOICES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+244,nan,SUPPLIER_HOLD_REASON,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,HOLD PAYMENTS,HOLD PAYMENTS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+245,nan,REASON_FOR_REJECTION,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,DAMAGED,DAMAGED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+246,nan,REASON_FOR_REJECTION,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,DEFECTIVE,DEFECTIVE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+247,nan,BATCH_FORMAT,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,FMMONTH RRRR,FMMONTH RRRR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+248,nan,BATCH_FORMAT,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,USER FMMONTH RRRR,USER FMMONTH RRRR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+249,nan,BATCH_FORMAT,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,USER RRRRMMDDHH24MISS,USER RRRRMMDDHH24MISS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+250,nan,PAYMENT_CARD_TYPES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,AMERICAN EXPRESS,AMERICAN EXPRESS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+251,nan,PAYMENT_CARD_TYPES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,DELTA,DELTA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+252,nan,PAYMENT_CARD_TYPES,API,I,nan,2009-12-28 11:29:03,2009-12-28 11:29:03,nan,None,None,NaT,NaT,None,SOLO,SOLO,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+253,nan,PAYMENT_CARD_TYPES,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,VISA,VISA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+254,nan,PAYMENT_CARD_TYPES,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,MASTERCARD,MASTERCARD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+255,nan,PAYMENT_TRANS_CATEGORY,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+256,nan,PAYMENT_TRANS_CATEGORY,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,OVERHEAD,OVERHEAD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+257,nan,AP_INVOICE_LINE_TYPE,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+258,nan,AP_INVOICE_LINE_TYPE,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,LABOUR,LABOUR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+259,nan,AP_INVOICE_LINE_TYPE,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,MATERIAL,MATERIAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+260,nan,AP_INVOICE_LINE_TYPE,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,PURCHASE,PURCHASE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+261,nan,AP_INVOICE_LINE_TYPE,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,SERVICE,SERVICE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+262,nan,AP_INVOICE_CATEGORY,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+263,nan,AP_INVOICE_CATEGORY,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,LABOUR,LABOUR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+264,nan,AP_INVOICE_CATEGORY,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,ASSET,ASSET,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+265,nan,AP_INVOICE_CATEGORY,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,PRODUCT,PRODUCT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+266,nan,AP_INVOICE_CATEGORY,API,I,nan,2009-12-28 11:29:06,2009-12-28 11:29:06,nan,None,None,NaT,NaT,None,MATERIALS,MATERIALS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+267,nan,AP_INVOICE_CATEGORY,API,I,nan,2009-12-28 11:29:07,2009-12-28 11:29:07,nan,None,None,NaT,NaT,None,OVERHEAD,OVERHEAD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+268,nan,AP_INVOICE_CATEGORY,API,I,nan,2009-12-28 11:29:07,2009-12-28 11:29:07,nan,None,None,NaT,NaT,None,SERVICE,SERVICE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+269,nan,COLOUR,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,WHITE,WHITE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+270,nan,ITEM_GROUP4,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+271,nan,ITEM_GROUP3,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+272,nan,ITEM_GROUP2,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+273,nan,ITEM_GROUP1,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+274,nan,ITEM_EXTERNAL_LOCATIONS,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+275,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,DAMAGED,DAMAGED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+276,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,GRN,GRN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+277,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,REFUND,REFUND,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+278,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,SALES,SALES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+279,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,STAGING,STAGING,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+280,nan,QUICKCODE_CATEGORIES,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,MENU,MENU,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+281,nan,QUICKCODE_CATEGORIES,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,QUICKCODE,QUICKCODE,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+282,nan,AUTODBN_CREATE_FOR,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,OVER DELIVERED,OVER DELIVERED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+283,nan,AUTODBN_CREATE_FOR,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,OVER SUPPLIED,OVER SUPPLIED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+284,nan,AUTODBN_CREATE_FOR,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,UNDER DELIVERED,UNDER DELIVERED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+285,nan,AUTODBN_CREATE_FOR,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,UNDER SUPPLIED,UNDER SUPPLIED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+286,nan,CASHINGUP_DIFFERENCE_CODE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,DISPUTE,DISPUTE,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+287,nan,CASHINGUP_DIFFERENCE_CODE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,UNKNOWN,UNKNOWN,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+288,nan,CASHINGUP_DIFFERENCE_CODE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,USER ERROR,USER ERROR,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+289,nan,BATCH_FORMAT,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,FMMONTH DAY RRRR,FMMONTH DAY RRRR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+290,nan,GL_PAYMENT_CATEGORY,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+291,nan,GL_PAYMENT_SOURCE,API,I,nan,2010-11-25 22:11:26,2010-11-25 22:11:26,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+292,nan,ITEM_MOVEMENT_CATEGORY,API,I,nan,2010-11-25 22:11:28,2010-11-25 22:11:28,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+293,nan,ITEM_MOVEMENT_CATEGORY,API,I,nan,2010-11-25 22:11:28,2010-11-25 22:11:28,nan,None,None,NaT,NaT,None,VAN,VAN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+294,nan,MINUS_STOCK_OPTIONS,API,U,29.0,2015-10-04 13:19:22,2010-01-08 17:41:28,nan,None,1,NaT,NaT,None,ITEM MOVEMENT,ITEM MOVEMENT,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,None
+295,nan,MINUS_STOCK_OPTIONS,API,U,29.0,2015-10-04 13:19:22,2010-01-08 17:41:28,nan,None,1,NaT,NaT,None,SALES INVOICE,SALES INVOICE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,None
+296,nan,MINUS_STOCK_OPTIONS,API,U,29.0,2015-10-04 13:19:12,2010-01-08 17:41:28,nan,None,1,NaT,NaT,None,SALES ORDER,SALES ORDER,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,None
+297,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,INNER QTY,INNER QTY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+298,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,INFINITY,INFINITY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+299,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,MAXIMUM QTY,MAXIMUM QTY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+300,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,USER DEFINED,USER DEFINED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+301,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,CASE QTY,CASE QTY,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+302,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,MINIMUM QTY,MINIMUM QTY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+303,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,PALLET QTY,PALLET QTY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+304,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,REORDER QTY,REORDER QTY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+305,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,SALES UNIT,SALES UNIT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+306,nan,PRICE_BREAK_SOURCE_TYPE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,BOTH,BOTH,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+307,nan,PRICE_BREAK_SOURCE_TYPE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,DYNAMIC,DYNAMIC,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+308,nan,PRICE_BREAK_SOURCE_TYPE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,STATIC,STATIC,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+309,nan,ALERT_METHOD_CODE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,EMAIL,EMAIL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+310,nan,ALERT_METHOD_CODE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,NOTIFICATION,NOTIFICATION,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+311,nan,ALERT_METHOD_CODE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,SCREEN,SCREEN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+312,nan,ALERT_METHOD_CODE,API,I,nan,2010-01-26 21:24:01,2010-01-26 21:24:01,nan,None,None,NaT,NaT,None,WORKLIST,WORKLIST,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+313,nan,ALERT_EVENTS,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,PURCHASES,PURCHASES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+314,nan,ALERT_EVENTS,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,ON INSERT,ON INSERT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+315,nan,ALERT_EVENTS,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,ON UPDATE,ON UPDATE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+316,nan,ALERT_EVENTS,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,SALES,SALES,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+317,nan,COMMUNICATION_CATEGORY_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,ATTACHMENT,ATTACHMENT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+318,nan,COMMUNICATION_CATEGORY_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,FILE,FILE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+319,nan,COMMUNICATION_CATEGORY_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,TEXT,TEXT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+320,nan,COMMUNICATION_TYPE_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,INBOUND,INBOUND,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+321,nan,COMMUNICATION_TYPE_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,OUTBOUND,OUTBOUND,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+322,nan,COMMUNICATION_TYPE_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+323,nan,COMMUNICATION_CATEGORY_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+324,nan,ALERT_NAMES,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+325,nan,ALERT_CATEGORY_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,HIDE,HIDE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+326,nan,ALERT_CATEGORY_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,INFORMATION,INFORMATION,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+327,nan,ALERT_CATEGORY_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,STOP,STOP,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+328,nan,ALERT_CATEGORY_CODE,API,I,nan,2010-01-26 21:24:02,2010-01-26 21:24:02,nan,None,None,NaT,NaT,None,WARNING,WARNING,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+329,nan,WHOSEFOR,API,I,nan,2009-12-28 11:29:12,2009-12-28 11:29:12,nan,None,None,NaT,NaT,None,AGE 5-10,AGE 5-10,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+330,nan,WHOSEFOR,API,I,nan,2009-12-28 11:29:12,2009-12-28 11:29:12,nan,None,None,NaT,NaT,None,BABYS,BABYS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+331,nan,WHOSEFOR,API,I,nan,2009-12-28 11:29:12,2009-12-28 11:29:12,nan,None,None,NaT,NaT,None,MOTHERS,MOTHERS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+332,nan,WHOSEFOR,API,I,nan,2009-12-28 11:29:12,2009-12-28 11:29:12,nan,None,None,NaT,NaT,None,INFANTS,INFANTS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+333,nan,STYLE,API,I,nan,2009-12-28 11:29:12,2009-12-28 11:29:12,nan,None,None,NaT,NaT,None,STYLE1,STYLE1,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+334,nan,FITTINGS,API,I,nan,2009-12-28 11:29:12,2009-12-28 11:29:12,nan,None,None,NaT,NaT,None,MEDIUM,MEDIUM,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+335,nan,FITTINGS,API,I,nan,2009-12-28 11:29:12,2009-12-28 11:29:12,nan,None,None,NaT,NaT,None,REGULAR,REGULAR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+336,nan,RESP_CATEGORY_CODE,API,I,nan,2009-12-28 15:52:26,2009-12-28 15:52:26,nan,None,None,NaT,NaT,None,USER DEFINED,USER DEFINED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+337,nan,RESP_CATEGORY_CODE,API,I,nan,2009-12-28 15:52:26,2009-12-28 15:52:26,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+338,nan,RESP_CATEGORY_CODE,API,I,nan,2009-12-28 15:52:26,2009-12-28 15:52:26,nan,None,None,NaT,NaT,None,SYSTEM,SYSTEM,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+339,nan,PRICELIST_GROUP_CODE,API,I,nan,2010-08-05 09:21:26,2010-08-05 09:21:26,nan,None,None,NaT,NaT,None,SPECIAL OFFER,SPECIAL OFFER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+340,nan,WWW_SUBSCRIPTION_PREFERENCE,API,I,nan,2010-10-07 14:04:09,2010-10-07 14:04:09,nan,None,None,NaT,NaT,None,EMAIL ONLY,EMAIL ONLY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+341,nan,WWW_SUBSCRIPTION_PREFERENCE,API,I,nan,2010-10-07 14:04:09,2010-10-07 14:04:09,nan,None,None,NaT,NaT,None,NO,NO,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+342,nan,WWW_SUBSCRIPTION_PREFERENCE,API,I,nan,2010-10-07 14:04:09,2010-10-07 14:04:09,nan,None,None,NaT,NaT,None,POSTAL ONLY,POSTAL ONLY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+343,nan,WWW_SUBSCRIPTION_PREFERENCE,API,I,nan,2010-10-07 14:04:09,2010-10-07 14:04:09,nan,None,None,NaT,NaT,None,YES,YES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+344,nan,WWW_CUSTOMER_CATEGORY,API,I,nan,2010-10-07 14:04:09,2010-10-07 14:04:09,nan,None,None,NaT,NaT,None,GOLD,GOLD,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+345,nan,SALES_ORDER_CATEGORY_CODE,API,I,nan,2010-10-07 14:04:09,2010-10-07 14:04:09,nan,None,None,NaT,NaT,None,AMAZON,AMAZON,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+346,nan,GL_QUALIFIER_CODE1,API,I,nan,2010-10-14 15:23:18,2010-10-14 15:23:18,nan,None,None,NaT,NaT,None,CAPITAL,CAPITAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+347,nan,GL_QUALIFIER_CODE1,API,I,nan,2010-10-14 15:23:18,2010-10-14 15:23:18,nan,None,None,NaT,NaT,None,STOCK,STOCK,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+348,nan,GL_QUALIFIER_CODE1,API,I,nan,2010-10-14 15:23:18,2010-10-14 15:23:18,nan,None,None,NaT,NaT,None,PURCHASE,PURCHASE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+349,nan,SALES_ORDER_CATEGORY_CODE,API,I,nan,2010-10-14 15:23:18,2010-10-14 15:23:18,nan,None,None,NaT,NaT,None,RESERVED ITEMS,RESERVED ITEMS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+350,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,PERCENT,PERCENT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+351,nan,CUSTOMER_CLASS_CODE,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,A CLASS,A CLASS,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+352,nan,CUSTOMER_CLASS_CODE,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,B CLASS,B CLASS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+353,nan,CUSTOMER_CLASS_CODE,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,C CLASS,C CLASS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+354,nan,USER_GROUP,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,MANAGER,MN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+355,nan,USER_GROUP,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,NOT APPLICABLE,NA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+356,nan,USER_GROUP,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,BUSINESS OWNER,OW,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+357,nan,USER_GROUP,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,POWER USER,PO,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+358,nan,USER_GROUP,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,SYSTEM REPRSENTATIVE,SR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+359,nan,USER_GROUP,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,SUPER VISOR,SV,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+360,nan,USER_GROUP,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,SYSTEM OWNER,SY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+361,nan,USER_GROUP,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,USER,US,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+362,nan,MATRIX_REPORT_COLUMNS,API,U,29.0,2012-08-22 20:11:31,2010-08-03 07:58:31,nan,None,1,NaT,NaT,None,AR_PAYMENT,AR_PAYMENT,None,None,None,None,None,None,DEBTC,WEB,BACS,CHK,CARD,CASH,N,nan,None
+363,nan,USER_EXPORTS,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,EXPORT SUB LOCATIONS,EXPORT SUB LOCATIONS,None,None,None,None,None,None,None,None,None,None,None,IMPEXP_PKG.EXPORT_VIEWDATA(,N,nan,None
+364,nan,USER_EXPORTS,API,I,nan,2010-08-03 07:58:31,2010-08-03 07:58:31,nan,None,None,NaT,NaT,None,EXPORT LOCATIONS,EXPORT LOCATIONS,None,None,None,None,None,None,None,None,None,None,None,IMPEXP_PKG.EXPORT_VIEWDATA(,N,nan,None
+365,nan,SIMILAR_ITEM_CATEGORY,API,I,nan,2010-08-26 19:11:22,2010-08-26 19:11:22,nan,None,None,NaT,NaT,None,DUPLICATE ITEMS,DUPLICATE ITEMS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+366,nan,SIMILAR_ITEM_CATEGORY,API,I,nan,2010-08-26 19:11:22,2010-08-26 19:11:22,nan,None,None,NaT,NaT,None,SIMILAR ITEMS,SIMILAR ITEMS,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,None
+367,nan,SUPPLIER_CATEGORY_CODE,API,I,nan,2010-08-26 19:11:22,2010-08-26 19:11:22,nan,None,None,NaT,NaT,None,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,None
+368,nan,SUB_LOCATION_GROUP_CODE,None,I,2.0,2010-11-28 16:53:01,2010-11-28 16:53:01,2.0,None,1,NaT,NaT,None,PRIMARY SALES,PRIMARY SALES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+369,nan,SUB_LOCATION_GROUP_CODE,None,I,2.0,2010-11-28 16:53:01,2010-11-28 16:53:01,2.0,None,1,NaT,NaT,None,PRIMARY GRN,PRIMARY GRN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+370,nan,ITEM_EXTERNAL_LOCATIONS,None,U,2.0,2010-11-28 16:53:30,2010-11-28 16:53:15,2.0,None,1,NaT,NaT,None,PARK STREET,PARK STREET,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,USER
+371,nan,PRICE_BREAK_QUANTITY_SOURCE,API,I,nan,2010-12-05 16:26:05,2010-12-05 16:26:05,nan,None,None,NaT,NaT,None,MIN PB QTY,MIN PB QTY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+372,nan,PRICE_BREAK_TEXT_TYPES,API,U,2.0,2010-12-18 13:39:28,2010-12-06 22:53:07,nan,None,1,NaT,NaT,"<FONT SIZE=5>$PRICEEXLTAX$  EACH </FONT>
+",TEXT01,TEXT01,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+373,nan,PRICE_BREAK_TEXT_TYPES,API,U,2.0,2010-12-18 13:36:07,2010-12-06 22:53:07,nan,None,1,NaT,NaT,"<FONT SIZE=5> $PRICEEXLTAX$ MIN $QTYFROM$ </FONT>
+",TEXT02,TEXT02,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+374,nan,PRICE_BREAK_TEXT_TYPES,API,U,2.0,2010-12-18 13:39:28,2010-12-06 22:53:07,nan,None,1,NaT,NaT,"<FONT SIZE=5> $PRICEEXLTAX$ MIN $QTYFROM$ </FONT>
+",TEXT03,TEXT03,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+375,nan,PRICE_BREAK_TEXT_TYPES,API,I,nan,2010-12-06 22:53:07,2010-12-06 22:53:07,nan,None,None,NaT,NaT,"<FONT SIZE=2>$PRICEEXLTAX$</FONT>
+ <FONT SIZE=1>$PRICEINCTAX$(INC. VAT)</FONT>
+  <FONT SIZE=1> LESS THAN $QTYTO$ PCS</FONT>",TEXT04,TEXT04,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+376,nan,BATCH_FORMAT,API,I,nan,2011-01-17 12:14:12,2011-01-17 12:14:12,nan,None,None,NaT,NaT,None,MM DD RRRR,MM DD RRRR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+377,nan,PO_TRANS_CATEGORY,API,I,nan,2010-12-29 11:12:24,2010-12-29 11:12:24,nan,None,None,NaT,NaT,None,FROM SALES ORDER,FROM SALES ORDER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+378,nan,MOBILE_DEFAULTS,API,I,nan,2012-04-21 18:55:33,2012-04-21 18:55:33,nan,None,None,NaT,NaT,None,PC:PRICETYPE,PC:PRICETYPE,None,None,None,None,None,None,None,None,None,None,None,EXLTAX,N,nan,SYSTEM
+379,nan,MOBILE_DEFAULTS,API,U,29.0,2021-01-16 04:40:21,2012-04-21 18:55:33,nan,None,1,NaT,NaT,None,PC:RETAILPRICE,PC:RETAILPRICE,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+380,nan,WWW_BARCODE_TYPE,API,I,nan,2013-08-03 09:35:18,2013-08-03 09:35:18,nan,None,None,NaT,NaT,None,EAN,EAN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+381,nan,WWW_PARENTAGE,API,I,nan,2013-08-03 09:35:18,2013-08-03 09:35:18,nan,None,None,NaT,NaT,None,CHILD,CHILD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+382,nan,WWW_DESIGN_PATTERN,API,I,nan,2013-08-03 09:35:18,2013-08-03 09:35:18,nan,None,None,NaT,NaT,None,ROUND GLASS,ROUND GLASS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+383,nan,WWW_VARIATION_THEME,API,I,nan,2013-08-03 09:35:18,2013-08-03 09:35:18,nan,None,None,NaT,NaT,None,SIZE-COLOUR,SIZE-COLOUR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+384,nan,WWW_RELATIONSHIP_TYPE,API,I,nan,2013-08-03 09:35:18,2013-08-03 09:35:18,nan,None,None,NaT,NaT,None,VARIATION,VARIATION,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+385,nan,MOBILE_DEFAULTS,API,I,nan,2013-08-03 09:35:18,2013-08-03 09:35:18,nan,None,None,NaT,NaT,None,LINK:ENABLED,LINK:ENABLED,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+386,nan,ITEM_SEARCH_QUERIES,None,I,7.0,2012-11-05 09:29:14,2012-11-05 09:29:14,7.0,None,1,NaT,NaT,ITEM_NUMBER LIKE '%CT%',ITEM_NUMBER LIKE '%CT%',ITEM_NUMBER LIKE '%CT%',None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+387,nan,MOBILE_DEFAULTS,API,I,nan,2012-03-01 21:43:59,2012-03-01 21:43:59,nan,None,None,NaT,NaT,None,PRICE CHECK ALLOCATED QTY,PC:ALLOCATED,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+388,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=MINUTELY; INTERVAL=20,EVERY 20 MINUTES,EVERY 20 MINUTES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+389,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,"FREQ=YEARLY; BYYEARDAY=100,200,300",100TH DAY OF YEAR,100TH DAY OF YEAR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+390,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=MONTHLY; BYDAY=2MON,2ND MONDAY OF THE MONTH,2ND MONDAY OF THE MONTH,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+391,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=YEARLY; BYDAY=35MON,35TH MONDAY OF THE YEAR,35TH MONDAY OF THE YEAR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+392,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=HOURLY; INTERVAL=1,EVERY 1 HOUR,EVERY 1 HOUR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+393,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=MINUTELY; INTERVAL=10,EVERY 10 MINUTES,EVERY 10 MINUTES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+394,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=MINUTELY; INTERVAL=25,EVERY 25 MINUTES,EVERY 25 MINUTES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+395,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=MINUTELY; INTERVAL=30,EVERY 30 MINUTES,EVERY 30 MINUTES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+396,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=SECONDLY; INTERVAL=30,EVERY 30 SECOND,EVERY 30 SECOND,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+397,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=MINUTELY; INTERVAL=45,EVERY 45 MINUTES,EVERY 45 MINUTES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+398,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=MINUTELY; INTERVAL=5,EVERY 5 MINUTES,EVERY 5 MINUTES,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+399,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,BYHOUR=6 BYMINUTE=0 INTERVAL=1,EVERY DAY AT 6AM,EVERY DAY AT 6AM,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+400,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=SECONDLY,EVERY SECOD,EVERY SECOND,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+401,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=DAILY; BYHOUR=1,FIRST HOUR OF EVERY DAY,FIRST HOUR OF EVERY DAY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+402,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=HOURLY; BYMINUTE=1,FIRST MINUTE OF AN HOUR,FIRST MINUTE OF AN HOUR,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+403,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=YEARLY; BYDAY=MON,FIRST MONDAY OF WEEKS,FIRST MONDAY OF WEEKS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+404,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=MINUTELY; BYSECOND=1,FIRST SECOND OF A MINUTE,FIRST SECOND OF A MINUTE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+405,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,"FREQ=MONTHLY; BYMONTHDAY=1,2",FIRST TWO DAYS OF MONTH,FIRST TWO DAYS OF MONTH,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+406,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,"FREQ=MONTHLY; BYMONTHDAY=-1,-2",LAST TWO DAYS OF MONTH,LAST TWO DAYS OF MONTH,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+407,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,FREQ=MONTHLY; BYDAY=-1WED,LAST WEDNESDAY OF THE MONTH,LAST WEDNESDAY OF THE MONTH,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+408,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,"FREQ=MONTHLY; BYMONTH=1,2,11,12","MONTHS 1,2,11,12","MONTHS 1,2,11,12",None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+409,nan,SCHEDULE_INTERVALS,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,"FREQ=MONTHLY; BYMONTH=JAN,FEB,NOV,DEC","MONTHS JAN,FEB,NOV,DEC","MONTHS JAN,FEB,NOV,DEC",None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+410,nan,ITEM_CONDITION,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,NEW,NEW,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,SYSTEM
+411,nan,ITEM_CONDITION,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,REFURBISHED,REFURBISHED,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,SYSTEM
+412,nan,ITEM_CONDITION,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,USED,USED,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,SYSTEM
+413,nan,CUSTOMER_TYPE_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,WEBCUSTOMER,WEBCUSTOMER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+414,nan,PARTY_GROUP_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,GMAIL,GMAIL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+415,nan,PARTY_GROUP_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,OUTLOOK,OUTLOOK,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+416,nan,PARTY_TYPE_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,CONTACT,CONTACT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+417,nan,PARTY_GROUP_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,YAHOO,YAHOO,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+418,nan,PARTY_TYPE_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,CUSTOMER,CUSTOMER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+419,nan,PARTY_TYPE_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,PARTY,PARTY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+420,nan,PARTY_TYPE_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,SUPPLIER,SUPPLIER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+421,nan,PARTY_GROUP_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+422,nan,CONTACT_TYPE_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,CUSTOMER,CUSTOMER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+423,nan,CONTACT_TYPE_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,PARTY,PARTY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+424,nan,CONTACT_TYPE_CODE,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,None,SUPPLIER,SUPPLIER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+425,nan,PRICE_BREAK_TEXT_TYPES,API,I,nan,2012-01-29 16:13:18,2012-01-29 16:13:18,nan,None,None,NaT,NaT,$PRICEEXLTAX$/$QTYFROM$,TEXTFS,TEXTFS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+426,nan,PURGE_TABLES,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,BEGIN LOCATION_PKG.DELETE_ZEROSUBLOCITEMS; END;,DELETE ZERO SUB LOC ITEMS,DELETE ZERO SUB LOC ITEMS,None,None,None,None,None,None,None,None,None,None,None,1,N,nan,SYSTEM
+427,nan,MOBILE_DEFAULTS,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,None,PRICE CHECK:PRICERP,PC:PRICERP,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+428,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,None,PRIMARY TRASIT,PRIMARY TRANSIT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+429,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,None,TRANSIT,TRANSIT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+430,nan,PURGE_TABLES,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT," DELETE AR_ORDERPAD_HEADERS H
+  WHERE SYSDATE-H.CREATION_DATE > 1
+ AND  NOT  EXISTS (SELECT 1
+                  FROM AR_ORDERPAD_LINES L
+                 WHERE L.ORDERPAD_HEADER_ID = H.ORDERPAD_HEADER_ID)",BLANK ORDER PADS,BLANK ORDER PADS,None,None,None,None,None,None,None,None,None,None,None,1,N,nan,SYSTEM
+431,nan,COLOUR,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,SILVER,SILVER,SILVER,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+432,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,144W,144W,144W,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+433,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,1.8M,1.8M,1.8M,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+434,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,120CM,120CM,120CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+435,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,180CM,180CM,180CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+436,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,23X25CM,23X25CM,23X25CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+437,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,36,36,36,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+438,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,38CM,38CM,38CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+439,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,60CM,60CM,60CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+440,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,8M,8M,8M,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+441,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,90CM,90CM,90CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+442,nan,COLOUR,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,BLUE & WHITE,BLUE & WHITE,BLUE & WHITE,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+443,nan,COLOUR,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,PEARLESCENT RED,PEARLESCENT RED,PEARLESCENT RED,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+444,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,CUSTOMER PAYMENTS,CUSTPMNT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+445,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,PAYMENTS,PMNT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+446,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,PURCHASE INVOICES,PURINV,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+447,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,SALES INVOCIES,SALINV,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+448,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,SUPPLIER INVOICES,SUPPINV,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+449,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,SUPPLIER PAYMENTS,SUPPPMNT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+450,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,TAX,TAX,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+451,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,CUSTOMER INVOICES,CUSTINV,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+452,nan,TRANSACTION_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,INVENTORY,INV,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+453,nan,TRANSACTION_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,PAYMENTS,PMNT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+454,nan,TRANSACTION_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,PURCHASE INVOICES,PURINV,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+455,nan,TRANSACTION_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,SALES INVOICES,SALINV,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+456,nan,PURGE_TABLES,None,I,29.0,2019-09-18 13:46:07,2019-09-18 13:46:07,29.0,None,1,NaT,NaT,"DELETE  INV_ITEM_SUB_LOCATIONS A
+WHERE A.SUB_LOCATION_ID IN
+    ( SELECT X.SUB_LOCATION_ID 
+      FROM  INV_SUB_LOCATIONS X 
+      WHERE X.SUB_LOCATION_ID IN (6491,6539,8912)
+    ) 
+AND   A.QUANTITY = 0",DELETE ZERO GRN STAGE,DELETE ZERO GRN STAGE,None,None,None,None,None,None,None,None,None,None,None,1,N,nan,SYSTEM
+457,nan,ITEM_DEFAULT_BATCHES,API,I,nan,2019-04-20 13:25:42,2019-04-20 13:25:42,nan,None,None,NaT,NaT,None,PRICE CHANGE,PRICE CHANGE,None,None,None,None,None,None,None,None,None,None,None,ITEM PRICE CHANGED,N,nan,SYSTEM
+458,nan,PURGE_TABLES,API,I,nan,2019-04-20 13:25:42,2019-04-20 13:25:42,nan,None,None,NaT,NaT,DELETE SYS_LOG_HEADERS WHERE CREATION_DATE < (SYSDATE-30),SYSTEM LOG HEADERS,SYSTEM LOG HEADERS,None,None,None,None,None,None,None,None,None,None,None,30,N,nan,SYSTEM
+459,nan,PURGE_TABLES,API,I,nan,2019-04-20 13:25:42,2019-04-20 13:25:42,nan,None,None,NaT,NaT," DELETE SYS_LOG_LINES WHERE LOG_HEADER_ID IN(SELECT X.LOG_HEADER_ID
+ FROM SYS_LOG_HEADERS X
+ WHERE X.CREATION_DATE < (SYSDATE-30))",SYSTEM LOG LINES,SYSTEM LOG LINES,None,None,None,None,None,None,None,None,None,None,None,30,N,nan,SYSTEM
+460,nan,AR_RETURN_REASON_CODE,API,I,nan,2019-04-20 13:25:42,2019-04-20 13:25:42,nan,None,None,NaT,NaT,None,SALEABLE RETURNS,SALEABLE RETURNS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+461,nan,AUTO_EMAIL,API,I,nan,2019-04-20 13:25:42,2019-04-20 13:25:42,nan,None,None,NaT,NaT,None,PALLETNOTE,PALLETNOTE,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+462,nan,DISPLAY_ITEM_PRICES,API,I,nan,2019-04-20 13:25:42,2019-04-20 13:25:42,nan,None,None,NaT,NaT,None,PRICECHECK:MANAGERPRICE,PRICECHECK:MANAGERPRICE,None,None,None,None,None,None,None,None,None,None,VAT,5,N,nan,SYSTEM
+463,nan,DISPLAY_ITEM_PRICES,API,I,nan,2019-04-20 13:25:42,2019-04-20 13:25:42,nan,None,None,NaT,NaT,None,PRICECHECK:PRICEBREAK,PRICECHECK:PRICEBREAK,None,None,None,None,None,None,None,None,None,None,VAT,0,N,nan,SYSTEM
+464,nan,DISPLAY_ITEM_PRICES,API,I,nan,2019-04-20 13:25:42,2019-04-20 13:25:42,nan,None,None,NaT,NaT,None,PRICECHECK:TRADEPRICE,PRICECHECK:TRADEPRICE,None,None,None,None,None,None,None,None,None,None,VAT,4,N,nan,SYSTEM
+465,nan,COLOUR,API,I,nan,2019-04-20 13:25:42,2019-04-20 13:25:42,nan,None,None,NaT,NaT,GOLD,GOLD,GOLD,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+466,nan,SALES_ORDER_WORKFLOW,None,U,29.0,2021-01-10 14:51:45,2020-12-03 19:24:30,29.0,None,1,NaT,NaT,None,APPROVE_5_REQUISITION,APPROVE_5_REQUISITION,None,None,None,None,None,None,None,None,None,INSTOCK<=0,2,YES,N,nan,SYSTEM
+467,nan,SALES_ORDER_WORKFLOW,None,U,29.0,2021-01-10 14:51:45,2021-01-08 09:56:07,29.0,None,1,NaT,NaT,None,APPROVE_2_REQUIISITION,APPROVE_2_REQUIISITION,None,None,None,None,None,None,None,None,None,CASEQTY,5,YES,N,nan,SYSTEM
+468,nan,ITEM_EXPORT_ATTRIBUTES,API,I,nan,2020-12-03 19:02:10,2020-12-03 19:02:10,nan,None,None,NaT,NaT,None,INCLUDE_LAYAWAY_DAYS,INCLUDE_LAYAWAY_DAYS,None,None,None,None,None,None,None,None,None,None,None,2,N,nan,SYSTEM
+469,nan,ITEM_EXPORT_ATTRIBUTES,API,I,nan,2020-12-03 19:02:10,2020-12-03 19:02:10,nan,None,None,NaT,NaT,None,REDUCE_LAYAWAY_QTY,REDUCE_LAYAWAY_QTY,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM
+470,nan,AUTO_EMAIL_OPTIONS,API,I,nan,2020-12-03 19:02:10,2020-12-03 19:02:10,nan,None,None,NaT,NaT,None,SALES INVOICE DELIVERY NOTE,DLNOTE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+471,nan,AUTO_EMAIL_OPTIONS,API,I,nan,2020-12-03 19:02:10,2020-12-03 19:02:10,nan,None,None,NaT,NaT,None,SALES INVOICE,INV,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+472,nan,AUTO_EMAIL_OPTIONS,API,I,nan,2020-12-03 19:02:10,2020-12-03 19:02:10,nan,None,None,NaT,NaT,None,PALLET NOTE,PLNOTE,None,None,None,None,None,None,None,None,None,None,None,Y,N,nan,SYSTEM
+473,nan,COLOUR,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,PEARLESCENT WHITE,PEARLESCENT WHITE,PEARLESCENT WHITE,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+474,nan,COLOUR,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,PINK,PINK,PINK,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+475,nan,COLOUR,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,STANDARD,STANDARD,STANDARD,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+476,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,16.3W,16.3W,16.3W,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+477,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,161W,161W,161W,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+478,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,30V 1.2VA,30V 1.2VA,30V 1.2VA,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+479,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,30W,30W,30W,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+480,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,36V 3.6VA,36V 3.6VA,36V 3.6VA,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+481,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,36V 6VA,36V 6VA,36V 6VA,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+482,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,36V 7.2VA,36V 7.2VA,36V 7.2VA,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+483,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,36V 8.5VA,36V 8.5VA,36V 8.5VA,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+484,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,96W,96W,96W,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+485,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,DC 12V,DC 12V,DC 12V,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+486,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,10M,10M,10M,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+487,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,180,180,180,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+488,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,20,20,20,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+489,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,240,240,240,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+490,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,300,300,300,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+491,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,4M,4M,4M,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+492,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,50,50,50,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+493,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,5M,5M,5M,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+494,nan,SIZE,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,6M,6M,6M,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+495,nan,COLOUR,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,CLEAR,CLEAR,CLEAR,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+496,nan,COLOUR,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,MULTI-COLOURED,MULTI-COLOURED,MULTI-COLOURED,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+497,nan,COLOUR,API,I,nan,2015-10-02 18:51:08,2015-10-02 18:51:08,nan,None,None,NaT,NaT,RED,RED,RED,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+498,nan,COLOUR,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,WARM WHITE,WARM WHITE,WARM WHITE,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+499,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,28.8W,28.8W,28.8W,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+500,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,35W,35W,35W,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+501,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,3V 0.06VA,3V 0.06VA,3V 0.06VA,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+502,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,48W,48W,48W,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+503,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,IP64 BS TRANSFORMER,IP64 BS TRANSFORMER,IP64 BS TRANSFORMER,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+504,nan,SIZE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,100,100,100,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+505,nan,SIZE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,15,15,15,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+506,nan,SIZE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,200,200,200,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+507,nan,SIZE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,250CM,250CM,250CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+508,nan,SIZE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,40,40,40,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+509,nan,SIZE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,70CM,70CM,70CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+510,nan,COLOUR,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,PURPLE,PURPLE,PURPLE,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+511,nan,SUB_LOCATION_GROUP_CODE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,LOST STOCK,LOST STOCK,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+512,nan,ITEM_DEFAULTS,API,U,29.0,2015-10-03 11:42:00,2015-10-02 18:51:09,nan,None,1,NaT,NaT,None,GENERATE_CASE_BARCODE,GENERATE_CASE_BARCODE,None,None,None,None,None,None,None,None,None,$CASEUNIT$,$ITEMNUMBER$Y$CASEUNIT$,Y,N,nan,SYSTEM
+513,nan,ITEM_DEFAULTS,API,U,29.0,2015-10-03 11:42:00,2015-10-02 18:51:09,nan,None,1,NaT,NaT,$ITEM_NUMBER$Y$INNER_QTY$,GENERATE_INNER_BARCODE,GENERATE_INNER_BARCODE,None,None,None,None,None,None,None,None,None,$INNERQTY$,$ITEMNUMBER$M$INNERQTY$,Y,N,nan,SYSTEM
+514,nan,PALLET_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,SALES INVOICE,AR_INVOICE_HEADERS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+515,nan,PALLET_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,SALES ORDER,AR_SALESORDER_HEADERS,None,None,None,None,None,None,None,None,None,None,None,None,Y,nan,SYSTEM
+516,nan,PALLET_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,PALLET,PALLET_HEADERS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+517,nan,PALLET_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,GOODS RECEIPT,PO_GRN_HEADERS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+518,nan,PALLET_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,PURCHASE ORDER,PO_HEADERS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+519,nan,SUB_LOCATION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,PALLET,PALLET,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+520,nan,DEFAULT_CONTAINER_TYPE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,BOX,BOX,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+521,nan,DEFAULT_CONTAINER_TYPE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,CONTAINER,CONTAINER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+522,nan,DEFAULT_CONTAINER_TYPE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,PALLET,PALLET,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+523,nan,SALES_ORDER_SOURCE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,ORDER PAD,ORDER PAD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+524,nan,ITEM_DELETE_PRECHECK,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,INV_BOM,INV_BOM,None,None,None,None,None,None,None,None,None,None,None,ITEM_ID = :P_ITEMID,N,nan,SYSTEM
+525,nan,PURGE_TABLES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,DELETE EXPORT_HEADERS  WHERE SYSDATE - CREATION_DATE >= 7,EXPORT_HEADERS,EXPORT_HEADERS,None,None,None,None,None,None,None,None,None,None,None,7,N,nan,SYSTEM
+526,nan,PURGE_TABLES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,DELETE SYS_FUNCTION_AUDIT WHERE SYSDATE - CREATION_DATE >=365,FUNCTION_AUDIT,FUNCTION_AUDIT,None,None,None,None,None,None,None,None,None,None,None,365,N,nan,SYSTEM
+527,nan,PURGE_TABLES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,DELETE INV_ITEM_BATCHES WHERE SYSDATE-CREATION_DATE >= 7,ITEM_BATCH,ITEM_BATCH,None,None,None,None,None,None,None,None,None,None,None,7,N,nan,SYSTEM
+528,nan,PURGE_TABLES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,DELETE SYS_LOGIN_AUDIT WHERE SYSDATE - CREATION_DATE >= 365,LOGIN_AUDIT,LOGIN_AUDIT,None,None,None,None,None,None,None,None,None,None,None,365,N,nan,SYSTEM
+529,nan,WEB_SITE_DEFAULTS,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,IMPORT_MISSING_ITEMS,IMPORT_MISSING_ITEMS,None,None,None,None,None,None,None,None,None,None,None,YES,N,nan,SYSTEM
+530,nan,WEB_SITE_DEFAULTS,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,MISSING_ITEM_NUMBER,MISSING_ITEM_NUMBER,None,None,None,None,None,None,None,None,None,None,None,99901,N,nan,SYSTEM
+531,nan,COLOUR,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,GREEN,GREEN,GREEN,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+532,nan,SIZE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,150CM,150CM,150CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+533,nan,ITEM_GROUP3,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,IP20 BS TRANSFORMER,IP20 BS TRANSFORMER,IP20 BS TRANSFORMER,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+534,nan,SIZE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,45CM,45CM,45CM,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+535,nan,COLOUR,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,WHITE/RED,WHITE/RED,WHITE/RED,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+536,nan,SIZE,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,ONE SIZE,ONE SIZE,ONE SIZE,None,None,None,None,None,None,None,None,None,None,None,None,None,nan,None
+537,nan,WEB_SITE_DEFAULTS,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,VARIATION,VARIATION,None,None,None,None,None,None,None,None,None,None,None,AUTO,N,nan,SYSTEM
+538,nan,REPORT_PARAMETERS,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,MIN ORDER VALUE:£250.00,MIN ORDER VALUE,MIN ORDER VALUE,None,None,None,None,None,None,None,None,None,None,None,£250.00,Y,nan,SYSTEM
+539,nan,LANGUAGE_ITEMS,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,CUSTOMER_NOTES1,CUSTOMER_NOTES1,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+540,nan,LANGUAGE_ITEMS,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,CUSTOMER_NOTES2,CUSTOMER_NOTES2,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+541,nan,LANGUAGE_ITEMS,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,CUSTOMER_NOTES3,CUSTOMER_NOTES3,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+542,nan,LANGUAGE_ITEMS,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,ITEM_LONG_DESC,ITEM_LONG_DESC,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+543,nan,LANGUAGE_ITEMS,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,ITEM_NAME,ITEM_NAME,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+544,nan,ITEM_DEFAULT_BATCHES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,"NEW CREATED ITEM
+ITEM NUMBER
+ITEM NAME
+SUBCATEGORY
+CASE QTY
+COST PRICE
+SELLING PRICES
+
+UNIT WEIGHT NW
+UNIT LENGTH
+UNIT HEIGHT
+UNIT WIDTH
+CUST NOTE1
+CUST NOTE2
+CUST NOTE3
+MISC/ITEMS SPECS
+COMENTS
+KEYWORDS
+ITEM SIZE
+ITEM FITTINGS
+GENDER/AGE
+EXPEDITE FLAG (CHANGE IN SHIPPING COST)
+
+ITEM CONDITION
+
+PICTURE NAME1-3
+TECH SPECS FILE
+DEMO VIDEO FILE
+TECHNICAL SPECS
+BARCODE
+",ITEM DETAILS,ITEM DETAILS,None,None,None,None,None,None,None,None,None,None,None,ITEM IS CHANGED,N,nan,SYSTEM
+545,nan,ITEM_DEFAULT_BATCHES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,ITEM DIMENSION,ITEM DIMENSION,None,None,None,None,None,None,None,None,None,None,None,ITEM IS CHANGED,N,nan,SYSTEM
+546,nan,ITEM_DEFAULT_BATCHES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,ITEM NOTES,ITEM NOTES,None,None,None,None,None,None,None,None,None,None,None,ITEM IS CHANGED,N,nan,SYSTEM
+547,nan,ITEM_DEFAULT_BATCHES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,PRCE CHANGE,PRCE CHANGE,None,None,None,None,None,None,None,None,None,None,None,ITEM IS CHANGED,N,nan,SYSTEM
+548,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,TOTALS,TOTALS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+549,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,JOURNAL,JOURNAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+550,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,OVERHEAD,OVERHEAD,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+551,nan,TRANSACTION_SOURCES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,GENERAL LEDGER,GL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+552,nan,TRANSACTION_TYPES,API,I,nan,2015-10-02 18:51:09,2015-10-02 18:51:09,nan,None,None,NaT,NaT,None,COST OF GOODS,COG,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+553,nan,COUNTRY_MAPPING_CODE,None,I,29.0,2020-07-27 10:17:23,2020-07-27 10:17:23,29.0,None,1,NaT,NaT,None,POL,POL,None,None,None,None,None,None,None,None,None,None,None,PL,N,nan,SYSTEM
+554,nan,COUNTRY_MAPPING_CODE,None,I,29.0,2020-07-27 10:17:23,2020-07-27 10:17:23,29.0,None,1,NaT,NaT,None,MAL,MAL,None,None,None,None,None,None,None,None,None,None,None,MT,N,nan,SYSTEM
+555,nan,COUNTRY_MAPPING_CODE,None,I,29.0,2020-07-27 10:17:23,2020-07-27 10:17:23,29.0,None,1,NaT,NaT,None,FIN,FIN,None,None,None,None,None,None,None,None,None,None,None,FI,N,nan,SYSTEM
+556,nan,COUNTRY_MAPPING_CODE,None,I,29.0,2020-07-27 10:17:23,2020-07-27 10:17:23,29.0,None,1,NaT,NaT,None,GREECE,GREECE,None,None,None,None,None,None,None,None,None,None,None,EL,N,nan,SYSTEM
+557,nan,COUNTRY_MAPPING_CODE,None,I,29.0,2020-07-27 10:17:23,2020-07-27 10:17:23,29.0,None,1,NaT,NaT,None,AUSTRIA,AUSTRIA,None,None,None,None,None,None,None,None,None,None,None,AT,N,nan,SYSTEM
+558,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,CENTER RIGHT,CENTER RIGHT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+559,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+560,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,TOP CENTER,TOP CENTER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+561,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,TOP LEFT,TOP LEFT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+562,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,TOP RIGHT,TOP RIGHT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+563,nan,ADDITIONAL_INFO_POSITION,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,USER DEFINED,USER DEFINED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+564,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,CSV,CSV,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+565,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,DELIMITED,DELIMITED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+566,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,HTML,HTML,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+567,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,IMAGE,IMAGE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+568,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,PLAIN TEXT,PLAIN TEXT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+569,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,RICH TEXT,RICH TEXT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+570,nan,ADDITIONAL_INFO_TYPE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,XML,XML,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+571,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+572,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,IMAGE,IMAGE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+573,nan,ADDITIONAL_INFO_CATEGORY,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,TEXT,TEXT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+574,nan,SALES_ORDER_CATEGORY_CODE,API,I,nan,2011-12-31 12:44:12,2011-12-31 12:44:12,nan,None,None,NaT,NaT,None,BACKORDER,BACKORDER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+575,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,AGE GROUP,AGE GROUP,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+576,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,CULTURAL,CULTURAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+577,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,GENDER,GENDER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+578,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,INSTRUCTIONS,INSTRUCTIONS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+579,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,IRON,IRON,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+580,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,ORIGIN,ORIGIN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+581,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,PHYSICAL,PHYSICAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+582,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,PRIMARY FUNCTION,PRIMARY FUNCTION,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+583,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,RELIGION,RELIGION,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+584,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,SOCIAL,SOCIAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+585,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,WARNINGS,WARNINGS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+586,nan,STP_ATTRIBUTES,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,WASHING,WASHING,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+587,nan,STP_LEVELS,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,COLOURE,COLOURE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+588,nan,STP_LEVELS,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,FITTINGS,FITTINGS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+589,nan,STP_LEVELS,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,SIZE,SIZE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+590,nan,STP_CATEGORY,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+591,nan,STP_CATEGORY,API,I,nan,2012-02-08 18:25:35,2012-02-08 18:25:35,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+592,nan,STORAGE_AREA2,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,BLOCK,BLOCK,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+593,nan,STORAGE_AREA2,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,PICKING,PICKING,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+594,nan,STORAGE_AREA2,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,PUTAWAY,PUTAWAY,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+595,nan,STORAGE_AREA3,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,IN,IN,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+596,nan,STORAGE_AREA3,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,IN-OUT,IN-OUT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+597,nan,STORAGE_AREA3,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,NO ACCESS,NO ACCESS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+598,nan,STORAGE_AREA3,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,OUT,OUT,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+599,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,DELIVERY BAYS,DELIVERY BAYS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+600,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,GENERAL STORAGE AREA,GENERAL STORAGE AREA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+601,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,BULK STORAGE,BULK STORAGE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+602,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,GOODS ISSUE AREA,GOODS ISSUE AREA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+603,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,GOODS RECEIPT AREA,GOODS RECEIPT AREA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+604,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,HIGH RACK STORAGE,HIGH RACK STORAGE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+605,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,INTERIM STORAGE FOR DIFFERENCE,INTERIM STORAGE FOR DIFFERENCE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+606,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,OPEN STORAGE,OPEN STORAGE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+607,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,PICKING AREA,PICKING AREA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+608,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,POSTING CHANGE ZONE,POSTING CHANGE ZONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+609,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,QUALITY CHECK AREA,QUALITY CHECK AREA,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+610,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,RE-SORTING ZONE,RE-SORTING ZONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+611,nan,STORAGE_AREAS,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,SHELF STORAGE,SHELF STORAGE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+612,nan,CONTAINER_RECYCLE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,NONE,NONE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+613,nan,CONTAINER_RECYCLE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,RECYCLABLE,RECYCLABLE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+614,nan,CONTAINER_CATEGORY,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,GENERAL,GENERAL,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+615,nan,CONTAINER_TYPE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,CARTON,CARTON,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+616,nan,CONTAINER_TYPE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,PALLET,PALLET,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+617,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,ALL MUST GO,ALL MUST GO,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+618,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,BUY X GET X FREE,BUY X GET X FREE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+619,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,CLEARANCE,CLEARANCE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+620,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,DISCOUNTED,DISCOUNTED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+621,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,FIXED PRICE,FIXED PRICE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+622,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,NEW PROMOTIONS,NEW PROMOTIONS,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+623,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,PRICE DROP,PRICE DROP,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+624,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,REFURBISHED,REFURBISHED,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+625,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,SPECIAL OFFER,SPECIAL OFFER,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+626,nan,OFFER_TYPE_CODE,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,SPECIAL PRICE,SPECIAL PRICE,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+627,nan,INV_REQUISITION_CATEGORY,API,I,nan,2012-03-18 18:34:32,2012-03-18 18:34:32,nan,None,None,NaT,NaT,None,AUTOMATIC,AUTOMATIC,None,None,None,None,None,None,None,None,None,None,None,None,N,nan,SYSTEM
+628,nan,DISPLAY_IMAGE,API,I,nan,2012-07-21 13:48:57,2012-07-21 13:48:57,nan,None,None,NaT,NaT,None,ALL SUMMARY SCREENS,SUMMARY,None,None,None,None,None,None,None,None,None,None,None,N,N,nan,SYSTEM

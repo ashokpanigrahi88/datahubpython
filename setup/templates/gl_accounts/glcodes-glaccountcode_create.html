@@ -1,0 +1,18 @@
+{% extends 'common/model_form.html' %}
+
+{% block title %}  {% if object.gl_account_id %} Update GL Account Code - {{object.gl_account_id}}
+    {% else %} New GL Account Code
+{% endif %} {% endblock %}
+
+{% block moduletitle %}
+<h2> Add GL Account Code</h2>
+{%  endblock %}
+
+{% block postform %}
+<a href="/setup/glcodes_list/">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+<a href="/setup/glaccountcode_delete/{{object.gl_account_id}}/">
+    <button class="delete-btn btn-delete" type="button">Delete</button>
+</a>
+{% endblock %}

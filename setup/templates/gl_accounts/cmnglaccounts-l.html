@@ -1,0 +1,75 @@
+{% extends 'common/model_list.html' %}
+{% block title %} {{  MYCONTEXT.title }}{% endblock %}
+{% block findaction %} {{ MYCONTEXT.list }} {% endblock %}
+
+{% block prelist %}
+<br>
+<form method="get">
+    {% csrf_token %}
+    <table class="table table-striped table-bordered table-sm">
+        <td>
+            <a href="{{ MYCONTEXT.create }}" class="btn btn-primary">
+                <span class="fa fa-plus" style="color: white;"></span>&nbsp;Add Currency Rate</a>
+        </td>
+        <td>
+            <!--        <td>-->
+            <a href="/setup/currencyrates_list" class="btn btn-primary">
+                <span class="fa fa-home" style="color: white;"></span>&nbsp;All Currency Rates</a>
+            <!--        </td>-->
+            {% for field,attrs in search_field_dict.items %}
+            <!--        <td>-->
+            <label for="{{field}}">{{attrs.label}}: </label>
+            <input id="{{field}}" type="text" name="{{field}}" value="{{attrs.value}}">
+            <!--        </td>-->
+            {% endfor %}
+            <input type="submit" class="btn btn-info" value="Search" name="list_filter">
+        </td>
+    </table>
+</form>
+
+{% endblock %}
+
+{% block tableheader %}
+<th>From Currency</th>
+<th>To Currency</th>
+<th>Date</th>
+<th>Buying Rate</th>
+<th>Selling Rate</th>
+<th>Type</th>
+{% endblock %}
+
+{% block tablerow %}
+<td>{{ row.from_currency_code }}</td>
+<td>{{ row.to_currency_code }}</td>
+<td>{{ row.currency_rate_date }}</td>
+<td>{{ row.currency_rate }}</td>
+<td>{{ row.sell_currency_rate }}</td>
+<td>{{ row.currency_rate_type }}</td>
+{% endblock %}
+
+{% block rowaction %}
+<td>
+    <a href="/setup/currencyrates_update/{{ row.from_currency_code }}/">
+        <button><span class="fa fa-pencil" style="color: blue;"></span></button>
+    </a>
+    <a href="/setup/currencyrates_delete/{{ row.from_currency_code}}/">
+        <button><span class="fa fa-trash" style="color: red;"></span></button>
+    </a>
+</td>
+{% endblock %}
+
+{% block createaction %}
+<!--<div style="text-align: center;"><a href="{{ MYCONTEXT.create }}" class="btn btn-primary">Add </a></div>-->
+{% endblock %}
+
+{% block postlist %}
+{% if details %}
+<h3>Currency Details</h3>
+<div class="row">
+    {% for field in details %}
+    {% include '_model_form2.html' %}
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
+

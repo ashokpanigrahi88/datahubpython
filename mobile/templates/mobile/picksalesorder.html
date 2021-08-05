@@ -1,0 +1,110 @@
+{% extends 'common/menu.html' %}
+{% block title %} Sales Order Picking  {% endblock %}
+{% block content_block %}
+    <h3> Sales Order Picking </h3>
+    {% block prelist %}
+        {% endblock %}
+{% if MYCONTEXT.errormessage %}
+    <p class="p-3 mb-2 text-danger  font-weight-bolder ">
+     {{  MYCONTEXT.errormessage }}
+    </p>
+{% endif %}
+{% if MYCONTEXT.successmessage %}
+    <p class="p-3 mb-2 bg-primary text-white font-weight-bolder ">
+    {{  MYCONTEXT.successmessage }}
+    </p>
+{% endif %}
+<form action="{% url 'mobile:picksalesorder' %}" method="post">
+    {% csrf_token %}
+<div class="container">
+
+                  {% if not MYCONTEXT.mode or MYCONTEXT.mode == "ADD" %}
+                          <div class="row">
+                      <div class="col-sm-2 pull-right " >  <label for="order_number">Order Number</label>  </div>
+                  <div class="col-md-6 pull-left " >  <input id="order_number" type="text" name="order_number" value="">  </div>
+                          </div>
+              {%  else %}
+                    <input id="order_number" type="hidden"   name="order_number" value="{{ MYCONTEXT.order_number }}">
+                  {% if MYCONTEXT.enablepalleting == "Y" %}
+                  <div class="row">
+                      <div class="col-sm-2 pull-right " >  <label for="box_slno">Pallet Reference</label>  </div>
+                      <div class="col-md-6 pull-left " >  <input id="box_slno" type="text" name="box_slno" value="{{ MYCONTEXT.boxslno }}">  </div>
+                  </div>
+                      {% endif %}
+                  {% if MYCONTEXT.pickingconfirmation == "THREEWAY" %}
+                      <div class="row">
+                      <div class="col-sm-2 pull-right ">  <label for="line_id">Scan Pick Barcode </label>  </div>
+                      <div class="col-md-6 pull-left " >  <input id="line_id" type="text" name="line_id" value="">  </div>
+                      </div>
+                      {% else %}
+                      <INPUT TYPE="hidden" NAME="line_id" id="line_id" VALUE="">
+                      {% endif %}
+                  <div class="row">
+                     <div class="col-sm-2 pull-right">  <label for="from_sub_location"> From Sub Location </label>  </div>
+                    <div class="col-md-6 pull-left">  <input id="from_sub_location" type="text" name="from_sub_location" value="">  </div>
+                  </div>
+                    {% if MYCONTEXT.pickingconfirmation == "TWOWAY" %}
+                        {% comment %} no action {% endcomment %}
+
+                        {% else %}
+                  <div class="row">
+                     <div class="col-sm-2 pull-right " >  <label for="picked_item_number">Scan Item you picked </label> </div>
+                    <div class="col-md-6 pull-left " >  <input id="picked_item_number" type="text" name="picked_item_number" value="">  </div>
+                  </div>
+                        <div class="row">
+                     <div class="col-sm-2 pull-right " >  <label for="quantity">Quantity</label>   </div>
+                    <div class="col-md-6 pull-left " >  <input id="quantity" type="text" name="quantity" value="">  </div>
+
+                  </div>
+                  </div>
+                        {% endif %}
+             {% endif %}
+    <div class="row">
+    <div class="col-sm-2 pull-right " > </div>
+    <div class="col-sm-2 pull-right " > </div>
+    <div class="col-md-6 pull-right " >  <input type="submit" class="btn btn-info" value="Submit"> </div>
+</div>
+<input id="order_id" type="hidden"   name="order_id" value="{{ MYCONTEXT.order_id }}">
+<input id="categorystring" type="hidden"   name="categorystring" value="{{ MYCONTEXT.categorystring }}">
+<input id="pickingconfirmation" type="hidden"   name="pickingconfirmation" value="{{ MYCONTEXT.pickingconfirmation }}">
+<input id="enable_palleting" type="hidden"   name="enable_palleting" value="{{ MYCONTEXT.enablepalleting }}">
+</form>
+</form>
+   {%  if linestopick %}
+                <div class="d-flex">
+                        <table class="table table-striped table-bordered table-sm" >
+                            <thead class="bg-info">
+                            <tr>
+                     {% block tableheader %}
+        <th>Order#</th>
+            <th>Line ID</th>
+            <th>Sub Location</th>
+            <th>Item Number</th>
+            <th>Item Name</th>
+            <th>Loc Stock</th>
+            <th>SubLoc Stock</th>
+            <th>Ordered</th>
+            <th>Picked</th>
+            <th>To Pick</th>
+            <th>To Pick (c)</th>
+                     {% endblock %}
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{  linestopick | safe }}
+                  {%   for row in rows %}
+                   <tr>
+                       {% block rowaction  %}
+                   {% endblock %}
+                      {% block tablerow %}
+                       {% endblock %}
+
+
+                    </tr>
+                  {%   endfor %}
+                  </tbody>
+                </table>
+           </div>
+    {% endif %}
+{% endblock %}

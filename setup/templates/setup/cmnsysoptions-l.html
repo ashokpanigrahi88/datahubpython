@@ -1,0 +1,52 @@
+{% extends 'common/model_list.html' %}
+{% block title %} System Options {% endblock %}
+{% block findaction %} {% endblock %}
+{% block findform %}
+    <br>
+    <h3> System Options</h3>
+    <br>
+{% endblock %}
+
+{% block tableheader %}
+    <th>Smtp domain</th>
+    <th>Casetype</th>
+    <th>Report server url</th>
+    <th>Report server name</th>
+    <th>Picture type</th>
+    <th>Picture path</th>
+    <th>Application directory</th>
+    <th>Tax code id</th>
+    <th>Country code</th>
+    <th>Currency code</th>
+    <th>Outbound</th>
+    <th>Inbound</th>
+    <th>Mobile Url</th>
+ {% endblock %}
+{% block tablerow %}
+    <td>{{row.smtp_domain}}</td>
+    <td>{{row.casetype}}</td>
+    <td>{{row.report_server_url}}</td>
+    <td>{{row.report_server_name}}</td>
+    <td>{{row.picture_type}}</td>
+    <td>{{row.picture_path}}</td>
+    <td>{{row.application_directory}}</td>
+    <td>{{row.tax_code_id}}</td>
+    <td>{{row.country_code}}</td>
+    <td>{{row.currency_code}}</td>
+    <td>{{row.dir_outbound}}</td>
+    <td>{{row.dir_inbound}}</td>
+    <td>{{row.mobile_url}}</td>
+{% endblock %}
+        {% block rowaction %}
+    <td>
+		<a href="/setup/cmnsysoptions_update/{{ row.sys_options_id }}/"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+    </td>
+{% endblock %}
+{% block createaction %}
+
+<script>
+$( "#find_search" ).hide();
+</script>
+{% endblock %}
+
+

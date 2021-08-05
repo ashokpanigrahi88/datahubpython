@@ -1,0 +1,29 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_Privilege(p_Name=>'CONFIGURATION'
+,p_description=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Privilege(p_Name=>'PRICE OVERRIDE'
+,p_description=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Privilege(p_Name=>'PROFORMA'
+,p_description=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Privilege(p_Name=>'REFUND'
+,p_description=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Privilege(p_Name=>'VOID INVOICE'
+,p_description=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Privilege(p_Name=>'VOID LINE'
+,p_description=>''
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

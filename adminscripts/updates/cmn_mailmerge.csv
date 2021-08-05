@@ -1,0 +1,313 @@
+,TABLE_VIEW_NAME,DESCRIPTION,IDENTIFIER,ACTIVE,UPDATE_SOURCE,DELETE_FLAG,BU_ID,CREATED_BY,CREATION_DATE,LAST_UPDATED_BY,LAST_UPDATE_DATE,MERGE_TYPE,MERGE_HEADER_ID,MERGE_OWNER,BARCODE_TEXT,ATTRIBUTE6,ATTRIBUTE5,ATTRIBUTE4,ATTRIBUTE3,ATTRIBUTE2,ATTRIBUTE1,SL_NO,SALES_UNIT,REPORT_ID,PRINTER_ID,PRINT_HEADER_IMAGE,LINE_SL_NO,LINE_TEXT,LINE_IDENTIFIER,LINE_TYPE,MERGE_LINE_ID,VARIABLE,LINE_ATTRIBUE1,LINE_ATTRIBUE2,LINE_ATTRIBUE3,LINE_ATTRIBUE4,LINE_ATTRIBUE5,LINE_ATTRIBUE6
+0,INV_ITEM_MASTERS,BARCODE LABEL1,BARCODE_LABEL1,Y,API,None,1,None,2010-08-24 10:38:03,5.0,2011-01-05 11:40:30,HTML,1,SYSTEM,PRIMARY,None,None,None,None,None,None,None,nan,nan,nan,N,1,"<FONT SIZE=4 FACE=""COURIER"">$ITEMNAME$ </FONT>
+<FONT SIZE=1.5 FACE=""COURIER"">Quantity  Price</FONT>
+  $SUMIN$£$PRICEINCMIN/1$
+ $BARCODEMIN$             $BINMIN$",BARCODE LABEL1,HTML,1,Y,None,None,None,None,None,None
+1,INV_ITEM_MASTERS,BARCODE LABEL1,BARCODE_LABEL1,Y,API,None,1,None,2010-08-24 10:38:03,5.0,2011-01-05 11:40:30,HTML,1,SYSTEM,PRIMARY,None,None,None,None,None,None,None,nan,nan,nan,N,2,"             QTY         Price
+              $SUMIN$£$PRICEINCMIN/1$",BARCODE LABEL1,HTML,4,Y,None,None,None,None,None,None
+2,INV_ITEM_MASTERS,BARCODE LABEL2,BARCODE_LABEL2,Y,API,None,1,None,2010-09-08 18:19:53,72.0,2020-05-05 08:58:30,HTML,3,SYSTEM,PRIMARY,None,None,None,None,None,None,None,nan,106.0,7.0,N,1,"            $SHORTDESC$
+             QTY         Price
+              $SUMIN$£$PRICEINCMIN/1$",BARCODE LABEL2,HTML,3,Y,None,None,None,None,None,None
+3,INV_ITEM_MASTERS,BARCODE LABEL3,BARCODE_LABEL3,Y,API,None,1,None,2010-10-07 14:04:14,nan,2010-10-07 14:04:14,HTML,4,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"$ITEMNUMBER$
+$ITEMNAME30$
+$PRICEEXLMIN/1$ $PRICEINCMIN/1$(inc)
+$PRICEEXLMIN/2$ $PRICEINCMIN/2$(inc) Buy 20 or more
+$PRICEEXLMIN/3$ $PRICEINCMIN/3$(inc) Buy 100 or more
+Inner:$INNERQTY$ Case:$CASEUNIT$ Pallet:$PALLETQTY$",BARCODE LABEL3,HTML,5,Y,None,None,None,None,None,None
+4,CMN_COMMUNICATIONS,COMMUNICATION - CUSTOMER,COMMUNICATION_-_CUSTOMER,Y,API,None,1,None,2012-02-19 17:19:21,nan,2012-02-19 17:19:21,HTML,21,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"Dear $CUSTOMERNAME$
+
+Subject : $SUBJECT$
+
+$COMMUNICATIONBODY$
+
+Ref :$COMMUNICATIONID$/$COMMUNICATIONTYPECODE$/$COMMUNICATIONCATEGORYCODE$/$LASTUPDATEDATE$
+Thanks
+",COMMUNICATION - CUSTOMER,HTML,27,Y,None,None,None,None,None,None
+5,AR_CUSTOMERS,CUSTOMER BOX LABEL,CUSTOMER_BOX_LABEL,Y,API,None,1,None,2011-04-24 21:32:39,nan,2011-04-24 21:32:39,HTML,17,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"GOODS FOR :                             Customer Ref:$CUSTOMERNUMBER$
+<FONT SIZE=6 FACE=""COURIER"">
+$CUSTOMERNAME$
+$BILLTOADDRESSLINE1$
+$BILLTOCITY$
+$BILLTOCOUNTY$
+$BILLTOPOSTCODE$</FONT>
+_________________________________________
+<FONT SIZE=7 FACE=""COURIER"">Carton No. : $NOOFBOXES$</FONT>
+_________________________________________
+
+<FONT SIZE=8 FACE=""COURIER""> Notes:$FREETEXT$</FONT>
+
+
+<FONT SIZE=5 FACE=""COURIER"">Dispatched By:
+$COMPANYNAME$
+$LOCADDRESS$
+$LOCCITY$
+$LOCCOUNTY$
+$LOCPOSTCODE$
+Tel:$LOCPHONE1$
+Fax:$LOCFAX1$
+e-mail:$LOCEMAIL$
+Date:$SYSDATE$
+</FONT>
+",CUSTOMER BOX LABEL,HTML,23,Y,None,None,None,None,None,None
+6,AR_CUSTOMERS,CUSTOMER COVER LETTER,CUSTOMER_COVER_LETTER,Y,API,None,1,None,2010-10-07 14:04:14,nan,2010-10-07 14:04:14,HTML,6,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"<FONT SIZE=6 FACE=""COURIER"">$LOCNAME$</FONT> <font size=2 >
+$LOCNAME$Tel:$LOCPHONE1$
+$LOCADDRESS$Fax:$LOCFAX1$
+$LOCCITY$e-mail:$LOCEMAIL$
+$LOCCOUNTY$Date:$SYSDATE$
+$LOCPOSTCODE$
+
+Dear  $CUSTOMERNAME$
+</font>
+",CUSTOMER COVER LETTER,HTML,7,Y,None,None,None,None,None,None
+7,AR_CUSTOMERS,CUSTOMER COVER LETTER,CUSTOMER_COVER_LETTER,Y,API,None,1,None,2010-10-07 14:04:14,nan,2010-10-07 14:04:14,HTML,6,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,2,"<font size=2 >Thank you for your order. For your convenience we have attached herewith a latest stock list for
+<b>$FREETEXT$</b>
+This new list shows many new items that have arrived since our main price list was printed.The list shows a list of items that are currently in stock. If you cannot see what you need, just give us a ring and ask, as it may have arrived after the list was printed.
+
+All images shown on our web site and leaflets are to give an indication of colour, design and packaging. The goods supplied may vary from the images shown.We would be obliged if you could check the name and address details on the invoice and let us know if there are any mistakes.</font>
+",CUSTOMER COVER LETTER,HTML,8,Y,None,None,None,None,None,None
+8,AR_CUSTOMERS,CUSTOMER COVER LETTER,CUSTOMER_COVER_LETTER,Y,API,None,1,None,2010-10-07 14:04:14,nan,2010-10-07 14:04:14,HTML,6,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,3,"<font size=5 >
+           ******************************************
+           *    Why not order on-line and check     *
+           *      out our WEB-ONLY Special          *
+           *       offers on our web site.          *
+           *    www.oratechsols.co.uk               *
+           ******************************************
+</font>
+",CUSTOMER COVER LETTER,HTML,9,Y,None,None,None,None,None,None
+9,AR_CUSTOMERS,CUSTOMER LABEL,CUSTOMER_LABEL,Y,API,None,1,None,2011-03-11 20:54:58,nan,2011-03-11 20:54:58,HTML,13,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"$CUSTOMERNAME$($CUSTOMERNUMBER$)
+$BILLTOADDRESSLINE1$
+$BILLTOCITY$
+$BILLTOCOUNTY$
+$BILLTOPOSTCODE$",CUSTOMER LABEL,HTML,19,Y,None,None,None,None,None,None
+10,AR_CUSTOMERS,CUSTOMER ORDER FORM,CUSTOMER_ORDER_FORM,Y,API,None,1,None,2010-10-07 14:04:14,nan,2010-10-07 14:04:14,HTML,7,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"<FONT SIZE=4 FACE=""COURIER"">$LOCNAME$</FONT><FONT SIZE=4 FACE=""COURIER"">ORDER FORM</FONT>
+<font size=2 >
+To
+$LOCNAME$$LOCEMAIL$
+$LOCADDRESS$
+$LOCCITY$Tel:$LOCPHONE1$
+$LOCCOUNTY$Fax:$LOCFAX1$
+$LOCPOSTCODE$
+</font>",CUSTOMER ORDER FORM,HTML,10,Y,None,None,None,None,None,None
+11,AR_CUSTOMERS,CUSTOMER ORDER FORM,CUSTOMER_ORDER_FORM,Y,API,None,1,None,2010-10-07 14:04:14,nan,2010-10-07 14:04:14,HTML,7,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,5,"<font size=2 FACE=""COURIER"">
+From : -                                          Date  :
+-------------------------------------------------------------------------------------
+$CUSTOMERNAME$<font size=""2.5"">Account Number:$CUSTACCOUNTNUMBER$ </font>
+-------------------------------------------------------------------------------------
+$CUSTADDRESS$email:$CUSTEMAIL$
+-------------------------------------------------------------------------------------
+ $CUSTCITY$Tel:$CUSTPHONE1$
+-------------------------------------------------------------------------------------
+$CUSTCOUNTY$Fax:$CUSTFAX1$
+-------------------------------------------------------------------------------------
+$CUSTPOSTCODE$ Mobile:$CUSTMOBILE$
+--------------------------------------------------------------------------------------
+</font>
+<font size=3 FACE=""COURIER"">
+PLEASE SUPPLY THE FOLLOWING GOODS          SUB TOTAL CARRIED FORWARD TO OTHER SIDE
+-----------------------------------------------------------------------------------
+SL# |CODE  |   QTY  |           DESCRIPTION               | UNIT COST| TOTAL COST |
+-----------------------------------------------------------------------------------</font>",CUSTOMER ORDER FORM,HTML,11,Y,None,None,None,None,None,None
+12,AR_CUSTOMERS,CUSTOMER ORDER FORM,CUSTOMER_ORDER_FORM,Y,API,None,1,None,2010-10-07 14:04:14,nan,2010-10-07 14:04:14,HTML,7,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,10,"<font size=3 FACE=""COURIER"">1.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+2.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+3.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+4.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+5.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+6.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+7.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+8.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+9.  |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+10. |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+11. |      |        |                                     |          |            |
+-----------------------------------------------------------------------------------
+C1  |      |        |   <b>CARRIAGE PER CARTOON (25KG)</b>       |    8.00  |            |
+-----------------------------------------------------------------------------------
+    Orders can also be placed by phone for faster delivery| Net Value|            |
+-----------------------------------------------------------------------------------
+   If you need help making up the order please call       |  V.A.T   |            |
+-----------------------------------------------------------------------------------
+   Do not forget starter packs are a good way to get going|   TOTAL  |            |
+-----------------------------------------------------------------------------------</font>",CUSTOMER ORDER FORM,HTML,12,N,None,None,None,None,None,None
+13,AR_CUSTOMERS,CUSTOMER ORDER FORM,CUSTOMER_ORDER_FORM,Y,API,None,1,None,2010-10-07 14:04:14,nan,2010-10-07 14:04:14,HTML,7,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,15,"INSTRUCTIONS FOR PAYMENT BY TRNSCASH                    SUPPLEMENT TERMS AND CONDITIONS FOR MAIL ORDERS
+
+Payment can be made by cash at any U.K. Post Office,  1) If items are out of stock, the order will be made up with
+using the enclosed TRANSACTION FORM                      similar items or extras of those already ordered,
+enclosed with the order.                                 unless there is a list of substitutes
+
+1) Complete the enclosed Transaction form             2) ALL CHINA AND GLASSWARE ARE SENT AT THE BUYERS RISK.
+with the TOTAL amount of payment
+(including VAT and P&P).                              3) Goods once sold cannot be returned .
+2) Ensure the Transcash form is dated and signed and
+ that both counter foils have the total amount shown. 4) All prices subject to change without notice and
+3) Take the form with the cash to any Post                VAT at the appropriate rate
+Office for payment.
+4) You will be charged a standard fee for the service.5) All goods offered subject to vailability.
+5)The Post Office will stamp both counterfoils as
+ confirmation of payment and retain the payment form.
+6) Retain one counterfoil for your own record          6) All orders subject to our normal Terms & Conditions
+  return the second with the order form.                   (copy available on request).
+
+IMPORTANT: Failure to include a counterfoil            7) All carriage charges (including returns)
+ will delay your order.                                     are to be paid for by the buyer.
+
+We will dispatch the goods upon receiving the order form and stamped counterfoil.
+
+PAYMENT BY DEBIT/CREDIT CARD   Please remember there is a £50 minimum on all orders.
+
+ Please debit my debit card, VISA / MASTERCARD / ACCESS / DELTA / SWITCH (delete as appropriate).
+
+ Card No.                                            Exp Date        Issue No. (switch)
+ -------------------------------------------------   ----------       -----------
+ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |   |  |  |  |       |    |    |
+ -------------------------------------------------   -----------      -----------
+
+ Amount__________________________________ Signed _________________________________
+",CUSTOMER ORDER FORM,HTML,13,N,None,None,None,None,None,None
+14,AR_CUSTOMERS,TEMPLATE FOR INFORMING REGISTRATION,CUSTOMER_REGISTRATION,Y,API,None,1,None,2011-03-22 20:18:45,nan,2011-03-22 20:18:45,HTML,15,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"Dear $CUSTOMERNAME$
+
+Thanks for registering with $LOCNAME$
+Please login using following details
+User name: $LOGINNAME$
+Password : $CUSTPASSWORD$
+
+",CUSTOMER REGISTRATION,HTML,21,Y,None,None,None,None,None,None
+15,AR_CUSTOMERS,CUSTOMER STATEMENT,CUSTOMER_STATEMENT,Y,API,None,1,None,2010-10-07 14:04:14,nan,2010-10-07 14:04:14,HTML,5,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"<font size=2 ><b>*********************
+Your transactions ends here
+*********************</b></font>",CUSTOMER STATEMENT,HTML,6,N,None,None,None,None,None,None
+16,AR_CUSTOMERS,TEMPLATE FOR INFORMING CUSTOMER USER NAME AND PASSWORD,CUSTOMER_USER_NAME_PASSWORD,Y,API,None,1,None,2011-03-22 20:18:45,nan,2011-03-22 20:18:45,HTML,14,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"Dear $CUSTOMERNAME$
+
+Thanks for registering with $LOCNAME$
+Please login using following details
+User name: $LOGINNAME$
+Password : $CUSTPASSWORD$
+
+",CUSTOMER USER NAME PASSWORD,HTML,20,Y,None,None,None,None,None,None
+17,AR_SALESORDER_HEADERS,THIS TEXT IS PRINTED IN DELIVERY NOTE - WEB ORDERS ONLY,DELIVERY_NOTE_FOOTER,Y,API,None,1,None,2011-09-10 11:25:52,nan,2011-09-10 11:25:52,HTML,18,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,DELIVERY NOTE TERMS AND CONDITIONS,DELIVERY NOTE FOOTER,HTML,24,Y,None,None,None,None,None,None
+18,AR_CUSTOMERS,THIS TEMPLATE WILL BE USED WHILE EMAILING INVOICES,INVOICE_ATTACHMENT_BODY,Y,API,None,1,None,2011-09-10 11:25:52,nan,2011-09-10 11:25:52,HTML,20,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"Dear $CUSTOMERNAME$
+
+Please find the invoice attached
+
+Thanks
+From : 
+$COMPANYNAME$
+$LOCATIONNAME$",INVOICE ATTACHMENT BODY,HTML,26,Y,None,None,None,None,None,None
+19,INV_ITEM_MASTERS,ITEM ALL COLUMNS,ITEM_ALL_COLUMNS,Y,API,None,1,None,2011-03-31 21:49:19,nan,2011-03-31 21:49:19,HTML,16,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"$ALTERNATECASECP$,$ALTERNATEUNITCP$,$APPLYOFFER$,$AVERAGEUNITCP$,$BALANCESHEETGLACCOUNTID$,$BUID$,$CASECP$,$CASEHEIGHT$,$CASELENGTH$,$CASEUNIT$,$CASEVOLUME$,$CASEWIDTH$,$CCCID$,$CLOSINGBALANCE$,$CMCPCID$,$COSTOFSALESGLACCOUNTID$,$CREATEDBY$,$CREATIONDATE$,$CTCTAXCODEID$,$CUSTOMERNOTES1$,$CUSTOMERNOTES2$,$CUSTOMERNOTES3$,$DEFAULTLABELNAME$,$DELETEFLAG$,$DELIVERYCHARGES$,$DEMOVIDEOFILE$,$ENDDATEACTIVE$,$ENFORCEREORDERQTY$,$ENFORCETAXCODE$,$EXTERNALREFERENCE$,$FLAGINDATEFROM$,$FLAGINDATETO$,$FLAGINWEBEXPORT$,$FREIGHT$,$FREIGHTPRICECRITERIA$,$GACGLACCOUNTID$,$GOODSINLOCATIONID$,$GROSSCASEWEIGHT$,$GROSSUNITWEIGHT$,$GROUP1$,$GROUP2$,$GROUP3$,$GROUP4$,$IICCATEGORYID$,$IISCSUBCATEGORYID$,$IMMANFID$,$INNERQTY$,$IPBHPRICEBREAKID$,$ITEMCLASSCATEGORY$,$ITEMCOLOUR$,$ITEMCOMMENT$,$ITEMDIMENSION$,$ITEMDIMENSIONTYPE$,$ITEMFITTING$,$ITEMID$,$ITEMNAME$,$ITEMNUMBER$,$ITEMSIZE$,$ITEMSPECIFICATIONS$,$ITEMSTATUS$,$ITEMSTYLE$,$IWCCHARGEID$,$KEYWORDS$,$LASTBOUGHTUNITCP$,$LASTUPDATEDBY$,$LASTUPDATEDATE$,$LONGDESC$,$MAXQTY$,$MINPBQTY$,$MINQTY$,$MKUPTEMPID$,$NETCASEWEIGHT$,$NETINGREDIENT$,$NETUNITWEIGHT$,$OPENINGBALANCE$,$PALLETQTY$,$PICTURENAME$,$PICTURENAME1$,$PICTURENAME2$,$PICTURENAME3$,$PICTURETYPE$,$PNLGLACCOUNTID$,$PRICEVARIANCEGLACCOUNTID$,$PRINTPICTURE$,$PUBLISHTOWEB$,$PURCHASEABLE$,$QTYINSTOCK$,$RECORDSTATUS$,$REORDERINTERVAL$,$REORDERQTY$,$REORDERUOMID$,$REPLENISHEDFROMLOCATION$,$REPLENISHMENTOPTIONS$,$RESERVABLE$,$SALEABLE$,$SALESGLACCOUNTID$,$SALESLOCATIONID$,$SALESLOCATIONQTY$,$SEASONCODEID$,$SERIALNUMBERED$,$SERVICEDITEM$,$SHORTDESC$,$SIMILARITEMCONCATED$,$SIMILARITEMID$,$STARTDATEACTIVE$,$STOCKABLE$,$STOCKHOLDINGUNIT$,$STOCKTAKECATEGORY$,$SUPPLIERCASECP$,$SUPPLIERNOTES1$,$SUPPLIERNOTES2$,$SUPPLIERNOTES3$,$SUPPLIERPRODUCTCODE$,$SUPPLIERUNITCP$,$SUPSUPPLIERID$,$TAKESNAPSHOT$,$TECHNICALSPECS$,$TECHNICALSPECSFILE$,$TRACKUSAGE$,$TRADINGCASECP$,$TRADINGUNITCP$,$UNITCP$,$UNITHEIGHT$,$UNITLENGTH$,$UNITVOLUME$,$UNITWIDTH$,$UPDATESOURCE$,$VALUABLE$,$VOLUMEUOMID$,$WARRANTIED$,$WARRANTYPERIOD$,$WEIGHEDITEM$,$WEIGHTUOMID$,$WHOSEFOR$,",ITEM ALL COLUMNS,HTML,22,Y,None,None,None,None,None,None
+20,INV_ITEM_MASTERS,ITEM TEMPLATE 1,ITEM_TEMPLATE_1,Y,API,None,1,None,2010-08-24 10:38:03,nan,2010-08-24 10:38:03,HTML,2,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"<FONT SIZE=4 FACE=""COURIER"">       $ITEMNUMBER$   $ITEMNAME$ </FONT>
+<FONT SIZE=1.5 FACE=""COURIER"">Quantity  Price</FONT>
+  $SUMIN$£$PRICEINCMIN/1$
+  $SUBOX$£$PRICEINCBOX/1$
+  $SUMAX$£$PRICEINCMAX/1$
+----------------------------------------------------------
+ $BARCODEMIN$             $BINMIN$
+",ITEM TEMPLATE 1,HTML,2,Y,None,None,None,None,None,None
+21,AR_CUSTOMERS,THIS TEMPLATE IS USED WHILE EMAILING PALLET NOTE,PALLETNOTE_ATTACHMENT_BODY,Y,API,None,1,None,2019-04-20 13:25:47,nan,2019-04-20 13:25:47,HTML,24,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"Dear $CUSTOMERNAME$
+
+Please find the pallet note attached
+
+Thanks
+From : $LOCATIONNAME$",PALLETNOTE_ATTACHMENT_BODY,HTML,30,Y,None,None,None,None,None,None
+22,INV_ITEM_MASTERS,PRICE DROP,PRICE_DROP,Y,API,None,1,None,2011-02-20 18:04:10,nan,2011-02-20 18:04:10,HTML,11,SYSTEM,ITEMNUMBER,None,None,None,None,None,None,None,1.0,nan,nan,N,1,"<FONT SIZE=6 FACE=""COURIER"">     PRICE CRASH</FONT>
+<FONT SIZE=4 FACE=""COURIER"">    $ITEMNAME$</FONT>
+
+
+
+
+<FONT SIZE=9 FACE=""COURIER"">                  $PRICEEXLMIN/5$</FONT>
+
+
+
+
+
+<FONT SIZE=3 FACE=""COURIER"">Normal Price                      $PRICEEXLMIN/1$</FONT>
+<FONT SIZE=2 FACE=""COURIER"">$ITEMNUMBER$                 $SUPPLIERPRODUCTCODE$               $CASEUNIT$</FONT>",PRICE DROP,HTML,17,Y,None,None,None,None,None,None
+23,INV_ITEM_MASTERS,PRICE DOP MULTIBUY,PRICE_DROP_MULTIBY,Y,API,None,1,None,2011-02-20 18:04:10,nan,2011-02-20 18:04:10,HTML,10,SYSTEM,ITEMNUMBER,None,None,None,None,None,None,None,nan,nan,nan,N,1,"<FONT SIZE=6 FACE=""COURIER"">    $SPOFFERNAME$</FONT>
+<FONT SIZE=4 FACE=""COURIER"">     $ITEMNAME$</FONT>
+
+
+
+
+$SPOFFERTEXT$
+
+
+
+<FONT SIZE=10 FACE=""COURIER"">    $PRICEEXLMIN/5$</FONT>
+
+
+
+
+
+
+              Average Net Price
+<FONT SIZE=3 FACE=""COURIER"">Normal Price                      $PRICEEXLMIN/1$</FONT>
+<FONT SIZE=2 FACE=""COURIER"">$ITEMNUMBER$                 $SUPPLIERPRODUCTCODE$               $CASEUNIT$</FONT>",PRICE DROP MULTIBY,HTML,16,Y,None,None,None,None,None,None
+24,AR_CUSTOMERS,THIS TEMPLATE WILL BE USED WHILE EMAILING ANY REPORT,REPORT_ATTACHMENT_BODY,Y,API,None,1,None,2012-02-19 17:19:22,nan,2012-02-19 17:19:22,HTML,22,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"Hello,
+
+Please find the invoice attached
+
+Thanks
+From : $LOCATIONNAME$",REPORT ATTACHMENT BODY,HTML,28,Y,None,None,None,None,None,None
+25,AR_INVOICE_HEADERS,THIS TEXT IS PRINTED IN SALES INVOICE,SALES_INVOICE_FOOTER,Y,API,None,1,None,2011-09-10 11:25:52,nan,2011-09-10 11:25:52,HTML,19,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"Items delivered by pallets/cartons are sealed.If tampered with recipients must inform <b>CANNON TOOLS LIMITED</b>
+on the same day of receipt.Discrepancies and Non-Delivery of goods must be notified in writing within three days of Invoice
+Date.Title of goods will remain with <b>CANNON TOOLS LIMITED</b> until payment is received in full.
+On overdue accounts <b>CANNON TOOLS LIMITED</b> reserve the right to charge interest at the rate of 12% over base rate of lending at
+Lloyds Bank Plc. Inc. VAT at line level is a guide only.
+Account Number 00637201
+Sort Code 30 00 03
+IBAN GB95 LOYD 3000 0300 637201
+BIC LOYDGB21003",SALES INVOICE FOOTER,HTML,25,Y,None,None,None,None,None,None
+26,AR_INVOICE_HEADERS,THIS TEXT IS PRINTED IN SALES ORDER REPORTS,SALES_ORDER_FOOTER,Y,API,None,1,None,2012-07-21 13:49:07,nan,2012-07-21 13:49:07,HTML,23,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"Items delivered by pallets/cartons are sealed.If tampered with recipients must inform <b>CANNON TOOLS LIMITED</b>
+on the same day of receipt.Discrepancies and Non-Delivery of goods must be notified in writing within three days of Invoice
+Date.Title of goods will remain with <b>CANNON TOOLS LIMITED</b> until payment is received in full.
+On overdue accounts <b>CANNON TOOLS LIMITED</b> reserve the right to charge interest at the rate of 12% over base rate of lending at
+Lloyds Bank Plc. Inc. VAT at line level is a guide only.
+Account Number 00637201
+Sort Code 30 00 03
+IBAN GB95 LOYD 3000 0300 637201
+BIC LOYDGB21003",SALES ORDER FOOTER,HTML,29,Y,None,None,None,None,None,None
+27,INV_ITEM_MASTERS,SHELF LABEL SPECIAL OFFER,SHELF_LABEL_SPECIAL_OFFER,Y,API,None,1,None,2011-02-20 18:04:10,nan,2011-02-20 18:04:10,HTML,8,SYSTEM,ITEMNUMBER,None,None,None,None,None,None,None,nan,nan,nan,N,1,"
+<FONT SIZE=6 FACE=""COURIER"">    Special Offer</FONT>
+________________________________________________________________
+<FONT SIZE=4 FACE=""COURIER"">     $ITEMNAME$</FONT>
+
+________________________________________________________
+Min Qty <FONT SIZE=3 FACE=""COURIER""> $SUBOX$</FONT>|Normal Price<FONT SIZE=3 FACE=""COURIER""> $PRICEEXLMIN/1$</FONT>
+---------------------------------------
+
+<FONT SIZE=20 FACE=""COURIER"">                  $PRICEEXLMIN/5$</FONT>
+
+
+______________________________________________________________________
+<FONT SIZE=2 FACE=""COURIER"">$ITEMNUMBER$           $SUPPLIERPRODUCTCODE$          $CASEUNIT$        $INNERQTY$</FONT>
+____________________________________________________________________
+",SHELF LABEL SPECIAL OFFER,HTML,14,Y,None,None,None,None,None,None
+28,AP_SUPPLIERS,SUPPLIER LABEL,SUPPLIER_LABEL,Y,API,None,1,None,2011-03-11 20:54:58,nan,2011-03-11 20:54:58,HTML,12,SYSTEM,None,None,None,None,None,None,None,None,nan,nan,nan,N,1,"$SUPPLIERNAME$($SUPPLIERNUMBER$)
+$ADDRESSLINE1$
+$CITY$
+$COUNTY$
+$POSTCODE$",SUPPLIER LABEL,HTML,18,Y,None,None,None,None,None,None
+29,INV_ITEM_MASTERS,UNIT LABEL,UNIT_LABEL,Y,API,None,1,None,2011-02-20 18:04:10,nan,2011-02-20 18:04:10,HTML,9,SYSTEM,ITEMNUMBER,None,None,None,None,None,None,None,nan,nan,nan,N,1,"
+<FONT SIZE=4 FACE=""COURIER"">           $ITEMNAME$</FONT>
+
+
+
+                 Pack Price <FONT SIZE=10 FACE=""COURIER"">        $PRICEEXLMIN/1$</FONT>
+<FONT SIZE=2 FACE=""COURIER"">
+-----------------------------------------------
+This item is only sold in              Average
+full packs. The average                  Price
+price shown is only an</FONT><FONT SIZE=4 FACE=""COURIER"">            $PRICEEXLMIN/4$</FONT><FONT SIZE=2 FACE=""COURIER"">
+indication for costing
+calculations</FONT>
+---------------------------------------
+<FONT SIZE=3 FACE=""COURIER"">                                   $BINMIN$</FONT>
+---------------------------------------
+<FONT SIZE=2 FACE=""COURIER"">$ITEMNUMBER$              $SUPPLIERPRODUCTCODE$                  $CASEUNIT$</FONT>",UNIT LABEL,HTML,15,Y,None,None,None,None,None,None

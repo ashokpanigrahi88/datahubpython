@@ -1,0 +1,30 @@
+{% extends 'common/model_list.html' %}
+{% block title %} {{  MYCONTEXT.title }}{% endblock %}
+{% block findaction %} {{ MYCONTEXT.list }} {% endblock %}
+{% block findform %}
+    <label for="nm">{{  MYCONTEXT.findfield }}</label>
+    <input id="nm" type="text" name="nm" value="">
+{% endblock %}
+
+{% block tableheader %}
+    <th> Code</th>
+    <th>Language </th>
+ {% endblock %}
+{% block tablerow %}
+    <td>{{ row.language_code  }}</td>
+    <td>{{ row.language_name }}</td>
+{% endblock %}
+        {% block rowaction %}
+    <td>
+		<a href="{{ MYCONTEXT.update }}{{ row.language_code }}/">Edit</a>
+<!--		<a href="{{ MYCONTEXT.delete }}{{ row.language_code}}/">Delete</a>-->
+    </td>
+{% endblock %}
+{% block createaction %}
+ <div style="text-align: center;"><a href="{{ MYCONTEXT.create }}">
+     <button type="button" class="new-btn new-button">Add</button>
+ </a></div>
+
+{% endblock %}
+
+

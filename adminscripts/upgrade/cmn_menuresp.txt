@@ -1,0 +1,1775 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.MOVE TO PRIMARY SALES'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. MOVE TO PRIMARY SALES'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PURCHASE ORDERPAD'
+,p_RespName=>'PURCHASES'
+,p_description=>'Purchase Orderpad'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.INTER OFFICE MOVEMENT'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M.INTER OFFICE MOVEMENT'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.MOVE UNIT4 TO NDC'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M.MOVE UNIT4 TO NDC'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PURCHASE ORDERPAD SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Purchase Orderpad Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES INVOICE DRILLDOWN'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Sales Invoice Drilldown'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES ORDER PICKING ENQUIRY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Sales Order Picking Enquiry'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM CATEGORY ENQUIRY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item Category Enquiry'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'RECEIVE EXTERNAL PO'
+,p_RespName=>'PURCHASES'
+,p_description=>'Receive External PO'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MULTILANGUAGE TEXTS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Multilanguage Texts'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.MANAGE DISPATCHES'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M.MANAGE DISPATCHES'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. ANNUAL STOCK TAKE'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. ANNUAL STOCK TAKE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.SPLIT PALLET'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. SPLIT PALLET'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.MERGE PALLET'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. MERGE PALLET'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. MOVE ITEM'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. MOVE ITEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. FIND PALLETS'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. FIND PALLETS'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SPLIT STOCK'
+,p_RespName=>'WAREHOUSE'
+,p_description=>'Split Stock'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SPLIT GOODS IN'
+,p_RespName=>'WAREHOUSE'
+,p_description=>'Split Goods In'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PICKING ASSIGNMENTS'
+,p_RespName=>'WAREHOUSE'
+,p_description=>'Picking Assignments'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MANAGE DISPATCHES'
+,p_RespName=>'WAREHOUSE'
+,p_description=>'Manage Dispatches'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MANAGE PALLET'
+,p_RespName=>'WAREHOUSE'
+,p_description=>'Manage Pallet'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MANAGE BOX'
+,p_RespName=>'WAREHOUSE'
+,p_description=>'Manage Box'
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT EXPORT SETUP'
+,p_RespName=>'IMPORT EXPORT'
+,p_description=>'Import Export Setup'
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MANAGE EXORTS'
+,p_RespName=>'REPORTS'
+,p_description=>'Manage Exports'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'EXTERNAL GRN SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'External Grn Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'STOCK ADJUSTMENT SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Stock Adjustment Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'EXPORT DATA'
+,p_RespName=>'IMPORT EXPORT'
+,p_description=>'Export Data'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES ORDER DASH BOARD'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Sales Order Dash Board'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ORDER PAD SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Order Pad Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM STATUS QUERY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item Status Query'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'THIRD PARTY FEEDS'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Third Party Feeds'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'COST PRICE HISTORY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Cost Price History'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES ORDER PAD'
+,p_RespName=>'SALES'
+,p_description=>'Sales Order Pad'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'QUICK SALES ORDER'
+,p_RespName=>'SALES'
+,p_description=>'Quick Sales Order'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'WEB SOURCES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Web Sources'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'LANGUAGES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Languages'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'JOURNAL ENTRIES'
+,p_RespName=>'GENERAL LEDGER'
+,p_description=>'Journal Entries'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GL TEMPLATE TRANS'
+,p_RespName=>'GENERAL LEDGER'
+,p_description=>'GL Template Trans'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GL TEMPLATES'
+,p_RespName=>'GENERAL LEDGER'
+,p_description=>'GL Templates'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SYSTEM CONTROLS'
+,p_RespName=>'SECURITY'
+,p_description=>'System Controls'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRINTERS'
+,p_RespName=>'SECURITY'
+,p_description=>'Printers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SEQUENCES'
+,p_RespName=>'SECURITY'
+,p_description=>'Sequences'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SYSTEM OPTIONS'
+,p_RespName=>'SECURITY'
+,p_description=>'System Options'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'UPGRADE/INSTALL'
+,p_RespName=>'SECURITY'
+,p_description=>'Upgrade/Install'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT'
+,p_RespName=>'SECURITY'
+,p_description=>'Import'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SYSTEM LOG'
+,p_RespName=>'SECURITY'
+,p_description=>'System Log'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'RUN APROCESS'
+,p_RespName=>'SECURITY'
+,p_description=>'Run A Process'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SCHEDULE SETUP'
+,p_RespName=>'SECURITY'
+,p_description=>'Schedule Setup'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'LOGIN AUDIT'
+,p_RespName=>'SECURITY'
+,p_description=>'Login Audit'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'FUNCTION AUDIT'
+,p_RespName=>'SECURITY'
+,p_description=>'Function Audit'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BACKGROUND JOBS'
+,p_RespName=>'SECURITY'
+,p_description=>'Background Jobs'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'REPORT GROUP'
+,p_RespName=>'SECURITY'
+,p_description=>'Report Group'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PROFILES'
+,p_RespName=>'SECURITY'
+,p_description=>'Profiles'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PROFILE VALUES'
+,p_RespName=>'SECURITY'
+,p_description=>'Profile Values'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRIVILEGES'
+,p_RespName=>'SECURITY'
+,p_description=>'Privileges'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GRANTED PRIVILEGES'
+,p_RespName=>'SECURITY'
+,p_description=>'Granted Privileges'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'TERMINALS'
+,p_RespName=>'SECURITY'
+,p_description=>'Terminals'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CREATE WORKLIST'
+,p_RespName=>'SECURITY'
+,p_description=>'Create Worklist'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'USER'
+,p_RespName=>'SECURITY'
+,p_description=>'User'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'FUNCTIONS'
+,p_RespName=>'SECURITY'
+,p_description=>'Functions'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MENUS'
+,p_RespName=>'SECURITY'
+,p_description=>'Menus'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'RESPONSIBILITY'
+,p_RespName=>'SECURITY'
+,p_description=>'Responsibility'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'EXPORT TEMPLATES'
+,p_RespName=>'SECURITY'
+,p_description=>'Export Templates'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'DEFAULT PROGRAMS'
+,p_RespName=>'SECURITY'
+,p_description=>'Default Programs'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SCHEDULE A JOB'
+,p_RespName=>'SECURITY'
+,p_description=>'Schedule A Job'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'COMPILE OBJECTS'
+,p_RespName=>'SECURITY'
+,p_description=>'Compile Objects'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MISCELLANEOUS TASK'
+,p_RespName=>'SECURITY'
+,p_description=>'Miscellaneous Task'
+,p_slno=>100
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CLOCK IN/OUT AUDIT'
+,p_RespName=>'SECURITY'
+,p_description=>'Clock IN / OUT Audit'
+,p_slno=>99
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'WORKLIST MAINTAINANCE'
+,p_RespName=>'SECURITY'
+,p_description=>'Worklist Maintenace'
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'NOTIFICATION MANAGER'
+,p_RespName=>'SECURITY'
+,p_description=>'Notification Manager'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'USER CONTROLS'
+,p_RespName=>'SECURITY'
+,p_description=>'User Controls'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'UI CONFIGURATION'
+,p_RespName=>'SECURITY'
+,p_description=>'Ui Configuration'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. UPDATE BIN'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. UPDATE BIN'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT DATA'
+,p_RespName=>'IMPORT EXPORT'
+,p_description=>'Import Data'
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT SALES INVOICE'
+,p_RespName=>'IMPORT EXPORT'
+,p_description=>'Import Sales Invoice'
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT SALES ORDER'
+,p_RespName=>'IMPORT EXPORT'
+,p_description=>'Import Sales Order'
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT CUSTOMER'
+,p_RespName=>'IMPORT EXPORT'
+,p_description=>'Import Customer'
+,p_slno=>9
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'EXPORT TEMPLATE'
+,p_RespName=>'IMPORT EXPORT'
+,p_description=>'Export Template'
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'EXPORT MAINTENANCE'
+,p_RespName=>'IMPORT EXPORT'
+,p_description=>'Export Maintenance'
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'EXPORT TO SAGE'
+,p_RespName=>'IMPORT EXPORT'
+,p_description=>'Export To Sage'
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'DISPATCH SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Dispatch Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GL SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'GL Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES ORDER DELIVERY'
+,p_RespName=>'SALES'
+,p_description=>'Sales Order Delivery'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES ORDER PICKING'
+,p_RespName=>'SALES'
+,p_description=>'Sales Order Picking'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM FREIGHTS'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item Freights'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.SPACE CHECK'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M.SPACE CHECK'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'STYLE / DESIGN / PATTERN'
+,p_RespName=>'INVENTORY'
+,p_description=>'Style / Design / Pattern'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'REPORT LOG'
+,p_RespName=>'REPORTS'
+,p_description=>'Report Log'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'JOB QUEUE'
+,p_RespName=>'REPORTS'
+,p_description=>'Job Queue'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SCHEDULE A JOB'
+,p_RespName=>'REPORTS'
+,p_description=>'Schedule A Job'
+,p_slno=>9
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.GRN DISTRIBUTION'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M.GRN DISTRIBUTION'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT CUSTOMERS'
+,p_RespName=>'SALES'
+,p_description=>'Import Customers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES INVOICE LINES'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Sales Invoice Lines'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SAGE EXPORT'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Sage Export'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.SALES ORDER QUERY'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. SALES ORDER QUERY'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M.FIND SALES ORDER'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M.FIND SALES ORDER'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES ORDER LINES'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Sales Order Lines'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. SET PRIMARY SALES'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. SET PRIMARY SALES'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. ITEM BY SUBLOCATION'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. ITEM BY SUBLOCATION'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM IN SUB LOCATIONS'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item In Sub Locations'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. SO CONFIRM DELIVERY'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. SO CONFIRM DELIVERY'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'UPDATE BIN IDENTIFIER'
+,p_RespName=>'INVENTORY'
+,p_description=>'Update Bin Identifier'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. ITEMS IN SUB LOCATION'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. ITEMS IN SUB LOCATION'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'STOCK TAKE AUDIT'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Stock Take Audit'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. ADD ITEM TO BATCH'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. ADD ITEM TO BATCH'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT SALES ORDERS'
+,p_RespName=>'SALES'
+,p_description=>'Import Sales Orders'
+,p_slno=>98
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BARCODE REPOSITORY'
+,p_RespName=>'INVENTORY'
+,p_description=>'Barcode Repository'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. UPDATE SUB LOC MIN/MAX'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. UPDATE SUB LOC MIN/MAX'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. INITIAL STOCK TAKE'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. INITIAL STOCK TAKE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. ITEM COUNT'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. ITEM COUNT'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. INTERNAL MOVEMENT'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. INTERNAL MOVEMENT'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. STOCK ADJUSTMENT'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. STOCK ADJUSTMENT'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. PRICE CHECK'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. PRICE CHECK'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. RECEIVE REQUISITION'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. GRN REQUISITION'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. SALES ORDER PICK LIST'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. SALES ORDER PICK LIST'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. EXT TO INT MOVEMENT'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. EXT TO INT MOVEMENT'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. FULFILL REQUISITION'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. FULFILL REQUISITION'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. GOODS IN'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. GOODS IN'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'M. LOCATE AN ITEM'
+,p_RespName=>'MOBILE MENU'
+,p_description=>'M. LOCATE AN ITEM'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'RECEIVE REQUISITION'
+,p_RespName=>'INVENTORY'
+,p_description=>'Receive Requisition'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'FULFILL REQUISITION'
+,p_RespName=>'INVENTORY'
+,p_description=>'Fulfill Requisition'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CREATE REQUISITION'
+,p_RespName=>'INVENTORY'
+,p_description=>'Create Requisition'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'REQUISITION SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Requisition Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES ORDER SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Sales Order Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'INTRA TRADE  STATISTICS'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Intra Trade  Statistics'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SUPPLIER DRILLDOWN'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Supplier Drilldown'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRICE TEMPLATE'
+,p_RespName=>'ADVANCE PRICING'
+,p_description=>'Price Template'
+,p_slno=>99
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'AP INVOICE SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'AP Invoice Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CUSTOMER DRILLDOWN'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Customer Drilldown'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PURCHASE ORDER (INTERNAL USAGE'
+,p_RespName=>'PURCHASES'
+,p_description=>'Purchase Order (Internal Usage)'
+,p_slno=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PUCHASE ORDER (INTERNAL USAGE)'
+,p_RespName=>'PURCHASES'
+,p_description=>'Purchase Order Internal Usage'
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MANUAL SALES INVOICE'
+,p_RespName=>'SALES'
+,p_description=>'Manual Sales Invoice'
+,p_slno=>11
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES INVOICE 02'
+,p_RespName=>'SALES'
+,p_description=>'Main Sales Screen'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MARKUP TEMPLATE'
+,p_RespName=>'INVENTORY'
+,p_description=>'Markup Template'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BILL OF MATERIALS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Bill Of Materials'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MISCELLANEOUS TASK'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Miscellaneous Task'
+,p_slno=>100
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SUB LOC ASSIGNMENT BATCH'
+,p_RespName=>'INVENTORY'
+,p_description=>'Sub Loc Assignment Batch'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GL CASHINGUP SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Gl Cashingup Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'COMMODITY CODES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Commodity Codes'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES INVOICE'
+,p_RespName=>'SALES'
+,p_description=>'Backoffice Sales Invoice'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'QUICK CODE SETUP'
+,p_RespName=>'INVENTORY'
+,p_description=>'Quick Code Setup'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'NOTIFICATION MANAGER'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Notification Manager'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'WORKLIST MAINTAINANCE'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Worklist Maintenace'
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PAYIN / PAYOUT'
+,p_RespName=>'SALES'
+,p_description=>'Payin / Payout'
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'INTERNAL MOVEMENTS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Internal Movements'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SUB LOCATION ASSIGNMENTS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Sub Location Assignments'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GL CASHING UP'
+,p_RespName=>'GENERAL LEDGER'
+,p_description=>'Gl Cashing Up'
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRICE CHECK'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Price Check'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'DEBIT NOTE SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Debit Note Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'USER CONTROLS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'User Controls'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GL ACCOUNT CODES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Gl Account Codes'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GL ACCOUNT CODES'
+,p_RespName=>'GENERAL LEDGER'
+,p_description=>'Gl Account Codes'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'NOTIFICATION MANAGER'
+,p_RespName=>'REPORTS'
+,p_description=>'Notification Manager'
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GRANTED PRIVILEGES'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Granted Privileges'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'RESERVED ITEMS'
+,p_RespName=>'SALES'
+,p_description=>'Reserved Items'
+,p_slno=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM CATEGORIES'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Item Categories'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SECURITY'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Security'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'TERMINALS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Terminals'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'RUN APROCESS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Run A Process'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PROFILE VALUES'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Profile Values'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRIVILEGES'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Privileges'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PROFILES'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Profiles'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CUSTOMER PRICE LIST'
+,p_RespName=>'SALES'
+,p_description=>'Customer Price List'
+,p_slno=>99
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES INVOICE SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Sales Invoice Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM DRILLDOWN'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item Drilldown'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CUSTOMER PRICE LIST'
+,p_RespName=>'ADVANCE PRICING'
+,p_description=>'Customer Price List'
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'RUN APROCESS'
+,p_RespName=>'REPORTS'
+,p_description=>'Run a Process'
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SYSTEM LOG'
+,p_RespName=>'REPORTS'
+,p_description=>'System Log'
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SCHEDULE SETUP'
+,p_RespName=>'REPORTS'
+,p_description=>'Scheduler Setup'
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BACKGROUND JOBS'
+,p_RespName=>'REPORTS'
+,p_description=>'Background Jobs'
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'EXPORT TEMPLATES'
+,p_RespName=>'REPORTS'
+,p_description=>'Export Templates'
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MAIL MERGE TEMPLATE'
+,p_RespName=>'REPORTS'
+,p_description=>'Mail Mege Template'
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SYSTEM CONTROLS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'System Controls'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'COMPILE OBJECTS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Compile Objects'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CLOCK IN/OUT AUDIT'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Clock IN / OUT Audit'
+,p_slno=>99
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT INVOCIES'
+,p_RespName=>'SALES'
+,p_description=>'Import Invoices'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CLOCK IN / OUT'
+,p_RespName=>'HUMAN RESOURCES'
+,p_description=>'Clock IN / OUT'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'WEB SITES SETUP'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Web Sites Setup'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BULK UPDATE SP'
+,p_RespName=>'ADVANCE PRICING'
+,p_description=>'Bulk Update Selling Prices'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM QUICK MOVEMENT'
+,p_RespName=>'INVENTORY'
+,p_description=>'Item Quick Movement'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'INVOICE BATCH AUDIT'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Invoice Batch Audit'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ORATECH'
+,p_RespName=>'MY WEB SITES'
+,p_description=>'Oratech'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'TECHNET'
+,p_RespName=>'MY WEB SITES'
+,p_description=>'Technet'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MAIN SALES SCREEN'
+,p_RespName=>'SALES'
+,p_description=>'Cannon Sales Screen'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MAIL MERGE TEMPLATE'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Mail Merge Template'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ORACLE'
+,p_RespName=>'MY WEB SITES'
+,p_description=>'Oracle'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'DEFAULT PROGRAMS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Default Programs'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SCHEDULE A JOB'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Schedule A Job'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES PAYMENT BY INVOICE'
+,p_RespName=>'SALES'
+,p_description=>'Sales Payment By Invoice'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'REPORT LOG'
+,p_RespName=>'MY WEB SITES'
+,p_description=>'Report Log'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BBC'
+,p_RespName=>'MY WEB SITES'
+,p_description=>'Bbc'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES TERMINALS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Sales Terminals'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'EXPORT TEMPLATES'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Export Templates'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM BATCH'
+,p_RespName=>'INVENTORY'
+,p_description=>'Item Batch'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'INVENTORY'
+,p_RespName=>'INVENTORY'
+,p_description=>'Inventory'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PAYABLES'
+,p_RespName=>'PURCHASES'
+,p_description=>'Payables'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'OBJECT PROPERTY VALUES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Object Property Values'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'OBJECT PROPERTIES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Object Properties'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRICE ROUNDINGS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Price Roundings'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'TERMS AND CONDITIONS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Terms And Conditions'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CURRENCY RATES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Currency Rates'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'REASONS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Reasons'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CONTAINERS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Containers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'COUNTRIES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Countries'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PAYMENT TERMS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Payment Terms'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SEASONS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Seasons'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BANKS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Banks'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'TAX CODES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Tax Codes'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CURRENCIES'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Currencies'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PAYMENT METHODS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Payment Methods'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'UNIT OF MEASUREMENTS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Unit Of Measurements'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BUSINESS UNITS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Business Units'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'COMPANY'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Company'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'LOOKUPS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Lookups'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'UI CONFIGURATION'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Ui Configuration'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CREATE WORKLIST'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Create Worklist'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'REPORT GROUP'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Report Group'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BACKGROUND JOBS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Background Jobs'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'FUNCTION AUDIT'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Function Audit'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'LOGIN AUDIT'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Login Audit'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SCHEDULE SETUP'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Schedule Setup'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SYSTEM LOG'
+,p_RespName=>'SYSADMIN'
+,p_description=>'System Log'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'IMPORT'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Import'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'UPGRADE/INSTALL'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Upgrade/Install'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SYSTEM OPTIONS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'System Options'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SEQUENCES'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Sequences'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRINTERS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Printers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'USER'
+,p_RespName=>'SYSADMIN'
+,p_description=>'User'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'FUNCTIONS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Functions'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MENUS'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Menus'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'RESPONSIBILITY'
+,p_RespName=>'SYSADMIN'
+,p_description=>'Responsibility'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'EMPLOYEES'
+,p_RespName=>'HUMAN RESOURCES'
+,p_description=>'Employees'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'WORKING DAYS'
+,p_RespName=>'HUMAN RESOURCES'
+,p_description=>'Working Days'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'JOB TYPES'
+,p_RespName=>'HUMAN RESOURCES'
+,p_description=>'Job Types'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'POSITIONS'
+,p_RespName=>'HUMAN RESOURCES'
+,p_description=>'Positions'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'JOBS'
+,p_RespName=>'HUMAN RESOURCES'
+,p_description=>'Jos'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'DEPARTMENTS'
+,p_RespName=>'HUMAN RESOURCES'
+,p_description=>'Departments'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'REPORTS'
+,p_RespName=>'REPORTS'
+,p_description=>'Reports'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'BULK UPDATE CP'
+,p_RespName=>'ADVANCE PRICING'
+,p_description=>'Bulk Update Cp'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRICE LIST'
+,p_RespName=>'ADVANCE PRICING'
+,p_description=>'Price List'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SUPPLIER PRICE LIST'
+,p_RespName=>'ADVANCE PRICING'
+,p_description=>'Supplier Price List'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM OFFERS'
+,p_RespName=>'ADVANCE PRICING'
+,p_description=>'Item Offers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRICE BREAK'
+,p_RespName=>'ADVANCE PRICING'
+,p_description=>'Price Break'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MINUS STOCK AUDIT'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Minus Stock Audit'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM MOVEMENT SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item Movement Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GRN SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Grn Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PO SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Po Summry'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM COST PRICE HISTORY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item Cost Price History'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM COUNT SUMMARY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item Count Summary'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'TRANSACTION HISTORY'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Transaction Histotry'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM BY LOCATION SNAPSHOT'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item By Location Snapshot'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM IN LOCATIONS'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item In Locations'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM BY LOCATION'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item By Location'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM SEARCH'
+,p_RespName=>'ENQUIRY'
+,p_description=>'Item Search'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM MASS UPDATE'
+,p_RespName=>'INVENTORY'
+,p_description=>'Item Mass Update'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM DIMENSIONS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Item Dimensions'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ADD ITEM TO LOCATION'
+,p_RespName=>'INVENTORY'
+,p_description=>'Add Item To Location'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM COUNTS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Item Counts'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'STOCK TAKE TYPES'
+,p_RespName=>'INVENTORY'
+,p_description=>'Stock Take Types'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'STOCK TAKE ITEMS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Stock Take Items'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PREFERRED SUPPLIER LIST'
+,p_RespName=>'INVENTORY'
+,p_description=>'Preferred Supplier List'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM MOVEMENTS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Item Movements'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'STOCK ADJUSTMENT'
+,p_RespName=>'INVENTORY'
+,p_description=>'Stock Adjustment'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'WEEE CHARGES'
+,p_RespName=>'INVENTORY'
+,p_description=>'Weee Charges'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SIMILAR ITEMS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Similar Items'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM SERIAL NUMBERS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Item Serial Numbers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRICE BREAK'
+,p_RespName=>'INVENTORY'
+,p_description=>'Price Break'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'INVENTORY LOCATIONS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Inventory Locations'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'MANUFACTURERS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Manufacturers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'INV OPTIONS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Inventory Options'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEMS'
+,p_RespName=>'INVENTORY'
+,p_description=>'Items'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRICE TYPE'
+,p_RespName=>'INVENTORY'
+,p_description=>'Price Types'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM CATEGORIES'
+,p_RespName=>'INVENTORY'
+,p_description=>'Item Categories'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'DEBIT NOTE'
+,p_RespName=>'PURCHASES'
+,p_description=>'Debit Note'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PAYMENTS'
+,p_RespName=>'PURCHASES'
+,p_description=>'Payments'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'INVOICE'
+,p_RespName=>'PURCHASES'
+,p_description=>'Invoice'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'GOODS RECEIPT'
+,p_RespName=>'PURCHASES'
+,p_description=>'Goods Receipt'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PO BUYERS'
+,p_RespName=>'PURCHASES'
+,p_description=>'Po Buyers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PURCHASE ORDER'
+,p_RespName=>'PURCHASES'
+,p_description=>'Purchase Order'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'AP OPTIONS'
+,p_RespName=>'PURCHASES'
+,p_description=>'Ap Options'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SUPPLIERS'
+,p_RespName=>'PURCHASES'
+,p_description=>'Suppliers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SUPPLIER PROFILES'
+,p_RespName=>'PURCHASES'
+,p_description=>'Supplier Profiles'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CREDIT NOTE'
+,p_RespName=>'SALES'
+,p_description=>'Credit Note'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES PAYMENTS'
+,p_RespName=>'SALES'
+,p_description=>'Sales Payments'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'FREIGHT SETUP'
+,p_RespName=>'SALES'
+,p_description=>'Freight Setup'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'DELIVERY NOTE'
+,p_RespName=>'SALES'
+,p_description=>'Delivery Note'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES CREDIT GROUPS'
+,p_RespName=>'SALES'
+,p_description=>'Sales Credit Groups'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES ORDERS'
+,p_RespName=>'SALES'
+,p_description=>'Sales Orders'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'SALES PERSONS'
+,p_RespName=>'SALES'
+,p_description=>'Sales Persons'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'ITEM OFFERS'
+,p_RespName=>'SALES'
+,p_description=>'Item Offers'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PRICE BREAK'
+,p_RespName=>'SALES'
+,p_description=>'Price Break'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'AR OPTIONS'
+,p_RespName=>'SALES'
+,p_description=>'Ar Options'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CUSTOMER'
+,p_RespName=>'SALES'
+,p_description=>'Customer'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'CUSTOMER PROFILES'
+,p_RespName=>'SALES'
+,p_description=>'Customer Profiles'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_MenuResp(p_menuName=>'PERIODS'
+,p_RespName=>'MASTER SETUPS'
+,p_description=>'Periods'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

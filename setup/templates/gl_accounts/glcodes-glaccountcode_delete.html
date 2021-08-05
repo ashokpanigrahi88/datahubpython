@@ -1,0 +1,13 @@
+{% extends 'common/confirm_delete.html' %}
+
+{% block title %}  Delete Account Code - {{object.gl_account_id}} {% endblock %}
+
+{% block moduletitle %}
+<h2> Delete Gl Account Code </h2>
+{%  endblock %}
+
+{% block postform %}
+<a href="/setup/glcodes_list/">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+{% endblock %}

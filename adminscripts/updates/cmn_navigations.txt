@@ -1,0 +1,61 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'AR_SALORDDASH01'
+,p_ToFuncName=>'AR_SALPICK01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'AR_SALORDDASH01'
+,p_ToFuncName=>'AR_SALORDLINEHIST01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'AR_SALORDDASH01'
+,p_ToFuncName=>'AR_SUMSALORD01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'AR_SALORDDASH01'
+,p_ToFuncName=>'AR_SUMPICKLIST01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEM01'
+,p_ToFuncName=>'INV_ITEMDRILLDOWN01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEMDRILLDOWN01'
+,p_ToFuncName=>'INV_ITEM01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEMMASS01'
+,p_ToFuncName=>'INV_ITEM01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEM01'
+,p_ToFuncName=>'CMN_COMMODITY01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEM01'
+,p_ToFuncName=>'INV_ITEMSLOCSNAP01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEM01'
+,p_ToFuncName=>'INV_ITEMINLOC01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEM01'
+,p_ToFuncName=>'INV_ITEMSEARCH01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEMSEARCH01'
+,p_ToFuncName=>'INV_ITEMINLOC01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEMSEARCH01'
+,p_ToFuncName=>'INV_ITEM01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Navigation(p_FromFuncName=>'INV_ITEMSEARCH01'
+,p_ToFuncName=>'INV_ITEMLOCQRY01'
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

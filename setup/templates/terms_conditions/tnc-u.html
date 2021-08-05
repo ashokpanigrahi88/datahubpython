@@ -1,0 +1,20 @@
+{% extends 'common/model_form.html' %}
+
+{% block title %} Edit TnC - {{object}} {% endblock %}
+
+{% block moduletitle %}
+<h2> Edit - {{object}}  </h2>
+{%  endblock %}
+
+{% block postform %}
+
+<a href="/setup/termcond_list/" style="text-decoration: none;">
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+
+<a href="/setup/tnc_delete/{{object.tc_code_id}}/" style="text-decoration: none;">
+    <button type="button" class="delete-btn delete-button">Delete</button>
+</a>
+
+
+{% endblock %}

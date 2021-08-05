@@ -1,0 +1,67 @@
+{% extends 'common/menu.html' %}
+
+{% load static %}
+
+{% block moduletitle %}
+
+{%  endblock %}
+
+{% block content_block %}
+<h2> Create / Add Languages </h2>
+
+<form method="POST">
+
+    {% csrf_token %}
+    <div class="container-fluid" style="border-style: groove;">
+        <table>
+            {{ form.management_form }}
+
+            {% for form_line in form.forms %}
+            {% if forloop.first %}
+            <thead>
+            <tr>
+                {% for field in form_line.visible_fields %}
+                <th>{{ field.label|capfirst }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            {% endif %}
+            <tr class="{% cycle 'row1' 'row2' %} formset_row">
+                {% for field in form_line.visible_fields %}
+                <td>
+                    {# Include the hidden fields in the form_line #}
+                    {% if forloop.first %}
+                    {% for hidden in form_line.hidden_fields %}
+                    {{ hidden }}
+                    {% endfor %}
+                    {% endif %}
+                    {{ field.errors }}
+                    {{ field }}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <input type="submit" value="Save" id="save_formset" name="save_formset">
+        <br>
+    </div>
+</form>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<script src="//code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery.formset.js' %}"></script>
+<script type="text/javascript">
+    $('.formset_row').formset({
+        addText: '<br><button>Add</button>',
+        deleteText: '&nbsp;&nbsp;&nbsp;</nbsp><i class="fas fa-trash"></i>',
+        prefix: 'form'
+    });
+</script>
+
+{% endblock %}
+
+

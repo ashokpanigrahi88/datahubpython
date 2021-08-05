@@ -1,0 +1,161 @@
+{% extends 'common/menu.html' %}
+{% block title %} Main Page {% endblock %}
+{% block content_block %}
+
+
+    <div id="content">
+ <div id="container" style="width: 75%;">
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id="category"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="customer"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id="supplier"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="items"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <canvas id="monthlysales"></canvas>
+            </div>
+        </div>
+  </div>
+    </div>
+    <div id="content">
+    {% for bu in businessunit %}
+    <div class="d-flex justify-content-center">
+           <p>   {{ bu.bu_id }}<h1> {{ bu.bu_name }} </h1> </p>
+    </div>
+        <div class="d-flex justify-content-center">
+          <p><h3> {{ bu.bu_address_line1 }} </h3></p>
+         </div>
+        <div class="d-flex justify-content-center">
+         <p><h3> {{ bu.bu_city }} </h3></p>
+         </div>
+        <div class="d-flex justify-content-center">
+         <p><h3> {{ bu.bu_county }} </h3></p>
+         </div>
+        <div class="d-flex justify-content-center">
+         <p><h3> {{ bu.bu_phone }} </h3></p>
+         </div>
+        <div class="d-flex justify-content-center">
+         <p><h3> {{ bu.email }} </h3></p>
+         </div>
+        <div class="d-flex justify-content-center">
+            <p><h3><a href="http://{{ bu.url}}" target="_blank" />{{ bu.url }} </a> </h3></p>
+         </div>
+
+     {% endfor %}
+    {% for loc in location %}
+    <div class="d-flex justify-content-center">
+        <p>   {{ request.user.user_full_name }} Logged in to :</p>
+    </div>
+    <div class="d-flex justify-content-center">
+           <p>   {{ loc.location_id }}<h3> {{ loc.location_name }} </h3> </p>
+    </div>
+     {% endfor %}
+   </div>
+
+</div>
+     <script>
+    var category = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+           backgroundColor : ["#f38b4a","#56d798", "#ff8397", "#6970d5", "#f38b4a",
+                    "#56d798","#ff8397", "#6970d5", "#ff8399",  "#6970d6"],
+            label: 'Top Categories'
+        }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    var customer = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ custdata|safe }},
+           backgroundColor : ["#f38b4a","#56d798", "#ff8397", "#6970d5", "#f38b4a",
+                    "#56d798","#ff8397", "#6970d5", "#ff8399",  "#6970d6"],
+            label: 'Top Customers'
+        }],
+        labels: {{ custlabels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    var supplier = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ supdata|safe }},
+           backgroundColor : ["#f38b4a","#56d798", "#ff8397", "#6970d5", "#f38b4a",
+                    "#56d798","#ff8397", "#6970d5", "#ff8399",  "#6970d6"],
+            label: 'Top Suppliers'
+        }],
+        labels: {{ suplabels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    var items = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ itemdata|safe }},
+           backgroundColor : ["#f38b4a","#56d798", "#ff8397", "#6970d5", "#f38b4a",
+                    "#56d798","#ff8397", "#6970d5", "#ff8399",  "#6970d6"],
+            label: 'Top Items'
+        }],
+        labels: {{ itemlabels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    var monthlysales = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ monthdata|safe }},
+           backgroundColor : ["#f38b4a","#56d798", "#ff8397", "#6970d5", "#f38b4a",
+                    "#56d798","#ff8397", "#6970d5", "#ff8399",  "#6970d6"],
+            label: 'Last 12 Month Sales'
+        }],
+        labels: {{ monthlabels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+    window.onload = function() {
+      var ctx = document.getElementById('category').getContext('2d');
+      window.myPie = new Chart(ctx, category);
+      var ctx1 = document.getElementById('customer').getContext('2d');
+      window.myPie1 = new Chart(ctx1, customer);
+      var ctx2= document.getElementById('supplier').getContext('2d');
+      window.myPie3 = new Chart(ctx2, supplier);
+      var ctx3= document.getElementById('items').getContext('2d');
+      window.myPie4 = new Chart(ctx3, items);
+      var ctx4= document.getElementById('monthlysales').getContext('2d');
+      window.myPie5 = new Chart(ctx4, monthlysales);
+    };
+
+  </script>
+{% endblock %}

@@ -1,0 +1,2194 @@
+TRIGGER_NAME,TRIGGER_TYPE,TRIGGERING_EVENT,BASE_OBJECT_TYPE,TABLE_NAME,REFERENCING_NAMES,TRIGGER_BODY,DATASOURCE
+DT_AIUD_CMNPMNTTRANS,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,CMN_PAYMENT_TRANS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   UpdateSource         Varchar2(30);
+   paidAmount        number(12,2);
+   addpaidAmount        number(12,2);
+   P_status		Number := 0;
+   MessageText        Varchar2(2000);
+   slno			number := 0;
+   newLineStatus           Varchar2(100);
+   oldLineStatus           Varchar2(100);
+   InvoiceID            number;
+   SourceObject		Varchar2(100);
+   Retvalue 		Number;
+   TransID 		Number;
+   pLevel               Varchar2(20);
+
+Begin
+ Plevel := '1';
+ UpdateSource 		:= nvl(:New.Update_Source,'API');
+ SourceObject		:= nvl(:New.Source_Object,:Old.Source_Object);
+ paidamount     	:=  Nvl(:New.payment_Trans_amount,:Old.payment_Trans_amount);
+ invoiceid    		:=  Nvl(:New.Source_Object_ID,:Old.Source_Object_ID);
+ TransId   		:=  Nvl(:New.Payment_Trans_ID,:Old.Payment_Trans_ID);
+ Plevel := '2';
+ if Deleting and :Old.Trans_Status = 'APPROVED'  then
+    Update Cmn_Payments
+   Set    Balance_Amount = Nvl(Balance_Amount,0) + paidamount
+   Where  Cmn_Payment_ID = :Old.Cmn_Payment_ID;
+ End If;
+
+ if UpdateSource not in ('ADJUSTPAYMENT') and nvl(:New.TRANS_STATUS,'NEW') not  in ('APPROVED')  Then Return; End If;
+ Plevel := '3';
+ if SourceObject in ('AR_INVOICE_HEADERS') then
+ Plevel := '4';
+ null;
+ Plevel := '6';
+ End If;
+
+
+Exception
+ When Others Then Raise_Application_Error(-20002,pLevel||':'||MessageText);
+
+End  DT_AIUD_CMNPMNTTRANS;",ORATECHDATAHUB
+DT_AIUD_ARPMNTLINE,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,AR_PAYMENT_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   UpdateSource         Varchar2(30);
+   paidAmount        number(12,2);
+   alreadypaidAmount        number(12,2);
+   addpaidAmount        number(12,2);
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+   newLineStatus           Varchar2(100);
+   oldLineStatus           Varchar2(100);
+   InvoiceID            number;
+   vBalanceTotal       Number(12,2);
+
+Begin
+ UpdateSource 		:= nvl(:New.Update_Source,'API');
+ paidamount     	:=  Nvl(:New.payment_amount,:Old.payment_amount);
+ addpaidamount     	:=  Nvl(:New.Additional_Payment_Amount,:Old.payment_amount);
+ invoiceid    		:=  Nvl(:New.invoice_header_id,:Old.invoice_header_id);
+ newLineStatus    	:= nvl(Nvl(:New.Payment_Line_Status,:Old.Payment_Line_Status),'NEW');
+ oldLineStatus    	:= Nvl(:old.Payment_Line_Status,'NEW');
+ if OldLineStatus 	= 'APPROVED' and NewLineStatus = 'APPROVED' Then Return; End If;
+ if paidAmount 		= 0 Then Return; End If;
+ If newLineStatus not in ('APPROVED') then Return; End If;
+ if  UpdateSource not in ('UPDATEINVBALANCE') Then return; End If;
+if inserting or Updating then
+ select nvl( Balance_Total,0),nvl(Paid_Amount,0)
+ Into    vBalanceTotal,alreadypaidAmount
+ From  Ar_Invoice_Headers
+ Where Invoice_Header_Id 	= invoiceid;
+ if PaidAmount+AlreadyPaidAmount > vBalanceTotal or Nvl(VBalanceTotal,0) = 0  Then
+   Raise_Application_Error(-20001,'Cannot pay more than the balance amount:'||vBalanceTotal);
+ End IF;
+
+ Update Ar_Invoice_Headers
+  Set    Balance_Total 		= nvl(Balance_total,0) - PaidAmount,
+         Paid_Amount   		= nvl(Paid_Amount,0) + PaidAmount,
+         Additional_Amount 	= nvl(Additional_Amount,0) + nvl(addpaidamount,0)
+  Where  Invoice_Header_Id 	= invoiceid;
+End If;
+if Deleting Then
+  Update Ar_Invoice_Headers
+  Set    Balance_Total 		=
+            case
+             when paid_amount = 0 then
+              Grand_Total
+             when Paid_Amount <= Balance_Total Then
+               nvl(Balance_total,0) - PaidAmount
+             when Paid_Amount > Balance_Total then
+               Grand_Total
+             else
+               grand_total
+             end,
+        Paid_Amount =
+           case
+             when paid_amount <> 0 then
+              nvl(Paid_Amount,0) + PaidAmount
+             else
+               0
+           end ,
+         Additional_Amount 	= nvl(Additional_Amount,0) + nvl(addpaidamount,0)
+  Where  Invoice_Header_Id 	= invoiceid;
+End If;
+
+
+
+Exception
+ When Others Then Raise_Application_Error(-20000,p_MessageText);
+
+End  Dt_AIUD_ARPMNTLINE;",ORATECHDATAHUB
+DT_BIU_PMNTLINE,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,AR_PAYMENT_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  vPmntMethodID Number;
+Begin
+ vPmntMethodId := nvl(:New.PMNT_METHOD_ID,:Old.PMNT_METHOD_ID);
+:New.Actual_Payment_Amount := nvl(nvl(:New.Payment_Amount,:Old.Payment_Amount),0)+
+                               nvl(nvl(:New.Cashback_Amount,:Old.Cashback_Amount),0);
+If ar_PAyment_Pkg.Get_PmntType(vPmntMethodId) = 'STANDARD' Then
+ :New.STANDARD_PAYMENT_AMOUNT     := :New.Actual_Payment_Amount;
+ :New.ADDITIONAL_PAYMENT_AMOUNT   := 0;
+Else
+ :New.STANDARD_PAYMENT_AMOUNT     := 0;
+ :New.ADDITIONAL_PAYMENT_AMOUNT   := :New.Actual_Payment_Amount;
+End If;
+
+Exception
+ When Others Then Null;
+
+End Dt_BIU_PMNTLINE;",ORATECHDATAHUB
+DT_PREUPDINS_SALORDHEAD,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,AR_SALESORDER_HEADERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   p_MessageText         varchar2(2000);
+   InvStatus          	varchar2(30);
+   InvoiceNumber		Varchar2(100);
+   InvoiceID		Number;
+
+Begin
+ begin
+ AUDIT_PKG.Object_Statuses(p_Hint  =>  'INSERT'
+                       ,p_ObjectName  => 'AR_SALESORDER_HEADERS'
+                       ,p_ObjectId1   => Nvl(:New.Order_header_ID,:Old.Order_Header_ID)
+                       ,p_NewStatus   => :New.Order_Status
+                       ,p_OldStatus   => :Old.Order_Status
+                       ,p_ObjectId2   => Null
+                       ,p_UserID      => :New.Last_Updated_By
+                       ,p_BuID        => Nvl(:New.Bu_ID,:Old.Bu_ID)
+                       ,p_Attribute1  =>  Null
+                       ,p_Attribute2  =>  Null
+                       ,p_Attribute3  =>  Null
+                       ,p_Attribute4  =>  Null);
+ Exception When Others Then null;
+End;
+
+Exception
+ When Others Then Raise_Application_Error(-20000,p_MessageText);
+
+End Dt_PREUPDINS_SALORDHEAD;",ORATECHDATAHUB
+DT_AIUD_SALORDLINE,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,AR_SALESORDER_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   ItemId		Number := 0;
+   p_MessageText        Varchar2(2000);
+   vDmlType             Varchar2(100);
+   ForceAllocQty        Number := 0;
+   RetValue		Number := 0;
+
+Begin
+ItemId      	:= Nvl(:New.Item_ID,:Old.Item_ID);
+
+ IF Inserting Then
+   vDmlType := 'INSERT';
+ End If;
+IF Updating Then
+   vDmlType := 'UPDATE';
+ End If;
+IF Deleting Then
+   vDmlType := 'DELETE';
+  /*  if Nvl(:New.Update_Source,:Old.Update_Source) = 'ALLOCATE' Then
+                 ForceAllocQty := 1;
+       Retvalue     := ItemStatus_Pkg.Update_QtyAllocated01(itemid,:Old.Qty_Picked_Units-1,
+                                     :Old.PICKED_LOCATION_ID,ForceAllocQty);
+    End If;
+  */
+ End If;
+
+  p_MessageText :=   BOM_PKG.Crate_BOMTrans(
+			p_TransSource => 'SALESORDER',
+			p_Level0ItemId	=> ItemID,
+			p_HeaderId	=> Nvl(:New.Order_Header_ID,:Old.Order_Header_ID) ,
+		 	p_LineId	=> Nvl(:New.Order_Line_ID,:Old.Order_Line_ID),
+			p_TransQty	=> Nvl(:New.Qty_Picked_Units,0),
+			p_DmlType	=> vDmlType,
+			p_BUID		=> Nvl(:New.BU_ID,:Old.BU_ID),
+			p_UserID	=> Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+                                        );
+
+Exception
+ When Others Then null;
+Raise_Application_Error(-20000,p_MessageText);
+
+End Dt_AIUD_SALORDLINE;",ORATECHDATAHUB
+DT_PREUPDINS_ORDLINE,BEFORE EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,AR_SALESORDER_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   LineStatus           Varchar2(30);
+   YesUpdateQty         Boolean := TRUE;
+   UpdateSource         Varchar2(30);
+   QtyToUpdate		Number := 0;
+   SalesUnit		Number := 0;
+   RetValue		Number := 0;
+   ItemId		Number := 0;
+   LocationID		Number := 0;
+   SubLocationId	Number := 0;
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+   OrderType           varchar2(30);
+   QtyCancelled        number(10);
+   vOrderStatus        varchar2(30);
+   QtyFulFilled        number :=0;
+   Qtybalance         number := 0;
+   QtyToAllocate      Number;
+   ForceAllocQty      Number := 0;
+
+Begin
+
+  Dbms_Output.Put_Line('Trigger1');
+ItemId      	:= Nvl(:New.Item_ID,:Old.Item_ID);
+ SlNo   	:= Nvl(:New.Sl_No,:Old.Sl_No);
+ select Order_Type,Order_status
+ into   OrderType,vOrderStatus
+ From   Ar_SalesOrder_Headers
+ Where  Order_header_Id = Nvl(:Old.Order_Header_Id,:New.Order_Header_Id);
+  Dbms_Output.Put_Line('Trigger1');
+   if Nvl(:New.Update_Source,:Old.Update_Source) = 'ALLOCATE' Then
+                 ForceAllocQty := 1;
+  Dbms_Output.Put_Line('Trigger2');
+
+   End If;
+begin
+ AUDIT_PKG.Object_Statuses(p_Hint  =>  'INSERT'
+                       ,p_ObjectName  => 'AR_SALESORDER_LINES'
+                       ,p_ObjectId1   => Nvl(:New.Order_LINE_ID,:Old.Order_LINE_ID)
+                       ,p_NewStatus   => :New.Order_Line_Status
+                       ,p_OldStatus   => :Old.Order_Line_Status
+                       ,p_ObjectId2   => Null
+                       ,p_UserID      => :New.Last_Updated_By
+                       ,p_BuID        => Nvl(:New.Bu_ID,:Old.Bu_ID)
+                       ,p_Attribute1  =>  Null
+                       ,p_Attribute2  =>  Null
+                       ,p_Attribute3  =>  Null
+                       ,p_Attribute4  =>  Null);
+Exception When Others Then Null;
+End;
+
+  Dbms_Output.Put_Line('Trigger3');
+
+     LocationId    	:= Nvl(:New.PICKED_LOCATION_ID,:Old.PICKED_LOCATION_ID);
+  if orderType <> 'SALESORDER' and Deleting then
+
+  Dbms_Output.Put_Line('Trigger4');
+     qtybalance   := Nvl(:New.Qty_ordered_Units,0);
+     Retvalue     := ItemStatus_Pkg.Update_QtyAllocated01(itemid,QtyBalance*-1,locationId);
+  end If;
+
+   If orderType = 'SALESORDER' then
+     If (Inserting or Updating) Then
+
+  	Dbms_Output.Put_Line('Trigger5');
+       		QtytoAllocate := Nvl(:New.Qty_Picked_Units,0) - nvl(:Old.Qty_Picked_Units,0);
+       		If QtyToAllocate <> 0 Then
+  		  Dbms_Output.Put_Line('Trigger6');
+            	  :New.Qty_Allocated_Units := Nvl(:Old.Qty_Allocated_Units,0) + QtyToAllocate;
+            	  Retvalue     := ItemStatus_Pkg.Update_QtyAllocated01(itemid,QtyToAllocate,locationId,ForceAllocQty);
+       		End If;
+    End If;
+    if updating('QTY_ORDERED_UNITS') Then
+       if :New.Qty_Ordered_Units = :Old.Qty_UserPicked_Units Then
+          :New.ORDER_LINE_STATUS := 'PICKED';
+       End If;
+    End If;
+    if (Deleting ) Then
+
+      		Dbms_Output.Put_Line('Trigger7');
+           	QtytoAllocate := Nvl(:Old.Qty_Allocated_Units,0);
+
+  		Dbms_Output.Put_Line('Trigger7:'||QtytoAllocate );
+          	Retvalue     := ItemStatus_Pkg.Update_QtyAllocated01(itemid,QtyToAllocate*-1,locationId,ForceAllocQty);
+    End If;
+   End If;
+
+ if orderType <> 'RESERVEORDER' then Return; End If;
+ if  inserting  then
+
+
+  Dbms_Output.Put_Line('Trigger8');
+       Notification_Pkg.Notify(p_event 	=> 'RESERVEDITEMCREATED',
+                                p_Table 	=> 'AR_SALESORDER_LINES',
+                                p_Subject 	=> Inv_Pkg.GetItemNumber(:new.Item_Id),
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID);
+  End If;
+ qtybalance   := Nvl(:New.Qty_ordered_Units,0) - nvl(:Old.Qty_picked_Units,0);
+ if Deleting then
+
+
+  Dbms_Output.Put_Line('Trigger9');
+   qtybalance   := Nvl(:old.Qty_ordered_Units,0);
+   Retvalue := ItemStatus_Pkg.Update_QtyReserved(itemid,QtyBalance*-1,locationId);
+   Retvalue := ItemStatus_Pkg.Update_QtyAllocated01(itemid,QtyBalance*-1,locationId,ForceAllocQty);
+
+
+  Dbms_Output.Put_Line('Trigger10');
+   Return;
+ End If;
+
+
+  Dbms_Output.Put_Line('Trigger11');
+ UpdateSource 	:= Nvl(:New.Update_Source,:Old.Update_Source);
+ QtyToUpdate    := Nvl(:New.Qty_ordered_Units,0) - nvl(:Old.Qty_ordered_Units,0);
+ Qtycancelled    := Nvl(:New.Qty_cancelled_Units,0) - nvl(:Old.Qty_cancelled_Units,0);
+ LocationId    	:= Nvl(:New.PICKED_LOCATION_ID,:Old.PICKED_LOCATION_ID);
+ QtyToUpdate    := qtytoupdate - qtyCancelled;
+
+
+  Dbms_Output.Put_Line('Trigger12');
+ if :new.Order_line_Status = 'CLOSED' and :Old.Order_Line_Status <> 'CLOSED' Then
+
+
+  Dbms_Output.Put_Line('Trigger13');
+   :New.Qty_Cancelled_Units := Nvl(:New.Qty_Cancelled_Units,0) + QtyBalance;
+   :New.Qty_Ordered_Units    := :Old.Qty_Ordered_Units - QtyBalance;
+   Retvalue := ItemStatus_Pkg.Update_QtyReserved(itemid,QtyBalance*-1,locationId);
+   Return;
+ End If;
+
+ if :new.Order_line_Status = 'CANCELLED' and :Old.Order_Line_Status <> 'CANCELLED'  Then
+
+
+  Dbms_Output.Put_Line('Trigger14');
+   :New.Qty_Cancelled_Units := QtyBalance;
+   :New.Qty_Ordered_Units    := :Old.Qty_Ordered_Units - QtyBalance;
+   Retvalue := ItemStatus_Pkg.Update_QtyReserved(itemid,:New.Qty_Cancelled_Units*-1,locationId);
+   Return;
+ End If;
+
+
+  Dbms_Output.Put_Line('Trigger15');
+  Retvalue := ItemStatus_Pkg.Update_QtyReserved(itemid,QtyToUpdate,locationId);
+ if Updating('QTY_ORDERED_UNITS')   then
+
+
+  Dbms_Output.Put_Line('Trigger16');
+    Retvalue := ItemStatus_Pkg.Update_QtyAllocated01(itemid,QtyToUpdate,locationId,ForceAllocQty);
+ End If;
+Exception
+ When Others Then null;
+--Raise_Application_Error(-20000,p_MessageText);
+
+End Dt_PREUPDINS_ORDLINE;",ORATECHDATAHUB
+DT_BIU_SALPICKLIST,BEFORE EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,AR_SALESORDER_PICKLIST,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   LineStatus           Varchar2(30);
+   TransSource          Varchar2(30);
+   YesUpdateQty         Boolean := TRUE;
+   UpdateSource         Varchar2(30);
+   QtyToUpdate		Number := 0;
+   SalesUnit		Number := 0;
+   RetValue		Number := 0;
+   ItemId		Number := 0;
+   oHeaderId		Number := 0;
+   oLineId		Number := 0;
+   iHeaderId		Number := 0;
+   iLineId		Number := 0;
+   LocationID		Number := 0;
+   SubLocationId	Number := 0;
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+  QtyToCancel           Number := 0;
+  failed                exception;
+  vPosition             varchar2(100);
+  vAllocatedQty         Number;
+  vForceAlloc           Number;
+
+Begin
+ UpdateSource 	:= nvl(Nvl(:New.Update_Source,:Old.Update_Source),'NONE');
+ Dbms_Output.Put_Line('UpdateSource:'||UpdateSource);
+ if UpdateSource = 'DONOTUPDATESTOCK' Then Return; End If;
+ QtyToUpdate    := Nvl(:New.quantity,:Old.quantity);
+ LineStatus 	:= Nvl(:New.picklist_status,:Old.picklist_status);
+ TransSource 	:= Nvl(:New.Transaction_Source,:Old.Transaction_Source);
+ ItemId      	:= Nvl(:New.Item_ID,:Old.Item_ID);
+ vPosition   := '1A';
+ oheaderId      	:= Nvl(:New.ORDER_HEADER_ID,:Old.ORDER_HEADER_ID);
+ olineId      	:= Nvl(:New.ORDER_LINE_ID,:Old.ORDER_LINE_ID);
+ iheaderId      	:= Nvl(:New.INVOICE_HEADER_ID,:Old.INVOICE_HEADER_ID);
+ ilineId      	:= Nvl(:New.INVOICE_LINE_ID,:Old.INVOICE_LINE_ID);
+ LocationId    	:= Nvl(:New.Location_ID,:Old.Location_ID);
+ vPosition   := '1b';
+ SubLocationId  := Nvl(:New.Sub_Location_ID,:Old.Sub_Location_ID);
+ QtyToUpdate    := QtyToUpdate;
+ vForceAlloc    :=0;
+ vPosition   := '1c';
+ if (Inserting or Deleting) and LineStatus = 'NEW' then
+      if Inserting then
+         QtyToUpdate := Nvl(:New.Quantity,0) - Nvl(:Old.Quantity,0);
+       end If;
+      if Deleting Then
+       QtyToUpdate :=  Nvl(:Old.Quantity,0);
+      End If;
+ End If;
+ vPosition   := '1d';
+    if  (inserting or updating) and  :New.PickList_status in ('APPROVED','PICKED')  and :Old.PickList_Status is null  then
+         retvalue :=  location_pkg.update_sublocationQty(ItemID,QtyToUpdate*-1,
+                                                     LocationId,SubLocationID);
+         RetValue := ItemStatus_Pkg.Update_QtySold(itemId,QtyToUpdate,locationId);
+
+  begin
+
+     BOM_PKG.StockControl(p_Id => itemID,
+                       p_Quantity => QtyToUpdate*-1,
+                       p_LocationId => locationid,
+                       p_SubLocationId => null,
+                       p_Calledfrom   => 'SALES',
+                       p_TransSource => 'SALESORDER',
+		       p_TransReference => olineId,
+		       p_HeaderId       => OHeaderId,
+		       p_LineId         => OLineId,
+		       p_UserID         => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By));
+  Exception When Others then Null;
+  end;
+
+        begin
+          select Nvl(Qty_Allocated_Units,0),Decode(Update_Source,'ALLOCATE',1,0)
+          Into   vAllocatedQty,vForceAlloc
+          From   AR_SALESORDER_LINEs
+          Where   Order_Line_ID = oLineID;
+          if vAllocatedQty <=0 then vAllocatedQty := 0; End If;
+         Update AR_SALESORDER_LINES
+               set Qty_UserPicked_Units = Nvl(Qty_UserPicked_Units,0) + QtyToUpdate,
+                   Qty_Allocated_Units  =
+                  ( Case
+                    When Nvl(Qty_Allocated_Units,0) - QtyToUpdate <= 0 Then 0
+                    else Nvl(Qty_Allocated_Units,0) - QtyToUpdate
+                   End
+                  )
+         Where Order_Line_ID = oLineID;
+        Exception When Others Then vAllocatedQty := 0; Null;
+        End;
+ vPosition   := '1d1';
+     --  Raise_Application_Error(-20000,vPosition||':'||'Updating Stock' ||'  --*RetValue:'||retvalue);
+ vPosition   := '1e';
+      if cmn_Common_Pkg.get_LookupAttributeValues('MINUS_STOCK_OPTIONS','SALES ORDER',1) = 'N' Then
+           if RetValue < 0 then
+            p_Status      := 'ERROR';
+             p_MessageTExt := ' Not Enough Stock, Invoice Line'||SlNo;
+            raise failed;
+            End If;
+      End If;
+ vPosition   := '1e';
+     retvalue := ITEMSTATUS_PKG.update_QtyAllocated01(p_Id =>  ItemID,
+                                                    p_Qty  => QtyToUpdate*-1,
+                                                    p_LocationID => LocationId,
+                                                    p_ForceAllocQty => vForceAlloc);
+ vPosition   := '1f';
+   End If;
+ if (Deleting) and :OLD.Picklist_status in ('APPROVED','PICKED') then
+      QtyToUpdate :=  Nvl(:Old.Quantity,0);
+      retvalue :=  location_pkg.update_sublocationQty(ItemID,QtyToUpdate,
+                                                     LocationId,SubLocationID);
+      RetValue := ItemStatus_Pkg.Update_QtySold(itemId,QtyToUpdate*-1,locationId);
+
+
+  begin
+     BOM_PKG.StockControl(p_Id => itemID,
+                       p_Quantity => QtyToUpdate,
+                       p_LocationId => locationid,
+                       p_SubLocationId => null,
+                       p_Calledfrom   => 'SALES',
+                       p_TransSource => 'SALESORDER',
+		       p_TransReference => olineId);
+  Exception When Others then Null;
+  end;
+        begin
+         Update AR_SALESORDER_LINES
+               set Qty_UserPicked_Units = Nvl(Qty_UserPicked_Units,0) + QtyToUpdate*-1
+         Where Order_Line_ID = oLineID;
+        Exception When Others Then Null;
+        End;
+ vPosition   := '1e';
+ End If;
+
+Exception
+ When Others Then Raise_Application_Error(-20000,vPosition||' :Others:'||p_MessageText||' '||SqlErrm);
+
+End   DT_BIU_SALPICKLIST;",ORATECHDATAHUB
+DT_AUDECUSTPL,AFTER EACH ROW,UPDATE OR DELETE,TABLE,AR_CUSTOMER_PRICE_LISTS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+Begin
+ Audit_Pkg.CustPriceHistory(p_Item_Id => :Old.Item_Id
+			  ,p_Transaction_Source => 'CUSTOMER PRICE LIST'
+			  ,p_Source_Object_Name  => 'AR_CUSTOMER_PRICE_LISTS'
+                          ,P_Source_Header_ID    => :Old.Price_List_ID
+                          ,p_Customer_ID         => :Old.Customer_ID
+			,p_Changed_By            => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Change_Reason         => 'PRICE LIST UPDATED / DELETED'
+			,p_Old_Price             => :Old.Price
+                        ,p_Old_Price_Type_ID     => :Old.Price_Type_ID
+                        ,p_Old_Price_Type        => :Old.Price_Type
+			,p_New_Price             => :New.Price
+                        ,p_New_Price_Type_ID     => :New.Price_Type_ID
+                        ,p_New_Price_Type        => :New.Price_Type
+			,p_Change_Type           => 'USER'
+			,p_Change_Category       => 'PRICE LIST'
+			,p_Last_Update_Date      => Nvl(:New.Last_Update_Date,:Old.Last_Update_Date)
+			,p_Last_Updated_By       => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Created_By            => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Bu_Id                 => :Old.Bu_ID
+			,p_Update_Source         => 'TRIGGER');
+
+Exception
+ When Others Then Null;
+
+End  Dt_AUDECUSTPL;",ORATECHDATAHUB
+DT_BD_INVHEAD,BEFORE EACH ROW,DELETE,TABLE,AR_INVOICE_HEADERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   p_MessageText         varchar2(2000);
+   InvStatus          	varchar2(30);
+   InvoiceNumber		Varchar2(100);
+   InvoiceID		Number;
+
+Begin
+ If Not Deleting Then Return; End If;
+
+ If Nvl(Nvl(:Old.Update_Source,:New.Update_Source),'NONE') <>  'MARKEDTODELETE'  Then
+   Raise_Application_Error(-20000,'This Invoice Cannot Be Deleted');
+ End If;
+
+InvoiceNumber   	:= upper(Nvl(:New.Invoice_Number,:old.Invoice_Number));
+ If  InvoiceNumber Not Like 'TEMP%'  Then
+   Raise_Application_Error(-20000,'Approved invoices cannot be deleted');
+ End If;
+
+
+End Dt_BD_INVHEAD;",ORATECHDATAHUB
+DT_PREUPDINS_INVHEAD,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,AR_INVOICE_HEADERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   p_MessageText         varchar2(2000);
+   InvStatus          	varchar2(30);
+   InvoiceNumber		Varchar2(100);
+   InvoiceID		Number;
+
+Begin
+  invStatus   		:= Nvl(:New.Invoice_Status,:old.Invoice_Status);
+  InvoiceNumber   	:= upper(Nvl(:New.Invoice_Number,:old.Invoice_Number));
+  InvoiceID   		:= Nvl(:New.Invoice_Header_ID,:old.Invoice_Header_ID);
+  if :New.Grand_Total is Null Then
+     :New.Grand_Total := :New.Gross_Total;
+  End If;
+ if InvoiceNumber is Null Then
+   :New.Invoice_Number := SALORDER_PKG.Get_SalesInvoiceNumber(p_InvStatus => invStatus ,
+	                                                      p_InvID     => InvoiceID,
+	                                                      p_InvNumber => InvoiceNumber);
+  end If;
+  If InvStatus <> 'APPROVED' Then Return; End If;
+  if InvoiceNumber like 'TEMP%' Then
+   :New.Invoice_Number := SALORDER_PKG.Get_SalesInvoiceNumber(p_InvStatus => 'APPROVED',
+	                                                      p_InvID     => InvoiceID,
+	                                                      p_InvNumber => InvoiceNumber);
+  End If;
+
+
+Exception
+ When Others Then Raise_Application_Error(-20000,p_MessageText);
+
+End Dt_PREUPDINS_INVHEAD;",ORATECHDATAHUB
+DT_AIU_INVLINE,AFTER EACH ROW,INSERT OR UPDATE,TABLE,AR_INVOICE_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   LineStatus           Varchar2(30);
+   YesUpdateQty         Boolean := TRUE;
+   UpdateSource         Varchar2(30);
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+
+Begin
+ UpdateSource 	:= Nvl(:New.Update_Source,:Old.Update_Source);
+
+ LineStatus 	:= Nvl(:New.Invoice_Line_Status,:Old.Invoice_Line_Status);
+ If LineStatus 	not in ( 'NEW') Then Return; End If;
+ if :New.PRICE_OVERRIDDEN = 'Y' then
+    Notification_Pkg.Notify(p_event 	=> 'SALES DISCOUNT APPLIED',
+                                p_Table 	=> 'AR_INVOICE_LINES',
+                                p_Subject 	=> 'Price Overriden ',
+                 		p_CreatedBy     => :New.Last_Updated_By,
+                                p_BuId          => :New.Bu_ID,
+                                p_OldValue      => 'N',
+                                p_NewValue      =>  'Y');
+ End If;
+ if Nvl(:NEW.Discount_Amount,0) <> 0  then
+    Notification_Pkg.Notify(p_event 	=> 'SALES DISCOUNT APPLIED',
+                                p_Table 	=> 'AR_INVOICE_LINES',
+                                p_Subject 	=> 'Discount Applied ',
+                 		p_CreatedBy     => :New.Last_Updated_By,
+                                p_BuId          => :New.Bu_ID,
+                                p_OldValue      => '0',
+                                p_NewValue      =>  :NEW.Discount_Amount);
+ End If;
+Exception
+ When Others Then null;
+
+End DT_AIU_INVLINE;",ORATECHDATAHUB
+DT_PREUPDINS_INVLINE,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,AR_INVOICE_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   LineStatus           Varchar2(30);
+   YesUpdateQty         Boolean := TRUE;
+   UpdateSource         Varchar2(30);
+   QtyToUpdate		Number := 0;
+   SalesUnit		Number := 0;
+   RetValue		Number := 0;
+   ItemId		Number := 0;
+   LocationID		Number := 0;
+   SubLocationId	Number := 0;
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+
+Begin
+ if :New.Returned_Location_Id is null Then
+    :New.Returned_Location_Id := :New.Picked_Location_Id;
+ End If;
+ if :New.Returned_sub_Location_Id is null Then
+    :New.Returned_Sub_Location_Id := Location_Pkg.GetSubLocationID(:New.Returned_Location_Id,
+                                 INV_Pkg.GetSubLocationName(AR_PKG.Get_OptionVal('RETURN_SUB_LOCATION_ID')));
+ End If;
+
+ UpdateSource 	:= Nvl(:New.Update_Source,:Old.Update_Source);
+ QtyToUpdate    := Nvl(:New.Qty_Invoiced_Units,:Old.Qty_Invoiced_Units);
+
+ LineStatus 	:= Nvl(:New.Invoice_Line_Status,:Old.Invoice_Line_Status);
+ SalesUnit      := Nvl(:New.Sales_Unit,:Old.Sales_Unit);
+ ItemId      	:= Nvl(:New.Item_ID,:Old.Item_ID);
+ LocationId    	:= Nvl(:New.Picked_Location_ID,:Old.Picked_Location_ID);
+ SlNo   	:= Nvl(:New.Sl_No,:Old.Sl_No);
+ SubLocationId    	:= Nvl(:New.Picked_Sub_Location_ID,:Old.Picked_Sub_Location_ID);
+ IF Nvl(:New.Net_Total_After_Discount,0) = 0 then
+     :New.Net_Total_After_Discount := :New.Net_Amount - Nvl(:New.Discount_Amount,0);
+ End If;
+ QtyToUpdate    := QtyToUpdate * -1;
+  if UpdateSource 	<> 'UPDATESTOCK' 	Then Return; end If;
+  If LineStatus 	not in ( 'APPROVED','PROFORMA') 		Then Return; End If;
+  if :Old.Order_Line_ID is not Null Then Return; End If;
+  if QtyToUpdate < 0 then
+      retvalue :=  location_pkg.update_sublocationQty(ItemID,QtyToUpdate,
+                                                     LocationId,SubLocationID);
+  End If;
+
+  if QtyToUpdate > 0  then
+      LocationId    	:= Nvl(:New.Returned_Location_ID,:Old.Returned_Location_ID);
+      SubLocationId    	:= Nvl(:New.Returned_Sub_Location_ID,:Old.Returned_Sub_Location_ID);
+      retvalue :=  location_pkg.update_sublocationQty(ItemID,QtyToUpdate,
+                                                     LocationId,SubLocationID);
+  End If;
+
+  begin
+     BOM_PKG.StockControl(p_Id => itemID,
+                       p_Quantity => QtyToUpdate,
+                       p_LocationId => locationid,
+                       p_SubLocationId => SubLocationID,
+                       p_Calledfrom   => 'SALES',
+                       p_TransSource => 'SALESINVOICE',
+		       p_TransReference => Nvl(:New.Invoice_Line_Id,:Old.Invoice_Line_ID),
+                       p_HeaderId       => Nvl(:New.Invoice_Header_ID,:Old.Invoice_Header_ID),
+                       p_LineID         => Nvl(:New.Invoice_Line_Id,:Old.Invoice_Line_Id),
+                       p_UserID         => Nvl(:New.LAst_Updated_By,:Old.Last_Updated_By));
+  Exception When Others then Null;
+  end;
+
+   if cmn_Common_Pkg.get_LookupAttributeValues('MINUS_STOCK_OPTIONS','SALES INVOICE',1) = 'N' Then
+    if RetValue < 0 then
+        p_Status      := 'ERROR';
+        p_MessageTExt := ' Not Enough Stock, Invoice Line'||SlNo;
+     End If;
+   End If;
+  RetValue := ItemStatus_Pkg.Update_QtySold(itemId,QtyToUpdate*-1,locationId);
+
+Exception
+ When Others Then Raise_Application_Error(-20000,p_MessageText);
+
+End DT_PREUPDINS_INVLINE;",ORATECHDATAHUB
+DT_PREUPDINS_FULFILLLINE,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,AR_ITEM_FULFILLMENT,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   LineStatus           Varchar2(30);
+   YesUpdateQty         Boolean := TRUE;
+   UpdateSource         Varchar2(30);
+   QtyToUpdate		Number := 0;
+   SalesUnit		Number := 0;
+   RetValue		Number := 0;
+   ItemId		Number := 0;
+   LocationID		Number := 0;
+   SubLocationId	Number := 0;
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+  QtyToCancel           Number := 0;
+
+Begin
+ UpdateSource 	:= Nvl(:New.Update_Source,:Old.Update_Source);
+ QtyToUpdate    := Nvl(:New.Qty_fulfilled_Units,:Old.Qty_fulfilled_Units);
+ QtyToCancel    := Nvl(:New.Qty_cancelled_Units,0) - nvl(:Old.Qty_cancelled_Units,0);
+
+ LineStatus 	:= Nvl(:New.FULFILLMENT_STATUS,:Old.FULFILLMENT_STATUS);
+ ItemId      	:= Nvl(:New.Item_ID,:Old.Item_ID);
+ LocationId    	:= Nvl(:New.Location_ID,:Old.Location_ID);
+ SubLocationId    	:= Nvl(:New.Sub_Location_ID,:Old.Sub_Location_ID);
+ QtyToUpdate    := QtyToUpdate;
+ If LineStatus in ( 'APPROVED','CANCELLED')  Then
+   if LineStatus = 'CANCELLED' and :Old.FulFillment_Status = 'APPROVED' Then
+      QtyToUpdate := QtyTocancel * -1;
+      :New.Qty_Fulfilled_Units := :New.Qty_Fulfilled_Units - QtyToCancel;
+     if :New.Qty_Fulfilled_Units  > 0 Then
+        :New.Fulfillment_Status := 'APPROVED';
+     End If;
+   End IF;
+  if UpdateSource 	<> 'UPDATESTOCK' 	Then Return; end If;
+   retvalue :=  location_pkg.update_sublocationQty(ItemID,QtyToUpdate*-1,
+                                                     LocationId,SubLocationID);
+   if cmn_Common_Pkg.get_LookupAttributeValues('MINUS_STOCK_OPTIONS','SALES INVOICE',1) = 'N' Then
+    if RetValue < 0 then
+        p_Status      := 'ERROR';
+        p_MessageTExt := ' Not Enough Stock, Invoice Line'||SlNo;
+     End If;
+   End If;
+  update AR_SALESORDER_LINES
+  Set    Qty_Picked_Units = nvl(Qty_Picked_Units,0) + Nvl(QtyToUpdate,0)
+  Where Order_Line_Id   = :Old.Order_Line_ID;
+  Retvalue := ItemStatus_Pkg.Update_QtyReservedFilled(itemid,QtyToUpdate,locationId);
+ end if;
+
+ If LineStatus in ( 'INVOICED') and :Old.FULFILLMENT_STATUS = 'APPROVED' Then
+  :New.Qty_Invoiced_Units := :Old.Qty_Fulfilled_Units;
+  Update ar_salesOrder_Lines
+     Set  qty_Invoiced_Units = nvl(qty_Invoiced_Units,0) + QtyToUpdate
+     Where Order_Line_ID = :Old.Order_Line_ID;
+  Retvalue := ItemStatus_Pkg.Update_QtyReservedInvoiced(itemid,:New.Qty_Invoiced_Units,locationId);
+ End If;
+Exception
+ When Others Then Raise_Application_Error(-20000,p_MessageText);
+
+End Dt_PREUPDINS_FULFILLLINE;",ORATECHDATAHUB
+DT_BIUUSER,BEFORE EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,CMN_USERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   CryptedPwd Varchar2(100);
+   vSubject   varchar2(400);
+Begin
+ if Inserting then
+   Cryptedpwd := Utility_Pkg.EncryptData(:New.User_PAssword);
+   vSubJect := 'User:'||:New.User_Name ||' Created ';
+ End If;
+ If Updating and (:New.User_Password <> :Old.User_Password
+                  or :New.Update_Source = 'RESETPASSWORD') Then
+   Cryptedpwd := nvl(Utility_Pkg.EncryptData(:New.User_PAssword),:New.User_PAssword);
+  vSubject := 'User:'||:Old.User_Name||' password is changed';
+ End If;
+ if Deleting Then
+   vSubject := 'User:'||:Old.User_Name ||' Deleted';
+ end If;
+
+ :New.User_PAssword := CryptedPwd;
+    Notification_Pkg.Notify(p_event 	=> 'USERADD/UPDATE/DELETE',
+                                p_Table 	=> 'CMN_USERS',
+                                p_Subject 	=> vSubject,
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID);
+Exception
+ When Others Then Null;
+
+End DT_BIUUSER;",ORATECHDATAHUB
+DT_BIU_STOCKADJUST,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,INV_ITEM_ADJUSTMENT_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  vsubject varchar2(400);
+  vTrackusage varchar2(10);
+  vminQty     number;
+  vMaxQty     Number;
+  vReorderQty Number;
+  vItemNumber varchar2(100);
+
+Begin
+    Select track_usage,min_qty,max_qty,Reorder_Qty,item_number
+    into   vtrackusage,vminqty,vmaxqty,vreorderqty,vitemnumber
+    from inv_item_masters
+    where item_id = nvl(:New.iim_Item_Id,:Old.iim_Item_ID);
+
+   vSubJect := 'Item:'|| vItemNumber;
+dbms_output.Put_Line(vSubject);
+      Notification_Pkg.Notify(p_event 	=> 'ITEMSTOCKADJSUTED',
+                                p_Table 	=> 'INV_ITEM_ADJUSTMENTS',
+                                p_Subject 	=> vSubject||' Stock Adjusted  ',
+                 		p_CreatedBy     => nvl(:New.Last_Updated_By,:Old.Last_Updated_By),
+                                p_BuId          => nvl(:New.Bu_Id,:Old.Bu_ID),
+                                p_OldValue      => :old.Qty_Adjusted,
+                                p_NewValue      => :new.Qty_Adjusted);
+
+
+
+Exception
+ When Others Then dbms_output.Put_Line(SqlErrm);
+
+End DT_BIU_STOCKADJUST;",ORATECHDATAHUB
+DT_AIUD_BARCODE,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,INV_ITEM_BARCODES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  BatchId  	Number;
+  AddedToBatch  Boolean := False;
+begin
+BatchId := ITEMBATCH_pkg.Get_ItemDefaultBatches;
+ if batchID is not null Then
+   If Inserting or Updating Then
+      ItemBatch_Pkg.Add_ItemToBatch01(p_ItemId  =>  nvl(:New.IIM_Item_ID,:Old.IIM_Item_Id),
+                                  p_BatchId => BatchID);
+ End If;
+End If;
+  if (Inserting) Then
+    Inv02_Pkg.Update_BarcodeRep(p_Barcode => :New.Barcode ,
+                           p_NewStatus  => 'INUSE',
+                           p_IteMid    => :New.IIM_ITEM_ID,
+                           p_SuID     => :New.IISU_SU_ID,
+                           p_UserId   => :New.Created_By,
+                           p_Hint    =>  'STATUSITEM');
+ End If;
+   if (Deleting) Then
+    Inv02_Pkg.Update_BarcodeRep(p_Barcode => :old.Barcode ,
+                           p_NewStatus  => 'DELETED',
+                           p_IteMid    => null,
+                           p_SuID     => null,
+                           p_UserId   => :old.Created_By,
+                           p_Hint    =>  'STATUSITEM');
+ End If;
+
+Exception
+ When Others Then null;
+
+End DT_AIUD_BARCODE;",ORATECHDATAHUB
+DT_BIU_ITEMLOC,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,INV_ITEM_LOCATIONS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  vsubject varchar2(400);
+  vTrackusage varchar2(10);
+  vminQty     number;
+  vMaxQty     Number;
+  vReorderQty Number;
+  vItemNumber varchar2(100);
+
+Begin
+
+ if inserting or updating then
+   if INV_PKG.Get_Optionval('AUTO_RELEASE_TO_WEB') = 'Y' then
+     if nvl(:Old.Quantity,0) <= 0 and :New.Quantity > 0 then
+       begin
+        Update AR_CUST_ITEM_UPLOADS
+        Set   Upload_Status = 'RELEASED'
+              ,Last_Update_Date = sysdate
+              ,Update_Source   = 'LOCSTOCK'
+        Where Item_Id = Nvl(:Old.Item_Id,:New.Item_ID)
+        And   Upload_Status in ( 'NEW','OUTOFSTOCK');
+
+      Exception When Others Then Null;
+     End;
+    End If;
+    if nvl(:Old.Quantity,0) > 0 and :New.Quantity <= 0 then
+       begin
+        Update AR_CUST_ITEM_UPLOADS
+        Set   Upload_Status = 'OUTOFSTOCK'
+              ,Last_Update_Date = sysdate
+              ,Update_Source   = 'LOCSTOCK'
+        Where Item_Id = Nvl(:Old.Item_Id,:New.Item_ID)
+        And   Upload_Status in ('RELEASED','UPLOADED');
+
+      Exception When Others Then Null;
+     End;
+    End If;
+   end If;
+---------------  Stock History
+ if INV_PKG.Get_Optionval('POPULATE_STOCK_HISTORY') = 'DYNAMIC' then
+     if nvl(:Old.Quantity,0) <= 0 and :New.Quantity > 0 then
+       begin
+        Insert Into AUDIT_STOCK_HISTORY(
+             Stock_In_Date,Item_Id,Location_ID,Quantity
+            )
+        Values(Sysdate, Nvl(:Old.Item_Id,:New.Item_ID),
+                       Nvl(:Old.Location_Id,:New.Location_ID),
+               :New.Quantity);
+
+      Exception When Others Then Null;
+     End;
+    End If;
+    if nvl(:Old.Quantity,0) > 0 and :New.Quantity <= 0 then
+       begin
+        Update AUDIT_STOCK_HISTORY
+        Set    Stock_SoldOut_Date = Sysdate,
+               No_Of_Days  = Sysdate - Stock_In_Date
+        Where  Item_Id =  Nvl(:Old.Item_Id,:New.Item_ID)
+        And    Location_Id =  Nvl(:Old.Location_Id,:New.Location_ID)
+        And    Stock_SoldOut_Date is Null;
+
+      Exception When Others Then Null;
+     End;
+    End If;
+   end If;
+
+  End If;
+
+ if Inserting then
+   return;
+ End If;
+ if Updating then
+
+    Select track_usage,min_qty,max_qty,Reorder_Qty,item_number
+    into   vtrackusage,vminqty,vmaxqty,vreorderqty,vitemnumber
+    from inv_item_masters
+    where item_id = :Old.Item_ID;
+  if vTrackUsage <> 'Y' then Return; End If;
+   vSubJect := 'Item:'|| vItemNumber;
+    if :New.Quantity < vMinQty and :Old.Quantity > vMinQty Then
+      Notification_Pkg.Notify(p_event 	=> 'ITEMINSTOCK<MINQTY',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' Instock below Min Qty  ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => vMinQty,
+                                p_NewValue      => :New.Quantity);
+
+   End If;
+    if :New.Quantity > vmaxQty and :Old.Quantity < vmaxQty Then
+      Notification_Pkg.Notify(p_event 	=> 'ITEMINSTOCK>MAXQTY',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' Instock above Max Qty  ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => vMaxQty,
+                                p_NewValue      => :New.Quantity);
+
+   End If;
+   if :New.Quantity > vreorderQty and :Old.Quantity < vreorderQty Then
+      Notification_Pkg.Notify(p_event 	=> 'ITEMINSTOCK>REORDERQTY',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' Instock above reorder Qty  ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => vreorderqty,
+                                p_NewValue      => :New.Quantity);
+
+   End If;
+    if :New.Quantity < 0 and :Old.Quantity >= 0  Then
+      Notification_Pkg.Notify(p_event 	=> 'ITEMGONETOMINUSSTOCK',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' gone to minus stock  ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => :old.Quantity,
+                                p_NewValue      => :New.Quantity);
+
+   End If;
+
+null;
+End If;
+
+
+Exception
+ When Others Then Null;
+
+End Dt_BIU_ITEMLOC;",ORATECHDATAHUB
+DT_AUEITEM,AFTER EACH ROW,INSERT OR UPDATE,TABLE,INV_ITEM_MASTERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x 		number := 0;
+  xc 		varchar2(1000);
+  BatchId  	Number;
+  AddedToBatch  Boolean := False;
+Begin
+ BatchId := ITEMBATCH_pkg.Get_ItemDefaultBatches;
+ if batchID is not null Then
+   If Inserting or
+      (Updating('UNIT_CP') OR
+       Updating('IISC_SUB_CATEGORY_ID') OR
+       Updating('ITEM_NAME') OR
+       Updating('CASE_UNIT') OR
+       Updating('GROSS_UNIT_WEIGHT') OR
+       Updating('UNIT_LENGTH') OR
+       Updating('UNIT_HEIGHT') OR
+       Updating('UNIT_WIDTH') OR
+       Updating('UNIT_VOLUME') OR
+       Updating('ITEM_SPECIFICATIONS') OR
+       Updating('TECHNICAL_SPECS_FILE') OR
+       Updating('TECHNICAL_SPECS') OR
+       Updating('CUSTOMER_NOTES1') OR
+       Updating('CUSTOMER_NOTES2') OR
+       Updating('CUSTOMER_NOTES3') OR
+       Updating('KEY_WORDS') OR
+	Updating('ITEM_STYLE') OR
+	Updating('ITEM_FITTING') OR
+	Updating('ITEM_SIZE') OR
+	Updating('ITEM_COLOUR') OR
+	Updating('PICTURENAME1')OR
+	Updating('PICTURENAME2')OR
+	Updating('PICTURENAME3') OR
+	Updating('ITEM_STATUS') OR
+	Updating('WHOSE_FOR')
+      )
+   Then
+    ItemBatch_Pkg.Add_ItemToBatch01(p_ItemId  =>  nvl(:New.Item_ID,:Old.Item_Id),
+                                  p_BatchId => BatchID);
+ End If;
+End If;
+
+ if Inserting then
+    if Inv_Pkg.Get_Optionval('ADD_ITEM_TO_LOCATION') = 'Y' then
+      x := Location_Pkg.AddItemToLocation(:New.Item_Id);
+    End If;
+ End If;
+
+ if Inserting or (Updating('UPDATE_SOURCE') and :New.Update_Source = 'UPDATEPB') then
+    if Inv_Pkg.Get_Optionval('PRICE_BREAK_CRITERIA') = 'ITEM' then
+      xc := Price_Pkg.Create_PbHeader(p_PbId => nvl(:New.Item_ID,:Old.Item_Id),
+                         p_Pbname => Substr(Nvl(:New.Item_Name,:Old.Item_Name)||'-'||nvl(:New.Item_Number,:Old.Item_Number),100),
+                         p_PbDesc => nvl(:New.Item_Name,:Old.Item_Name),
+                         p_ItemId => nvl(:New.Item_ID,:Old.Item_Id),
+                         p_UserId => nvl(:New.Created_By,:Old.Created_By),
+                         p_BuId   => nvl(:New.Bu_ID,:Old.Bu_Id));
+    End If;
+ End If;
+
+ if Inserting or Updating then
+ If (:New.Update_Source = 'UPLOADCUSTITEM' and Updating) or Inserting  then
+   Inv_Pkg.Pop_CustomerItems(p_CallType => 'SINGLE',
+                             p_ItemId   => Nvl(:New.Item_Id,:Old.Item_Id),
+                             p_CategoryId => Nvl(:New.IIC_Category_ID,:Old.IIC_Category_ID),
+                             p_SubCategoryId => Nvl(:New.IIsC_sub_Category_ID,:Old.IIsC_sub_Category_ID));
+ End If;
+ End If;
+
+ if Inserting or Updating then
+ If (:New.Update_Source = 'MULTIPLEGROUPS' or Updating('IISC_SUB_CATEGORY_ID')) or Inserting  then
+   If Not Inserting then
+    Begin
+       Delete INV_ITEM_MULTI_CATEGORIES
+       Where  Item_ID = Nvl(:New.Item_Id,:Old.Item_Id)
+       and    sub_Category_ID = :Old.IIsC_sub_Category_ID;
+     Exception When Others Then Null;
+    End;
+  End If;
+   Inv_Pkg.Pop_MultipleGroups(p_CallType => 'SINGLE',
+                             p_ItemId   => Nvl(:New.Item_Id,:Old.Item_Id),
+                             p_CategoryId => Nvl(:New.IIC_Category_ID,:Old.IIC_Category_ID),
+                             p_SubCategoryId => Nvl(:New.IIsC_sub_Category_ID,:Old.IIsC_sub_Category_ID));
+ End If;
+ End If;
+ if Inserting or Updating then
+ If (:New.Update_Source = 'MULTIPLESEASONS' or Updating) or Inserting  then
+   Inv_Pkg.Pop_Multipleseasons(p_CallType => 'SINGLE',
+                             p_ItemId   => Nvl(:New.Item_Id,:Old.Item_Id),
+                             p_seasoncodeId => Nvl(:New.season_code_Id,:Old.season_Code_Id));
+ End If;
+ End If;
+ If not Updating then Return; End If;
+ If :New.Unit_Cp = :Old.Unit_Cp
+   and :New.Alternate_Unit_Cp = :Old.Alternate_Unit_Cp
+   And :New.Average_UnitCp = :Old.Average_UnitCP
+  Then
+   Return;
+ End If;
+
+ Audit_Pkg.ItemPriceHistory(p_Item_Id => :Old.Item_Id
+			  ,p_Transaction_Source => 'ITEM MASTER'
+			  ,p_Source_Object_Name  => 'INV_ITEM_MASTERS'
+			,p_Changed_By => :New.Last_Updated_By
+			,p_Change_Reason  => 'ITEM UPDATE'
+			,p_Old_Price      => :Old.Unit_Cp
+			,p_New_Price      => :New.Unit_Cp
+			,p_Old_Averageprice => :Old.Average_UnitCp
+			,p_New_Averageprice => :New.Average_UnitCp
+			,p_Change_Type      => 'USER'
+			,p_Change_Category  => 'ITEM'
+			,p_Last_Update_Date => :New.Last_Update_Date
+			,p_Last_Updated_By  => :New.Last_Updated_By
+			,p_Created_By       => :New.Last_Updated_By
+			,p_Bu_Id            => :Old.Bu_ID
+			,p_Update_Source    => 'TRIGGER');
+
+Exception
+ When Others Then Null;
+
+End Dt_AUEITEM;",ORATECHDATAHUB
+DT_BINSERTITEM,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,INV_ITEM_MASTERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  vsubject varchar2(400);
+  vItemId   Number;
+  vMessage  Varchar2(400);
+Begin
+ begin
+  -- :New.Case_Volumetric_Weight := Round((:New.Case_Height*:New.Case_Length*:New.Case_Width)/5000,6);
+   -- :New.Unit_Volumetric_Weight := Round((:New.Unit_Height*:New.Unit_Length*:New.Unit_Width)/5000,6);
+   :New.Case_Volumetric_Weight := 0;
+    :New.Unit_Volumetric_Weight := 0;
+ Exception When Others Then Null;
+End;
+ if Inserting then
+  :NEW.Average_UnitCP := :New.Unit_Cp;
+   :New.Last_Bought_UnitCp := :New.Unit_Cp;
+ End If;
+ vItemID := Nvl(:Old.Item_Id,:New.Item_Id);
+ if Updating then
+      if Updating('ITEM_STATUS')  Then
+        vMessage := Inv02_Pkg.CanChange_ItemStatus(p_ItemId  => :Old.Item_ID,
+			       p_NewStatus 		     => :New.Item_Status,
+			       p_ItemNumber    		     => :Old.Item_Number,
+			       p_Action  		     =>  'CHANGE',
+			       p_Hint    		     =>  'ANY');
+       if vMessage <> 'OK' Then
+          Raise_Application_Error(-20001,'Item Update:'||vMessage);
+       End If;
+      End If;
+
+   if :Old.Track_Usage <> 'Y' then Return; End If;
+   vSubJect := 'Item:'|| :old.Item_Number;
+     Notification_Pkg.Notify(p_event 	=> 'ITEMSTATUSCHANGED',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' Status changed ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => :Old.item_Status,
+                                p_NewValue      =>  :new.item_Status);
+     Notification_Pkg.Notify(p_event 	=> 'ITEMMINQTY',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' MIN Qty Changed ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => :Old.min_qty,
+                                p_NewValue      => :new.min_qty);
+     Notification_Pkg.Notify(p_event 	=> 'ITEMMAXQTY',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' MAX Qty Changed ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => :Old.max_qty,
+                                p_NewValue      => :new.max_qty);
+     Notification_Pkg.Notify(p_event 	=> 'ITEMREORDERQTY',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' Reorder Qty Changed ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => :Old.reorder_qty,
+                                p_NewValue      => :new.reorder_qty);
+     Notification_Pkg.Notify(p_event 	=> 'ITEMINNERQTY',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' INNER Qty Changed ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => :Old.INNER_qty,
+                                p_NewValue      => :new.INNER_qty);
+     Notification_Pkg.Notify(p_event 	=> 'ITEMPALLETQTY',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' PALLET Qty Changed ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => :Old.PALLET_qty,
+                                p_NewValue      => :new.PALLET_qty);
+     Notification_Pkg.Notify(p_event 	=> 'ITEMPRICEBREAK',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' Price Break Changed ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => :Old.IPBH_PRICE_BREAK_ID,
+                                p_NewValue      => :new.IPBH_PRICE_BREAK_ID);
+     Notification_Pkg.Notify(p_event 	=> 'ITEMUNITCP',
+                                p_Table 	=> 'INV_ITEM_MASTERS',
+                                p_Subject 	=> vSubject||' Unit Price Changed ',
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID,
+                                p_OldValue      => :Old.unit_cp,
+                                p_NewValue      => :new.unit_cp);
+
+null;
+End If;
+
+
+Exception
+ When Others Then Null;
+
+End Dt_BINSERTITEM;",ORATECHDATAHUB
+DT_BIU_INVPICKLINE,BEFORE EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,INV_ITEM_PICKLIST,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   LineStatus           Varchar2(30);
+   TransSource          Varchar2(30);
+   YesUpdateQty         Boolean := TRUE;
+   UpdateSource         Varchar2(30);
+   QtyToUpdate		Number := 0;
+   SalesUnit		Number := 0;
+   RetValue		Number := 0;
+   ItemId		Number := 0;
+   HeaderId		Number := 0;
+   LineId		Number := 0;
+   LocationID		Number := 0;
+   SubLocationId	Number := 0;
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+  QtyToCancel           Number := 0;
+  failed                exception;
+
+Begin
+ UpdateSource 	:= Nvl(:New.Update_Source,:Old.Update_Source);
+ QtyToUpdate    := Nvl(:New.quantity,:Old.quantity);
+ LineStatus 	:= Nvl(:New.picklist_status,:Old.picklist_status);
+ TransSource 	:= Nvl(:New.Transaction_Source,:Old.Transaction_Source);
+ ItemId      	:= Nvl(:New.Item_ID,:Old.Item_ID);
+ headerId      	:= Nvl(:New.source_header_ID,:Old.source_header_ID);
+ lineId      	:= Nvl(:New.source_line_ID,:Old.source_line_ID);
+ LocationId    	:= Nvl(:New.Location_ID,:Old.Location_ID);
+ SubLocationId  := Nvl(:New.Sub_Location_ID,:Old.Sub_Location_ID);
+ QtyToUpdate    := QtyToUpdate;
+
+ if TransSource =  'INVREQUISITION' then
+   if (Inserting or Deleting) and LineStatus = 'NEW' then
+      if Inserting then
+         QtyToUpdate := Nvl(:New.Quantity,0) - Nvl(:Old.Quantity,0);
+       end If;
+      if Deleting Then
+       QtyToUpdate :=  Nvl(:Old.Quantity,0) * -1;
+      End If;
+       Update Inv_Requisition_Lines
+       Set    Qty_Allocated_Units =  Nvl(Qty_Allocated_Units,0) + QtyToUpdate
+       where  Requisition_Id      = headerId
+       And    Requisition_Line_Id = LineId;
+    End If;
+    if  (inserting or updating) and  :New.PickList_status in ('APPROVED','PICKED')  and :Old.PickList_Status is null  then
+         retvalue :=  location_pkg.update_sublocationQty(ItemID,QtyToUpdate*-1,
+                                                    LocationId,SubLocationID);
+     if cmn_Common_Pkg.get_LookupAttributeValues('MINUS_STOCK_OPTIONS','SALES INVOICE',1) = 'N' Then
+           if RetValue < 0 then
+            p_Status      := 'ERROR';
+             p_MessageTExt := ' Not Enough Stock, Invoice Line'||SlNo;
+            raise failed;
+            End If;
+      End If;
+     Update Inv_Requisition_Lines
+       Set    Qty_Allocated_Units = 0,
+              QTY_FULLFILLED_UNITS = nvl(QTY_FULLFILLED_UNITS,0) + QtyToUpdate,
+              Qty_Balance_Units   = nvl(Qty_Balance_Units,0) - QtytoUpdate
+       where  Requisition_Id = headerId
+       And    Requisition_Line_Id = LineId;
+       retvalue := Location_Pkg.update_TransitQty(p_LocationId => LocationId,
+			   			  p_ID	       => ItemID,
+                           			  p_Qty        => QtyToUpdate);
+   End If;
+
+End If;
+
+if TransSource like '%SALES%' then
+   if (Inserting or Deleting) and LineStatus = 'NEW' then
+      if Inserting then
+         QtyToUpdate := Nvl(:New.Quantity,0) - Nvl(:Old.Quantity,0);
+       end If;
+      if Deleting Then
+       QtyToUpdate :=  Nvl(:Old.Quantity,0) * -1;
+      End If;
+    End If;
+    if  (inserting or updating) and  :New.PickList_status in ('APPROVED','PICKED')  and :Old.PickList_Status is null  then
+         retvalue :=  location_pkg.update_sublocationQty(ItemID,QtyToUpdate*-1,
+                                                    LocationId,SubLocationID);
+     if cmn_Common_Pkg.get_LookupAttributeValues('MINUS_STOCK_OPTIONS','SALES INVOICE',1) = 'N' Then
+           if RetValue < 0 then
+            p_Status      := 'ERROR';
+             p_MessageTExt := ' Not Enough Stock, Invoice Line'||SlNo;
+            raise failed;
+            End If;
+      End If;
+   End If;
+
+End If;
+
+
+Exception
+ When Others Then Raise_Application_Error(-20000,p_MessageText);
+
+End  DT_BIU_INVPICKLINE;",ORATECHDATAHUB
+DT_AIUD_ITEMPRICES,AFTER EACH ROW,INSERT OR UPDATE,TABLE,INV_ITEM_PRICES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  BatchId  	Number;
+  AddedToBatch  Boolean := False;
+begin
+BatchId := ITEMBATCH_pkg.Get_ItemDefaultBatches;
+ if batchID is not null Then
+   If Inserting or Updating Then
+      ItemBatch_Pkg.Add_ItemToBatch01(p_ItemId  =>  nvl(:New.IIM_Item_ID,:Old.IIM_Item_Id),
+                                  p_BatchId => BatchID);
+ End If;
+End If;
+
+
+Exception
+ When Others Then null;
+
+End DT_AIUD_ITEMPRICES;",ORATECHDATAHUB
+DT_BIU_ITEMSTAT,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,INV_ITEM_STATUSES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  vsubject varchar2(400);
+Begin
+
+ if updating then
+  if :New.Qty_Inorder < 0 Then
+  :NEW.Qty_Inorder := 0;
+ End If;
+ End If;
+
+
+Exception
+ When Others Then Null;
+
+End Dt_BIU_ITEMSTAT;",ORATECHDATAHUB
+DT_AIU_ITEMSUBLOC,AFTER EACH ROW,INSERT OR UPDATE,TABLE,INV_ITEM_SUB_LOCATIONS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  locationid number;
+  itemid     number;
+  sublocationid number;
+  userid     number;
+  Retvalue  varchar2(200);
+
+Begin
+locationid := Nvl(:New.Location_Id,:Old.Location_Id);
+sublocationid := Nvl(:New.sub_Location_Id,:Old.sub_Location_Id);
+itemid := Nvl(:New.Item_Id,:Old.Item_Id);
+userid := Nvl(:New.last_updated_by,:Old.last_updated_by);
+if Updating then
+  if :New.Update_Source <> 'ITEMSUBLOCGROUP' then return; End If;
+end If;
+retvalue := Location_Pkg.Add_ItemSubLocGroup(p_LocationId => locationid,
+                             p_ItemId     => itemid,
+                             p_SubLocationId  => SubLocationId,
+                             p_UserID      => userid);
+
+null;
+
+
+Exception
+ When Others Then Null;
+
+End Dt_AIU_ITEMSUBLOC;",ORATECHDATAHUB
+DT_AUDMINUSSTOCK,AFTER EACH ROW,UPDATE OR DELETE,TABLE,INV_ITEM_SUB_LOCATIONS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+Begin
+ if Nvl(:New.Minus_Quantity,0) = Nvl(:Old.Minus_Quantity,0) then
+    Return;
+ End If;
+
+ Audit_Pkg.MinusStockHistory(p_Item_Id => :Old.Item_ID
+			  ,p_Audit_Source => 'ITEM SUB LOCATION'
+			  ,p_Audit_Source_Ref  => 'INV_ITEM_SUB_LOCATIONS'
+                          ,P_Location_ID       => :Old.Location_ID
+                          ,P_Sub_Location_ID     => :Old.Sub_Location_ID
+                          ,P_Audit_Date         => Sysdate
+                          ,P_Minus_Quantity    =>  nvl(:New.Minus_Quantity,0) - nvl(:Old.Minus_Quantity,0)
+                          ,P_Total_Minus_Quantity    =>  nvl(:New.Minus_Quantity,0)
+			,p_Last_Update_Date      => Nvl(:New.Last_Update_Date,:Old.Last_Update_Date)
+			,p_Last_Updated_By       => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Created_By            => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Bu_Id                 => :Old.Bu_ID
+			,p_Update_Source         => 'TRIGGER');
+
+Exception
+ When Others Then Null;
+
+End Dt_AUDMINUSSTOCK;",ORATECHDATAHUB
+DT_BIUD_JOBQUEUE,BEFORE EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,SYS_JOB_QUEUE,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+
+Begin
+if Inserting or Updating Then
+   if :New.Next_run_date > Sysdate Then
+  --    :New.Repeat := 'N';
+     Null;
+   End If;
+End If;
+Exception
+ When Others Then null;
+
+End Dt_BIUD_JOBQUEUE;",ORATECHDATAHUB
+DT_SYSUIITEM_BIUD,BEFORE EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,SYS_UIITEMS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x number;
+   vRegionId  Number;
+   vRegRow    SYS_UIREGIONS%RowType;
+   vItemRow   Sys_UIItems%RowType;
+   vUi_Type   Varchar2(100);
+Begin
+ vitemRow.Item_Type := Nvl(:New.Item_Type,:Old.Item_Type);
+ if :New.Item_Type = 'ITEM' or  :Old.Item_Type = 'ITEM' Then Return; End If;
+ vItemRow.Item_Id := Nvl(:new.Item_Id,:Old.Item_Id);
+ vItemRow.BU_Id := Nvl(:new.BU_Id,:Old.BU_Id);
+ vItemRow.Name    := Nvl(:New.Name,:Old.Name);
+ vItemRow.Description := Nvl(:New.Description,:Old.Description);
+ vItemRow.Created_By  := Nvl(:New.Created_By,:Old.Created_By);
+ vItemRow.Last_Updated_By := Nvl(:New.Last_Updated_By,:Old.Last_Updated_By);
+ vRegRow.Region_Id := null;
+ Select Ui_Type into vUi_Type from SYS_UIREGIONS where Region_Id = Nvl(:New.REGION_ID,:Old.Region_ID);
+ if Inserting or UPDATING then
+  Dbms_Output.Put_Line('INS/UPD:item_id:'||vitemRow.Item_ID);
+    vRegRow.Item_Id := vItemRow.Item_Id;
+    SYs_UIREGIONSAPI('SELECT',VRegRow);
+ Dbms_Output.Put_Line('AFTER SELECT:item_id:'||vitemRow.Item_ID||' Name:'||vRegRow.Name);
+    if vRegRow.Name is  Null Then
+       vRegRow.Region_Id       := -1;
+      vRegRow.Name             := VItemRow.Name;
+      vRegRow.Description      := vItemRow.Description;
+      vRegRow.UI_TYPE          := vui_type;
+      vRegRow.Parent_Region_Id := :New.Region_Id;
+      vRegRow.Item_Id          := vItemRow.Item_Id;
+      vRegRow.Created_By := vItemRow.Created_By;
+      vRegRow.Last_Updated_By := vItemRow.Last_Updated_By;
+      vRegRow.BU_ID           := vItemRow.BU_ID;
+      SYs_UIREGIONSAPI('INSERT',VregRow);
+     Dbms_Output.Put_Line('INSERTED:item_id:'||vitemRow.Item_ID);
+    else
+      Update SYS_UIREGIONS Set Name = vItemRow.Name Where Item_Id = vItemRow.Item_Id;
+    End If;
+ End If;
+Exception
+ When Others Then
+    Raise_Application_Error(-20001,'DT SYS UIITEMS:'||SqlErrm);
+
+End Dt_SYSUIITEM_BIUD;",ORATECHDATAHUB
+DT_BIUD_TPSTOCKLINES,BEFORE EACH ROW,INSERT,TABLE,TP_STOCK_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+vSuId     Number(10);
+begin
+  if (Inserting) Then
+    Inv02_Pkg.Get_IdsByBarcode(p_Barcode => Nvl(:New.Barcode,:New.Item_Number) ,
+                          p_Hint  =>  'ITEM',
+                          p_ItemID => :New.Item_ID,
+                          p_SuId   => vSUID);
+
+    Begin
+     Select Item_Name,Item_Number,Unit_CP
+     Into   :New.Item_Name,:New.Item_Number,:New.My_cost
+     From   Inv_Item_Masters
+     Where  Item_Id  = :New.Item_Id;
+       :New.TP_STATUS := 'OK';
+   Exception When Others then
+    :New.TP_STATUS := 'UNKNOWN';
+   End;
+
+  :New.TP_Source_Cost  := Nvl(:New.TP_Source_Cost,0);
+
+  if :New.My_Cost < :New.TP_Source_Cost then
+     :New.PRICE_DIFFERENCE_FLAG := 'UP';
+   Elsif :New.My_Cost > :New.TP_Source_Cost then
+     :New.PRICE_DIFFERENCE_FLAG := 'DOWN';
+   Elsif :New.My_Cost = :New.TP_Source_Cost then
+     :New.PRICE_DIFFERENCE_FLAG := 'UNCHANGED';
+   else
+     :New.PRICE_DIFFERENCE_FLAG := 'UNKNOWN';
+  End If;
+ End If;
+
+Exception
+ When Others Then null;
+
+End DT_BIUD_TPSTOCKLINES;",ORATECHDATAHUB
+DT_AIUEGRNLINE,AFTER EACH ROW,INSERT OR UPDATE,TABLE,PO_GRN_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  QtyGrned  Number := 0;
+  SupplierId number;
+  UpdateStock Varchar2(1);
+  Updatebasecost Varchar2(1);
+Begin
+
+ QtyGrned := Nvl(:New.Qty_Received_Units,0) - Nvl(:Old.Qty_Received_Units,0);
+
+
+ if :New.GRN_STATUS = 'NEW' and nvl(:Old.GRN_STATUS,'NEW') = 'NEW'  Then
+   if QtyGrned <> 0 and Ap_Pkg.Get_UnAppSubLocation is not null and  :New.Unapproved_Sub_Location_Id is not Null
+   then
+     x := Location_Pkg.update_subLocationQty(p_Id 	=> :New.Item_Id ,
+                               p_Qty 	=> QtyGrned,
+                               p_locationId => nvl(:new.Location_Id,:old.Location_Id),
+                               p_subLocationId => nvl(:old.Unapproved_Sub_Location_Id,:New.Unapproved_Sub_Location_Id));
+
+
+ end If;
+   return;
+ End If;
+
+ if nvl(:Old.GRN_STATUS,'NEW') = 'NEW' and  :New.GRN_STATUS = 'APPROVED' Then
+   if :New.Update_Source = 'UPDATESTOCK' then
+    select Sup_Supplier_Id,nvl(Update_Stock,'Y'),nvl(update_base_cost,'N')
+    Into   SupplierId,UpdateStock,updatebasecost
+    From   Po_Grn_Headers
+    Where  Grn_ID  = Nvl(:New.Pgh_Grn_ID,:Old.Pgh_Grn_Id);
+     if UpdateStock = 'Y' then
+         x := ItemStatus_Pkg.update_QtyGoodsin(   p_Id          => :old.Item_Id
+                                                          ,p_POLineID    => :old.Po_Line_Id
+                                                          ,p_QtyGoodsIn  => nvl(:new.Qty_received_Units,:old.Qty_received_Units)
+                                                          ,p_QtyInOrder  => nvl(:new.Qty_ordered_Units,:Old.Qty_Ordered_Units)
+                                                          ,p_LocationID   => nvl(:new.Location_Id,:old.Location_Id)
+                                                          ,p_CaseSize     => :old.Case_Size
+                                                          ,p_UnitCP       => nvl(:new.Landing_Unit_price,:old.Landing_Unit_price)
+                                                          ,P_SupplierID   => supplierID
+                                                          ,p_SubLocationID => nvl(:new.Sub_Location_ID,:Old.Sub_Location_ID)
+                                                          ,p_RejQty       =>  nvl(:new.Qty_Rejected,:old.Qty_Rejected)
+                                                          ,p_RejSubLocationID => nvl(:new.Rejection_Sub_Location_ID,:Old.Rejection_Sub_Location_ID)
+                                                          ,p_RejUpdateStock   => nvl(:new.Rejection_Update_Stock,:Old.Rejection_Update_Stock)
+                                                          ,p_DiffReason       => nvl(:new.REASON_FOR_DIFFERENCE,:Old.REASON_FOR_DIFFERENCE)
+                                                          ,p_QtyReserved       => nvl(:new.Qty_Reserved_Units,:Old.Qty_Reserved_Units)
+                                                          ,p_updatebasecost    => updatebasecost
+                                                          ,p_QtyInStock        => Nvl(:New.Qty_InStock,:Old.Qty_InStock));
+      End If;  -- Update Stock
+     if  nvl(:new.Qty_Reserved_Units,:Old.Qty_Reserved_Units) <> 0 then
+          Notification_Pkg.Notify(p_event 	=> 'GRNRESERVED',
+                                p_Table 	=> 'PO_GRN_LINES',
+                                p_Subject 	=> Inv_Pkg.GetItemNumber(:Old.Item_Id),
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID);
+     End If;
+
+     If  Ap_Pkg.Get_UnAppSubLocation is not null
+        and  :New.Unapproved_Sub_Location_Id is not Null
+       then
+          QtyGrned := Nvl(:Old.Qty_Received_Units,0)  * -1;
+          x := Location_Pkg.update_subLocationQty(p_Id 	=> :Old.Item_Id ,
+                               p_Qty 	=> QtyGrned,
+                               p_locationId =>  :old.Location_Id,
+                               p_subLocationId => :old.Unapproved_Sub_Location_Id);
+    End If;
+ End If;  -- update source;
+End If; -- Grn Status
+
+ If Nvl(:Old.Grn_Status,:New.GRN_STATUS) <> 'APPROVED' Then Return; End If;
+ If Nvl(:New.Unit_Cp,-99999) = Nvl(:Old.Unit_Cp,-888888)
+   Then
+   Return;
+ End If;
+ Audit_Pkg.ItemPriceHistory(p_Item_Id => :New.Item_Id
+			  ,p_Transaction_Source 	=> 'GRN LINES'
+			  ,p_Source_Object_Name  	=> 'PO_GRN_LINES'
+                          ,P_Source_Header_ID    	=> :New.PGH_GRN_ID
+                          ,p_Source_Line_ID      	=> :New.GRN_LINE_ID
+			,p_Changed_By 			=> :New.Last_Updated_By
+			,p_Change_Reason  		=> 'GRN APPROVED'
+			,p_Old_Price      		=> :New.Unit_Cp
+			,p_New_Price      		=> :New.Unit_Cp
+			,p_Change_Type      		=> 'USER'
+			,p_Change_Category  		=> 'GRN'
+			,p_Last_Update_Date 		=> :New.Last_Update_Date
+			,p_Last_Updated_By  		=> :New.Last_Updated_By
+			,p_Created_By       		=> :New.Last_Updated_By
+			,p_Bu_Id            		=> :New.Bu_ID
+			,p_Update_Source    		=> 'TRIGGER');
+
+Exception
+ When Others Then Null;
+
+End Dt_AIUEGRNLINE;",ORATECHDATAHUB
+DT_AIU_POLINE,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,PO_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x 		number := 0;
+  PoQty  	Number := 0;
+  ReservedQty  	Number := 0;
+  SupplierId 	number;
+  UpdateStock 	Varchar2(1);
+  CurrStatus 	Varchar2(30);
+  UpdateSource 	Varchar2(30);
+  OldStatus  	varchar2(30);
+  Retvalue   	Number := 0;
+  LocationId	Number := 0;
+Begin
+OldStatus   	:= Nvl(:Old.Order_Status,'NEW');
+CurrStatus  	:= Nvl(:New.Order_status,'NEW');
+UpdateSource 	:= Nvl(:New.Update_Source,:Old.Update_Source);
+
+    PoQty 		:=   Nvl(:New.Qty_ordered_Units,:Old.Qty_ordered_Units);
+    PoQty 		:=   PoQty + nvl(Nvl(:New.Qty_free_Units,:Old.Qty_free_Units),0);
+   ReservedQty 	        :=   Nvl(:New.Qty_Reserved_Units,:Old.Qty_Reserved_Units);
+if (Deleting) Then
+   if OldStatus <> 'APPROVED'  then Return; End If;
+   Retvalue  := ItemStatus_Pkg.update_QtyInOrder(:Old.Item_Id
+                                               ,(:Old.Qty_Ordered_Units+Nvl(:Old.Qty_free_Units,0))*-1
+                                               ,LocationId);
+End If;
+
+if UpdateSource <> 'UPDATEPOQTY' Then Return; End If;
+if currstatus = 'NEW' and OldStatus = 'APPROVED' Then
+   if poQty <> 0 Then
+     Retvalue  := ItemStatus_Pkg.update_QtyInOrder(:Old.Item_Id
+                                               ,PoQty *-1
+                                               ,LocationId);
+   End If;
+  if ReservedQty <> 0 then
+    RetValue := ItemStatus_Pkg.update_QtyReservedPO(Nvl(:New.Item_Id,:Old.Item_Id)
+                                                 ,ReservedQty * -1
+                                                 ,LocationId);
+  End If;
+  Return;
+End If;
+
+if Currstatus <> 'APPROVED' Then return; end If;
+if OldStatus = 'APPROVED' and CurrStatus = 'APPROVED' then Return; End If;
+Select Shipto_Location_Id
+Into   LocationId
+From   Po_Headers
+where  Po_Header_ID = Nvl(:New.Poh_Po_Header_Id,:old.Poh_Po_Header_Id);
+/* if Nvl(:Old.Revision_number,0) = 0 then
+   PoQty 		:=   Nvl(:New.Qty_ordered_Units,:Old.Qty_ordered_Units);
+   PoQty 		:=   PoQty + nvl(Nvl(:New.Qty_free_Units,:Old.Qty_free_Units),0);
+   ReservedQty 	        :=   Nvl(:New.Qty_Reserved_Units,:Old.Qty_Reserved_Units);
+--Else
+--   PoQty 		:=   Nvl(:New.Qty_ordered_Units,0) - Nvl(:Old.Qty_ordered_Units,0);
+--   PoQty 		:=   PoQty + (Nvl(:New.Qty_free_Units,0) - Nvl(:Old.Qty_free_Units,0));
+--   ReservedQty 	        :=   Nvl(:New.Qty_Reserved_Units,0) - Nvl(:Old.Qty_Reserved_Units,0);
+--End If;
+*/
+
+ if poQty > 0 then
+   Retvalue  := ItemStatus_Pkg.update_QtyInOrder(Nvl(:New.Item_Id,:Old.Item_Id)
+                                               ,PoQty
+                                               ,LocationId);
+ End If;
+if ReservedQty > 0 then
+  RetValue := ItemStatus_Pkg.update_QtyReservedPO(Nvl(:New.Item_Id,:Old.Item_Id)
+                                                 ,ReservedQty
+                                                 ,LocationId);
+end If;
+
+Exception
+ When Others Then Null;
+
+End Dt_AIU_POLINE;",ORATECHDATAHUB
+DT_POSTUPDINS_UPDATESP,BEFORE EACH ROW,INSERT OR UPDATE,TABLE,PRICE_UPDATESP_PRICES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+
+   YesUpdate         Boolean := TRUE;
+   UpdateSource         Varchar2(30);
+   QtyToUpdate		Number := 0;
+   SalesUnit		Number := 0;
+   RetValue		Number := 0;
+   ItemId		Number := 0;
+   pricetypeId		Number := 0;
+   suId			Number := 0;
+   LocationID		Number := 0;
+   SubLocationId	Number := 0;
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+
+Begin
+ UpdateSource 	:= Nvl(:New.Update_Source,:Old.Update_Source);
+ SalesUnit      := Nvl(:New.Sales_Unit,:Old.Sales_Unit);
+ ItemId      	:= Nvl(:New.Item_ID,:Old.Item_ID);
+ suId      	:= Nvl(:New.su_ID,:Old.su_ID);
+ priceTypeID   	:= Nvl(:New.price_type_ID,:Old.price_type_ID);
+  if UpdateSource 	<> 'UPDATESELLINGPRICE' 	Then Return; end If;
+
+  update Inv_Item_Prices
+  Set    Price_IncTax  = Nvl(:New.New_Price_IncTax,:Old.Old_Price_IncTax)
+        ,Price_ExlTax  = Nvl(:New.New_Price_ExlTax,:Old.Old_Price_ExlTax)
+        ,Markup        = Nvl(:New.Price_Value,:Old.Price_Value)
+        ,Update_Source = updateSource
+  Where  IISU_SU_ID     = SuId
+  And    IPT_Price_Type_ID = PriceTypeID;
+
+
+Exception
+ When Others Then Raise_Application_Error(-20000,p_MessageText);
+
+End Dt_POSTUPDINS_UPDATESP;",ORATECHDATAHUB
+DT_AUDEPRICELISTLINE,AFTER EACH ROW,UPDATE OR DELETE,TABLE,PR_PRICELIST_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+Begin
+ Audit_Pkg.CustPriceHistory(p_Item_Id => :Old.Item_ID
+			  ,p_Transaction_Source => 'PRICE LIST LINE'
+			  ,p_Source_Object_Name  => 'PR_PRICELIST_LINES'
+                          ,P_Source_Header_ID    => :Old.PRICELIST_HEADER_ID
+                          ,P_Source_Line_ID     => :Old.PRICELIST_LINE_ID
+                          ,P_Category_ID        => :Old.Category_ID
+                          ,P_Sub_Category_ID    => :Old.Sub_Category_ID
+			,p_Changed_By            => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Change_Reason         => 'PRICE LIST UPDATED / DELETED'
+			,p_Old_Price             => :Old.Price
+                        ,p_Old_Price_Type_ID     => :Old.Price_Type_ID
+                        ,p_Old_Price_Type        => :Old.Price_Type
+			,p_New_Price             => :New.Price
+                        ,p_New_Price_Type_ID     => :New.Price_Type_ID
+                        ,p_New_Price_Type        => :New.Price_Type
+			,p_Change_Type           => 'USER'
+			,p_Change_Category       => 'PRICE LIST'
+			,p_Last_Update_Date      => Nvl(:New.Last_Update_Date,:Old.Last_Update_Date)
+			,p_Last_Updated_By       => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Created_By            => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Bu_Id                 => :Old.Bu_ID
+			,p_Update_Source         => 'TRIGGER');
+
+Exception
+ When Others Then Null;
+
+End Dt_AUDEPRICELISTLINE;",ORATECHDATAHUB
+DT_BIUD_BARREPOSITORY,BEFORE EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,INV_BARCODE_REPOSITORY,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+begin
+  if (Inserting) Then
+    Inv02_Pkg.Get_IdsByBarcode(p_Barcode => :New.Barcode ,
+                          p_Hint  =>  'ITEM',
+                          p_ItemID => :New.Item_ID,
+                          p_SuId   => :New.SU_ID);
+    if :New.Su_Id is Not Null
+      Then
+       :New.Barcode_Status := 'INUSE';
+    End If;
+ End If;
+Exception
+ When Others Then null;
+
+End DT_BIUD_BARREPOSITORY;",ORATECHDATAHUB
+DT_ONUPDATEITEMCOUNT,BEFORE EACH ROW,UPDATE,TABLE,INV_ITEMCOUNT_INTERFACE,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x number := 0;
+  vStockable Varchar2(10);
+   vICLineRow      Inv_Item_Count_Lines%RowType;
+
+  Procedure AppendStatus(p_StatusText In Varchar2)
+  IS
+  BEGIN
+   :New.Status_Text := Upper(:New.STATUS_TEXT||':'||p_StatusText);
+  End;
+
+Begin
+ If Not Updating Then Return; End If;
+ If :New.Update_Source = 'INTERFACE' then
+   	vICLineRow.Last_Updated_By      := -1;
+	vICLineRow.Last_Update_Date     := sysdate;
+	vICLineRow.Creation_Date        := sysdate;
+	vICLineRow.Update_Source        := 'INTERFACE';
+	vICLineRow.Record_Status        := 'I';
+	vICLineRow.Delete_Flag          := 'N';
+	vICLineRow.Sub_Location_Id      := :OLD.Sub_Location_Id;
+	vICLineRow.Location_Id          := :OLD.Location_Id;
+	vICLineRow.Created_By           := -1;
+	vICLineRow.Bu_Id                := :OLD.Bu_Id;
+	vICLineRow.Qty_Instock          := 0;
+	vICLineRow.Qty_Counted          := :OLD.Quantity;
+	vICLineRow.Item_Id          	:= :OLD.Item_Id;
+	vICLineRow.Item_Count_Header_Id := :NEW.Item_Count_Header_Id;
+	vICLineRow.Stktake_Item_Id      :=  Null;
+	vICLineRow.Item_Count_Line_Id   := -1;
+	vICLineRow.Count_Status_Date    := Sysdate;
+	vICLineRow.Count_Status         := 'NEW';
+	vICLineRow.Crea_Reason_Code_Id  := null;
+	vICLineRow.Reason_Desc          := null;
+	vICLineRow.Sl_No                := :NEW.Sl_No;
+	vICLineRow.Stktake_Item_Sl_No   := null;
+        Inv_Item_Count_LinesAPI('INSERT',vICLineRow);
+        if vICLineRow.Item_Count_Line_Id <= 0 Then
+           :New.Status := 'INVALID';
+          :NEW.Update_Source := :Old.Update_Source;
+          AppendStatus('ERROR: Creating Batch');
+        else
+            :New.UPLOAD_STATUS := 'INTERFACED';
+        End If;
+    Return;
+  End If;
+
+ If :New.Update_Source <> 'VALIDATE' Then Return; End If;
+  :New.Status_Text := Null;
+ If :Old.Item_Number is Null then
+   AppendStatus('Null Item Number');
+ end If;
+ If :Old.Location_Name is Null then
+   AppendStatus('Null Location');
+ end If;
+ If :Old.Sub_Location is Null then
+   AppendStatus('Null Sub Location');
+ end If;
+ Begin -- Check for Item Number
+  Select Item_Id,Item_Name,Stockable,Nvl(Average_UnitCp,Unit_Cp)
+  Into   :New.Item_Id,:New.Item_Name,vStockable,:New.Unit_CP
+  From   Inv_Item_Masters
+  Where  Item_Number = TRIM(:Old.Item_Number);
+  :New.Count_Value := :New.Unit_CP * nvl(:Old.Quantity,0);
+  If vStockable = 'N' Then
+    AppendStatus('Not a Stockable');
+  End If;
+ Exception When Others then
+    AppendStatus('Item not found:'||SqlErrm);
+ End;
+ Begin -- Check for Item Number
+  Select Location_ID
+  Into   :New.Location_Id
+  From   Inv_Locations
+  Where  Location_Name = :Old.Location_Name
+  And    Active = 'Y';
+  Exception When Others then
+    AppendStatus('Location not found or Not Active');
+ End;
+ Begin -- Check for Item Number
+  Select Sub_Location_ID
+  Into   :New.Sub_Location_Id
+  From   Inv_Sub_Locations
+  Where  IL_Location_ID = :New.Location_ID
+  And    Sub_Location   = :Old.Sub_Location
+  And    Active = 'Y';
+  Exception When Others then
+    AppendStatus('Sub Location not found or Not Active');
+ End;
+ If :Old.Quantity is Null then
+    AppendStatus('Null Quantity');
+ End If;
+ If :Old.Quantity < 0  then
+    AppendStatus('Negative Quantity');
+ End If;
+ If :New.Status_Text is NOT  Null Then
+    :New.Status := 'INVALID';
+    :NEW.Update_Source := :Old.Update_Source;
+ else
+    :New.Status := 'VALID';
+    :New.UPLOAD_STATUS := 'VALIDATED';
+ End If;
+
+
+Exception
+ When Others Then Null;
+
+End DT_SIMILARITEMLINES;",ORATECHDATAHUB
+DT_BINSERTITEMCOUNT,BEFORE EACH ROW,INSERT,TABLE,INV_ITEMCOUNT_INTERFACE,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+Begin
+ :NEW.INTERFACE_ID      := Cmn_Common_Pkg.SF_GetIdvalue('INV_ITEMCOUNT_INTERFACE_S.NEXTVAL');
+ :NEW.BATCH_NAME        := SUBSTR(:NEW.LOCATION_NAME,1,10)||' '||TO_CHAR(Sysdate,'DD MON YYYY');
+ :NEW.STKTAKE_NAME      := 'INITIAL STOCK TAKE';
+ :NEW.UPLOAD_STATUS     := 'NEW';
+ :NEW.INTERFACE_DATE    := sysdate;
+ :NEW.CREATED_BY        :=  '-1';
+ :NEW.CREATION_DATE     := sysdate;
+ :NEW.RECORD_STATUS     := 'I';
+ :NEW.LAST_UPDATE_DATE  := sysdate  ;
+ :NEW.LAST_UPDATED_BY   := '-1'  ;
+ :NEW.UPDATE_SOURCE     := 'LOADED' ;
+ :NEW.DELETE_FLAG       := 'N';
+Exception
+ When Others Then Null;
+
+End DT_SIMILARITEMLINES;",ORATECHDATAHUB
+DT_AIUD_PB,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,INV_PRICE_BREAK_HEADERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  vitemId  Number;
+  vheaderID Number;
+Begin
+ vitemId := Nvl(:New.Item_ID,:Old.Item_ID);
+ vHeaderID := Nvl(:New.Price_Break_ID,:Old.Price_break_ID);
+ if vItemId is null Then Return; End If;
+ if Deleting then vItemID := Null; End If;
+  Update Inv_Item_Masters
+  Set    IPBH_Price_Break_Id = vHeaderID
+  Where  Item_ID = vItemId;
+
+
+
+Exception
+ When Others Then Null;
+
+End Dt_AIUD_PB;",ORATECHDATAHUB
+DT_AIUD_INVRQHEADER,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,INV_REQUISITION_HEADERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  vsubject varchar2(400);
+  VTrigger   Varchar2(30);
+Begin
+
+   if Inserting then
+      vTrigger := 'CREATED';
+   elsif Updating then
+      vTrigger := 'UPDATED';
+   Elsif Deleting then
+      vTrigger := 'DELETED';
+   else
+     vTrigger := 'UNKNOWN';
+  end If;
+
+    INV_REQUISITION_PKG.Notify(p_trigger 	=> vTrigger,
+                               p_Hint 		=> 'TRIGGER',
+                               p_RqId           => Nvl(:New.REQUISITION_iD,:OLD.REQUISiTION_ID),
+                               p_RqNUMBER       => Nvl(:New.REQUISITION_NUMBER,:OLD.REQUISiTION_NUMBER),
+                               p_fromlocationid => Nvl(:New.FROM_LOCATION_ID,:OLD.FROM_LOCATION_ID),
+                               p_ToLocationID   => Nvl(:New.TO_LOCATION_ID,:OLD.TO_LOCATION_ID),
+                               p_newstatus	=> :New.REQUISITION_STATUS,
+                               p_OLDstatus	=> :Old.REQUISITION_STATUS,
+                               p_newPhase	=> :New.REQUISITION_PHASE_CODE,
+                               p_OldPhase	=> :Old.REQUISITION_PHASE_CODE,
+                 	       p_REQUESTEDBy     => nvl(:New.Requested_by,:Old.Requested_By),
+                 	       p_PickedBy     => nvl(:New.Picked_by,:Old.picked_By),
+                 		p_FulfilledBy     => nvl(:New.FulFilled_by,:Old.FulFilled_By),
+                 		p_ReceivedBy     => nvl(:New.Received_by,:Old.Received_By),
+                                p_BuId          => NVL(:nEW.BU_iD,:Old.Bu_ID),
+                                p_Source          => NVL(:nEW.REQUISITION_SOURCE,:Old.REQUISITION_SOURCE  )
+                         );
+
+
+Exception
+ When Others Then Null;
+
+End DT_AIUD_INVRQHEADER;",ORATECHDATAHUB
+DT_PREUPDINS_RQSTIONLINE,BEFORE EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,INV_REQUISITION_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   LineStatus           Varchar2(30);
+   YesUpdateQty         Boolean := TRUE;
+   UpdateSource         Varchar2(30);
+   QtyToUpdate		Number := 0;
+   SalesUnit		Number := 0;
+   RetValue		Number := 0;
+   ItemId		Number := 0;
+   LocationID		Number := 0;
+   SubLocationId	Number := 0;
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+   OrigSysSource        Varchar2(100);
+
+Begin
+UpdateSource 	:= Nvl(:New.Update_Source,:Old.Update_Source);
+  LineStatus 	:= Nvl(:New.REQUISITION_LINE_STATUS,:Old.REQUISITION_LINE_STATUS);
+  ItemId      	:= Nvl(:New.Item_ID,:Old.Item_ID);
+  SlNo   	:= Nvl(:New.Sl_No,:Old.Sl_No);
+  OrigSysSource  	:= Nvl(:New.ORIG_SYS_SOURCE,:Old.ORIG_SYS_SOURCE);
+
+
+If Deleting Then
+   if LineStatus = 'APPROVED' then
+      QtyToUpdate    :=  (:Old.QTY_REQUESTED_UNITS) * -1 ;
+      LocationId     :=  :Old.To_Location_ID;
+     if OrigSysSource is null Then
+        retvalue       := ItemStatus_Pkg.update_QtyRqstion(p_Id => ItemID,
+                                                        p_Qty => QtyToUpdate,
+                                                        p_LocationID => LocationId);
+     End If;
+   End If;
+  return;
+ End If;
+
+ if :New.Qty_Balance_Units is null Then
+    :New.Qty_Balance_Units := :New.Qty_Requested_Units;
+ End If;
+
+
+
+ if updateSource = 'UPDATEREQUESTEDQTY' then
+  if LineStatus = 'APPROVED' and :Old.REQUISITION_LINE_STATUS = 'NEW' then
+     QtyToUpdate    := Nvl(:New.QTY_REQUESTED_UNITS,:Old.QTY_REQUESTED_UNITS);
+     LocationId     := Nvl(:New.To_Location_ID,:Old.To_Location_ID);
+
+     if OrigSysSource is null Then
+       retvalue       := ItemStatus_Pkg.update_QtyRqstion(p_Id => ItemID,
+                                                        p_Qty => QtyToUpdate,
+                                                        p_LocationID => LocationId);
+     end If;
+  End If;
+ End If;
+
+ if updateSource = 'UPDATEFULFILLEDQTY' then
+   if LineStatus = 'FULFILLED' and :Old.REQUISITION_LINE_STATUS = 'APPROVED' then
+      QtyToUpdate    := Nvl(:New.QTY_FULLFILLED_UNITS,:Old.QTY_FULLFILLED_UNITS);
+      LocationId     := Nvl(:New.From_Location_ID,:Old.From_Location_ID);
+    /*  retvalue      :=  location_pkg.update_TransitQty(LocationId ,
+                                                       ItemID,QtyToUpdate);
+    */
+
+    /*  retvalue       := ItemStatus_Pkg.update_QtyRqstionTransit(p_Id => ItemID,
+                                                        p_Qty => QtyToUpdate,
+                                                        p_LocationID => LocationId);
+*/
+   End If;
+ End If;
+
+ if updateSource = 'UPDATERECEIVEDQTY' then
+  if LineStatus = 'RECEIVED' and :Old.REQUISITION_LINE_STATUS = 'FULFILLED' then
+     QtyToUpdate    := Nvl(:New.QTY_RECEIVED_UNITS,:Old.QTY_RECEIVED_UNITS);
+     LocationId     := Nvl(:New.to_Location_ID,:Old.to_Location_ID);
+     SubLocationId  := Nvl(:New.RECEIVED_SUB_LOCATION_ID,:Old.RECEIVED_SUB_LOCATION_ID);
+     retvalue      :=  location_pkg.update_sublocationQty(ItemID,QtyToUpdate,
+                                                     LocationId,SubLocationID);
+     retvalue       := ItemStatus_Pkg.update_QtyRqstionReceive(p_Id => ItemID,
+                                                        p_Qty => QtyToUpdate * -1,
+                                                        p_LocationID => LocationId);
+
+      LocationId     := Nvl(:New.From_Location_ID,:Old.From_Location_ID);
+     retvalue      :=  location_pkg.update_TransitQty(LocationId,
+                                                 ItemID,QtyToUpdate*-1);
+  End If;
+End If;
+
+Exception
+ When Others Then Raise_Application_Error(-20000,SqlErrm);
+
+End Dt_PREUPDINS_RQSTIONLINE;",ORATECHDATAHUB
+DT_SIMILARITEMLINES,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,INV_SIMILAR_ITEM_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+Begin
+ If Inserting then
+    Update Inv_Item_Masters
+      Set similar_item_concated = similar_item_concated||'~'||:new.SIH_SIMILAR_ITEM_ID||'~'
+    Where Item_Id = :New.IIM_ITEM_ID;
+ elsIf updating Then
+    Update Inv_Item_Masters
+      Set Similar_Item_concated = Replace(Similar_Item_concated,'~'||:old.SIH_SIMILAR_ITEM_ID||'~')||'~'||:new.SIH_SIMILAR_ITEM_ID||'~'
+    Where Item_Id = :old.IIM_ITEM_ID;
+ elsIf Deleting Then
+    Update Inv_Item_Masters
+      Set Similar_Item_concated = Replace(Similar_Item_concated,'~'||:old.SIH_SIMILAR_ITEM_ID||'~')
+    Where Item_Id = :old.IIM_ITEM_ID;
+ End If;
+
+Exception
+ When Others Then Null;
+
+End DT_SIMILARITEMLINES;",ORATECHDATAHUB
+DT_BIU_SUBLOC,BEFORE EACH ROW,UPDATE,TABLE,INV_SUB_LOCATIONS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  locationid number;
+  itemid     number;
+  sublocationid number;
+  userid     number;
+  Retvalue  varchar2(200);
+  subLocation Varchar2(100);
+
+Begin
+if :New.Update_Source <> 'UPDATEHIERARCHY' then Return; End If;
+locationid := Nvl(:New.IL_Location_Id,:Old.IL_Location_Id);
+SubLocation := Nvl(:New.Sub_Location,:Old.Sub_Location);
+Location_Pkg.Split_SubLocation(p_LocationId => LocationID,
+                           p_SubLocation  => SubLocation,
+                           p_SubLocationID => :New.Sub_Location_Id,
+                            p_PartSpecial  => :New.Level0_Hierarchy,
+                                   p_part1 => :New.HierArchy1,
+                                   p_part2 => :New.HierArchy2,
+                                   p_part3  => :New.HierArchy3,
+                                   p_part4  => :New.HierArchy4,
+                                   p_part5  => :New.HierArchy5,
+                                   p_part6  => :New.HierArchy6,
+                                   p_part7  => :New.HierArchy7,
+                                   p_part8  => :New.HierArchy8,
+                                   p_part9  => :New.HierArchy9,
+                                   p_part10  => :New.HierArchy10);
+
+null;
+
+
+Exception
+ When Others Then Null;
+
+End Dt_BIU_SUBLOC;",ORATECHDATAHUB
+DT_AIU_DBNLINE,AFTER EACH ROW,INSERT OR UPDATE,TABLE,AP_DBNOTE_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  Qtydbn  Number := 0;
+  UpdateStock Varchar2(1);
+  LocId       number;
+  sublocid    number;
+Begin
+ if :old.Dbnote_Status = 'APPROVED' Then Return; end if;
+ if Nvl(:New.Dbnote_Status,:old.Dbnote_Status) <> 'APPROVED' Then Return; end If;
+ if Nvl(:New.Adjust_Stock,:Old.Adjust_Stock) <> 'Y' then Return; End If;
+ locid  := Nvl(:new.location_id,:old.Location_Id);
+ sublocid  := Nvl(:new.sub_location_id,:old.sub_Location_Id);
+ if sublocid is null or locid is null then return; end if;
+ Qtydbn := Nvl(:New.Qty_DBNOTE_Units,:Old.Qty_DBNOTE_Units);
+ x := Location_Pkg.update_subLocationQty(p_Id 	=> nvl(:New.Item_Id,:Old.Item_Id),
+                                        p_Qty 	=> Qtydbn * -1 ,
+                                        p_locationId => locid,
+                                        p_subLocationId => sublocid);
+
+Exception
+ When Others Then Null;
+
+End Dt_AIU_DBNLINE;",ORATECHDATAHUB
+DT_PREUPDINS_APPMNTLINE,BEFORE EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,AP_PAYMENT_LINES,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   x			 number := 0;
+   LineStatus           Varchar2(30);
+   UpdateSource         Varchar2(30);
+   paidAmount        number(12,2);
+   P_status		Number := 0;
+   p_MessageText        Varchar2(2000);
+   slno			number := 0;
+
+Begin
+ UpdateSource 	:= Nvl(:New.Update_Source,:Old.Update_Source);
+ paidamount   :=  Nvl(:New.payment_amount,0) - nvl(:Old.payment_amount,0);
+ if paidAmount = 0 Then Return; End If;
+ LineStatus      := :new.Payment_Line_Status;
+--  If LineStatus 	not in ( 'APPROVED') Then Return; End If;
+-- if :Old.Payment_Line_Status = 'APPROVED' and LineStatus = 'APPROVED'  Then Return; End If;
+ If Deleting then
+   PaidAmount := :Old.Payment_Amount * -1;
+ End If;
+
+ Update Ap_invoice_Headers
+ Set    paid_Total = nvl(paid_Total,0) + PaidAmount,
+        Balance_Total = Nvl(Balance_Total,0) -( Nvl(PaidAmount,0)),
+        last_update_Date = Sysdate,
+        Last_Updated_By = :New.Last_Updated_By
+ Where  Invoice_ID = nvl(:new.Invoice_Id,:Old.Invoice_Id);
+
+
+
+Exception
+ When Others Then Raise_Application_Error(-20000,p_MessageText);
+
+End  Dt_PREUPDINS_APPMNTLINE;",ORATECHDATAHUB
+DT_AIUD_SUP,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,AP_SUPPLIERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  vSubject   Varchar2(200);
+Begin
+ if updating then Return; End If;
+ If Inserting then
+   vSubject := 'Supplier Created:'||:New.Supplier_Name;
+ end If;
+ if Deleting Then
+   vSubject := 'Supplier Deleted:'||:Old.Supplier_Name;
+ End If;
+     Notification_Pkg.Notify(p_event 	=> 'SUPPLIERADD/DELETE',
+                                p_Table 	=> 'AP_SUPPLIERS',
+                                p_Subject 	=> vSubject,
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID);
+
+
+Exception
+ When Others Then Null;
+
+End Dt_AIUD_SUP;",ORATECHDATAHUB
+DT_AUDESUPPL,AFTER EACH ROW,UPDATE OR DELETE,TABLE,AP_SUPPLIER_PRICE_LISTS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+Begin
+
+ Audit_Pkg.ItemPriceHistory(p_Item_Id => :Old.Item_Id
+			  ,p_Transaction_Source => 'SUPPLIER PRICE LIST'
+			  ,p_Source_Object_Name  => 'AP_SUPPLIER_PRICE_LISTS'
+                          ,P_Source_Header_ID    => :Old.Price_List_ID
+                          ,p_Supplier_ID         => :Old.Supplier_ID
+			,p_Changed_By            => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Change_Reason         => 'PRICE LIST UPDATED / DELETED'
+			,p_Old_Price             => :Old.Unit_Cp
+			,p_New_Price             => :New.Unit_Cp
+			,p_Change_Type           => 'USER'
+			,p_Change_Category       => 'PRICE LIST'
+			,p_Last_Update_Date      => Nvl(:New.Last_Update_Date,:Old.Last_Update_Date)
+			,p_Last_Updated_By       => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Created_By            => Nvl(:New.Last_Updated_By,:Old.Last_Updated_By)
+			,p_Bu_Id                 => :Old.Bu_ID
+			,p_Update_Source         => 'TRIGGER');
+
+Exception
+ When Others Then Null;
+
+End  Dt_AUDESUPPL;",ORATECHDATAHUB
+DT_AIUD_CUSTOMER,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,AR_CUSTOMERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+   vnewSupplierID   number;
+   vCustomerID   Number;
+   voldSupplierID   number;
+Begin
+ vCustomerId := nvl(:Old.Customer_ID,:New.Customer_ID);
+ vnewSupplierid := :New.Supplier_Id;
+ vOldSupplierId := :Old.Supplier_Id;
+ if vOldSupplierId is not null   then
+   Update Ap_Suppliers
+   Set    Customer_id = null
+   Where  Supplier_Id = vOldSupplierId;
+ End If;
+  if vnewSupplierId is not null   then
+   Update Ap_Suppliers
+   Set    Customer_id = vCustomerId
+   Where  Supplier_Id = vnewSupplierId;
+ End If;
+
+Exception
+ When Others Then Null;
+
+End Dt_AIUD_CUSTOMER;",ORATECHDATAHUB
+DT_AIUD_CUST,AFTER EACH ROW,INSERT OR UPDATE OR DELETE,TABLE,AR_CUSTOMERS,REFERENCING NEW AS NEW OLD AS OLD,"Declare
+  x number := 0;
+  vSubject   Varchar2(200);
+Begin
+ if updating then Return; End If;
+ If Inserting then
+   vSubject := 'Customer Created:'||:New.Customer_Name;
+ end If;
+ if Deleting Then
+   vSubject := 'Customer Deleted:'||:Old.Customer_Name;
+ End If;
+     Notification_Pkg.Notify(p_event 	=> 'CUSTOMERADD/DELETE',
+                                p_Table 	=> 'AR_CUSTOMERS',
+                                p_Subject 	=> vSubject,
+                 		p_CreatedBy     => :Old.Last_Updated_By,
+                                p_BuId          => :Old.Bu_ID);
+
+
+Exception
+ When Others Then Null;
+
+End Dt_AIUD_CUST;",ORATECHDATAHUB

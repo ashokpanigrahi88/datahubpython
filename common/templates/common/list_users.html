@@ -1,0 +1,34 @@
+{% extends 'common/model_list.html' %}
+{% load get_responsibilities %}
+{% block title %} Users {% endblock %}
+{% block findaction %} /common/listusers/ {% endblock %}
+{% block findform %}
+    <label for="nm">User Name</label>
+    <input id="nm" type="text" name="nm" value="">
+{% endblock %}
+{% block tableheader %}
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Fullnamne</th>
+        <th>Description</th>
+        <th>Active </th>
+    {% endblock %}
+{% block tablerow %}
+        <td> <a href="/core/detailuser/{{ row.user_id }}">
+            <span class="glyphicon glyphicon-pencil" >{{ row.user_id }}</span></a> </td>
+        <td>{{ row.user_name }}</td>
+        <td>{{ row.email }}</td>
+        <td>{{ row.user_full_name }}</td>
+        <td>{{ row.user_description }}</td>
+        <td>{{ row.active}}</td>
+{% endblock %}
+        {% block rowaction %}
+    <td>
+            <a href="/common/edituser/{{ row.user_id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/common/deleteuser/{{ row.user_id }}">Delete</a>
+    </td>
+{% endblock %}
+{% block createaction %}
+ <div style="text-align: left;"><a href="/common/createuser/" class="btn btn-primary">Add User</a></div>
+    {% endblock %}

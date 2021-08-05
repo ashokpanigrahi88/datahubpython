@@ -1,0 +1,1898 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RAP_CREDITORS01'
+,p_RepDispName=>'Creditors'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_CUSTLABELPPI01'
+,p_RepDispName=>'Customer Label PPI'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_CATEGORY01'
+,p_RepDispName=>'Item Category List'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>53
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL50X38MM'
+,p_RepDispName=>'Item Label 50x38mm'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>55
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELPEG03'
+,p_RepDispName=>'Item Peg Label 03'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>54
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RAP_INVLINES01'
+,p_RepDispName=>'AP Invoice Lines'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$SUPPLIER_NAME~SUPPLIER$USERNAME~USER$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_BARCODE95X84'
+,p_RepDispName=>'Item Label 95x84'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>51
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELOUTERS01'
+,p_RepDispName=>'Item Inner Outer Label'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>52
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELOFFERA6L03'
+,p_RepDispName=>'SP Offer Percent'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>41
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_SALORDSUM01'
+,p_RepDispName=>'Sales Order Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$ORDER_NUMBER~ORDER NUMBER$ORDER_STATUS_DATE~DATE$ORDER_SOURCE~SOURCE$ORDER_CATEGORY_CODE~CATEGORY$CUSTOMER_NAME~CUSTOMER$USERNAME~USER$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELOFFERA6L02'
+,p_RepDispName=>'Item Offer Label A6 02'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>41
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RPO_GRNSUMM02'
+,p_RepDispName=>'Goods In Summary 02'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$SUPPLIER_NAME~SUPPLIER$
+GRN_NUMBER~GRN NUMBER$OPERATORNAME~RECEIVED BY$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ENQUIRY'
+,p_RepName=>'RSAGE_TRANS01'
+,p_RepDispName=>'Sage Transaction'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$TRANS_TYPE~TRANS TYPE$ACCOUNT_REF~ACCOUNT REF$ACCOUNT_NAME~ACCOUNT NAME$GL_CODE~GL CODE$PAYMENT_METHOD~PAYMENT METHOD$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_MINUSSTOCK02'
+,p_RepDispName=>'Minus Stock 02'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_ITEMLIST01'
+,p_RepDispName=>'Item List 01'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>50
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL87X36'
+,p_RepDispName=>'Item Label 87x36'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>49
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ADVANCE PRICING'
+,p_RepName=>'RPR_CATPRICELISTCUST01'
+,p_RepDispName=>'PL By Category By Customer'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ENQUIRY'
+,p_RepName=>'RAR_ORDLINEHIST01'
+,p_RepDispName=>'Sales Order History'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$CUSTOMER_NAME~CUSTOMER$OPERATOR~USER$TAX_RATE~TAXRATE$ORDER_NUMBER~ORDER NUMBER$ORDER_TYPE~ORDER TYPE$ORDER_SOURCE~ORDER SOURCE$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_ORDLINES01'
+,p_RepDispName=>'Sales Order Lines'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$CUSTOMER_NAME~CUSTOMER$OPERATOR~USER$TAX_RATE~TAXRATE$ORDER_NUMBER~ORDER NUMBER$ORDER_TYPE~ORDER TYPE$ORDER_SOURCE~ORDER SOURCE$T_ORDERNUMBER~WEB ORDER NUMBER$ORDER_LINE_STATUS~LINE STATUS$LINEPHASECODE~LINE PHASE$PHASE_CODE~ORDER PHASE$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVSIMPLE04'
+,p_RepDispName=>'Invoice Format 04'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_NICSUBLOC01'
+,p_RepDispName=>'Net Ingredient Report'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL05A4CLR'
+,p_RepDispName=>'Clearance Label (A4)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>46
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL05A4NEW'
+,p_RepDispName=>'New Item Label (A4)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>45
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL05A4SPL'
+,p_RepDispName=>'Special Offer Label (A4)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>47
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELSPOFF01'
+,p_RepDispName=>'Special Offer Landscape'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>48
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL05A5NEW'
+,p_RepDispName=>'New Item Label (A5)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>43
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL2PP01'
+,p_RepDispName=>'Price Label 2pp'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>44
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL8PP01'
+,p_RepDispName=>'Price Label 8pp'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>42
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELOFFERA6L'
+,p_RepDispName=>'Item Offer Label A6'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>40
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELPACKA6L'
+,p_RepDispName=>'Item Pack Label A6'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>41
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RPO_POPORT02'
+,p_RepDispName=>'Purchase Order Format 02'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ADVANCE PRICING'
+,p_RepName=>'RPR_PRICELIST02'
+,p_RepDispName=>'Price List By Offer'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_CUSTMAILMERGE02'
+,p_RepDispName=>'Customer Mailmerge With Header'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL05A5CLR'
+,p_RepDispName=>'Clearance Label (A5)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>35
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL05A5SPL'
+,p_RepDispName=>'Special Offer Label (A5)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>36
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RAP_SUPSTATEMENT01'
+,p_RepDispName=>'Supplier Statement'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RGL_CASHBOOK01'
+,p_RepDispName=>'Cash Book'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ENQUIRY'
+,p_RepName=>'RAR_INVLINEHIST01'
+,p_RepDispName=>'Sales Invoice History'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$CUSTOMER_NAME~CUSTOMER$TERMINAL_NAME~TERMINAL$OPERATOR~USER$TAX_RATE~TAXRATE$INVOICE_NUMBER~INVOICE NUMBER$INVOICE_TYPE~INVOICE TYPE$INVOICE_SOURCE~INVOICE SOURCE$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVSIMPLEFC02'
+,p_RepDispName=>'My Invoice Foreign'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_ITEMGRID01'
+,p_RepDispName=>'Item Report'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_ITEMTEMPLATE01'
+,p_RepDispName=>'Item Generic Template'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>11
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INTRASTATE01'
+,p_RepDispName=>'Intra Trade Statistics'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$COMMODITY_CODE~COMMODITY CODEY$COUNTRY_REGION_CODE~REGION CODE$BILLTO_COUNTRY_CODE~COUNTRY$INVOICE_NUMBER~INVOICE NUMBER$CUSTOMER_NAME~CUSTOMER$CUSTDET~CUSTOMER DETAIL$BYREGION~COMMODITYCODE,REGION$BYCOUNTRY~COMMODITYCODE,COUNTRY$CUSTDETBYINV~CUSTOMER DETAIL,INVOICE$BYREGIONBYINV~COMMODITY CODE,REGION,INVOICE$BYCOUNTRYBYINV~COMMODITY CODE,COUNTRY,INVOICE$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RAP_SUPPLABEL02'
+,p_RepDispName=>'Supplier Label 14pp'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_CUSTLABEL02'
+,p_RepDispName=>'Customer Lable 14pp'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVDELNOTE02'
+,p_RepDispName=>'Delivery Note 02 (Invoice)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVPICKSUBLOC01'
+,p_RepDispName=>'Pick List Sub Loc (Invoice)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVSIMPLE03'
+,p_RepDispName=>'Invoice Format 03'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_QUOTATION01'
+,p_RepDispName=>'Quotation'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_BARCODE72X36'
+,p_RepDispName=>'Barcode 72X36'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>32
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELA6'
+,p_RepDispName=>'Item Label A6'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>33
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELA6L'
+,p_RepDispName=>'Item Label A6 (Landscape)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>39
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELSUA6'
+,p_RepDispName=>'Item Label SU A6'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>34
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELSUA6L'
+,p_RepDispName=>'item label SU A6 (Landscape)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>37
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELSUA7'
+,p_RepDispName=>'item Label SU A7'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>35
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RPO_GRNDETPORT01'
+,p_RepDispName=>'GRN Detail (Portrait)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$SUPPLIER_NAME~SUPPLIER$
+ITEM_NUMBER~ITEM NUMBER$GRN_ITEM_NAME~ITEM NAME$GRN_NUMBER~GRN NUMBER$OPERATORNAME~RECEIVED BY$SUB_LOCATION~SUB LOCATION$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'SALES PACK'
+,p_RepDispName=>'Sales Pack'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SET'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL05A5'
+,p_RepDispName=>'Item Label 05 (A5)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>'N'
+,p_ReportGroup=>'SINGLE'
+,p_slno=>31
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_BARCODE05'
+,p_RepDispName=>'Barcode Label 102X74'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>31
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_BARCODESMALL01'
+,p_RepDispName=>'Barcode Label 50.8X25.4'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>30
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL05A4'
+,p_RepDispName=>'item label 05 (A4)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>27
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELPEG01'
+,p_RepDispName=>'Item Peg Label 01'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>28
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABELPEG02'
+,p_RepDispName=>'Item Peg Label 02'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>29
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVSIMPLE02'
+,p_RepDispName=>'My invoice'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_PICKLISTBOM01'
+,p_RepDispName=>'Picklist (BOM)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL05'
+,p_RepDispName=>'item label 05'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>'BARCODE'
+,p_Defaultflag=>'N'
+,p_ReportGroup=>'SINGLE'
+,p_slno=>25
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL04'
+,p_RepDispName=>'Item Label 04'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>24
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_SLOCASSIGNBATCH01'
+,p_RepDispName=>'Sub Loc Assignments'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>23
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL01'
+,p_RepDispName=>'Item Label 01'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>20
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL02'
+,p_RepDispName=>'item label 02'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>21
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_LABEL03'
+,p_RepDispName=>'Item Label 03'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>22
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_DEBTORS01'
+,p_RepDispName=>'Debtors'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'GENERAL LEDGER'
+,p_RepName=>'RGL_CASHINGUP01'
+,p_RepDispName=>'Cashing UP'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RAP_DAILYSUP01'
+,p_RepDispName=>'Supplier Invoices'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$SUPPLIER_NAME~SUPPLIER$USERNAME~USER$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RAP_INVSUMM01'
+,p_RepDispName=>'AP Invoice Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$SUPPLIER_NAME~SUPPLIER$USERNAME~USER$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RVAT_ANALYSIS01'
+,p_RepDispName=>'Vat Analysis'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_BARCODE03'
+,p_RepDispName=>'Barcode Template3'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>11
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_BARCODE02'
+,p_RepDispName=>'Barcode Template2'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_ITEMHISTORY01'
+,p_RepDispName=>'Item History Report'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_BARCODE01'
+,p_RepDispName=>'Print Barcodes'
+,p_Desformat=>'DFLT'
+,p_DesType=>'PRINTER'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_ITEMINSUBLOC01'
+,p_RepDispName=>'Items In Sub Location'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_ITEMMAILMERGE01'
+,p_RepDispName=>'Mail Merge'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_CUSTSTATEMENT01'
+,p_RepDispName=>'Customer Statement'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ADVANCE PRICING'
+,p_RepName=>'RPR_CATPRICELIST01'
+,p_RepDispName=>'Price List By Category'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ADVANCE PRICING'
+,p_RepName=>'RPR_PRICELIST01'
+,p_RepDispName=>'Price List'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'CUSTOMER SALES PACK'
+,p_RepDispName=>'Customer Sales Pack'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SET'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RAP_DBNPORT01'
+,p_RepDispName=>'Debit Note'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_CUSTMAILMERGE01'
+,p_RepDispName=>'Customer Cover Letter'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ENQUIRY'
+,p_RepName=>'RAR_CUSTPMNTSUM01'
+,p_RepDispName=>'Customer Payment Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ENQUIRY'
+,p_RepName=>'RAR_CUSTSALSUM01'
+,p_RepDispName=>'Customer Sales Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_DAILYCUST01'
+,p_RepDispName=>'Daily Customer List'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$INVOICE_NUMBER~INVOICE NUMBER$INVOICE_DATE~DATE$INVOICE_SOURCE~INVOICE SOURCE$INVOICE_CATEGORY_CODE~CATEGORY$CUSTOMER_NAME~CUSTOMER$USERNAME~USER$'
+,p_OrderBy=>'$INVOICE_NUMBER~INVOICE NUMBER$INVOICE_DATE~DATE$INVOICE_SOURCE~INVOICE SOURCE$INVOICE_CATEGORY_CODE~CATEGORY$CUSTOMER_NAME~CUSTOMER$USERNAME~USER$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVDELNOTE01'
+,p_RepDispName=>'Delivery Note (Invoice)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVPICKLIST01'
+,p_RepDispName=>'Pick List (Invoice)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVSIMPLE01'
+,p_RepDispName=>'Sales Invoice Simple'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVSUMM01'
+,p_RepDispName=>'Invoice Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$INVOICE_NUMBER~INVOICE NUMBER$INVOICE_DATE~DATE$INVOICE_SOURCE~INVOICE SOURCE$INVOICE_CATEGORY_CODE~CATEGORY$CUSTOMER_NAME~CUSTOMER$USERNAME~USER$'
+,p_OrderBy=>'$INVOICE_NUMBER~INVOICE NUMBER$INVOICE_DATE~DATE$INVOICE_SOURCE~INVOICE SOURCE$INVOICE_CATEGORY_CODE~CATEGORY$CUSTOMER_NAME~CUSTOMER$USERNAME~USER$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ENQUIRY'
+,p_RepName=>'RAR_SUPPURSUM01'
+,p_RepDispName=>'Supplier Purchase Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ENQUIRY'
+,p_RepName=>'RINV_ITEMPURSUM01'
+,p_RepDispName=>'Item Purchase Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ENQUIRY'
+,p_RepName=>'RINV_ITEMSALSUM01'
+,p_RepDispName=>'Item Sales Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'ENQUIRY'
+,p_RepName=>'RSYS_EXPDATA01'
+,p_RepDispName=>'Output Saved Queries'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RAP_SUPLABEL01'
+,p_RepDispName=>'Supplier Labels'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>'$SUPPLIER_NAME~NAME$SUPPLIER_NUMBER~NUMBER$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RAP_SUPPLIERS01'
+,p_RepDispName=>'Suppliers'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>'$SUPPLIER_NAME~NAME$SUPPLIER_NUMBER~NUMBER$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_CRNOTE01'
+,p_RepDispName=>'Credit Note'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_CUSTLABEL01'
+,p_RepDispName=>'Customer Labels'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_CUSTOMERS01'
+,p_RepDispName=>'Customers'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_DELNOTE01'
+,p_RepDispName=>'Delivery Note'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_INVPORT01'
+,p_RepDispName=>'Sales Invoice'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_PICKLIST01'
+,p_RepDispName=>'Picklist'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'RECEIVABLES'
+,p_RepName=>'RAR_SOPORT01'
+,p_RepDispName=>'Sales Order'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_APPSUPLIST01'
+,p_RepDispName=>'Approved Supplier Lists'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY'
+,p_OrderBy=>'$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$PREFERENCE_CODE~CLASSIFICATIONS$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_ITEMINLOC01'
+,p_RepDispName=>'Items In Locations'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$CATEGORY_NAME~CATEGORY$SUB_CATEGORY_NAME~SUB CATEGORY$SUPPLIER_NAME~SUPPLIER$'
+,p_OrderBy=>'$LOCATION_NAME~LOCATION$CATEGORY_NAME~CATEGORY$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_ITEMMOVEMENT01'
+,p_RepDispName=>'Item Movement Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_OrderBy=>'$LOCATION_NAME~LOCATION$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_MINUSSTOCK01'
+,p_RepDispName=>'Minus Stock'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_MOVEMENT01'
+,p_RepDispName=>'Item Movement (A4)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_MRP01'
+,p_RepDispName=>'Suggested Items'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_OrderBy=>'$LOCATION_NAME~LOCATION$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_MSAUDIT01'
+,p_RepDispName=>'Minus Stock Audit'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$SUB_LOCATION~SUB LOCATION$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_OUTSSTKTAKE01'
+,p_RepDispName=>'Outstanding Stock Take'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_SNAPMIR01'
+,p_RepDispName=>'Monthly Inventory Report'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_STKADJUST01'
+,p_RepDispName=>'Stock Adjustment'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$SUB_LOCATION_NAME~SUB LOCATION$SUPPLIER_NAME~SUPPLIER$'
+,p_OrderBy=>'$LOCATION_NAME~LOCATION$SUB_LOCATION_NAME~SUB LOCATION$SUPPLIER_NAME~SUPPLIER$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_STKQTY01'
+,p_RepDispName=>'Stock Min/Max Query'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_OrderBy=>'$LOCATION_NAME~LOCATION$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_STKTAKE01'
+,p_RepDispName=>'Stock Take Sheet'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_STKTKAUDIT01'
+,p_RepDispName=>'Stock Take Variation'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$BATCH_NAME~BATCH$OPERATORNAME~USER$'
+,p_OrderBy=>'$LOCATION_NAME~LOCATION$BATCH_NAME~BATCH$OPERATORNAME~USER$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_STKVAL01'
+,p_RepDispName=>'Stock Valuation All'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>'$SUB_LOCATION~SUB LOCATION$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'INVENTORY'
+,p_RepName=>'RINV_STKVALSUBLOC01'
+,p_RepDispName=>'Stock Valuation (Valuable)'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>'$SUB_LOCATION~SUB LOCATION$CATEGORY_NAME~CATEGORY$SUPPLIER_NAME~SUPPLIER$SUB_CATEGORY_NAME~SUB CATEGORY$'
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RPO_GRNDETAIL01'
+,p_RepDispName=>'Grn Detail Report'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'LANDSCAPE'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$SUPPLIER_NAME~SUPPLIER$
+ITEM_NUMBER~ITEM NUMBER$GRN_ITEM_NAME~ITEM NAME$GRN_NUMBER~GRN NUMBER$OPERATORNAME~RECEIVED BY$SUB_LOCATION~SUB LOCATION$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RPO_GRNPORT01'
+,p_RepDispName=>'Goods Receipt - Portrait'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RPO_GRNSUMMARY01'
+,p_RepDispName=>'Grn Summary'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>'$LOCATION_NAME~LOCATION$SUPPLIER_NAME~SUPPLIER$'
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_Reports(p_module=>'PAYABLES'
+,p_RepName=>'RPO_POPORT01'
+,p_RepDispName=>'Purchase Order - Portrait'
+,p_Desformat=>'PDF'
+,p_DesType=>'CACHE'
+,p_Orientation=>'PORTRAIT'
+,p_RepType=>'RDF'
+,p_GroupBy=>''
+,p_OrderBy=>''
+,p_Category=>''
+,p_Defaultflag=>''
+,p_ReportGroup=>'SINGLE'
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

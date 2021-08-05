@@ -1,0 +1,53 @@
+{% extends 'common/model_list.html' %}
+{% block title %} {{  MYCONTEXT.title }}{% endblock %}
+{% block findaction %} {{ MYCONTEXT.list }} {% endblock %}
+{% block findform %}
+    <label for="lookup_type">Lookup Type</label>
+    <input id="lookup_type" type="text" name="lookup_type" value="">
+    <label for="nm">{{  MYCONTEXT.findfield }}</label>
+    <input id="nm" type="text" name="nm" value="">
+{% endblock %}
+
+{% block tableheader %}
+    <th> Type</th>
+    <th> Sl No</th>
+    <th> Code </th>
+    <th> Meaning </th>
+    <th> Default </th>
+    <th> Attribute1 </th>
+    <th> Attribute2 </th>
+    <th> Attribute3 </th>
+    <th> Attribute4 </th>
+    <th> Attribute5 </th>
+    <th> Attribute6 </th>
+    <th> Description </th>
+ {% endblock %}
+{% block tablerow %}
+    <td>{{ row.clt_lookup_type  }}</td>
+    <td>{{ row.sl_no }}</td>
+    <td>{{ row.lookup_code }}</td>
+    <td>{{ row.lookup_meaning }}</td>
+    <td>{{ row.lookup_default }}</td>
+    <td>{{ row.attribute1 }}</td>
+    <td>{{ row.attribute2 }}</td>
+    <td>{{ row.attribute3 }}</td>
+    <td>{{ row.attribute4 }}</td>
+    <td>{{ row.attribute5 }}</td>
+    <td>{{ row.attribute6 }}</td>
+    <td>{{ row.description }}</td>
+{% endblock %}
+        {% block rowaction %}        <a href= </a>
+        <td>
+	    <a href="{{ MYCONTEXT.update }}{{ row.clt_lookup_type }}/{{ row.lookup_code }}/"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+		{%  comment %}
+            <a href="{{ MYCONTEXT.delete }}{{ row.clt_lookup_type }}/{{ row.lookup_code }}/">Delete</a>
+            {% endcomment %}
+            </td>
+{% endblock %}
+{% block createaction %}
+
+ <a href="{{ MYCONTEXT.create }}" class="new-btn new-button" >Add Lookup Code </a>
+
+{% endblock %}
+
+

@@ -1,0 +1,16 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_Profile(p_module=>''
+,p_Name=>'REFUND ALLOWED'
+,p_prompt=>'REFUND ALLOWED'
+,p_description=>'REFUND ALLOWED'
+,p_DataType=>'CHAR'
+,p_SqlQuery=>''
+,p_DefaultValue=>'NO'
+,p_DefaultValueType=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

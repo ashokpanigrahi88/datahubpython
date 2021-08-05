@@ -1,0 +1,46 @@
+{% extends 'common/masterdetail_edit.html' %}
+{% block title %} Categry {% endblock %}
+{% block findaction %} /inv/category/ {% endblock %}
+{% block findform %}
+{% endblock %}
+{% block findformaction  %}/inventory/barcoderep/{% endblock %}
+{{ MYCONTEXT }}
+{% block parenttitle %}Barcode(<a href={% url 'inventory:barcoderep' %}?operation=parent_new><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>)
+{%  endblock %}
+{% block parentrowsbody %}
+<th scope="row"><a href={% url 'inventory:barcoderep' %}?parentid={{ row.repository_id }}&nm={{row.barcode|safe}}>{{ row.barcode }}</a></th>
+
+{% endblock %}
+{% block childtitle %}
+        {% if childprefix %}
+                {%  if parentid %}
+                    Sub Category
+                 (<a href={% url 'inventory:barcoderep' %}?parentid={{ parentid }}&operation=child_new><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>)
+                {% endif %}
+    {% endif %}
+{% endblock %}
+{% block childrowsbody %}
+    {% if childprefix %}
+        <th scope="row"><a href={% url 'inventory:barcoderep' %}?parentid={{ row.repository_id }}&nm={{nm}}>{{ row.sbarcode }}</a></th>
+    {%  endif %}
+
+{% endblock %}
+{% block parentdelete %}
+<td>   <a href={% url 'inventory:barcoderep_delete' parentid %}><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a></td>
+    <!--img src="/static/admin/img/icon-deletelink.svg" alt="Delete"-->
+    <!--button><span class="fa fa-trash" style="color: red;"></span></button-->
+{% endblock %}
+{% block childdelete %}
+    <td>   <a href={% url 'inventory:barcoderep_delete' childid %}><button><span class="fa fa-trash" style="color: red;"></span></button></a></td>
+{% endblock %}
+{% block tableheader %}
+ {% endblock %}
+{% block tablerow %}
+{% endblock %}
+{% block rowaction %}
+
+{% endblock %}
+{% block createaction %}
+{% endblock %}
+
+

@@ -1,0 +1,3092 @@
+Declare
+p_statusText Varchar2(4000);
+retstat number;
+BEGIN
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTSTATEMENT01'
+,p_Paramname=>'P_ADDITIONALINFO'
+,p_prompt=>'ADDITIONAL INFO               '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTLABELPPI01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'CUSTOMER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTLABELPPI01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'CUSTOMER TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL50X38MM'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL50X38MM'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_CREDITORS01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPEG03'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPEG03'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPEG03'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_CREDITORS01'
+,p_Paramname=>'P_OUTSTANDINGONLY'
+,p_prompt=>'OUTSTANDING ONLY              '
+,p_DefaultValue=>'YES'
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_CREDITORS01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL50X38MM'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_BOMONLY'
+,p_prompt=>'BOM ONLY                      '
+,p_DefaultValue=>'NO'
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOUTERS01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOUTERS01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOUTERS01'
+,p_Paramname=>'P_LABELTYPE'
+,p_prompt=>'LABEL TYPE                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_INVLINES01'
+,p_Paramname=>'P_PMNTMETHODID'
+,p_prompt=>'PAYMENT METHOD                '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE95X84'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE95X84'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_INVLINES01'
+,p_Paramname=>'P_SUPPLIERID'
+,p_prompt=>'SUPPLIER                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_INVLINES01'
+,p_Paramname=>'P_STATUS'
+,p_prompt=>'STATUS                        '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE95X84'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_IMAGECHECK'
+,p_prompt=>'CHECK IMAGE                   '
+,p_DefaultValue=>''
+,p_slno=>9
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'SUB CATEGORY FROM             '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'SUB CATEGORY TO               '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO                   '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INTRASTATE01'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'INVOICE NUMBER                '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOFFERA6L03'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOFFERA6L03'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOFFERA6L03'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM                 '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNSUMM02'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNSUMM02'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNSUMM02'
+,p_Paramname=>'P_GRNNUMBER'
+,p_prompt=>'GRN NUMBER                    '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOFFERA6L02'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOFFERA6L02'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNSUMM02'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_SALORDSUM01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'CUSTOMER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOFFERA6L02'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_SALORDSUM01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'CUSTOMER TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RSAGE_TRANS01'
+,p_Paramname=>'P_SUMMARYONLY'
+,p_prompt=>'SUMMARY ONLY                  '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO                   '
+,p_DefaultValue=>''
+,p_slno=>14
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM                 '
+,p_DefaultValue=>''
+,p_slno=>13
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MINUSSTOCK02'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL87X36'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL87X36'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL87X36'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMLIST01'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'INCLUDE PICTURE               '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_CATPRICELISTCUST01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO                   '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_CATPRICELISTCUST01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'SUB CATEGORY TO               '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_CATPRICELISTCUST01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'SUB CATEGORY FROM             '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_CATPRICELISTCUST01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_CATPRICELISTCUST01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_CATPRICELISTCUST01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_CATPRICELISTCUST01'
+,p_Paramname=>'P_CUSTOMER_NUMBER'
+,p_prompt=>'CUSTOMER NUMBER               '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_CATPRICELISTCUST01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM                 '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM                 '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_SONUMBER'
+,p_prompt=>'ORDER NUMBER                  '
+,p_DefaultValue=>''
+,p_slno=>13
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_ORDSTATUS'
+,p_prompt=>'ORDER STATUS                  '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_ORDPHASE'
+,p_prompt=>'ORDER PHASE                   '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_LINESTATUS'
+,p_prompt=>'LINE STATUS                   '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_LINEPHASE'
+,p_prompt=>'LINE PHASE                    '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_ORDLINEOTHERS'
+,p_prompt=>'OTHER CRITERIA                '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_WEBORDERNUMBER'
+,p_prompt=>'WEB ORDER NUMBER              '
+,p_DefaultValue=>''
+,p_slno=>11
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_SONUMBER'
+,p_prompt=>'ORDER NUMBER                  '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'CUSTOMER TO                   '
+,p_DefaultValue=>''
+,p_slno=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINES01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'CUSTOMER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>9
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_ORDSTATUS'
+,p_prompt=>'ORDER STATUS                  '
+,p_DefaultValue=>''
+,p_slno=>9
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_ORDPHASE'
+,p_prompt=>'ORDER PHASE                   '
+,p_DefaultValue=>''
+,p_slno=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_LINESTATUS'
+,p_prompt=>'LINE STATUS                   '
+,p_DefaultValue=>''
+,p_slno=>11
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_LINEPHASE'
+,p_prompt=>'LINE PHASE                    '
+,p_DefaultValue=>''
+,p_slno=>12
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO                   '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'SUB CATEGORY TO               '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'SUB CATEGORY FROM             '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_ORDLINEHIST01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_INVSUMM01'
+,p_Paramname=>'P_PMNTMETHODID'
+,p_prompt=>'PAYMENT METHOD                '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSUMM01'
+,p_Paramname=>'P_SUMMARYONLY'
+,p_prompt=>'SUMMARY ONLY                  '
+,p_DefaultValue=>'NO'
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSIMPLE04'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_NICSUBLOC01'
+,p_Paramname=>'P_SUMMARYONLY'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_NICSUBLOC01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSPOFF01'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4CLR'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4CLR'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4SPL'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4SPL'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4SPL'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4SPL'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSPOFF01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSPOFF01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSPOFF01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4CLR'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4NEW'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4NEW'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4NEW'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4NEW'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4CLR'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL2PP01'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL2PP01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL2PP01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL2PP01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5NEW'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5NEW'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5NEW'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5NEW'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL8PP01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL8PP01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL8PP01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPACKA6L'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPACKA6L'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPACKA6L'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOFFERA6L'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOFFERA6L'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELOFFERA6L'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_PRICELIST02'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_POPORT02'
+,p_Paramname=>'P_PONUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKVALSUBLOC01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKVALSUBLOC01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKVALSUBLOC01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKVALSUBLOC01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE02'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE02'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE02'
+,p_Paramname=>'P_FREETEXT'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE02'
+,p_Paramname=>'P_MAILMERGETEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE02'
+,p_Paramname=>'P_NOOFBOXES'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5SPL'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5CLR'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5SPL'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5SPL'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5SPL'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5CLR'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5CLR'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5CLR'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INTRASTATE01'
+,p_Paramname=>'P_VATCRITERIA'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPSTATEMENT01'
+,p_Paramname=>'P_INCLUDEDATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPSTATEMENT01'
+,p_Paramname=>'P_OUTSTANDINGONLY'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE01'
+,p_Paramname=>'P_NOOFBOXES'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPSTATEMENT01'
+,p_Paramname=>'P_SUPPLIERID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>12
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>9
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMTEMPLATE01'
+,p_Paramname=>'P_ITEMTEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMTEMPLATE01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMTEMPLATE01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMTEMPLATE01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMGRID01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMGRID01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMGRID01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMGRID01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMGRID01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMGRID01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMGRID01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMGRID01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMGRID01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INTRASTATE01'
+,p_Paramname=>'P_COUNTRYREGION'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INTRASTATE01'
+,p_Paramname=>'P_COMMODITYCODE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_SUMMARYONLY'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>11
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_ARINVOICESTATUS'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVLINEHIST01'
+,p_Paramname=>'P_ARINVOICETYPE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSIMPLEFC02'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INTRASTATE01'
+,p_Paramname=>'P_SUMMARYONLY'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_DAILYSUP01'
+,p_Paramname=>'P_STATUS'
+,p_prompt=>'STATUS                        '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_INVSUMM01'
+,p_Paramname=>'P_STATUS'
+,p_prompt=>'STATUS                        '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INTRASTATE01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INTRASTATE01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINLOC01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>11
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINLOC01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINLOC01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINLOC01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>9
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSUMM01'
+,p_Paramname=>'P_VATCRITERIA'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPPLABEL02'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPPLABEL02'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPPLABEL02'
+,p_Paramname=>'P_MAILMERGETEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSUMM01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSUMM01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTLABEL02'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTLABEL02'
+,p_Paramname=>'P_MAILMERGETEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTLABEL02'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_QUOTATION01'
+,p_Paramname=>'P_QUOTATIONNO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELA6'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE72X36'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE72X36'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSIMPLE03'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVPICKSUBLOC01'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELA6L'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELA6L'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELA6L'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELA6L'
+,p_Paramname=>'P_ITEMTEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA6L'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA6L'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA6L'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA6L'
+,p_Paramname=>'P_ITEMTEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVDELNOTE02'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVDELNOTE02'
+,p_Paramname=>'P_DELIVERYNOTES'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVDELNOTE02'
+,p_Paramname=>'P_NOOFBOXES'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA7'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA7'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA7'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA6'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA6'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELSUA6'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELA6'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELA6'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE72X36'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETPORT01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETPORT01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETPORT01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETPORT01'
+,p_Paramname=>'P_GRNNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTSTATEMENT01'
+,p_Paramname=>'P_INCLUDEDATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTSTATEMENT01'
+,p_Paramname=>'P_ACCOUNTONLY'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETPORT01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETPORT01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'INCLUDE PICTURE               '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A5'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE05'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE05'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE05'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODESMALL01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODESMALL01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODESMALL01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPEG02'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPEG02'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPEG02'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPEG01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPEG01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABELPEG01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05A4'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSIMPLE02'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_PICKLISTBOM01'
+,p_Paramname=>'P_SONUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'INCLUDE PICTURE               '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'ITEM BATCH                    '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05'
+,p_Paramname=>'P_PBTEXT1'
+,p_prompt=>'PB TEXT1                      '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05'
+,p_Paramname=>'P_PBTEXT2'
+,p_prompt=>'PB TEXT2                      '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05'
+,p_Paramname=>'P_PBTEXT3'
+,p_prompt=>'PB TEXT3                      '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL05'
+,p_Paramname=>'P_PBTEXT4'
+,p_prompt=>'PB TEXT4                      '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL04'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL04'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL04'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL04'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL04'
+,p_Paramname=>'P_PBTEXT3'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL04'
+,p_Paramname=>'P_PBTEXT1'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL04'
+,p_Paramname=>'P_PBTEXT4'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL04'
+,p_Paramname=>'P_PBTEXT2'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_SLOCASSIGNBATCH01'
+,p_Paramname=>'P_USERID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL02'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL02'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL02'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL02'
+,p_Paramname=>'P_PBTEXT1'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL02'
+,p_Paramname=>'P_PBTEXT2'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL02'
+,p_Paramname=>'P_PBTEXT4'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL01'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL01'
+,p_Paramname=>'P_PBTEXT1'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL01'
+,p_Paramname=>'P_PBTEXT2'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL01'
+,p_Paramname=>'P_PBTEXT3'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL01'
+,p_Paramname=>'P_PBTEXT4'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL02'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL03'
+,p_Paramname=>'P_PBTEXT4'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL03'
+,p_Paramname=>'P_PBTEXT3'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL03'
+,p_Paramname=>'P_PBTEXT2'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL03'
+,p_Paramname=>'P_PBTEXT1'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL03'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL03'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL03'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL03'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_LABEL02'
+,p_Paramname=>'P_PBTEXT3'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_DEBTORS01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_DEBTORS01'
+,p_Paramname=>'P_OUTSTANDINGONLY'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_DEBTORS01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNPORT01'
+,p_Paramname=>'P_PRINTITEMS'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RGL_CASHINGUP01'
+,p_Paramname=>'P_CASHINGUPID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_DAILYSUP01'
+,p_Paramname=>'P_SUPPLIERID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_INVSUMM01'
+,p_Paramname=>'P_SUPPLIERID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_DAILYCUST01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_DAILYCUST01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RVAT_ANALYSIS01'
+,p_Paramname=>'P_SUMMARYONLY'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE02'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE02'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE02'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE02'
+,p_Paramname=>'P_ITEMTEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE03'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE03'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE03'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE03'
+,p_Paramname=>'P_ITEMTEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMAILMERGE01'
+,p_Paramname=>'P_ITEMBATCHID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMHISTORY01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMHISTORY01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMHISTORY01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_BARCODE01'
+,p_Paramname=>'P_ITEMTEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINSUBLOC01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMAILMERGE01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMAILMERGE01'
+,p_Paramname=>'P_ITEMTEMPLATE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMAILMERGE01'
+,p_Paramname=>'P_FREETEXT'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMAILMERGE01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINSUBLOC01'
+,p_Paramname=>'P_SUBLOCATIONID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_PRICELIST01'
+,p_Paramname=>'P_PRICELISTID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_PRICELIST01'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPR_CATPRICELIST01'
+,p_Paramname=>'P_INCLUDEPICTURE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTSTATEMENT01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTSTATEMENT01'
+,p_Paramname=>'P_OUTSTANDINGONLY'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTSTATEMENT01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_SUPPURSUM01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_DBNPORT01'
+,p_Paramname=>'P_DBNNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTPMNTSUM01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTPMNTSUM01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTSALSUM01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTSALSUM01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMPURSUM01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMPURSUM01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMPURSUM01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMSALSUM01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMSALSUM01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMSALSUM01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSIMPLE01'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_DAILYCUST01'
+,p_Paramname=>'P_INVOICETYPE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_DAILYCUST01'
+,p_Paramname=>'P_INVOICESOURCE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSUMM01'
+,p_Paramname=>'P_INVOICETYPE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVSUMM01'
+,p_Paramname=>'P_INVOICESOURCE'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVPICKLIST01'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVDELNOTE01'
+,p_Paramname=>'P_NOOFBOXES'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVDELNOTE01'
+,p_Paramname=>'P_DELIVERYNOTES'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVDELNOTE01'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE01'
+,p_Paramname=>'P_MAILMERGETEMPLATE'
+,p_prompt=>'CUSTOMER COVER LETTER         '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE01'
+,p_Paramname=>'P_FREETEXT'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTMAILMERGE01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_SUPPURSUM01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'                              '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RSYS_EXPDATA01'
+,p_Paramname=>'P_ATTACHMENTLINEID'
+,p_prompt=>'SAVED QUERY                   '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'SUB CATEGORY FROM             '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'SUB CATEGORY TO               '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKQTY01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER                      '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKQTY01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKQTY01'
+,p_Paramname=>'P_STKQTYQUERY'
+,p_prompt=>'QTY CRITERIA                  '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKQTY01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKQTY01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'SUB CATEGORY FROM             '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKQTY01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'SUB CATEGORY TO               '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKQTY01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKQTY01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKVAL01'
+,p_Paramname=>'P_SUMMARYONLY'
+,p_prompt=>'SUMMARY ONLY                  '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKVAL01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKADJUST01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER                      '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKADJUST01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKADJUST01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKADJUST01'
+,p_Paramname=>'P_SUBLOCATIONID'
+,p_prompt=>'SUB LOCATION                  '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKADJUST01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'SUB CATEGORY FROM             '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKADJUST01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'SUB CATEGORY TO               '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKADJUST01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKADJUST01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CRNOTE01'
+,p_Paramname=>'P_CRNOTENUMBER'
+,p_prompt=>'CREDIT NOTE NUMBER            '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPLABEL01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPLABEL01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPPLIERS01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAP_SUPPLIERS01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTLABEL01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'CUSTOMER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTLABEL01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'CUSTOMER TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTOMERS01'
+,p_Paramname=>'P_CUSTOMER_FROM'
+,p_prompt=>'CUSTOMER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_CUSTOMERS01'
+,p_Paramname=>'P_CUSTOMER_TO'
+,p_prompt=>'CUSTOMER TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_DELNOTE01'
+,p_Paramname=>'P_SONUMBER'
+,p_prompt=>'ORDER NUMBER                  '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_INVPORT01'
+,p_Paramname=>'P_SALESINVNUMBER'
+,p_prompt=>'INVOICE NUMBER                '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_PICKLIST01'
+,p_Paramname=>'P_SONUMBER'
+,p_prompt=>'ORDER NUMBER                  '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RAR_SOPORT01'
+,p_Paramname=>'P_SONUMBER'
+,p_prompt=>'ORDER NUMBER                  '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MSAUDIT01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_SNAPMIR01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETAIL01'
+,p_Paramname=>'P_ITEMNUMBER_TO'
+,p_prompt=>'ITEM NUMBER TO                '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETAIL01'
+,p_Paramname=>'P_ITEMNUMBER_FROM'
+,p_prompt=>'ITEM NUMBER FROM              '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETAIL01'
+,p_Paramname=>'P_GRNNUMBER'
+,p_prompt=>'GRN NUMBER                    '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETAIL01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETAIL01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNDETAIL01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNSUMMARY01'
+,p_Paramname=>'P_ITEMNAME_TO'
+,p_prompt=>'ITEM NAME TO                  '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNSUMMARY01'
+,p_Paramname=>'P_ITEMNAME_FROM'
+,p_prompt=>'ITEM NAME FROM                '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNSUMMARY01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNSUMMARY01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNSUMMARY01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_OUTSSTKTAKE01'
+,p_Paramname=>'P_DAYSOLD'
+,p_prompt=>'DAYS OLD                      '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_OUTSSTKTAKE01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MINUSSTOCK01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKVALSUBLOC01'
+,p_Paramname=>'P_SUMMARYONLY'
+,p_prompt=>'SUMMARY ONLY                  '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKVALSUBLOC01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MOVEMENT01'
+,p_Paramname=>'P_ITEMMOVBATCHNAME'
+,p_prompt=>'BATCH NAME                    '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNPORT01'
+,p_Paramname=>'P_GRNNUMBER'
+,p_prompt=>'GRN NUMBER                    '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_GRNPORT01'
+,p_Paramname=>'P_PONUMBER'
+,p_prompt=>'PO NUMBER                     '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RPO_POPORT01'
+,p_Paramname=>'P_PONUMBER'
+,p_prompt=>'PO NUMBER                     '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKTKAUDIT01'
+,p_Paramname=>'P_STKTAKEDIFFQTY'
+,p_prompt=>'DIFF QTY                      '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKTKAUDIT01'
+,p_Paramname=>'P_STKTAKENAME'
+,p_prompt=>'STOCK TAKE TYPE               '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKTKAUDIT01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKTAKE01'
+,p_Paramname=>'P_ICBATCHNAME'
+,p_prompt=>'BATCH NAME                    '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKTAKE01'
+,p_Paramname=>'P_STKTAKENAME'
+,p_prompt=>'STOCK TAKE TYPE               '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_STKTAKE01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINLOC01'
+,p_Paramname=>'P_QUERYLOCATIONID'
+,p_prompt=>'LOCATION                      '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINLOC01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'SUB CATEGORY FROM             '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINLOC01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'SUB CATEGORY TO               '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINLOC01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMINLOC01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_APPSUPLIST01'
+,p_Paramname=>'P_ITEMNAME_TO'
+,p_prompt=>'ITEM NAME TO                  '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_APPSUPLIST01'
+,p_Paramname=>'P_ITEMNAME_FROM'
+,p_prompt=>'ITEM NAME FROM                '
+,p_DefaultValue=>''
+,p_slno=>7
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_APPSUPLIST01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_APPSUPLIST01'
+,p_Paramname=>'P_SUPPLIER_TO'
+,p_prompt=>'SUPPLIER TO                   '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_APPSUPLIST01'
+,p_Paramname=>'P_SUB_CATEGORY_FROM'
+,p_prompt=>'SUB CATEGORY FROM             '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_APPSUPLIST01'
+,p_Paramname=>'P_SUB_CATEGORY_TO'
+,p_prompt=>'SUB CATEGORY TO               '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_APPSUPLIST01'
+,p_Paramname=>'P_CATEGORY_TO'
+,p_prompt=>'CATEGORY TO                   '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_APPSUPLIST01'
+,p_Paramname=>'P_CATEGORY_FROM'
+,p_prompt=>'CATEGORY FROM                 '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMOVEMENT01'
+,p_Paramname=>'P_MOVEMENTTYPE'
+,p_prompt=>'MOVEMENT TYPE                 '
+,p_DefaultValue=>''
+,p_slno=>5
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMOVEMENT01'
+,p_Paramname=>'P_LOCATION_FROM'
+,p_prompt=>'SOURCE LOCATION FROM          '
+,p_DefaultValue=>''
+,p_slno=>1
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMOVEMENT01'
+,p_Paramname=>'P_LOCATION_TO'
+,p_prompt=>'DEST LOCATION NAME            '
+,p_DefaultValue=>''
+,p_slno=>2
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMOVEMENT01'
+,p_Paramname=>'P_ITEMNAME_TO'
+,p_prompt=>'ITEM NAME TO                  '
+,p_DefaultValue=>''
+,p_slno=>4
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_ITEMMOVEMENT01'
+,p_Paramname=>'P_ITEMNAME_FROM'
+,p_prompt=>'ITEM NAME FROM                '
+,p_DefaultValue=>''
+,p_slno=>3
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_ALLITEMS'
+,p_prompt=>'ALL ITEMS                     '
+,p_DefaultValue=>''
+,p_slno=>11
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_ITEMNAME_TO'
+,p_prompt=>'ITEM NAME TO                  '
+,p_DefaultValue=>''
+,p_slno=>10
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_ITEMNAME_FROM'
+,p_prompt=>'ITEM NAME FROM                '
+,p_DefaultValue=>''
+,p_slno=>9
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_SUGGESTEDQTYFORMULA'
+,p_prompt=>'SUGGESTED FORMULA             '
+,p_DefaultValue=>''
+,p_slno=>8
+,p_StatusText=>p_statusText);
+-------------------------------------
+retstat := SYSADMIN_PKG.Add_RepParameters(p_RepName=>'RINV_MRP01'
+,p_Paramname=>'P_SUPPLIER_FROM'
+,p_prompt=>'SUPPLIER FROM                 '
+,p_DefaultValue=>''
+,p_slno=>6
+,p_StatusText=>p_statusText);
+-------------------------------------
+END;

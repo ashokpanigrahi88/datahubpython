@@ -1,0 +1,92 @@
+{% extends 'common/menu.html' %}
+{% load static %}
+{% block title %} Mail Merge Formset {% endblock %}
+{% block findaction %} {{ MYCONTEXT.list }} {% endblock %}
+{% block content_block %}
+{% block prelist %}
+{% endblock %}
+
+
+<div class="container-fluid">
+<br>
+    <form method="POST"> {% csrf_token %}
+
+        <div class="container-fluid">
+            <h3>Header Form</h3>
+            <div class="col-8">
+                <div class="row">
+                    {% for field in form %}
+                    {% include '_model_form2.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container-fluid card-header">
+            <button class="save-btn">Save</button>
+            <a href="/setup/mailmerge_list/" style="text-decoration: none;">
+                <button type="button" class="cancel-btn cancel-button">Cancel</button>
+            </a>
+        </div>
+        <br>
+        <div class="row">
+            <div class="container-fluid">
+                <h3>Lines</h3>
+                <br>
+                <table>
+                    {{ lines_formset.management_form }}
+
+                    {% for form in lines_formset.forms %}
+                    {% if forloop.first %}
+                    <thead>
+                    <tr>
+                        {% for field in form.visible_fields %}
+                        <th>{{ field.label|capfirst }}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                    {% endif %}
+                    <tr class="{% cycle 'row1' 'row2' %} formset_row">
+                        {% for field in form.visible_fields %}
+                        <td>
+                            {# Include the hidden fields in the form #}
+                            {% if forloop.first %}
+                            {% for hidden in form.hidden_fields %}
+                            {{ hidden }}
+                            {% endfor %}
+                            {% endif %}
+                            {{ field.errors }}
+                            {{ field }}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+    </form>
+
+
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery.formset.js' %}"></script>
+<script type="text/javascript">
+    $('.formset_row').formset({
+        addText: '<button><span class="fa fa-plus" style="color: blue;"> Line</span></button>',
+        deleteText: 'Delete',
+        prefix: 'lines_formset'
+    });
+</script>
+{% endblock %}
+

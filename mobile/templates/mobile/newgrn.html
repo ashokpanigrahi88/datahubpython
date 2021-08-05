@@ -1,0 +1,131 @@
+{% extends 'common/generic_list_post.html' %}
+{% block moduletitle %}
+    Add / Ammend GRN
+
+{% endblock %}
+{% block findaction %}{% url 'mobile:creategrn' %} {% endblock %}
+{% block getpost %}{% if MYCNTEXT.grnnumber or MYCONTEXT.itemnumber %}post{% else %}post{% endif %}{% endblock %}
+
+{% block formattr %}document.myform.itemn_number.focus(){% endblock %}
+{% block findform %}
+    {% if myform %}
+       {{ myform | safe }}
+    {% else %}
+        {{ form }}
+    {% endif %}
+     <input type="submit" class="btn btn-info" value="Submit">
+    {% if not MYCONTEXT.grnnumber %}
+     <input type="submit" class="btn btn-info" value="Goods in from PO">
+    {% endif %}
+{% endblock %}
+{% block tableheader %}
+<th>ID</th>
+<th>GRN#</th>
+<th>Location</th>
+<th>Delivery Note</th>
+<th>Supplier# </th>
+<th>SupplierName</th>
+<th>Status</th>
+<th>Date</th>
+ {% endblock %}
+{% block tablerow %}
+      <td>{{ row.GRN_ID  }}</td>
+      <td>{{ row.GRN_NUMBER  }}</td>
+      <td>{{ row.LOCATION_NAME  }}</td>
+      <td>{{ row.DELIVERY_NOTE_REF  }}</td>
+        <td>{{ row.SUPPLIER_NUMBER  }}</td>
+         <td>{{ row.SUPPLIER_NAME  }}</td>
+       <td>{{ row.GRN_STATUS  }} </td>
+        <td>{{ row.LAST_UPDATE_DATE  }}</td>
+    {% comment %}
+        <a href="{%  url 'mobile:salesorderquery' %} {{row.order_header_id }} "><span class="glyphicon glyphicon-pencil" >{{row.order_header_id }}</span></a>
+             </td>
+             {% endcomment %}
+{% endblock %}
+{% block rowaction %}
+{% endblock %}
+    {% block postlist %}
+
+        <div class="d-flex justify-content-center">
+            <p><h3><a href="{%  url 'mobile:creategrn' %}" > Start New Goods In </a> </h3></p>
+         </div>
+  {% endblock %}
+
+        <div> <h3> {% block table2title %}Goods In Lines {% endblock  %}  </h3> </div>
+        {% block tableheader2 %}
+                <th> Item Number </th>
+                 <th> BIN </th>
+                <th>Sub Location</th>
+                 <th> Item Name </th>
+                 <th> Qty Received </th>
+        {% endblock %}
+    {% block tablerow2 %}
+            <td>{{row2.ITEM_NUMBER }}</td>
+            <td>{{row2.SUBIN }}</td>
+            <td>{{row2.SUB_LOCATION }}</td>
+            <td>{{row2.ITEM_NAME }}</td>
+            <td>{{row2.QTY_RECEIVED_UNITS }}</td>
+        {% endblock %}
+{% block table3title %} Approved Purchase Orders  {% endblock  %}
+        {% block tableheader3 %}
+                <th>PO ID</th>
+                <th>PO Number</th>
+                <th>status</th>
+                <th>Supplier Number</th>
+                <th>Supplier Name</th>
+                <th>Status Date</th>
+                <th>Supplier Id</th>
+        {% endblock %}
+       {% block tablerow3 %}
+      <td>{{ row.PO_HEADER_ID }}</td>
+      <td>{{ row.PO_NUMBER  }}</td>
+       <td>{{ row.ORDER_STATUS  }} </td>
+        <td>{{ row.SUPPLIER_NUMBER  }}</td>
+         <td>{{ row.SUPPLIER_NAME  }}</td>
+        <td>{{ row.ORDER_STATUS_DATE  }}</td>
+      <td>{{ row.SUPPLIER_ID }}</td>
+        {% endblock %}
+{% block table4title %} Lines  {% endblock  %}
+        {% block tableheader4%}
+                <th>Sl No</th>
+                <th>Item Number</th>
+                <th>Ordered</th>
+                <th>Accepted</th>
+                <th>Picked</th>
+                <th>Delivered</th>
+                <th>Status</th>
+                <th>Phase</th>
+                <th>Web Order#</th>
+                <th>Delivery Status</th>
+                <th>Delivered On</th>
+                <th>Item Name</th>
+        {% endblock %}
+       {% block tablerow4 %}
+            <td>{{row4.SL_NO }}</td>
+            <td>{{row4.ITEM_NUMBER  }}</td>
+            <td>{{row4.QTY_ORDERED_UNITS  }}</td>
+            <td>{{row4.QTY_PICKED_UNITS }}</td>
+            <td>{{row4.QTY_USERPICKED_UNITS  }}</td>
+            <td>{{row4.QTY_DELIVERED_UNITS  }}</td>
+            <td>{{row4.LINESTATUS }}</td>
+             <td>{{row4.LINEPHASECODE }}</td>
+            <td>{{row4.T_ORDERNUMBER }}</td>
+            <td>{{row4.DELIVERY_STATUS }}</td>
+            <td>{{row4.DELIVERY_DATE  }}</td>
+            <td>{{row4.ITEM_NAME  }}</td>
+        {% endblock %}
+{% block createaction %}
+{% endblock %}
+{% block scripts %}
+    <script>
+     $(function () {
+         $('input[type="text"], textarea').val('');
+        $('select').each(function() {
+        $(this).val($(this).find('option').val());
+            };
+  });
+
+</script>
+{% endblock %}
+
+

@@ -1,0 +1,134 @@
+{% extends 'common/menu.html' %}
+{% block content_block %}
+<h3>  System Options </h3>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active"  id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general"
+           aria-selected="true">General</a>
+    <a class="nav-item nav-link"  id="email-tab" data-toggle="tab" href="#email" role="tab" aria-controls="email"
+           aria-selected="false">Email</a>
+    <a class="nav-item nav-link"  id="reports-tab" data-toggle="tab" href="#reports" role="tab" aria-controls="reports"
+           aria-selected="false">Reports</a>
+    <a class="nav-item nav-link"  id="directories-tab" data-toggle="tab" href="#directories" role="tab" aria-controls="directories"
+           aria-selected="false">Directories</a>
+  </div>
+</nav>
+
+<form method="POST">{% csrf_token %}
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+        <div class="container-fluid" style="padding-left:2%;">
+            {% for field in form %}
+            {% if field.name in general_field_list %}
+            <div class="row">
+                <div class="col-md-2 pull-right text-right font-weight-normal">
+                    {{ field.label_tag }}
+                    {% if field.help_text %}
+                    <sup>{{ field.help_text }}</sup>
+                    {% endif %}
+                    {% for error in field.errors %}
+                    <div class="row">
+                        <div class="alert alert-danger">{{error}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-2">
+                    {{ field }}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+    </div>
+    </div>
+    <div class="tab-pane fade" id="email" role="tabpanel" aria-labelledby="email-tab">
+        {% for field in form %}
+        {% if field.name in email_field_list %}
+        <div class="row">
+
+            <div class="col-md-2 pull-right text-right font-weight-normal">
+                {{ field.label_tag }}
+                {% if field.help_text %}
+                <sup>{{ field.help_text }}</sup>
+                {% endif %}
+                {% for error in field.errors %}
+                <div class="row">
+                    <div class="alert alert-danger">{{error}}</div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-2">
+                {{ field }}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab">
+
+        <div class="container-fluid" style="padding-left:2%;">
+            {% for field in form %}
+            {% if field.name in reports_field_list %}
+            <div class="row">
+                <div class="col-md-2 pull-right text-right font-weight-normal">
+                    {{ field.label_tag }}
+                    {% if field.help_text %}
+                    <sup>{{ field.help_text }}</sup>
+                    {% endif %}
+                    {% for error in field.errors %}
+                    <div class="row">
+                        <div class="alert alert-danger">{{error}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-2">
+                    {{ field }}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="tab-pane fade" id="directories" role="tabpanel" aria-labelledby="directories-tab">
+        <div class="container-fluid" style="padding-left:2%;">
+            {% for field in form %}
+            {% if field.name in dirs_field_list %}
+            <div class="row">
+                <div class="col-md-2 pull-right text-right font-weight-normal">
+                    {{ field.label_tag }}
+                    {% if field.help_text %}
+                    <sup>{{ field.help_text }}</sup>
+                    {% endif %}
+                    {% for error in field.errors %}
+                    <div class="row">
+                        <div class="alert alert-danger">{{error}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-2">
+                    {{ field }}
+                </div>
+            </div>
+            {% endif %}
+
+
+            {% endfor %}
+        </div>
+
+ </div>
+
+</div>
+<br>
+<div class="row" style="padding-left:3%">
+<div class="col-md-2">
+</div>
+<div class="col-md-3">
+    <a href="/setup/cmnsysoptions_list" class="cancel-btn cancel-button">Cancel</a>
+    <button class="save-btn">Save</button>
+</div>
+</div>
+</form>
+{%  endblock %}
+

@@ -1,0 +1,55 @@
+{% extends 'common/menu.html' %}
+{% load getverbose %}
+
+{% block title %} Inventory Options {% endblock %}
+
+{% block content_block %}
+<br>
+<div class="container-fluid">
+
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="bg-info">
+        <tr>
+            {% for field,attrs in listview_filed_dict.items %}
+            <th>{{attrs}}</th>
+            {% endfor %}
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for row in rows %}
+        <tr>
+
+            {% for field in listview_filed_dict %}
+            {% if field == 'pc_name' %}
+            <td><a href="?inventoryoptions_id={{row.pc_id}}">{{ row|get_instance_field_value:field }}</a></td>
+            {% else %}
+            <td>{{ row|get_instance_field_value:field }}</td>
+            {% endif %}
+            {% endfor %}
+            <td>
+                <a href="/inventory/options/update-{{ row.inv_options_id }}/">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+<div class="container-fluid">
+    {% if details %}
+    <h3>Details</h3>
+    <div class="row">
+        {% for field in details %}
+        {% include '_model_detailform.html' %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}
+

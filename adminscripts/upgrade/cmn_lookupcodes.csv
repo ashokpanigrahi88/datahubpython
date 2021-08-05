@@ -1,0 +1,678 @@
+None PRICE_BREAK_TEXT_TYPES API U 2.0 2011-01-21 09:52:21 2011-01-19 17:13:49 None None 1 None None  $PRICEEXLTAX$ MIN $QTYFROM$ TEXTA4 TEXTA4 None None None None None None None None None None None None N None SYSTEM
+None PRICE_BREAK_TEXT_TYPES API I None 2011-01-19 17:13:49 2011-01-19 17:13:49 None None None None None $PRICEEXLTAX$
+MIN $QTYFROM$
+ TEXTNORMAL TEXTNORMAL None None None None None None None None None None None None N None SYSTEM
+None SALES_ORDER_CATEGORY_CODE API I None 2011-01-20 21:04:58 2011-01-20 21:04:58 None None None None None None MANUALLY ENTERED MANUALLY ENTERED None None None None None None None None None None None None N None SYSTEM
+None SALES_ORDER_CATEGORY_CODE API I None 2011-01-20 21:04:58 2011-01-20 21:04:58 None None None None None None STANDARD STANDARD None None None None None None None None None None None None N None SYSTEM
+2.0 SALES_ORDER_SOURCE None U 2.0 2011-01-24 09:27:26 2011-01-20 21:09:11 2.0 None 1 None None BCP MIGRATED INVOICE BCP BCP None None None None None None None None None None None BCP. N None USER
+None WEB_EXPORT_HINT_CODES API I None 2011-02-10 21:11:46 2011-02-10 21:11:46 None None None None None None NONE NONE None None None None None None None None None None None None Y None SYSTEM
+None WEB_EXPORT_HINT_CODES API I None 2011-02-10 21:11:46 2011-02-10 21:11:46 None None None None None None SPECIAL OFFER SPECIAL OFFER None None None None None None None None None None None None Y None SYSTEM
+None WWW_UPLOAD_PREFERENCE API I None 2011-02-10 21:11:46 2011-02-10 21:11:46 None None None None None None 1:HOME PAGE 1:HOME PAGE None None None None None None None None None None None None N None SYSTEM
+None WWW_UPLOAD_PREFERENCE API I None 2011-02-10 21:11:46 2011-02-10 21:11:46 None None None None None None 2:SLIDE SHOW 2:SLIDE SHOW None None None None None None None None None None None None N None SYSTEM
+None WWW_UPLOAD_PREFERENCE API I None 2011-02-10 21:11:46 2011-02-10 21:11:46 None None None None None None 99:GENERAL 99:GENERAL None None None None None None None None None None None None Y None SYSTEM
+None PO_TRANS_CATEGORY API I None 2011-02-10 21:11:46 2011-02-10 21:11:46 None None None None None None INTERNAL USAGE INTERNAL USAGE None None None None None None None None None None None None N None SYSTEM
+None CUSTOMER_TYPE_CODE API I None 2011-02-20 18:04:09 2011-02-20 18:04:09 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None SYSTEM
+None COUNTRY_REGION_CODE API I None 2011-02-20 18:04:09 2011-02-20 18:04:09 None None None None None None EC EC None None None None None None None None None None None None N None SYSTEM
+None COUNTRY_REGION_CODE API I None 2011-02-20 18:04:09 2011-02-20 18:04:09 None None None None None None NON-EC NON-EC None None None None None None None None None None None None N None SYSTEM
+None ITEM_SEARCH_QUERIES API I None 2011-02-20 18:04:09 2011-02-20 18:04:09 None None None None None PURCHASEABLE = 'Y' PURCHASEABLE=Y PURCHASEABLE=Y None None None None None None None None None None None None N None SYSTEM
+None ITEM_EXTERNAL_LOCATIONS None I 5.0 2011-03-03 12:10:26 2011-03-03 12:10:26 5.0 None 1 None None None UNIT 4 UNIT 4 None None None None None None None None None None None None Y 1.0 SYSTEM
+None SALES_UNIT_BARCODE_SUFFIX API I None 2011-03-07 21:17:47 2011-03-07 21:17:47 None None None None None None A 1 None None None None None None None None None None None None N None SYSTEM
+None SALES_UNIT_BARCODE_SUFFIX API I None 2011-03-07 21:17:47 2011-03-07 21:17:47 None None None None None None C 12 None None None None None None None None None None None None N None SYSTEM
+None SALES_UNIT_BARCODE_SUFFIX API I None 2011-03-07 21:17:47 2011-03-07 21:17:47 None None None None None None D 24 None None None None None None None None None None None None N None SYSTEM
+None SALES_UNIT_BARCODE_SUFFIX API I None 2011-03-07 21:17:47 2011-03-07 21:17:47 None None None None None None E 36 None None None None None None None None None None None None N None SYSTEM
+None SALES_UNIT_BARCODE_SUFFIX API I None 2011-03-07 21:17:47 2011-03-07 21:17:47 None None None None None None F 48 None None None None None None None None None None None None N None SYSTEM
+None SALES_UNIT_BARCODE_SUFFIX API I None 2011-03-07 21:17:47 2011-03-07 21:17:47 None None None None None None B 6 None None None None None None None None None None None None N None SYSTEM
+None SALES_UNIT_BARCODE_SUFFIX API I None 2011-03-07 21:17:47 2011-03-07 21:17:47 None None None None None None H 72 None None None None None None None None None None None None N None SYSTEM
+None STKTAKE_SOURCE_CODE API I None 2011-03-11 20:54:56 2011-03-11 20:54:56 None None None None None None MOBILE MOBILE None None None None None None None None None None None None N None SYSTEM
+None STKTAKE_SOURCE_CODE API I None 2011-03-11 20:54:56 2011-03-11 20:54:56 None None None None None None STANDARD STANDARD None None None None None None None None None None None None Y None SYSTEM
+None DISPLAY_IMAGE API U 29.0 2011-10-26 15:34:57 2011-04-15 22:47:17 None None 1 None None None GOODS RECEIPT GRN None None None None None None None None None None None N N None SYSTEM
+None SAGE_DEFAULTS API I None 2011-03-22 20:18:43 2011-03-22 20:18:43 None None None None None None DEAPRTMENR DEPARTMENT None None None None None None None None None None None 01 N None SYSTEM
+None SAGE_DEFAULTS API I None 2011-03-22 20:18:43 2011-03-22 20:18:43 None None None None None None PUCHASE CREDIT NOTES PC None None None None None None None None None None None None N None SYSTEM
+None SAGE_DEFAULTS API I None 2011-03-22 20:18:43 2011-03-22 20:18:43 None None None None None None PURCAHSE INVOICE PI None None None None None None None None None None None None N None SYSTEM
+156.0 SAGE_DEFAULTS API U 29.0 2012-03-21 17:26:18 2011-03-22 20:18:43 None None 1 None None None SALES RECEIPT SA None None None None None None None None None None None None N None SYSTEM
+48.0 SAGE_DEFAULTS API U 29.0 2012-03-21 17:43:58 2011-03-22 20:18:43 None None 1 None None None SALES CREDIT SC None None None None None None None None None None None None N None SYSTEM
+48.0 SAGE_DEFAULTS API U 29.0 2012-03-21 17:41:18 2011-03-22 20:18:43 None None 1 None None None SALES INVOICE SI None None None None None None None None None None None None N None SYSTEM
+None SUB_LOCATION_GROUP_CODE API I None 2011-03-22 20:18:43 2011-03-22 20:18:43 None None None None None None PRIMARY DAMAGED PRIMARY DAMAGED None None None None None None None None None None None None N None SYSTEM
+None SUB_LOCATION_GROUP_CODE API I None 2011-03-22 20:18:43 2011-03-22 20:18:43 None None None None None None PRIMARY REFUND PRIMARY REFUND None None None None None None None None None None None None N None SYSTEM
+None DISPLAY_IMAGE API I None 2011-04-15 22:47:17 2011-04-15 22:47:17 None None None None None None DEBIT NOTE DBN None None None None None None None None None None None Y N None SYSTEM
+None DISPLAY_IMAGE API U 29.0 2011-04-15 22:50:27 2011-04-15 22:47:17 None None 1 None None None PURCHASE ORDER PO None None None None None None None None None None None N N None SYSTEM
+None DISPLAY_IMAGE API U 29.0 2015-10-07 09:41:31 2011-04-15 22:47:17 None None 1 None None None SALES INVOICE SI None None None None None None None None None None None N N None SYSTEM
+None DISPLAY_IMAGE API I None 2011-04-15 22:47:17 2011-04-15 22:47:17 None None None None None None SALES ORDER SO None None None None None None None None None None None Y N None SYSTEM
+None AMAZON_DEFAULTS API I None 2011-04-15 22:47:17 2011-04-15 22:47:17 None None None None None None CUSTOMER NUMBER CUSTOMER NUMBER None None None None None None None None None None None Z0063 N None SYSTEM
+None AMAZON_DEFAULTS API I None 2011-04-15 22:47:17 2011-04-15 22:47:17 None None None None None None FREIGHT ITEM FREIGHT ITEM None None None None None None None None None None None 99901 N None SYSTEM
+None SUB_LOCATION_TYPES API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None EXTERNAL EXTERNAL None None None None None None None None None None None None N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None APPLY_OFFER APPLY_OFFER None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None ENFORCE_REORDER_QTY ENFORCE_REORDER_QTY None None None None None None None None None None None N N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None ENFORCE_TAX_CODE ENFORCE_TAX_CODE None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None FLAGINWEBEXPORT FLAGINWEBEXPORT None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None FREIGHT FREIGHT None None None None None None None None None None None N N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None ITEM_STATUS ITEM_STATUS None None None None None None None None None None None ACTIVE N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None PRINT_PICTURE PRINT_PICTURE None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API U 29.0 2015-02-25 07:54:58 2011-04-24 21:32:37 None None 1 None None None PUBLISH_TO_WEB PUBLISH_TO_WEB None None None None None None None None None None None N N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None PURCHASEABLE PURCHASEABLE None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None RESERVABLE RESERVABLE None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None SALEABLE SALEABLE None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None SERIAL_NUMBERED SERIAL_NUMBERED None None None None None None None None None None None N N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None SERVICEDITEM SERVICEDITEM None None None None None None None None None None None N N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None STOCKABLE STOCKABLE None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None TAKE_SNAPSHOT TAKE_SNAPSHOT None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None TRACK_USAGE TRACK_USAGE None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None VALUABLE VALUABLE None None None None None None None None None None None Y N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None WARRANTIED WARRANTIED None None None None None None None None None None None N N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-04-24 21:32:37 2011-04-24 21:32:37 None None None None None None WEIGHED_ITEM WEIGHED_ITEM None None None None None None None None None None None Y N None SYSTEM
+None ADDRESS_TYPES API I None 2021-01-17 10:25:56 2011-05-14 10:21:34 None None None 2021-01-01 00:00:00 2021-01-01 00:00:00 None BUSINESS BUSINESS None None None None None None None None None None None None N None SYSTEM
+None ADDRESS_TYPES API I None 2011-05-14 10:21:34 2011-05-14 10:21:34 None None None None None None RESIDENTIAL RESIDENTIAL None None None None None None None None None None None None N None SYSTEM
+None ITEM_DEFAULTS API I None 2011-06-08 10:22:23 2011-06-08 10:22:23 None None None None None None IMAGE_HINT IMAGE_HINT None None None None None None None None None None None AVAILABLE N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None INV_ITEM_MOVEMENT_LINES INV_ITEM_MOVEMENT_LINES None None None None None None None None None None None INV02_PKG.ITEM_MOVEMENTSTATUS(:P_ITEMID) = 'NEW' N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None AP_DBNOTE_LINES AP_DBNOTE_LINES None None None None None None None None None None None ITEM_ID = :P_ITEMID AND DBNOTE_STATUS = 'NEW' N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None AR_DELIVERY_LINES AR_DELIVERY_LINES None None None None None None None None None None None ITEM_ID = :P_ITEMID AND DELIVERY_LINE_STATUS = 'NEW' N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None AR_INVOICE_LINES AR_INVOICE_LINES None None None None None None None None None None None ITEM_ID = :P_ITEMID AND INVOICE_LINE_STATUS = 'NEW' N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None AR_SALESORDER_LINES AR_SALESORDER_LINES None None None None None None None None None None None ITEM_ID = :P_ITEMID AND ORDER_LINE_STATUS = 'NEW' N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None INV_ITEMCOUNT_INTERFACE INV_ITEMCOUNT_INTERFACE None None None None None None None None None None None ITEM_ID = :P_ITEMID AND STATUS = 'NEW' N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None INV_ITEM_COUNT_LINES INV_ITEM_COUNT_LINES None None None None None None None None None None None ITEM_ID = :P_ITEMID AND COUNT_STATUS = 'NEW' N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None INV_QUICKCODE_LINES INV_QUICKCODE_LINES None None None None None None None None None None None ITEM_ID = :P_ITEMID N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None PO_GRN_LINES PO_GRN_LINES None None None None None None None None None None None ITEM_ID = :P_ITEMID AND GRN_STATUS = 'NEW' N None SYSTEM
+None INV_REQUISITION_CATEGORY API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None SYSTEM
+None INV_REQUISITION_SOURCE API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None AUTOMATIC AUTOMATIC None None None None None None None None None None None None N None SYSTEM
+None INV_REQUISITION_SOURCE API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None MANUAL MANUAL None None None None None None None None None None None None N None SYSTEM
+None INV_REQUISITION_TYPE API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None REPLENISHMENT REPLENISHMENT None None None None None None None None None None None None N None SYSTEM
+None PRIORITY_CODES API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None 01:URGENT 01:URGENT None None None None None None None None None None None None N None SYSTEM
+None PRIORITY_CODES API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None 02:HIGH 02:HIGH None None None None None None None None None None None None N None SYSTEM
+None PRIORITY_CODES API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None 03:MEDIUM 03:MEDIUM None None None None None None None None None None None None N None SYSTEM
+None PRIORITY_CODES API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None 04:LOW 04:LOW None None None None None None None None None None None None N None SYSTEM
+None PRIORITY_CODES API I None 2011-06-08 10:22:24 2011-06-08 10:22:24 None None None None None None 05:NORMAL 05:NORMAL None None None None None None None None None None None None N None SYSTEM
+None SIMILAR_ITEM_CATEGORY None I 7.0 2011-06-15 15:20:46 2011-06-15 15:20:46 7.0 None 1 None None None SPARE PARTS SPARE PARTS None None None None None None None None None None None None N None SYSTEM
+None SALES_ORDER_SOURCE API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None IMPORT IMPORT None None None None None None None None None None None None N None SYSTEM
+None SALES_ORDER_CATEGORY_CODE API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None EBAY EBAY None None None None None None None None None None None None N None SYSTEM
+None SALES_ORDER_CATEGORY_CODE API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None WEB WEB None None None None None None None None None None None None N None SYSTEM
+None MOBILE_DEFAULTS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None PRICE CHECK SUB LOCATIONS PC:SUBLOCSTOCK None None None None None None None None None None None YES N None SYSTEM
+None MOBILE_DEFAULTS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None PRICE CHECK IN STOCK PC:INSTOCK None None None None None None None None None None None YES N None SYSTEM
+None MOBILE_DEFAULTS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None PRICE CHECK FLAGS PC:FLAGS None None None None None None None None None None None YES N None SYSTEM
+None MOBILE_DEFAULTS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None PC:PB PC:PB None None None None None None None None None None None YES N None SYSTEM
+None MOBILE_DEFAULTS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None PRICE CHECK PRICE1 PC:PRICE1 None None None None None None None None None None None YES N None SYSTEM
+None MOBILE_DEFAULTS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None PRICE CHECK PRICE2 PC:PRICE2 None None None None None None None None None None None YES N None SYSTEM
+None MOBILE_DEFAULTS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None PRICE CHECK PRICE3 PC:PRICE3 None None None None None None None None None None None YES N None SYSTEM
+None MOBILE_DEFAULTS API U 29.0 2021-01-16 04:40:21 2011-09-10 11:25:49 None None 1 None None None PRICE CHECK PRICE4 PC:PRICE4 None None None None None None None None None None None YES N None SYSTEM
+None MOBILE_DEFAULTS API U 29.0 2021-01-16 04:40:21 2011-09-10 11:25:49 None None 1 None None None PRICE CHECK PRICE5 PC:PRICE5 None None None None None None None None None None None YES N None SYSTEM
+None EU_DIRECTIVE_WARNINGS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None NONE NONE None None None None None None None None None None None None N None SYSTEM
+None ITEM_EXTRAS_CATEGORY API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None EU_DIRECTIVE_WARNINGS EU_DIRECTIVE_WARNINGS None None None None None None None None None None None None N None SYSTEM
+None EXPORT_GRID_DEFAULTS API U 29.0 2021-01-15 09:23:57 2011-09-10 11:25:49 None None 1 None None None EMAIL OUTPUT EMAIL OUTPUT None None None None None None None None None None None NO N None SYSTEM
+None EXPORT_GRID_DEFAULTS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None DIR_ALIAS DIR_ALIAS None None None None None None None None None None None /FORMS/HTML/ N None SYSTEM
+None EXPORT_GRID_DEFAULTS API I None 2011-09-10 11:25:49 2011-09-10 11:25:49 None None None None None None FILE EXTENSION FILE EXTENSION None None None None None None None None None None None .XLS N None SYSTEM
+None EXPORT_GRID_DEFAULTS API U 29.0 2021-01-15 09:23:57 2011-09-10 11:25:49 None None 1 None None None VIEW OUTPUT VIEW OUTPUT None None None None None None None None None None None NO N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-17 18:19:57 2011-10-17 18:19:57 None None None None None None GOODS RECEIPT GOODS RECEIPT None None None None None None None None None None None YES N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-17 18:19:57 2011-10-17 18:19:57 None None None None None None PURCHASE ORDER PURCHASE ORDER None None None None None None None None None None None YES N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-17 18:19:57 2011-10-17 18:19:57 None None None None None None SALES INVOICE SALES INVOICE None None None None None None None None None None None YES N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-17 18:19:57 2011-10-17 18:19:57 None None None None None None SALES ORDER SALES ORDER None None None None None None None None None None None YES N None SYSTEM
+None MOBILE_DEFAULTS API I None 2011-10-17 18:19:57 2011-10-17 18:19:57 None None None None None None PC: ITEM IN PO PC:ITEMINPO None None None None None None None None None None None YES N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-19 15:52:14 2011-10-19 15:52:14 None None None None None None SALES INVOICE FC SALES INVOICE FC None None None None None None None None None None None YES N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-19 15:52:14 2011-10-19 15:52:14 None None None None None None DELIVERYNOTE DELIVERYNOTE None None None None None None None None None None None YES N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-19 15:52:14 2011-10-19 15:52:14 None None None None None None GOODSRECEIPT GOODSRECEIPT None None None None None None None None None None None YES N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-19 15:52:14 2011-10-19 15:52:14 None None None None None None PURCAHSEORDER PURCAHSEORDER None None None None None None None None None None None YES N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-19 15:52:14 2011-10-19 15:52:14 None None None None None None SALESINVOICE SALESINVOICE None None None None None None None None None None None YES N None SYSTEM
+None AUTO_EMAIL API I None 2011-10-19 15:52:14 2011-10-19 15:52:14 None None None None None None SALESORDER SALESORDER None None None None None None None None None None None YES N None SYSTEM
+None AMAZON_DEFAULTS API I None 2011-10-22 18:05:37 2011-10-22 18:05:37 None None None None None None DISCOUNT ITEM DISCOUNT ITEM None None None None None None None None None None None 99901 N None SYSTEM
+None WEB_SITE_DEFAULTS API I None 2011-11-02 20:17:07 2011-11-02 20:17:07 None None None None None None STOCK PUBLISH PERCENTAGE STOCK PUBLISH PERCENTAGE None None None None None None None None None None None 90% N None SYSTEM
+None AUTO_EMAIL API I None 2011-11-08 18:41:50 2011-11-08 18:41:50 None None None None None None SALES INVOICE DELIVERYNOTE SALES INVOICE DELIVERYNOTE None None None None None None None None None None None YES N None SYSTEM
+None DATE_FORMAT API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None DD/MM/YY DD/MM/YY None None None None None None None None None None None None N None SYSTEM
+None DATE_FORMAT API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None DD/MM/YY HH24:MI:SS DD/MM/YY HH24:MI:SS None None None None None None None None None None None None N None SYSTEM
+None DATE_FORMAT API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None DD/MM/YYYY DD/MM/YYYY None None None None None None None None None None None None N None SYSTEM
+None DATE_FORMAT API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None DD/MM/YYYY HH24:MI:SS DD/MM/YYYY HH24:MI:SS None None None None None None None None None None None None N None SYSTEM
+None DATE_FORMAT API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None FMDD MONTH YYYY FMDD MONTH YYYY None None None None None None None None None None None None N None SYSTEM
+None DATE_FORMAT API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None YYYY/MM/DD YYYY/MM/DD None None None None None None None None None None None None N None SYSTEM
+None DATE_FORMAT API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None YYYY/MM/DD HH24:MI:SS YYYY/MM/DD HH24:MI:SS None None None None None None None None None None None None N None SYSTEM
+157.0 SAGE_DEFAULTS API U 29.0 2012-03-21 17:26:18 2011-12-31 12:44:12 None None 1 None None None PURCHASE RECEIPT PA None None None None None None None None None None None None N None SYSTEM
+None ITEM_SEARCH_QUERIES API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None SALEABLE = 'Y' SALEABLE SALEABLE None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None DOC DOC None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None PDF PDF None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None XLS XLS None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None SYMBOL SYMBOL None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None MOVIE MOVIE None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2021-01-17 10:51:49 2011-12-31 12:44:12 None None None 2021-01-01 00:00:00 2021-01-01 00:00:00 None COMMENT COMMENT None None None None None None None None None None None None N 2.0 SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2021-01-17 10:41:36 2011-12-31 12:44:12 None None None 2021-01-01 00:00:00 2021-01-01 00:00:00 None KEY WORDS KEY WORDS None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None NOTES NOTES None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None TECHNICAL SPECS TECHNICAL SPECS None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None USER MANUAL USER MANUAL None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None VIDEO VIDEO None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None BOTTM RIGHT BOTTM RIGHT None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None BOTTOM CENTER BOTTOM CENTER None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None BOTTOM LEFT BOTTOM LEFT None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None CENTER CENTER CENTER CENTER None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None CENTER LEFT CENTER LEFT None None None None None None None None None None None None N None SYSTEM
+None SUB_LOCATION_TYPES API I None 2009-12-28 11:29:10 2009-12-28 11:29:10 None None None None None None VAN VAN None None None None None None None None None None None None N None None
+None SUB_LOCATION_TYPES API I None 2009-12-28 11:29:10 2009-12-28 11:29:10 None None None None None None INTERNAL INTERNAL None None None None None None None None None None None None N None None
+None PRICELIST_USAGE_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None LOCATION LOCATION None None None None None None None None None None None None N None None
+None CREDIT_ITEM_STATUS_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None DAMAGED DAMAGED None None None None None None None None None None None None N None None
+None CREDIT_ITEM_STATUS_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None DEFECTIVE DEFECTIVE None None None None None None None None None None None None N None None
+None CREDIT_ITEM_STATUS_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None DID NOT ORDER DID NOT ORDER None None None None None None None None None None None None N None None
+None CREDIT_ITEM_STATUS_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None NOT HAPPY NOT HAPPY None None None None None None None None None None None None N None None
+None CREDIT_ITEM_STATUS_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None UNKNOWN UNKNOWN None None None None None None None None None None None None Y None None
+None CREDIT_ITEM_STATUS_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None WRONG ITEM PICKED WRONG ITEM PICKED None None None None None None None None None None None None N None None
+None CREDIT_INV_ACTION_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None ADD TO STOCK ADD TO STOCK None None None None None None None None None None None None Y None None
+None CREDIT_INV_ACTION_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None DO NOT ADD TO STOCK DO NOT ADD TO STOCK None None None None None None None None None None None None N None None
+None CREDIT_INV_ACTION_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None RECYCLE RECYCLE None None None None None None None None None None None None N None None
+None CREDIT_INV_ACTION_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None RETURN TO SUPPLIER RETURN TO SUPPLIER None None None None None None None None None None None None N None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None UNKNOWN UNKNOWN None None None None None None None None None None None None N None None
+None SALES_ORDER_CATEGORY_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None SHOP CREDIT SHOP CREDIT None None None None None None None None None None None None N None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None CONTRACT CANCELLED CONTRACT CANCELLED None None None None None None None None None None None None N None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None DENIED PAYMENT DENIED PAYMENT None None None None None None None None None None None None N None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None DISPUTE DISPUTE None None None None None None None None None None None None N None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:01 2009-12-28 11:29:01 None None None None None None GOODWILL GOODWILL None None None None None None None None None None None None N None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None UNIT PRICE OVERCHARGED OVERCHARGED None None None None None None None None None None None None N None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None UNDERSHIPPED UNDERSHIPPED None None None None None None None None None None None None N None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None UNHAPPY CUSTOMER UNHAPPY CUSTOMER None None None None None None None None None None None None N None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None WRITEOFF WRITEOFF None None None None None None None None None None None None Y None None
+None AR_RETURN_REASON_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None WRONGLY INVOICED WRONGLYINVOICED None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE2 API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None BALANCE SHEET BS None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE2 API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None BALANCE SHEET , PROFIT AND LOS BS,PL None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE2 API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None NOMINAL CODE NM None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE2 API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None PROFIT AND LOSS PL None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE1 API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None ASSET ASSET None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE1 API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None EXPENSES EXPENSES None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE1 API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None LIABILITY LIABILITY None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE1 API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None REVENUE REVENUE None None None None None None None None None None None None N None None
+None AR_INVOICE_TYPE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None CREDIT NOTE CREDIT NOTE None None None None None None None None None None None None N None None
+None AR_INVOICE_TYPE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None INVOICE INVOICE None None None None None None None None None None None None N None None
+None AR_INVOICE_TYPE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None STANDARD STANDARD None None None None None None None None None None None None N None None
+None SALES_ORDER_SOURCE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None MANUAL MANUAL None None None None None None None None None None None None N None None
+None SALES_ORDER_CATEGORY_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None SHOP SALES SHOP SALES None None None None None None None None None None None None N None None
+None SALES_ORDER_SOURCE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None SHOP SALES SHOP SALES None None None None None None None None None None None None N None None
+None SALES_ORDER_SOURCE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None WEB ORDER WEB ORDER None None None None None None None None None None None None N None None
+None AR_PAYMENT_SOURCES API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None CREDIT NOTE CREDIT NOTE None None None None None None None None None None None None N None None
+None AR_PAYMENT_SOURCES API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None INVOICE INVOICE None None None None None None None None None None None None N None None
+None AR_PAYMENT_SOURCES API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None RETURN RETURN None None None None None None None None None None None None N None None
+None AR_PAYMENT_SOURCES API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None BANK BANK None None None None None None None None None None None None N None None
+None AR_PAYMENT_SOURCES API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None RECEIVABLES RECEIVABLES None None None None None None None None None None None None N None None
+None AR_PAYMENT_SOURCES API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None TAX REFUND TAX REFUND None None None None None None None None None None None None N None None
+None AR_PAYMENT_SOURCES API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None WEB WEB None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None NO EMAIL NO EMAIL None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None NO FAX NO FAX None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None NO MAILSHOT NO MAILSHOT None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None NO PHONE NO PHONE None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None MAILSHOT MAILSHOT None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None NONE NONE None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None ANY ANY None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None EMAIL EMAIL None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None FAX FAX None None None None None None None None None None None None N None None
+None CONTACT_METHOD_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None PHONE PHONE None None None None None None None None None None None None N None None
+None PRICELIST_USAGE_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None SUPPLIER SUPPLIER None None None None None None None None None None None None N None None
+None PRICELIST_USAGE_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None CUSTOMER CUSTOMER None None None None None None None None None None None None N None None
+None PRICELIST_GROUP_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None STANDARD STANDARD None None None None None None None None None None None None N None None
+None CONTACT_TYPE_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None ACCOUNT PAYABLE ACCOUNT PAYABLE None None None None None None None None None None None None N None None
+None CONTACT_TYPE_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None ACCOUNTS RECEIVABLES ACCOUNTS RECEIVABLES None None None None None None None None None None None None N None None
+None CONTACT_TYPE_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None PHONE PHONE None None None None None None None None None None None None N None None
+None CONTACT_TYPE_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None None
+None CONTACT_GROUP_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None MARKETING MARKETING None None None None None None None None None None None None N None None
+None CONTACT_GROUP_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None PERSONAL PERSONAL None None None None None None None None None None None None N None None
+None CONTACT_GROUP_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None SHIP_TO SHIP_TO None None None None None None None None None None None None N None None
+None CONTACT_GROUP_CODE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None BILL_TO BILL_TO None None None None None None None None None None None None N None None
+None ITEM_CLASS_CATEGORY API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None SUNDRY ITEMS SUNDRY ITEMS None None None None None None None None None None None None N None None
+None ITEM_SNAPSHOT_TYPE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None ALL ITEMS ALL ITEMS None None None None None None None None None None None None N None None
+None ITEM_SNAPSHOT_TYPE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None STOCKABLE ITEMS STOCKABLE ITEMS None None None None None None None None None None None None N None None
+None ITEM_SNAPSHOT_TYPE API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None ONLY VALUABLE ITEMS VALUABLE ITEMS None None None None None None None None None None None None N None None
+None STOCK_TAKE_CATEGORY API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None COUNT CLASS A COUNT CLASS A None None None None None None None None None None None None N None None
+None STOCK_TAKE_CATEGORY API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None COUNT CLASS B COUNT CLASS B None None None None None None None None None None None None N None None
+None STOCK_TAKE_CATEGORY API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None COUNT CLASS C COUNT CLASS C None None None None None None None None None None None None N None None
+None ITEM_CLASS_CATEGORY API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None A CATEGORY A CATEGORY None None None None None None None None None None None None N None None
+None ITEM_CLASS_CATEGORY API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None B CATEGORY B CATEGORY None None None None None None None None None None None None N None None
+None ITEM_CLASS_CATEGORY API I None 2009-12-28 11:29:02 2009-12-28 11:29:02 None None None None None None C CATEGORY C CATEGORY None None None None None None None None None None None None N None None
+None ITEM_CLASS_CATEGORY API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None D CATEGORY D CATEGORY None None None None None None None None None None None None N None None
+None ITEM_CLASS_CATEGORY API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None E CATEGORY E CATEGORY None None None None None None None None None None None None N None None
+None SIZE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None NONE NONE None None None None None None None None None None None None N None None
+None SIMILAR_ITEM_CATEGORY API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None LINKED ITEMS LINKED ITEMS None None None None None None None None None None None None N None None
+None PO_TRANS_CATEGORY API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None STANDARD STANDARD None None None None None None None None None None None None N None None
+None LOCATION_REGION_CODE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None NONE NONE None None None None None None None None None None None None N None None
+None COLOUR API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None BLACK BLACK None None None None None None None None None None None None N None None
+None COLOUR API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None BLUE BLUE None None None None None None None None None None None None N None None
+None DIM_SALES_CRITERIA API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None STANDARD STANDARD None None None None None None None None None None None None N None None
+None DIM_STOCK_UPDATE_CRITERIA API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None ON CREATION ON CREATION None None None None None None None None None None None None N None None
+None DIM_STOCK_UPDATE_CRITERIA API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None ON SALE ON SALE None None None None None None None None None None None None N None None
+None ITEM_DIMENSION_TYPE API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None COLOUR SIZE AND STYLE COLOUR SIZE AND STYLE None None None None None None None None None None None None N None None
+None ITEM_DIMENSION_TYPE API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None COLOURE AND SIZE COLOURE AND SIZE None None None None None None None None None None None None N None None
+None ITEM_DIMENSION_TYPE API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None FURNITURE FURNITURE None None None None None None None None None None None None N None None
+None ITEM_DIMENSION_TYPE API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None INGREDIENTS INGREDIENTS None None None None None None None None None None None None N None None
+None ITEM_DIMENSION_TYPE API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None PACKAGED GOODS PACKAGED GOODS None None None None None None None None None None None None N None None
+None PERSON_TITLES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None DAME DAME None None None None None None None None None None None None N None None
+None PERSON_TITLES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None DOCTOR DOCTOR None None None None None None None None None None None None N None None
+None PERSON_TITLES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None MASTER MASTER None None None None None None None None None None None None N None None
+None PERSON_TITLES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None MRS MRS None None None None None None None None None None None None N None None
+None PERSON_TITLES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None MISS MISS None None None None None None None None None None None None N None None
+None PERSON_TITLES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None MR MR None None None None None None None None None None None None N None None
+None CUSTOMER_HOLD_REASON API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None OUTSTANDING OUTSTANDING INVOICES None None None None None None None None None None NO OVERRIDE N None None
+None CUSTOMER_HOLD_REASON API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None POOR CREDIT RATING POOR CREDIT RATING None None None None None None None None None None YES OVERRIDE N None None
+None CUSTOMER_HOLD_REASON API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None REQUIRES PROOF OF IDENTIFICAT REQUIRES PROOF OF IDENTIFICAT None None None None None None None None None None None None N None None
+None INVOICE_RELEASE_CODES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None RELEASED BY MANAGER RELEASED BY MANAGER None None None None None None None None None None None None N None None
+None INVOICE_RELEASE_CODES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None VERBALLY CHECKED VERBALLY CHECKED None None None None None None None None None None None None N None None
+None SUPPLIER_HOLD_REASON API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None HOLD INVOICES HOLD INVOICES None None None None None None None None None None None None N None None
+None SUPPLIER_HOLD_REASON API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None HOLD PAYMENTS HOLD PAYMENTS None None None None None None None None None None None None N None None
+None REASON_FOR_REJECTION API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None DAMAGED DAMAGED None None None None None None None None None None None None N None None
+None REASON_FOR_REJECTION API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None DEFECTIVE DEFECTIVE None None None None None None None None None None None None N None None
+None BATCH_FORMAT API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None FMMONTH RRRR FMMONTH RRRR None None None None None None None None None None None None N None None
+None BATCH_FORMAT API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None USER FMMONTH RRRR USER FMMONTH RRRR None None None None None None None None None None None None N None None
+None BATCH_FORMAT API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None USER RRRRMMDDHH24MISS USER RRRRMMDDHH24MISS None None None None None None None None None None None None N None None
+None PAYMENT_CARD_TYPES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None AMERICAN EXPRESS AMERICAN EXPRESS None None None None None None None None None None None None N None None
+None PAYMENT_CARD_TYPES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None DELTA DELTA None None None None None None None None None None None None N None None
+None PAYMENT_CARD_TYPES API I None 2009-12-28 11:29:03 2009-12-28 11:29:03 None None None None None None SOLO SOLO None None None None None None None None None None None None N None None
+None PAYMENT_CARD_TYPES API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None VISA VISA None None None None None None None None None None None None N None None
+None PAYMENT_CARD_TYPES API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None MASTERCARD MASTERCARD None None None None None None None None None None None None N None None
+None PAYMENT_TRANS_CATEGORY API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None None
+None PAYMENT_TRANS_CATEGORY API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None OVERHEAD OVERHEAD None None None None None None None None None None None None N None None
+None AP_INVOICE_LINE_TYPE API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None None
+None AP_INVOICE_LINE_TYPE API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None LABOUR LABOUR None None None None None None None None None None None None N None None
+None AP_INVOICE_LINE_TYPE API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None MATERIAL MATERIAL None None None None None None None None None None None None N None None
+None AP_INVOICE_LINE_TYPE API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None PURCHASE PURCHASE None None None None None None None None None None None None N None None
+None AP_INVOICE_LINE_TYPE API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None SERVICE SERVICE None None None None None None None None None None None None N None None
+None AP_INVOICE_CATEGORY API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None None
+None AP_INVOICE_CATEGORY API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None LABOUR LABOUR None None None None None None None None None None None None N None None
+None AP_INVOICE_CATEGORY API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None ASSET ASSET None None None None None None None None None None None None N None None
+None AP_INVOICE_CATEGORY API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None PRODUCT PRODUCT None None None None None None None None None None None None N None None
+None AP_INVOICE_CATEGORY API I None 2009-12-28 11:29:06 2009-12-28 11:29:06 None None None None None None MATERIALS MATERIALS None None None None None None None None None None None None N None None
+None AP_INVOICE_CATEGORY API I None 2009-12-28 11:29:07 2009-12-28 11:29:07 None None None None None None OVERHEAD OVERHEAD None None None None None None None None None None None None N None None
+None AP_INVOICE_CATEGORY API I None 2009-12-28 11:29:07 2009-12-28 11:29:07 None None None None None None SERVICE SERVICE None None None None None None None None None None None None N None None
+None COLOUR API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None WHITE WHITE None None None None None None None None None None None None N None None
+None ITEM_GROUP4 API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None NONE NONE None None None None None None None None None None None None N None None
+None ITEM_GROUP3 API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None NONE NONE None None None None None None None None None None None None N None None
+None ITEM_GROUP2 API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None NONE NONE None None None None None None None None None None None None N None None
+None ITEM_GROUP1 API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None NONE NONE None None None None None None None None None None None None N None None
+None ITEM_EXTERNAL_LOCATIONS API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None NONE NONE None None None None None None None None None None None None N None None
+None SUB_LOCATION_GROUP_CODE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None DAMAGED DAMAGED None None None None None None None None None None None None N None None
+None SUB_LOCATION_GROUP_CODE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None GRN GRN None None None None None None None None None None None None N None None
+None SUB_LOCATION_GROUP_CODE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None REFUND REFUND None None None None None None None None None None None None N None None
+None SUB_LOCATION_GROUP_CODE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None SALES SALES None None None None None None None None None None None None N None None
+None SUB_LOCATION_GROUP_CODE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None STAGING STAGING None None None None None None None None None None None None N None None
+None QUICKCODE_CATEGORIES API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None MENU MENU None None None None None None None None None None None None Y None None
+None QUICKCODE_CATEGORIES API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None QUICKCODE QUICKCODE None None None None None None None None None None None None Y None None
+None AUTODBN_CREATE_FOR API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None OVER DELIVERED OVER DELIVERED None None None None None None None None None None None None N None None
+None AUTODBN_CREATE_FOR API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None OVER SUPPLIED OVER SUPPLIED None None None None None None None None None None None None N None None
+None AUTODBN_CREATE_FOR API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None UNDER DELIVERED UNDER DELIVERED None None None None None None None None None None None None N None None
+None AUTODBN_CREATE_FOR API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None UNDER SUPPLIED UNDER SUPPLIED None None None None None None None None None None None None N None None
+None CASHINGUP_DIFFERENCE_CODE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None DISPUTE DISPUTE None None None None None None None None None None None None Y None None
+None CASHINGUP_DIFFERENCE_CODE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None UNKNOWN UNKNOWN None None None None None None None None None None None None Y None None
+None CASHINGUP_DIFFERENCE_CODE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None USER ERROR USER ERROR None None None None None None None None None None None None Y None None
+None BATCH_FORMAT API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None FMMONTH DAY RRRR FMMONTH DAY RRRR None None None None None None None None None None None None N None None
+None GL_PAYMENT_CATEGORY API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None GENERAL GENERAL None None None None None None None None None None None None Y None None
+None GL_PAYMENT_SOURCE API I None 2010-11-25 22:11:26 2010-11-25 22:11:26 None None None None None None STANDARD STANDARD None None None None None None None None None None None None Y None None
+None ITEM_MOVEMENT_CATEGORY API I None 2010-11-25 22:11:28 2010-11-25 22:11:28 None None None None None None STANDARD STANDARD None None None None None None None None None None None None N None None
+None ITEM_MOVEMENT_CATEGORY API I None 2010-11-25 22:11:28 2010-11-25 22:11:28 None None None None None None VAN VAN None None None None None None None None None None None None N None None
+None MINUS_STOCK_OPTIONS API U 29.0 2015-10-04 13:19:22 2010-01-08 17:41:28 None None 1 None None None ITEM MOVEMENT ITEM MOVEMENT None None None None None None None None None None None N N None None
+None MINUS_STOCK_OPTIONS API U 29.0 2015-10-04 13:19:22 2010-01-08 17:41:28 None None 1 None None None SALES INVOICE SALES INVOICE None None None None None None None None None None None Y N None None
+None MINUS_STOCK_OPTIONS API U 29.0 2015-10-04 13:19:12 2010-01-08 17:41:28 None None 1 None None None SALES ORDER SALES ORDER None None None None None None None None None None None N N None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None INNER QTY INNER QTY None None None None None None None None None None None None N None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None INFINITY INFINITY None None None None None None None None None None None None N None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None MAXIMUM QTY MAXIMUM QTY None None None None None None None None None None None None N None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None USER DEFINED USER DEFINED None None None None None None None None None None None None N None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None CASE QTY CASE QTY None None None None None None None None None None None None Y None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None MINIMUM QTY MINIMUM QTY None None None None None None None None None None None None N None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None PALLET QTY PALLET QTY None None None None None None None None None None None None N None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None REORDER QTY REORDER QTY None None None None None None None None None None None None N None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None SALES UNIT SALES UNIT None None None None None None None None None None None None N None None
+None PRICE_BREAK_SOURCE_TYPE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None BOTH BOTH None None None None None None None None None None None None N None None
+None PRICE_BREAK_SOURCE_TYPE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None DYNAMIC DYNAMIC None None None None None None None None None None None None Y None None
+None PRICE_BREAK_SOURCE_TYPE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None STATIC STATIC None None None None None None None None None None None None N None None
+None ALERT_METHOD_CODE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None EMAIL EMAIL None None None None None None None None None None None None N None None
+None ALERT_METHOD_CODE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None NOTIFICATION NOTIFICATION None None None None None None None None None None None None N None None
+None ALERT_METHOD_CODE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None SCREEN SCREEN None None None None None None None None None None None None N None None
+None ALERT_METHOD_CODE API I None 2010-01-26 21:24:01 2010-01-26 21:24:01 None None None None None None WORKLIST WORKLIST None None None None None None None None None None None None N None None
+None ALERT_EVENTS API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None PURCHASES PURCHASES None None None None None None None None None None None None N None None
+None ALERT_EVENTS API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None ON INSERT ON INSERT None None None None None None None None None None None None N None None
+None ALERT_EVENTS API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None ON UPDATE ON UPDATE None None None None None None None None None None None None N None None
+None ALERT_EVENTS API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None SALES SALES None None None None None None None None None None None None Y None None
+None COMMUNICATION_CATEGORY_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None ATTACHMENT ATTACHMENT None None None None None None None None None None None None N None None
+None COMMUNICATION_CATEGORY_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None FILE FILE None None None None None None None None None None None None N None None
+None COMMUNICATION_CATEGORY_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None TEXT TEXT None None None None None None None None None None None None N None None
+None COMMUNICATION_TYPE_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None INBOUND INBOUND None None None None None None None None None None None None N None None
+None COMMUNICATION_TYPE_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None OUTBOUND OUTBOUND None None None None None None None None None None None None N None None
+None COMMUNICATION_TYPE_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None GENERAL GENERAL None None None None None None None None None None None None Y None None
+None COMMUNICATION_CATEGORY_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None STANDARD STANDARD None None None None None None None None None None None None Y None None
+None ALERT_NAMES API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None STANDARD STANDARD None None None None None None None None None None None None Y None None
+None ALERT_CATEGORY_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None HIDE HIDE None None None None None None None None None None None None N None None
+None ALERT_CATEGORY_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None INFORMATION INFORMATION None None None None None None None None None None None None Y None None
+None ALERT_CATEGORY_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None STOP STOP None None None None None None None None None None None None N None None
+None ALERT_CATEGORY_CODE API I None 2010-01-26 21:24:02 2010-01-26 21:24:02 None None None None None None WARNING WARNING None None None None None None None None None None None None N None None
+None WHOSEFOR API I None 2009-12-28 11:29:12 2009-12-28 11:29:12 None None None None None None AGE 5-10 AGE 5-10 None None None None None None None None None None None None N None None
+None WHOSEFOR API I None 2009-12-28 11:29:12 2009-12-28 11:29:12 None None None None None None BABYS BABYS None None None None None None None None None None None None N None None
+None WHOSEFOR API I None 2009-12-28 11:29:12 2009-12-28 11:29:12 None None None None None None MOTHERS MOTHERS None None None None None None None None None None None None N None None
+None WHOSEFOR API I None 2009-12-28 11:29:12 2009-12-28 11:29:12 None None None None None None INFANTS INFANTS None None None None None None None None None None None None N None None
+None STYLE API I None 2009-12-28 11:29:12 2009-12-28 11:29:12 None None None None None None STYLE1 STYLE1 None None None None None None None None None None None None N None None
+None FITTINGS API I None 2009-12-28 11:29:12 2009-12-28 11:29:12 None None None None None None MEDIUM MEDIUM None None None None None None None None None None None None N None None
+None FITTINGS API I None 2009-12-28 11:29:12 2009-12-28 11:29:12 None None None None None None REGULAR REGULAR None None None None None None None None None None None None N None None
+None RESP_CATEGORY_CODE API I None 2009-12-28 15:52:26 2009-12-28 15:52:26 None None None None None None USER DEFINED USER DEFINED None None None None None None None None None None None None N None None
+None RESP_CATEGORY_CODE API I None 2009-12-28 15:52:26 2009-12-28 15:52:26 None None None None None None STANDARD STANDARD None None None None None None None None None None None None Y None None
+None RESP_CATEGORY_CODE API I None 2009-12-28 15:52:26 2009-12-28 15:52:26 None None None None None None SYSTEM SYSTEM None None None None None None None None None None None None N None None
+None PRICELIST_GROUP_CODE API I None 2010-08-05 09:21:26 2010-08-05 09:21:26 None None None None None None SPECIAL OFFER SPECIAL OFFER None None None None None None None None None None None None N None None
+None WWW_SUBSCRIPTION_PREFERENCE API I None 2010-10-07 14:04:09 2010-10-07 14:04:09 None None None None None None EMAIL ONLY EMAIL ONLY None None None None None None None None None None None None N None None
+None WWW_SUBSCRIPTION_PREFERENCE API I None 2010-10-07 14:04:09 2010-10-07 14:04:09 None None None None None None NO NO None None None None None None None None None None None None N None None
+None WWW_SUBSCRIPTION_PREFERENCE API I None 2010-10-07 14:04:09 2010-10-07 14:04:09 None None None None None None POSTAL ONLY POSTAL ONLY None None None None None None None None None None None None N None None
+None WWW_SUBSCRIPTION_PREFERENCE API I None 2010-10-07 14:04:09 2010-10-07 14:04:09 None None None None None None YES YES None None None None None None None None None None None None N None None
+None WWW_CUSTOMER_CATEGORY API I None 2010-10-07 14:04:09 2010-10-07 14:04:09 None None None None None None GOLD GOLD None None None None None None None None None None None None Y None None
+None SALES_ORDER_CATEGORY_CODE API I None 2010-10-07 14:04:09 2010-10-07 14:04:09 None None None None None None AMAZON AMAZON None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE1 API I None 2010-10-14 15:23:18 2010-10-14 15:23:18 None None None None None None CAPITAL CAPITAL None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE1 API I None 2010-10-14 15:23:18 2010-10-14 15:23:18 None None None None None None STOCK STOCK None None None None None None None None None None None None N None None
+None GL_QUALIFIER_CODE1 API I None 2010-10-14 15:23:18 2010-10-14 15:23:18 None None None None None None PURCHASE PURCHASE None None None None None None None None None None None None N None None
+None SALES_ORDER_CATEGORY_CODE API I None 2010-10-14 15:23:18 2010-10-14 15:23:18 None None None None None None RESERVED ITEMS RESERVED ITEMS None None None None None None None None None None None None N None None
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None PERCENT PERCENT None None None None None None None None None None None None N None None
+None CUSTOMER_CLASS_CODE API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None A CLASS A CLASS None None None None None None None None None None None None Y None None
+None CUSTOMER_CLASS_CODE API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None B CLASS B CLASS None None None None None None None None None None None None N None None
+None CUSTOMER_CLASS_CODE API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None C CLASS C CLASS None None None None None None None None None None None None N None None
+None USER_GROUP API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None MANAGER MN None None None None None None None None None None None None N None None
+None USER_GROUP API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None NOT APPLICABLE NA None None None None None None None None None None None None N None None
+None USER_GROUP API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None BUSINESS OWNER OW None None None None None None None None None None None None N None None
+None USER_GROUP API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None POWER USER PO None None None None None None None None None None None None N None None
+None USER_GROUP API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None SYSTEM REPRSENTATIVE SR None None None None None None None None None None None None N None None
+None USER_GROUP API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None SUPER VISOR SV None None None None None None None None None None None None N None None
+None USER_GROUP API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None SYSTEM OWNER SY None None None None None None None None None None None None N None None
+None USER_GROUP API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None USER US None None None None None None None None None None None None Y None None
+None MATRIX_REPORT_COLUMNS API U 29.0 2012-08-22 20:11:31 2010-08-03 07:58:31 None None 1 None None None AR_PAYMENT AR_PAYMENT None None None None None None DEBTC WEB BACS CHK CARD CASH N None None
+None USER_EXPORTS API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None EXPORT SUB LOCATIONS EXPORT SUB LOCATIONS None None None None None None None None None None None IMPEXP_PKG.EXPORT_VIEWDATA( N None None
+None USER_EXPORTS API I None 2010-08-03 07:58:31 2010-08-03 07:58:31 None None None None None None EXPORT LOCATIONS EXPORT LOCATIONS None None None None None None None None None None None IMPEXP_PKG.EXPORT_VIEWDATA( N None None
+None SIMILAR_ITEM_CATEGORY API I None 2010-08-26 19:11:22 2010-08-26 19:11:22 None None None None None None DUPLICATE ITEMS DUPLICATE ITEMS None None None None None None None None None None None None N None None
+None SIMILAR_ITEM_CATEGORY API I None 2010-08-26 19:11:22 2010-08-26 19:11:22 None None None None None None SIMILAR ITEMS SIMILAR ITEMS None None None None None None None None None None None None Y None None
+None SUPPLIER_CATEGORY_CODE API I None 2010-08-26 19:11:22 2010-08-26 19:11:22 None None None None None None STANDARD STANDARD None None None None None None None None None None None None N None None
+None SUB_LOCATION_GROUP_CODE None I 2.0 2010-11-28 16:53:01 2010-11-28 16:53:01 2.0 None 1 None None None PRIMARY SALES PRIMARY SALES None None None None None None None None None None None None N None SYSTEM
+None SUB_LOCATION_GROUP_CODE None I 2.0 2010-11-28 16:53:01 2010-11-28 16:53:01 2.0 None 1 None None None PRIMARY GRN PRIMARY GRN None None None None None None None None None None None None N None SYSTEM
+None ITEM_EXTERNAL_LOCATIONS None U 2.0 2010-11-28 16:53:30 2010-11-28 16:53:15 2.0 None 1 None None None PARK STREET PARK STREET None None None None None None None None None None None None N None USER
+None PRICE_BREAK_QUANTITY_SOURCE API I None 2010-12-05 16:26:05 2010-12-05 16:26:05 None None None None None None MIN PB QTY MIN PB QTY None None None None None None None None None None None None N None SYSTEM
+None PRICE_BREAK_TEXT_TYPES API U 2.0 2010-12-18 13:39:28 2010-12-06 22:53:07 None None 1 None None <FONT SIZE=5>$PRICEEXLTAX$  EACH </FONT>
+ TEXT01 TEXT01 None None None None None None None None None None None None N None SYSTEM
+None PRICE_BREAK_TEXT_TYPES API U 2.0 2010-12-18 13:36:07 2010-12-06 22:53:07 None None 1 None None <FONT SIZE=5> $PRICEEXLTAX$ MIN $QTYFROM$ </FONT>
+ TEXT02 TEXT02 None None None None None None None None None None None None N None SYSTEM
+None PRICE_BREAK_TEXT_TYPES API U 2.0 2010-12-18 13:39:28 2010-12-06 22:53:07 None None 1 None None <FONT SIZE=5> $PRICEEXLTAX$ MIN $QTYFROM$ </FONT>
+ TEXT03 TEXT03 None None None None None None None None None None None None N None SYSTEM
+None PRICE_BREAK_TEXT_TYPES API I None 2010-12-06 22:53:07 2010-12-06 22:53:07 None None None None None <FONT SIZE=2>$PRICEEXLTAX$</FONT>
+ <FONT SIZE=1>$PRICEINCTAX$(INC. VAT)</FONT>
+  <FONT SIZE=1> LESS THAN $QTYTO$ PCS</FONT> TEXT04 TEXT04 None None None None None None None None None None None None N None SYSTEM
+None BATCH_FORMAT API I None 2011-01-17 12:14:12 2011-01-17 12:14:12 None None None None None None MM DD RRRR MM DD RRRR None None None None None None None None None None None None N None SYSTEM
+None PO_TRANS_CATEGORY API I None 2010-12-29 11:12:24 2010-12-29 11:12:24 None None None None None None FROM SALES ORDER FROM SALES ORDER None None None None None None None None None None None None N None SYSTEM
+None MOBILE_DEFAULTS API I None 2012-04-21 18:55:33 2012-04-21 18:55:33 None None None None None None PC:PRICETYPE PC:PRICETYPE None None None None None None None None None None None EXLTAX N None SYSTEM
+None MOBILE_DEFAULTS API U 29.0 2021-01-16 04:40:21 2012-04-21 18:55:33 None None 1 None None None PC:RETAILPRICE PC:RETAILPRICE None None None None None None None None None None None YES N None SYSTEM
+None WWW_BARCODE_TYPE API I None 2013-08-03 09:35:18 2013-08-03 09:35:18 None None None None None None EAN EAN None None None None None None None None None None None None N None SYSTEM
+None WWW_PARENTAGE API I None 2013-08-03 09:35:18 2013-08-03 09:35:18 None None None None None None CHILD CHILD None None None None None None None None None None None None N None SYSTEM
+None WWW_DESIGN_PATTERN API I None 2013-08-03 09:35:18 2013-08-03 09:35:18 None None None None None None ROUND GLASS ROUND GLASS None None None None None None None None None None None None N None SYSTEM
+None WWW_VARIATION_THEME API I None 2013-08-03 09:35:18 2013-08-03 09:35:18 None None None None None None SIZE-COLOUR SIZE-COLOUR None None None None None None None None None None None None N None SYSTEM
+None WWW_RELATIONSHIP_TYPE API I None 2013-08-03 09:35:18 2013-08-03 09:35:18 None None None None None None VARIATION VARIATION None None None None None None None None None None None None N None SYSTEM
+None MOBILE_DEFAULTS API I None 2013-08-03 09:35:18 2013-08-03 09:35:18 None None None None None None LINK:ENABLED LINK:ENABLED None None None None None None None None None None None YES N None SYSTEM
+None ITEM_SEARCH_QUERIES None I 7.0 2012-11-05 09:29:14 2012-11-05 09:29:14 7.0 None 1 None None ITEM_NUMBER LIKE '%CT%' ITEM_NUMBER LIKE '%CT%' ITEM_NUMBER LIKE '%CT%' None None None None None None None None None None None None N None SYSTEM
+None MOBILE_DEFAULTS API I None 2012-03-01 21:43:59 2012-03-01 21:43:59 None None None None None None PRICE CHECK ALLOCATED QTY PC:ALLOCATED None None None None None None None None None None None YES N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MINUTELY; INTERVAL=20 EVERY 20 MINUTES EVERY 20 MINUTES None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=YEARLY; BYYEARDAY=100,200,300 100TH DAY OF YEAR 100TH DAY OF YEAR None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MONTHLY; BYDAY=2MON 2ND MONDAY OF THE MONTH 2ND MONDAY OF THE MONTH None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=YEARLY; BYDAY=35MON 35TH MONDAY OF THE YEAR 35TH MONDAY OF THE YEAR None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=HOURLY; INTERVAL=1 EVERY 1 HOUR EVERY 1 HOUR None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MINUTELY; INTERVAL=10 EVERY 10 MINUTES EVERY 10 MINUTES None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MINUTELY; INTERVAL=25 EVERY 25 MINUTES EVERY 25 MINUTES None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MINUTELY; INTERVAL=30 EVERY 30 MINUTES EVERY 30 MINUTES None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=SECONDLY; INTERVAL=30 EVERY 30 SECOND EVERY 30 SECOND None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MINUTELY; INTERVAL=45 EVERY 45 MINUTES EVERY 45 MINUTES None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MINUTELY; INTERVAL=5 EVERY 5 MINUTES EVERY 5 MINUTES None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None BYHOUR=6 BYMINUTE=0 INTERVAL=1 EVERY DAY AT 6AM EVERY DAY AT 6AM None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=SECONDLY EVERY SECOD EVERY SECOND None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=DAILY; BYHOUR=1 FIRST HOUR OF EVERY DAY FIRST HOUR OF EVERY DAY None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=HOURLY; BYMINUTE=1 FIRST MINUTE OF AN HOUR FIRST MINUTE OF AN HOUR None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=YEARLY; BYDAY=MON FIRST MONDAY OF WEEKS FIRST MONDAY OF WEEKS None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MINUTELY; BYSECOND=1 FIRST SECOND OF A MINUTE FIRST SECOND OF A MINUTE None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MONTHLY; BYMONTHDAY=1,2 FIRST TWO DAYS OF MONTH FIRST TWO DAYS OF MONTH None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MONTHLY; BYMONTHDAY=-1,-2 LAST TWO DAYS OF MONTH LAST TWO DAYS OF MONTH None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MONTHLY; BYDAY=-1WED LAST WEDNESDAY OF THE MONTH LAST WEDNESDAY OF THE MONTH None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MONTHLY; BYMONTH=1,2,11,12 MONTHS 1,2,11,12 MONTHS 1,2,11,12 None None None None None None None None None None None None N None SYSTEM
+None SCHEDULE_INTERVALS API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None FREQ=MONTHLY; BYMONTH=JAN,FEB,NOV,DEC MONTHS JAN,FEB,NOV,DEC MONTHS JAN,FEB,NOV,DEC None None None None None None None None None None None None N None SYSTEM
+None ITEM_CONDITION API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None NEW NEW None None None None None None None None None None None None Y None SYSTEM
+None ITEM_CONDITION API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None REFURBISHED REFURBISHED None None None None None None None None None None None None Y None SYSTEM
+None ITEM_CONDITION API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None USED USED None None None None None None None None None None None None Y None SYSTEM
+None CUSTOMER_TYPE_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None WEBCUSTOMER WEBCUSTOMER None None None None None None None None None None None None N None SYSTEM
+None PARTY_GROUP_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None GMAIL GMAIL None None None None None None None None None None None None N None SYSTEM
+None PARTY_GROUP_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None OUTLOOK OUTLOOK None None None None None None None None None None None None N None SYSTEM
+None PARTY_TYPE_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None CONTACT CONTACT None None None None None None None None None None None None N None SYSTEM
+None PARTY_GROUP_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None YAHOO YAHOO None None None None None None None None None None None None N None SYSTEM
+None PARTY_TYPE_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None CUSTOMER CUSTOMER None None None None None None None None None None None None N None SYSTEM
+None PARTY_TYPE_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None PARTY PARTY None None None None None None None None None None None None N None SYSTEM
+None PARTY_TYPE_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None SUPPLIER SUPPLIER None None None None None None None None None None None None N None SYSTEM
+None PARTY_GROUP_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None SYSTEM
+None CONTACT_TYPE_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None CUSTOMER CUSTOMER None None None None None None None None None None None None N None SYSTEM
+None CONTACT_TYPE_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None PARTY PARTY None None None None None None None None None None None None N None SYSTEM
+None CONTACT_TYPE_CODE API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None None SUPPLIER SUPPLIER None None None None None None None None None None None None N None SYSTEM
+None PRICE_BREAK_TEXT_TYPES API I None 2012-01-29 16:13:18 2012-01-29 16:13:18 None None None None None $PRICEEXLTAX$/$QTYFROM$ TEXTFS TEXTFS None None None None None None None None None None None None N None SYSTEM
+None PURGE_TABLES API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None BEGIN LOCATION_PKG.DELETE_ZEROSUBLOCITEMS; END; DELETE ZERO SUB LOC ITEMS DELETE ZERO SUB LOC ITEMS None None None None None None None None None None None 1 N None SYSTEM
+None MOBILE_DEFAULTS API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None None PRICE CHECK:PRICERP PC:PRICERP None None None None None None None None None None None YES N None SYSTEM
+None SUB_LOCATION_GROUP_CODE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None None PRIMARY TRASIT PRIMARY TRANSIT None None None None None None None None None None None None N None SYSTEM
+None SUB_LOCATION_GROUP_CODE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None None TRANSIT TRANSIT None None None None None None None None None None None None N None SYSTEM
+None PURGE_TABLES API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None  DELETE AR_ORDERPAD_HEADERS H
+  WHERE SYSDATE-H.CREATION_DATE > 1
+ AND  NOT  EXISTS (SELECT 1
+                  FROM AR_ORDERPAD_LINES L
+                 WHERE L.ORDERPAD_HEADER_ID = H.ORDERPAD_HEADER_ID) BLANK ORDER PADS BLANK ORDER PADS None None None None None None None None None None None 1 N None SYSTEM
+None COLOUR API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None SILVER SILVER SILVER None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 144W 144W 144W None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 1.8M 1.8M 1.8M None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 120CM 120CM 120CM None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 180CM 180CM 180CM None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 23X25CM 23X25CM 23X25CM None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 36 36 36 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 38CM 38CM 38CM None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 60CM 60CM 60CM None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 8M 8M 8M None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 90CM 90CM 90CM None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None BLUE & WHITE BLUE & WHITE BLUE & WHITE None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None PEARLESCENT RED PEARLESCENT RED PEARLESCENT RED None None None None None None None None None None None None None None None
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None CUSTOMER PAYMENTS CUSTPMNT None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None PAYMENTS PMNT None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None PURCHASE INVOICES PURINV None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None SALES INVOCIES SALINV None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None SUPPLIER INVOICES SUPPINV None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None SUPPLIER PAYMENTS SUPPPMNT None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None TAX TAX None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None CUSTOMER INVOICES CUSTINV None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None INVENTORY INV None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None PAYMENTS PMNT None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None PURCHASE INVOICES PURINV None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None SALES INVOICES SALINV None None None None None None None None None None None None N None SYSTEM
+None PURGE_TABLES None I 29.0 2019-09-18 13:46:07 2019-09-18 13:46:07 29.0 None 1 None None DELETE  INV_ITEM_SUB_LOCATIONS A
+WHERE A.SUB_LOCATION_ID IN
+    ( SELECT X.SUB_LOCATION_ID 
+      FROM  INV_SUB_LOCATIONS X 
+      WHERE X.SUB_LOCATION_ID IN (6491,6539,8912)
+    ) 
+AND   A.QUANTITY = 0 DELETE ZERO GRN STAGE DELETE ZERO GRN STAGE None None None None None None None None None None None 1 N None SYSTEM
+None ITEM_DEFAULT_BATCHES API I None 2019-04-20 13:25:42 2019-04-20 13:25:42 None None None None None None PRICE CHANGE PRICE CHANGE None None None None None None None None None None None ITEM PRICE CHANGED N None SYSTEM
+None PURGE_TABLES API I None 2019-04-20 13:25:42 2019-04-20 13:25:42 None None None None None DELETE SYS_LOG_HEADERS WHERE CREATION_DATE < (SYSDATE-30) SYSTEM LOG HEADERS SYSTEM LOG HEADERS None None None None None None None None None None None 30 N None SYSTEM
+None PURGE_TABLES API I None 2019-04-20 13:25:42 2019-04-20 13:25:42 None None None None None  DELETE SYS_LOG_LINES WHERE LOG_HEADER_ID IN(SELECT X.LOG_HEADER_ID
+ FROM SYS_LOG_HEADERS X
+ WHERE X.CREATION_DATE < (SYSDATE-30)) SYSTEM LOG LINES SYSTEM LOG LINES None None None None None None None None None None None 30 N None SYSTEM
+None AR_RETURN_REASON_CODE API I None 2019-04-20 13:25:42 2019-04-20 13:25:42 None None None None None None SALEABLE RETURNS SALEABLE RETURNS None None None None None None None None None None None None N None SYSTEM
+None AUTO_EMAIL API I None 2019-04-20 13:25:42 2019-04-20 13:25:42 None None None None None None PALLETNOTE PALLETNOTE None None None None None None None None None None None YES N None SYSTEM
+None DISPLAY_ITEM_PRICES API I None 2019-04-20 13:25:42 2019-04-20 13:25:42 None None None None None None PRICECHECK:MANAGERPRICE PRICECHECK:MANAGERPRICE None None None None None None None None None None VAT 5 N None SYSTEM
+None DISPLAY_ITEM_PRICES API I None 2019-04-20 13:25:42 2019-04-20 13:25:42 None None None None None None PRICECHECK:PRICEBREAK PRICECHECK:PRICEBREAK None None None None None None None None None None VAT 0 N None SYSTEM
+None DISPLAY_ITEM_PRICES API I None 2019-04-20 13:25:42 2019-04-20 13:25:42 None None None None None None PRICECHECK:TRADEPRICE PRICECHECK:TRADEPRICE None None None None None None None None None None VAT 4 N None SYSTEM
+None COLOUR API I None 2019-04-20 13:25:42 2019-04-20 13:25:42 None None None None None GOLD GOLD GOLD None None None None None None None None None None None None None None None
+None SALES_ORDER_WORKFLOW None U 29.0 2021-01-10 14:51:45 2020-12-03 19:24:30 29.0 None 1 None None None APPROVE_5_REQUISITION APPROVE_5_REQUISITION None None None None None None None None None INSTOCK<=0 2 YES N None SYSTEM
+None SALES_ORDER_WORKFLOW None U 29.0 2021-01-10 14:51:45 2021-01-08 09:56:07 29.0 None 1 None None None APPROVE_2_REQUIISITION APPROVE_2_REQUIISITION None None None None None None None None None CASEQTY 5 YES N None SYSTEM
+None ITEM_EXPORT_ATTRIBUTES API I None 2020-12-03 19:02:10 2020-12-03 19:02:10 None None None None None None INCLUDE_LAYAWAY_DAYS INCLUDE_LAYAWAY_DAYS None None None None None None None None None None None 2 N None SYSTEM
+None ITEM_EXPORT_ATTRIBUTES API I None 2020-12-03 19:02:10 2020-12-03 19:02:10 None None None None None None REDUCE_LAYAWAY_QTY REDUCE_LAYAWAY_QTY None None None None None None None None None None None N N None SYSTEM
+None AUTO_EMAIL_OPTIONS API I None 2020-12-03 19:02:10 2020-12-03 19:02:10 None None None None None None SALES INVOICE DELIVERY NOTE DLNOTE None None None None None None None None None None None Y N None SYSTEM
+None AUTO_EMAIL_OPTIONS API I None 2020-12-03 19:02:10 2020-12-03 19:02:10 None None None None None None SALES INVOICE INV None None None None None None None None None None None Y N None SYSTEM
+None AUTO_EMAIL_OPTIONS API I None 2020-12-03 19:02:10 2020-12-03 19:02:10 None None None None None None PALLET NOTE PLNOTE None None None None None None None None None None None Y N None SYSTEM
+None COLOUR API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None PEARLESCENT WHITE PEARLESCENT WHITE PEARLESCENT WHITE None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None PINK PINK PINK None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None STANDARD STANDARD STANDARD None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 16.3W 16.3W 16.3W None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 161W 161W 161W None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 30V 1.2VA 30V 1.2VA 30V 1.2VA None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 30W 30W 30W None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 36V 3.6VA 36V 3.6VA 36V 3.6VA None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 36V 6VA 36V 6VA 36V 6VA None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 36V 7.2VA 36V 7.2VA 36V 7.2VA None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 36V 8.5VA 36V 8.5VA 36V 8.5VA None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 96W 96W 96W None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None DC 12V DC 12V DC 12V None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 10M 10M 10M None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 180 180 180 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 20 20 20 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 240 240 240 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 300 300 300 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 4M 4M 4M None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 50 50 50 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 5M 5M 5M None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None 6M 6M 6M None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None CLEAR CLEAR CLEAR None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None MULTI-COLOURED MULTI-COLOURED MULTI-COLOURED None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:08 2015-10-02 18:51:08 None None None None None RED RED RED None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None WARM WHITE WARM WHITE WARM WHITE None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 28.8W 28.8W 28.8W None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 35W 35W 35W None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 3V 0.06VA 3V 0.06VA 3V 0.06VA None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 48W 48W 48W None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None IP64 BS TRANSFORMER IP64 BS TRANSFORMER IP64 BS TRANSFORMER None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 100 100 100 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 15 15 15 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 200 200 200 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 250CM 250CM 250CM None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 40 40 40 None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 70CM 70CM 70CM None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None PURPLE PURPLE PURPLE None None None None None None None None None None None None None None None
+None SUB_LOCATION_GROUP_CODE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None LOST STOCK LOST STOCK None None None None None None None None None None None None N None SYSTEM
+None ITEM_DEFAULTS API U 29.0 2015-10-03 11:42:00 2015-10-02 18:51:09 None None 1 None None None GENERATE_CASE_BARCODE GENERATE_CASE_BARCODE None None None None None None None None None $CASEUNIT$ $ITEMNUMBER$Y$CASEUNIT$ Y N None SYSTEM
+None ITEM_DEFAULTS API U 29.0 2015-10-03 11:42:00 2015-10-02 18:51:09 None None 1 None None $ITEM_NUMBER$Y$INNER_QTY$ GENERATE_INNER_BARCODE GENERATE_INNER_BARCODE None None None None None None None None None $INNERQTY$ $ITEMNUMBER$M$INNERQTY$ Y N None SYSTEM
+None PALLET_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None SALES INVOICE AR_INVOICE_HEADERS None None None None None None None None None None None None N None SYSTEM
+None PALLET_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None SALES ORDER AR_SALESORDER_HEADERS None None None None None None None None None None None None Y None SYSTEM
+None PALLET_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None PALLET PALLET_HEADERS None None None None None None None None None None None None N None SYSTEM
+None PALLET_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None GOODS RECEIPT PO_GRN_HEADERS None None None None None None None None None None None None N None SYSTEM
+None PALLET_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None PURCHASE ORDER PO_HEADERS None None None None None None None None None None None None N None SYSTEM
+None SUB_LOCATION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None PALLET PALLET None None None None None None None None None None None None N None SYSTEM
+None DEFAULT_CONTAINER_TYPE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None BOX BOX None None None None None None None None None None None None N None SYSTEM
+None DEFAULT_CONTAINER_TYPE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None CONTAINER CONTAINER None None None None None None None None None None None None N None SYSTEM
+None DEFAULT_CONTAINER_TYPE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None PALLET PALLET None None None None None None None None None None None None N None SYSTEM
+None SALES_ORDER_SOURCE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None ORDER PAD ORDER PAD None None None None None None None None None None None None N None SYSTEM
+None ITEM_DELETE_PRECHECK API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None INV_BOM INV_BOM None None None None None None None None None None None ITEM_ID = :P_ITEMID N None SYSTEM
+None PURGE_TABLES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None DELETE EXPORT_HEADERS  WHERE SYSDATE - CREATION_DATE >= 7 EXPORT_HEADERS EXPORT_HEADERS None None None None None None None None None None None 7 N None SYSTEM
+None PURGE_TABLES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None DELETE SYS_FUNCTION_AUDIT WHERE SYSDATE - CREATION_DATE >=365 FUNCTION_AUDIT FUNCTION_AUDIT None None None None None None None None None None None 365 N None SYSTEM
+None PURGE_TABLES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None DELETE INV_ITEM_BATCHES WHERE SYSDATE-CREATION_DATE >= 7 ITEM_BATCH ITEM_BATCH None None None None None None None None None None None 7 N None SYSTEM
+None PURGE_TABLES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None DELETE SYS_LOGIN_AUDIT WHERE SYSDATE - CREATION_DATE >= 365 LOGIN_AUDIT LOGIN_AUDIT None None None None None None None None None None None 365 N None SYSTEM
+None WEB_SITE_DEFAULTS API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None IMPORT_MISSING_ITEMS IMPORT_MISSING_ITEMS None None None None None None None None None None None YES N None SYSTEM
+None WEB_SITE_DEFAULTS API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None MISSING_ITEM_NUMBER MISSING_ITEM_NUMBER None None None None None None None None None None None 99901 N None SYSTEM
+None COLOUR API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None GREEN GREEN GREEN None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 150CM 150CM 150CM None None None None None None None None None None None None None None None
+None ITEM_GROUP3 API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None IP20 BS TRANSFORMER IP20 BS TRANSFORMER IP20 BS TRANSFORMER None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None 45CM 45CM 45CM None None None None None None None None None None None None None None None
+None COLOUR API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None WHITE/RED WHITE/RED WHITE/RED None None None None None None None None None None None None None None None
+None SIZE API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None ONE SIZE ONE SIZE ONE SIZE None None None None None None None None None None None None None None None
+None WEB_SITE_DEFAULTS API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None VARIATION VARIATION None None None None None None None None None None None AUTO N None SYSTEM
+None REPORT_PARAMETERS API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None MIN ORDER VALUE:£250.00 MIN ORDER VALUE MIN ORDER VALUE None None None None None None None None None None None £250.00 Y None SYSTEM
+None LANGUAGE_ITEMS API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None CUSTOMER_NOTES1 CUSTOMER_NOTES1 None None None None None None None None None None None None N None SYSTEM
+None LANGUAGE_ITEMS API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None CUSTOMER_NOTES2 CUSTOMER_NOTES2 None None None None None None None None None None None None N None SYSTEM
+None LANGUAGE_ITEMS API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None CUSTOMER_NOTES3 CUSTOMER_NOTES3 None None None None None None None None None None None None N None SYSTEM
+None LANGUAGE_ITEMS API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None ITEM_LONG_DESC ITEM_LONG_DESC None None None None None None None None None None None None N None SYSTEM
+None LANGUAGE_ITEMS API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None ITEM_NAME ITEM_NAME None None None None None None None None None None None None N None SYSTEM
+None ITEM_DEFAULT_BATCHES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None NEW CREATED ITEM
+ITEM NUMBER
+ITEM NAME
+SUBCATEGORY
+CASE QTY
+COST PRICE
+SELLING PRICES
+
+UNIT WEIGHT NW
+UNIT LENGTH
+UNIT HEIGHT
+UNIT WIDTH
+CUST NOTE1
+CUST NOTE2
+CUST NOTE3
+MISC/ITEMS SPECS
+COMENTS
+KEYWORDS
+ITEM SIZE
+ITEM FITTINGS
+GENDER/AGE
+EXPEDITE FLAG (CHANGE IN SHIPPING COST)
+
+ITEM CONDITION
+
+PICTURE NAME1-3
+TECH SPECS FILE
+DEMO VIDEO FILE
+TECHNICAL SPECS
+BARCODE
+ ITEM DETAILS ITEM DETAILS None None None None None None None None None None None ITEM IS CHANGED N None SYSTEM
+None ITEM_DEFAULT_BATCHES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None ITEM DIMENSION ITEM DIMENSION None None None None None None None None None None None ITEM IS CHANGED N None SYSTEM
+None ITEM_DEFAULT_BATCHES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None ITEM NOTES ITEM NOTES None None None None None None None None None None None ITEM IS CHANGED N None SYSTEM
+None ITEM_DEFAULT_BATCHES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None PRCE CHANGE PRCE CHANGE None None None None None None None None None None None ITEM IS CHANGED N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None TOTALS TOTALS None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None JOURNAL JOURNAL None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None OVERHEAD OVERHEAD None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_SOURCES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None GENERAL LEDGER GL None None None None None None None None None None None None N None SYSTEM
+None TRANSACTION_TYPES API I None 2015-10-02 18:51:09 2015-10-02 18:51:09 None None None None None None COST OF GOODS COG None None None None None None None None None None None None N None SYSTEM
+None COUNTRY_MAPPING_CODE None I 29.0 2020-07-27 10:17:23 2020-07-27 10:17:23 29.0 None 1 None None None POL POL None None None None None None None None None None None PL N None SYSTEM
+None COUNTRY_MAPPING_CODE None I 29.0 2020-07-27 10:17:23 2020-07-27 10:17:23 29.0 None 1 None None None MAL MAL None None None None None None None None None None None MT N None SYSTEM
+None COUNTRY_MAPPING_CODE None I 29.0 2020-07-27 10:17:23 2020-07-27 10:17:23 29.0 None 1 None None None FIN FIN None None None None None None None None None None None FI N None SYSTEM
+None COUNTRY_MAPPING_CODE None I 29.0 2020-07-27 10:17:23 2020-07-27 10:17:23 29.0 None 1 None None None GREECE GREECE None None None None None None None None None None None EL N None SYSTEM
+None COUNTRY_MAPPING_CODE None I 29.0 2020-07-27 10:17:23 2020-07-27 10:17:23 29.0 None 1 None None None AUSTRIA AUSTRIA None None None None None None None None None None None AT N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None CENTER RIGHT CENTER RIGHT None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None NONE NONE None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None TOP CENTER TOP CENTER None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None TOP LEFT TOP LEFT None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None TOP RIGHT TOP RIGHT None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_POSITION API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None USER DEFINED USER DEFINED None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None CSV CSV None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None DELIMITED DELIMITED None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None HTML HTML None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None IMAGE IMAGE None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None PLAIN TEXT PLAIN TEXT None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None RICH TEXT RICH TEXT None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_TYPE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None XML XML None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None IMAGE IMAGE None None None None None None None None None None None None N None SYSTEM
+None ADDITIONAL_INFO_CATEGORY API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None TEXT TEXT None None None None None None None None None None None None N None SYSTEM
+None SALES_ORDER_CATEGORY_CODE API I None 2011-12-31 12:44:12 2011-12-31 12:44:12 None None None None None None BACKORDER BACKORDER None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None AGE GROUP AGE GROUP None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None CULTURAL CULTURAL None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None GENDER GENDER None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None INSTRUCTIONS INSTRUCTIONS None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None IRON IRON None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None ORIGIN ORIGIN None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None PHYSICAL PHYSICAL None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None PRIMARY FUNCTION PRIMARY FUNCTION None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None RELIGION RELIGION None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None SOCIAL SOCIAL None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None WARNINGS WARNINGS None None None None None None None None None None None None N None SYSTEM
+None STP_ATTRIBUTES API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None WASHING WASHING None None None None None None None None None None None None N None SYSTEM
+None STP_LEVELS API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None COLOURE COLOURE None None None None None None None None None None None None N None SYSTEM
+None STP_LEVELS API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None FITTINGS FITTINGS None None None None None None None None None None None None N None SYSTEM
+None STP_LEVELS API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None SIZE SIZE None None None None None None None None None None None None N None SYSTEM
+None STP_CATEGORY API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None SYSTEM
+None STP_CATEGORY API I None 2012-02-08 18:25:35 2012-02-08 18:25:35 None None None None None None NONE NONE None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREA2 API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None BLOCK BLOCK None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREA2 API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None PICKING PICKING None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREA2 API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None PUTAWAY PUTAWAY None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREA3 API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None IN IN None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREA3 API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None IN-OUT IN-OUT None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREA3 API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None NO ACCESS NO ACCESS None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREA3 API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None OUT OUT None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None DELIVERY BAYS DELIVERY BAYS None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None GENERAL STORAGE AREA GENERAL STORAGE AREA None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None BULK STORAGE BULK STORAGE None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None GOODS ISSUE AREA GOODS ISSUE AREA None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None GOODS RECEIPT AREA GOODS RECEIPT AREA None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None HIGH RACK STORAGE HIGH RACK STORAGE None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None INTERIM STORAGE FOR DIFFERENCE INTERIM STORAGE FOR DIFFERENCE None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None OPEN STORAGE OPEN STORAGE None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None PICKING AREA PICKING AREA None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None POSTING CHANGE ZONE POSTING CHANGE ZONE None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None QUALITY CHECK AREA QUALITY CHECK AREA None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None RE-SORTING ZONE RE-SORTING ZONE None None None None None None None None None None None None N None SYSTEM
+None STORAGE_AREAS API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None SHELF STORAGE SHELF STORAGE None None None None None None None None None None None None N None SYSTEM
+None CONTAINER_RECYCLE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None NONE NONE None None None None None None None None None None None None N None SYSTEM
+None CONTAINER_RECYCLE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None RECYCLABLE RECYCLABLE None None None None None None None None None None None None N None SYSTEM
+None CONTAINER_CATEGORY API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None GENERAL GENERAL None None None None None None None None None None None None N None SYSTEM
+None CONTAINER_TYPE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None CARTON CARTON None None None None None None None None None None None None N None SYSTEM
+None CONTAINER_TYPE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None PALLET PALLET None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None ALL MUST GO ALL MUST GO None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None BUY X GET X FREE BUY X GET X FREE None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None CLEARANCE CLEARANCE None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None DISCOUNTED DISCOUNTED None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None FIXED PRICE FIXED PRICE None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None NEW PROMOTIONS NEW PROMOTIONS None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None PRICE DROP PRICE DROP None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None REFURBISHED REFURBISHED None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None SPECIAL OFFER SPECIAL OFFER None None None None None None None None None None None None N None SYSTEM
+None OFFER_TYPE_CODE API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None SPECIAL PRICE SPECIAL PRICE None None None None None None None None None None None None N None SYSTEM
+None INV_REQUISITION_CATEGORY API I None 2012-03-18 18:34:32 2012-03-18 18:34:32 None None None None None None AUTOMATIC AUTOMATIC None None None None None None None None None None None None N None SYSTEM
+None DISPLAY_IMAGE API I None 2012-07-21 13:48:57 2012-07-21 13:48:57 None None None None None None ALL SUMMARY SCREENS SUMMARY None None None None None None None None None None None N N None SYSTEM

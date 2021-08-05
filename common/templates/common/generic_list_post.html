@@ -1,0 +1,151 @@
+{% extends 'common/menu.html' %}
+{% load variableinvariable %}
+{% block content_block %}
+<h3> {% block moduletitle %}  {% endblock %} </h3>
+    {% block prelist %}
+        {% endblock %}
+
+{% if MYCONTEXT.errormessage %}
+    <p class="p-3 mb-2 text-danger  font-weight-bolder ">
+     {{  MYCONTEXT.errormessage }}
+    </p>
+{% endif %}
+{% if MYCONTEXT.successmessage %}
+    <p class="p-3 mb-2 bg-primary text-white font-weight-bolder ">
+    {{  MYCONTEXT.successmessage }}
+    </p>
+{% endif %}
+<form id="myform" name="myform" action="{% block findaction %} {% endblock %}" onload="{% block formattr %}{% endblock %}" method="{% block getpost %}{% endblock %}">
+    {% csrf_token %}
+  {% block findform %}
+
+  {% endblock %}
+</form>
+    {% if rows %}
+        <div> <h3> {% block table1title %} {% endblock  %}  </h3> </div>
+    <div class="d-flex">
+            <table class="table table-striped table-bordered table-sm" >
+          <thead class="bg-info">
+            <tr>
+            {% if rows_tableheader %}
+                {%  variableinvariable rows_tableheader %}
+           {% endif %}
+            </tr>
+          </thead>
+          <tbody>
+          {%   for row in rows %}
+           <tr>
+            {% if rows_tablecolumns %}
+                {%  variableinvariable rows_tablecolumns %}
+           {% endif %}
+              {% block tablerow %}
+               {% endblock %}
+            </tr>
+          {%   endfor %}
+          </tbody>
+        </table>
+   </div>
+    {% endif %}
+    {% block postlist %}
+        {% endblock %}
+
+    {% block rowset2 %}
+         {% if rowset2 %}
+             <div><h3> {% block table2title %} {% endblock  %} </h3>  </div>
+
+             <div class="d-flex">
+            <table class="table table-striped table-bordered table-sm" >
+          <thead class="bg-info">
+            <tr>
+            {% if rows2_tableheader %}
+                {%  variableinvariable rows2_tableheader %}
+           {% endif %}
+             {% block tableheader2 %}
+
+             {% endblock %}
+
+            </tr>
+          </thead>
+          <tbody>
+
+          {%   for row2 in rowset2 %}
+           <tr>
+            {% if rows2_tablecolumns %}
+                {%  variableinvariable rows2_tablecolumns %}
+           {% endif %}
+              {% block tablerow2 %}
+               {% endblock %}
+            </tr>
+          {%   endfor %}
+          </tbody>
+        </table>
+   </div>
+    {% endif %}
+        {% endblock %}
+
+    {% block rowset3 %}
+         {% if rowset3 %}
+             <div><h3> {% block table3title %} {% endblock  %} </h3>  </div>
+    <div class="d-flex">
+            <table class="table table-striped table-bordered table-sm" >
+          <thead class="bg-info">
+            <tr>
+            {% if rows3_tableheader %}
+                {%  variableinvariable rows3_tableheader %}
+           {% endif %}
+             {% block tableheader3 %}
+
+             {% endblock %}
+
+            </tr>
+          </thead>
+          <tbody>
+
+          {%   for row3 in rowset3 %}
+           <tr>
+            {% if rows3_tablecolumns %}
+                {%  variableinvariable rows3_tablecolumns %}
+           {% endif %}
+              {% block tablerow3 %}
+               {% endblock %}
+            </tr>
+          {%   endfor %}
+          </tbody>
+        </table>
+   </div>
+    {% endif %}
+        {% endblock %}
+
+    {% block rowset4 %}
+         {% if rowset4 %}
+             <div><h3> {% block table4title %} {% endblock  %} </h3>  </div>
+    <div class="d-flex">
+            <table class="table table-striped table-bordered table-sm" >
+          <thead class="bg-info">
+            <tr>
+            {% if rows4_tableheader %}
+                {%  variableinvariable rows4_tableheader %}
+           {% endif %}
+             {% block tableheader4 %}
+
+             {% endblock %}
+
+            </tr>
+          </thead>
+          <tbody>
+
+          {%   for row4 in rowset4 %}
+           <tr>
+            {% if rows4_tablecolumns %}
+                {%  variableinvariable rows4_tablecolumns %}
+           {% endif %}
+              {% block tablerow4 %}
+               {% endblock %}
+            </tr>
+          {%   endfor %}
+          </tbody>
+        </table>
+   </div>
+    {% endif %}
+        {% endblock %}
+{% endblock %}

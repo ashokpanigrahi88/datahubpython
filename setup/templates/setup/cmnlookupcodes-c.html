@@ -1,0 +1,16 @@
+{% extends 'common/model_form.html' %}
+{% block moduletitle %}
+<h2> Create / Add  Lookup Code </h2>
+{%  endblock %}
+
+{% block cancelaction %}/setup/lookupcodes_list/{% endblock %}
+
+
+       <script>
+            function syncFunction() {
+                    document.getElementById(
+                      "id_lookup_meaning").value =
+                    document.getElementById(
+                      "id_lookup_code").value;
+            }
+        </script>

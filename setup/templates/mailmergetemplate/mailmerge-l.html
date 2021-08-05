@@ -1,0 +1,85 @@
+{% extends 'common/menu.html' %}
+{% block title %} {{  MYCONTEXT.title }}{% endblock %}
+{% block content_block %}
+<br>
+<form method="get">
+    {% csrf_token %}
+    <table class="table table-striped table-bordered table-sm">
+        <td>
+            <a href="/setup/mailmerge/new_header/" class="new-btn new-button">
+                New Header</a>
+
+            <a href="/setup/mailmerge_list" class="cancel-btn cancel-button">
+                All Headers</a>
+
+            {% for field,attrs in search_field_dict.items %}
+
+            <label for="{{field}}">{{attrs.label}}: </label>
+            <input id="{{field}}" type="text" name="{{field}}" value="{{attrs.value}}">
+
+            {% endfor %}
+            <input type="submit" class="btn btn-info" value="Search" name="list_filter">
+        </td>
+    </table>
+</form>
+<div class="content">
+
+    {% block createaction %} {% endblock %}
+</div>
+<div class="d-flex">
+
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="bg-info">
+        <tr>
+            <th>ID</th>
+            <th>Merge Type</th>
+            <th>Identifier</th>
+            <th>Description</th>
+            <th>Merge Owner</th>
+            <th>Table View Name</th>
+            <th>Active</th>
+            <th>Header Image</th>
+
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for row in rows %}
+        <tr>
+            <td>{{ row.merge_header_id }}</td>
+            <td>{{ row.merge_type }}</td>
+            <td>
+                <a href="/setup/mailmerge_detail/header-{{ row.merge_header_id }}/">
+                    {{ row.identifier }}
+                </a></td>
+            <td>{{ row.description }}</td>
+            <td>{{ row.merge_owner }}</td>
+            <td>{{ row.table_view_name }}</td>
+            <td>{{ row.active }}</td>
+            <td>{{ row.print_header_image }}</td>
+
+            <td>
+                <a href="/setup/mailmerge/header-{{ row.merge_header_id }}/edit/">Edit</a>
+<!--                <a href="/setup/mailmerge/deleteheader-{{ row.merge_header_id}}/">-->
+<!--                    <button><span class="fa fa-trash" style="color: red;"></span></button>-->
+<!--                </a>-->
+            </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% if details %}
+<h3>Currency Details</h3>
+<div class="row">
+    {% for field in details %}
+    {% include '_model_form2.html' %}
+    {% endfor %}
+</div>
+{% endif %}
+
+
+{% endblock %}

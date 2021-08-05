@@ -1,0 +1,12 @@
+{% extends 'common/model_form.html' %}
+{% block moduletitle %}
+<h2> Update Business Unit </h2>
+{%  endblock %}
+{% block postform %}
+<a href="/setup/bu_list/" >
+    <button type="button" class="cancel-btn cancel-button">Cancel</button>
+</a>
+<a href="/setup/bu_delete/{{ object.bu_id }}/">
+    <button type="button" class="btn-delete delete-btn">Delete</button>
+</a>
+{% endblock %}

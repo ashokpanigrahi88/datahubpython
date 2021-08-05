@@ -1,0 +1,168 @@
+{% extends 'common/menu.html' %}
+{% block title %} {{  MYCONTEXT.title }}{% endblock %}
+{% block content_block %}
+<div class="row">
+
+    <div class="col-6">
+        <div class="container">
+            <br>
+            <h3>Banks</h3>
+        {% block prelist %}
+        {% endblock %}
+            <div class="container" style="padding: 10px;">
+        <form action="?add_new_bank" method="get">
+            <a href="?add_new_bank"><button type="button" class="new-btn new-button">New Bank</button></a>
+            {% csrf_token %}
+            <label for="nm">{{ MYCONTEXT.findfield }}</label>
+            <input id="nm" type="text" name="nm" value="">
+            <input type="submit" class="btn btn-info" value="Search">
+        </form>
+            </div>
+        <div class="d-flex">
+            <table class="table table-striped table-bordered table-sm">
+                <thead class="bg-info">
+                <tr>
+                    <th> ID</th>
+                    <th>Bank Name</th>
+                    <th>Credit</th>
+                    <th>Debit</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ row.bank_id }}</td>
+                    <td><a href="?bank_id={{ row.bank_id }}">{{ row.bank_name }}</a></td>
+                    <td>{{row.credit_amount}}</td>
+                    <td>{{row.debit_amount}}</td>
+                    <td>
+                        <a href="?edit_bank_id={{ row.bank_id}}">Edit</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+        <div class="container">
+            <h3>Account Details</h3>
+            <a href="?bank_id={{request.GET.bank_id}}&add_new_bank_account" >
+                <button type="button" class="new-btn new-button">New Account</button>
+                </a>
+            <br>
+            {% if account_details %}
+            <table class="table table-striped table-bordered table-sm">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Currency</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Gl Acc Id</th>
+                    <th>Actions</th>
+                </tr>
+                {% for item in account_details %}
+                <tr>
+                    <td>{{item.bank_account_id}}</td>
+                    <td>{{item.branch_acctname}}</td>
+                    <td>{{item.currency_code}}</td>
+                    <td>{{item.bank_branch_city}}</td>
+                    <td>{{item.country_code}}</td>
+                    <td>{{item.gac_gl_account_id}}</td>
+                    <td>
+                        <a href="?bank_id={{ request.GET.bank_id }}&edit_bank_account_id={{ item.bank_account_id}}">Edit</a>
+<!--                        <a href="{% url 'setup:bankaccounts_delete' bank_account_id=item.bank_account_id %}">Delete</a>-->
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            No Accounts
+            {% endif %}
+            </div>
+
+
+        {% block postlist %}
+        {% endblock %}
+    </div>
+
+    <div class="col-6">
+        <div class="container">
+            <br>
+
+            {% if banks_form %}
+            <h5>
+            {% if request.GET.edit_bank_id %}
+            Update Bank - {{request.GET.edit_bank_id}}
+            {% else %}
+            Add New Bank
+            {% endif %}
+            </h5>
+            <div class="row">
+                <div class="container">
+                    {% if request.GET.edit_bank_id %}
+                    <a href="{% url 'setup:banks_delete' bank_id=request.GET.edit_bank_id %}">
+                        <button class="delete-btn btn-delete" type="button">Delete</button>
+                    </a>
+                    {% endif %}
+                    &nbsp;
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="save_bank_form">
+                <div class="row">
+                    {% for field in banks_form %}
+                    {% include '_model_form2.html' %}
+                    {% cycle '' '<div class="row" style="height: 40px;"></div>' %}
+                    {% endfor %}
+                </div>
+
+            </form>
+            {% endif %}
+
+            {% if bankaccounts_form %}
+
+            {% if request.GET.edit_bank_account_id %}
+            <h5>Update Bank Account - {{request.GET.edit_bank_account_id}}</h5>
+            {% else %}
+            <h5>Add New Account</h5>
+            {% endif %}
+
+            <div class="row">
+                <div class="container">
+                    {% if request.GET.edit_bank_account_id %}
+                    <a href="{% url 'setup:bankaccounts_delete' bank_account_id=request.GET.edit_bank_account_id %}"
+                    style="text-decoration: none;">
+                        <button class="delete-btn btn-delete" type="button">Delete</button>
+                    </a>
+                    {% endif %}
+                    &nbsp;
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="save_bankaccount_form">
+                <div class="row">
+                    {% for field in bankaccounts_form %}
+                    {% include 'setup/_model_form2.html' %}
+                    {% cycle '' '<div class="row" style="height: 40px;"></div>' %}
+                    {% endfor %}
+                </div>
+
+            </form>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
