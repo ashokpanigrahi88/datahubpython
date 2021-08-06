@@ -1,7 +1,8 @@
 #-+- coding: UTF-8 -*-
 from __future__ import unicode_literals
 from django.contrib.auth.models import  Group
-from common.models import (CmnUsers, InvItemCategories, InvItemSubCategories, InvItemMasters, CmnBusinessSectors)
+from common.models import (CmnUsers, InvItemCategories, InvItemSubCategories, InvItemMasters, CmnBusinessSectors,
+                            InvItemSalesUnits,InvItemBarcodes)
 from rest_framework import (viewsets, permissions, generics)
 from rest_framework.generics import (CreateAPIView, ListAPIView, UpdateAPIView, DestroyAPIView)
 import django_filters
@@ -103,7 +104,6 @@ class RESTItemList2(generics.ListCreateAPIView):
                 ,'item_name__startswith']
 
 
-
 class RESTItemList(generics.ListCreateAPIView):
     lookup_field = 'item_number'
     queryset = InvItemMasters.objects.none()
@@ -119,6 +119,42 @@ class RESTItemList(generics.ListCreateAPIView):
         if self.inputparams != {}:
             self.queryset = InvItemMasters.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)
+
+
+class RESTSalesUnitList(generics.ListCreateAPIView):
+    lookup_field = 'sales_unit'
+    queryset = InvItemSalesUnits.objects.none()
+    serializer_class = SalesUnitsSerializer
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'iim_item_id' in key or 'sales_unit' in key or 'last_update_date' in key:
+                self.inputparams[key] = value
+        if self.inputparams != {}:
+            self.queryset = InvItemSalesUnits.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTBarcodeList(generics.ListCreateAPIView):
+    lookup_field = 'barcode'
+    queryset = InvItemBarcodes.objects.none()
+    serializer_class = BarcodesSerializer
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'iim_item_id' in key or 'iisu_su_id' in key\
+                    or 'last_update_date' in key or 'barcode' in key:
+                self.inputparams[key] = value
+        if self.inputparams != {}:
+            self.queryset = InvItemBarcodes.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
 
 class RESTItemDetail(generics.RetrieveUpdateDestroyAPIView):
     def get_serializer_context(self):
@@ -175,3 +211,21 @@ class RESTItemBatchDetail(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = model.objects.all()
     serializer_class = ItemSerializer
+
+
+class RESTItemBatchLines(generics.ListCreateAPIView):
+    lookup_field = 'item_id'
+    model = InvItemBatchLines
+    queryset = model.objects.all()
+    serializer_class = ItemBatchLinesSerialized
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'batch_name' in key or 'name' in key or 'item_batch_category' in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)

@@ -5638,6 +5638,17 @@ class InvItemCategories(models.Model):
     attribute2 = models.CharField(max_length=1000, blank=True, null=True, verbose_name=VN_C('attribute2'))
     amazon_percent = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('amazon_percent'))
     ebay_percent = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('ebay_percent'))
+    on_home_page = models.SmallIntegerField( default=0,
+                                            choices=populatelistitem('TRUE_FALSE'),
+                                            blank=True, null=True, verbose_name=VN_C('on_home_page'))
+    active = models.SmallIntegerField( default=1,
+                                            choices=populatelistitem('TRUE_FALSE'),
+                                            blank=True, null=True, verbose_name=VN_C('active'))
+    displayorder = models.SmallIntegerField(
+                                            blank=True, null=True, verbose_name=VN_C('on_home_page'))
+    meta_title = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('meta_title'))
+    tags = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('tags'))
+    picturename1 = models.CharField(max_length=200, blank=True, null=True, verbose_name=VN_C('picturename1'))
 
     class Meta:
         managed = False
@@ -6367,6 +6378,17 @@ class InvItemSubCategories(models.Model):
     amazon_percent = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('amazon_percent'))
     attribute1 = models.CharField(max_length=1000, blank=True, null=True, verbose_name=VN_C('attribute1'))
     attribute2 = models.CharField(max_length=1000, blank=True, null=True, verbose_name=VN_C('attribute2'))
+    on_home_page = models.SmallIntegerField( default=0,
+                                            choices=populatelistitem('TRUE_FALSE'),
+                                            blank=True, null=True, verbose_name=VN_C('on_home_page'))
+    active = models.SmallIntegerField( default=1,
+                                            choices=populatelistitem('TRUE_FALSE'),
+                                            blank=True, null=True, verbose_name=VN_C('active'))
+    displayorder = models.SmallIntegerField(blank=True, null=True, verbose_name=VN_C('on_home_page'))
+    meta_title = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('meta_title'))
+    tags = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('tags'))
+    picturename1 = models.CharField(max_length=200, blank=True, null=True, verbose_name=VN_C('picturename1'))
+
     class Meta:
         managed = False
         db_table = 'inv_item_sub_categories_v'
@@ -6719,6 +6741,17 @@ class InvItemMasters(models.Model):
                                               verbose_name=VN_C('sales_gl_account_id'))
     gac_gl_account_id = models.IntegerField(blank=True, null=True, editable=False,
                                             verbose_name=VN_C('gac_gl_account_id'))
+    country_of_manf = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('country_of_manf'))
+    country_of_origin = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('country_of_origin'))
+    click_and_collect = models.CharField(max_length=1, blank=True, null=True,
+                                   choices=populatelistitem('YES_NO'),
+                                         verbose_name=VN_C('click_and_collect'))
+    delivery = models.CharField(max_length=1, blank=True, null=True,
+                                   choices=populatelistitem('YES_NO'),
+                                verbose_name=VN_C('delivery'))
+    in_store = models.CharField(max_length=1, blank=True, null=True,
+                                   choices=populatelistitem('YES_NO'),
+                                verbose_name=VN_C('delivery'))
 
     class Meta:
         managed = False
@@ -8611,7 +8644,7 @@ class InvItemSalesUnits(models.Model):
         verbose_name = verbose_name_plural = VN_T('inv_item_sales_units')
 
     def __str__(self):
-        return str(self.SU_ID)
+        return str(self.su_id)
 
 
 class InvQuickcodeLines(models.Model):
@@ -9165,6 +9198,7 @@ class InvItemBarcodes(models.Model):
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
     barcode = models.CharField(max_length=20, blank=False, null=False, verbose_name=VN_C('barcode'), primary_key=True)
     iim_item_id = models.ForeignKey(InvItemMasters, models.DO_NOTHING, blank=True, null=True, to_field='item_id', db_column='iim_item_id')
+    iisu_su_id = models.ForeignKey(InvItemSalesUnits, models.DO_NOTHING, blank=True, null=True, to_field='su_id', db_column='iisu_su_id')
 
     class Meta:
         managed = False

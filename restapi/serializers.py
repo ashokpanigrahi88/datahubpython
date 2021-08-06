@@ -2,7 +2,7 @@ from django.contrib.auth.models import  Group
 from common.models import CmnUsers
 from rest_framework import serializers
 from common.models import (InvItemCategories, InvItemSubCategories,InvItemMasters, CmnBusinessSectors,
-                           InvItemBatches, InvItemBatchLines)
+                           InvItemBatches, InvItemBatchLines, InvItemSalesUnits, InvItemBarcodes)
 from common import (sysutil,commonutil)
 
 """
@@ -51,12 +51,12 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class SubCategorySerializer(serializers.ModelSerializer):
     print('in Sub cat serializer')
-    #iic_category_id = REFCategorySerializer()
-    category_name = serializers.CharField()
+    iic_category_id = REFCategorySerializer()
     class Meta:
         model = InvItemSubCategories
-        fields = [f.name  for f in model._meta.get_fields()]+['category_name']
-        read_only_fields = ['sub_category_id','category_name']
+        fields = '__all__'
+        # [f.name  for f in model._meta.get_fields()]+['category_name']
+        read_only_fields = ['sub_category_id']
         #fields = fields + ['category_name']
 
         #fields = ['sub_category_id', 'sub_category_name','iic_category_id']
@@ -92,6 +92,28 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = InvItemMasters
         fields = '__all__'
+        order_by = ['item_id']
+
+
+class SalesUnitsSerializer(serializers.ModelSerializer):
+    iim_item_id = ItemSerializer()
+    class Meta:
+        model = InvItemSalesUnits
+        fields = '__all__'
+        order_by = ['iim_item_id','su_id']
+
+
+class BarcodesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InvItemBarcodes
+        fields = '__all__'
+        order_by = ['barcode']
+
+class REFItemBatchLinesSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = InvItemBatchLines
+        fields = '__all__'
+
 
 class ItemBatchSerialized(serializers.ModelSerializer):
     class Meta:
@@ -110,6 +132,7 @@ class ItemBatchSerialized(serializers.ModelSerializer):
 
 
 class ItemBatchLinesSerialized(serializers.ModelSerializer):
+    batch_id = ItemBatchSerialized()
     class Meta:
         model = InvItemBatchLines
         fields = '__all__'

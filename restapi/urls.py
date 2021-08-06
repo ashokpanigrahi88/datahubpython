@@ -18,7 +18,10 @@ urlpatterns = [
     url(r"^item/$",RESTItemList.as_view(),name="item"),
     url(r"^item/(?P<pk>[0-9]+)/$", RESTItemDetail.as_view(),name="item_detail"),
     path("itemsearch/<str:item_number>/", RESTItemDetail.as_view(),name="item_search"),
-    url(r"^itembatch/$",RESTItemBatchList.as_view(),name="item_batch"),
+    url(r"^itembatch/$",RESTItemBatchLines.as_view(),name="item_batch"),
     url(r"^itembatch/(?P<pk>[0-9]+)/$", RESTItemBatchDetail.as_view(),name="itembatch_detail"),
+    url(r"^salesunit/$", RESTSalesUnitList.as_view(),name="sales_unit_list"),
+    url(r"^barcode/$", RESTBarcodeList.as_view(),name="barcode_list"),
+    url(r"^salesunit/(?P<pk>[0-9]+)/$", RESTSalesUnitList.as_view(),name="sales_unit"),
 ]
 
