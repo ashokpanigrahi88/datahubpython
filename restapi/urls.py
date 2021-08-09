@@ -23,5 +23,9 @@ urlpatterns = [
     url(r"^salesunit/$", RESTSalesUnitList.as_view(),name="sales_unit_list"),
     url(r"^barcode/$", RESTBarcodeList.as_view(),name="barcode_list"),
     url(r"^salesunit/(?P<pk>[0-9]+)/$", RESTSalesUnitList.as_view(),name="sales_unit"),
+    url(r"^uom/$", RESTUOMList.as_view(),name="uom_list"),
+    url(r"^taxcode/$", RESTTaxCodesList.as_view(),name="taxcode_list"),
+    url(r"^customer/$", RESTCustomersList.as_view(),name="customer_list"),
+    url(r"^manf/$", RESTManfList.as_view(),name="manf_list"),
 ]
 

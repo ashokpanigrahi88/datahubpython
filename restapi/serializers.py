@@ -2,7 +2,9 @@ from django.contrib.auth.models import  Group
 from common.models import CmnUsers
 from rest_framework import serializers
 from common.models import (InvItemCategories, InvItemSubCategories,InvItemMasters, CmnBusinessSectors,
-                           InvItemBatches, InvItemBatchLines, InvItemSalesUnits, InvItemBarcodes)
+                           InvItemBatches, InvItemBatchLines, InvItemSalesUnits, InvItemBarcodes,
+                           CmnUnitOfMeasurements, CmnTaxCodes, ArCustomers,ArCustomerProfiles,
+                           InvManufacturers)
 from common import (sysutil,commonutil)
 
 """
@@ -149,3 +151,69 @@ class ItemBatchLinesSerialized(serializers.ModelSerializer):
 
 class ItemBatchLinesGetSerialized(ItemBatchSerialized):
     batch_id = ItemBatchSerialized
+
+
+class UOMSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = CmnUnitOfMeasurements
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return CmnUnitOfMeasurements.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance
+
+
+
+class TaxcCodesSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = CmnTaxCodes
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return CmnTaxCodes.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance
+
+class CustomersSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = ArCustomers
+        #fields = '__all__'
+        exclude = ['host_image_path1', 'host_image_path2']
+
+    def create(self, validated_data):
+        data = validated_data
+        return ArCustomers.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance
+
+class ManfSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = InvManufacturers
+        fields = '__all__'
+        #exclude = ['host_image_path1', 'host_image_path2']
+
+    def create(self, validated_data):
+        data = validated_data
+        return InvManufacturers.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance
+

@@ -2,7 +2,8 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import  Group
 from common.models import (CmnUsers, InvItemCategories, InvItemSubCategories, InvItemMasters, CmnBusinessSectors,
-                            InvItemSalesUnits,InvItemBarcodes)
+                            InvItemSalesUnits,InvItemBarcodes,
+                           CmnUnitOfMeasurements, CmnTaxCodes, ArCustomerProfiles, ArCustomers)
 from rest_framework import (viewsets, permissions, generics)
 from rest_framework.generics import (CreateAPIView, ListAPIView, UpdateAPIView, DestroyAPIView)
 import django_filters
@@ -228,4 +229,63 @@ class RESTItemBatchLines(generics.ListCreateAPIView):
                 self.inputparams[key] = value
         self.queryset = self.model.objects.filter(**self.inputparams)
         print(self.queryset.query)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTUOMList(generics.ListCreateAPIView):
+    lookup_field = 'short_desc'
+    queryset = CmnUnitOfMeasurements.objects.none()
+    serializer_class = UOMSerialized
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            self.inputparams[key] = value
+        self.queryset = CmnUnitOfMeasurements.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+class RESTTaxCodesList(generics.ListCreateAPIView):
+    lookup_field = 'tax_code'
+    queryset = CmnTaxCodes.objects.none()
+    serializer_class = TaxcCodesSerialized
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            self.inputparams[key] = value
+        self.queryset = CmnTaxCodes.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTCustomersList(generics.ListCreateAPIView):
+    lookup_field = 'customer_id'
+    queryset = ArCustomers.objects.none()
+    serializer_class = CustomersSerialized
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            self.inputparams[key] = value
+        self.queryset = ArCustomers.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTManfList(generics.ListCreateAPIView):
+    lookup_field = 'manf_id'
+    queryset = InvManufacturers.objects.none()
+    serializer_class = ManfSerialized
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            self.inputparams[key] = value
+        self.queryset = InvManufacturers.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)

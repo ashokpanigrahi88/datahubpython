@@ -3852,7 +3852,8 @@ class ArCustomers(models.Model):
     cpt_cpt_id = models.ForeignKey(CmnPaymentTerms, models.DO_NOTHING, blank=True, null=True, to_field='cpt_id', db_column='cpt_cpt_id')
     ctc_tax_code_id = models.ForeignKey(CmnTaxCodes, models.DO_NOTHING, blank=True, null=True, to_field='tax_code_id', db_column='ctc_tax_code_id')
     ctp_cust_profile_id = models.ForeignKey(ArCustomerProfiles, models.DO_NOTHING, blank=True, null=True, to_field='cust_profile_id', db_column='ctp_cust_profile_id')
-
+    dob = models.DateTimeField(blank=True, null=True, verbose_name=VN_C('date_of_birth'))
+    anniversary = models.DateTimeField(blank=True, null=True, verbose_name=VN_C('aniversary'))
     class Meta:
         managed = False
         db_table = 'ar_customers'
@@ -5604,6 +5605,16 @@ class InvItemBatches(models.Model):
     date_from = models.DateTimeField(blank=True, null=True, verbose_name=VN_C('date_from'))
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
     batch_id = models.BigIntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('batch_id'), primary_key=True)
+    location_id = models.IntegerField(blank=True, null=True, editable=False, verbose_name=VN_C('location_id'))
+    banner_type = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('banner_type'))
+    on_click_action = models.CharField(max_length=400, blank=True, null=True, verbose_name=VN_C('on_click_action'))
+    page_url = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('page_url'))
+    display_order = models.IntegerField( blank=True, null=True, verbose_name=VN_C('display_order'))
+    meta_title = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('meta_title'))
+    key_words = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('key_words'))
+    image_url = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('image_url'))
+    active = models.CharField(max_length=1, blank=True, null=True, default='Y',
+                              choices=populatelistitem('YES_NO'), verbose_name=VN_C('page_url'))
 
     class Meta:
         managed = False
@@ -6752,6 +6763,7 @@ class InvItemMasters(models.Model):
     in_store = models.CharField(max_length=1, blank=True, null=True,
                                    choices=populatelistitem('YES_NO'),
                                 verbose_name=VN_C('delivery'))
+    primary_barcode = models.CharField(max_length=50, blank=True, null=True, verbose_name=VN_C('primary_barcode'))
 
     class Meta:
         managed = False
@@ -8383,6 +8395,8 @@ class InvItemBatchLines(models.Model):
     batch_line_id = models.BigIntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('batch_line_id'), primary_key=True)
     batch_id = models.ForeignKey(InvItemBatches, models.DO_NOTHING, blank=True, null=True, to_field='batch_id', db_column='batch_id')
     item_id = models.ForeignKey(InvItemMasters, models.DO_NOTHING, blank=True, null=True, to_field='item_id', db_column='item_id')
+    category_id = models.IntegerField(blank=True, null=True, verbose_name=VN_C('category_id'))
+    bom_id = models.IntegerField(blank=True, null=True, verbose_name=VN_C('bom_id'))
 
     class Meta:
         managed = False
