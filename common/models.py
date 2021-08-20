@@ -3750,6 +3750,7 @@ class ArCustomers(models.Model):
     contact_full_name = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('contact_full_name'))
     cust_title = models.CharField(max_length=20, blank=True, null=True, verbose_name=VN_C('cust_title'))
     shipto_email = models.EmailField(max_length=254,blank=True, null=True, verbose_name=VN_C('shipto_email'))
+    email = models.EmailField(max_length=254,blank=True, null=True, verbose_name=VN_C('email'))
     shipto_contact_name = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('shipto_contact_name'))
     fax = models.CharField(max_length=20, blank=True, null=True, verbose_name=VN_C('fax'))
     currency_code = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('currency_code'))

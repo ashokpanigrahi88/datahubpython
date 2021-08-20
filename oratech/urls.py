@@ -36,8 +36,8 @@ urlpatterns = [
     path('accounts/logout/', views.LogoutView.as_view(next_page='/'), name='logout'),
     # path('accounts/profile/', include('common.urls',namespace='common'), name='profile'),
     path(r'admin/', admin.site.urls, name ='admin'),
-    path('restapi/', include(router.urls)),
-    path('restapi/api-auth/', include('rest_framework.urls', namespace='rest_framework'),name='restapi'),
+    #path('restapi/', include(router.urls)),
+    #path('restapi/api-auth/', include('rest_framework.urls', namespace='rest_framework'),name='restapi'),
     path(r'rest-api/', include('restapi.urls', namespace='restapi'), name='restapi'),
     path(r'', include('common.urls', namespace='common'), name='main'),
 ]

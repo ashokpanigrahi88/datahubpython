@@ -4,7 +4,7 @@ from rest_framework import serializers
 from common.models import (InvItemCategories, InvItemSubCategories,InvItemMasters, CmnBusinessSectors,
                            InvItemBatches, InvItemBatchLines, InvItemSalesUnits, InvItemBarcodes,
                            CmnUnitOfMeasurements, CmnTaxCodes, ArCustomers,ArCustomerProfiles,
-                           InvManufacturers)
+                           InvManufacturers, InvLocations)
 from common import (sysutil,commonutil)
 
 """
@@ -98,7 +98,7 @@ class ItemSerializer(serializers.ModelSerializer):
 
 
 class SalesUnitsSerializer(serializers.ModelSerializer):
-    iim_item_id = ItemSerializer()
+    #iim_item_id = ItemSerializer()
     class Meta:
         model = InvItemSalesUnits
         fields = '__all__'
@@ -133,8 +133,20 @@ class ItemBatchSerialized(serializers.ModelSerializer):
         return instance
 
 
+class REFItemBatchSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = InvItemBatches
+        fields = ['batch_id','item_batch_category']
+
+    def create(self, validated_data):
+        data = {}
+        return InvItemBatches.objects.create(**data)
+
+    def update(self, instance, validated_data):
+       return instance
+
 class ItemBatchLinesSerialized(serializers.ModelSerializer):
-    batch_id = ItemBatchSerialized()
+    batch_id = REFItemBatchSerialized()
     class Meta:
         model = InvItemBatchLines
         fields = '__all__'
@@ -148,6 +160,8 @@ class ItemBatchLinesSerialized(serializers.ModelSerializer):
             setattr(instance, fname, fvalue)
         instance.save()
         return instance
+
+
 
 class ItemBatchLinesGetSerialized(ItemBatchSerialized):
     batch_id = ItemBatchSerialized
@@ -214,6 +228,24 @@ class ManfSerialized(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         for fname, fvalue in validated_data.items():
             setattr(instance, fname, fvalue)
-        instance.save()
+        #instance.save()
+        return instance
+
+
+class StoreSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = InvLocations
+        fields = '__all__'
+        #exclude = ['host_image_path1', 'host_image_path2']
+
+    def create(self, validated_data):
+        data = validated_data
+        data = {}
+        return InvLocations.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        #instance.save()
         return instance
 
