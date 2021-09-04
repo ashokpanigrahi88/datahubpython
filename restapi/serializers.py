@@ -4,7 +4,7 @@ from rest_framework import serializers
 from common.models import (InvItemCategories, InvItemSubCategories,InvItemMasters, CmnBusinessSectors,
                            InvItemBatches, InvItemBatchLines, InvItemSalesUnits, InvItemBarcodes,
                            CmnUnitOfMeasurements, CmnTaxCodes, ArCustomers,ArCustomerProfiles,
-                           InvManufacturers, InvLocations)
+                           InvManufacturers, InvLocations,InvItemLocations)
 from common import (sysutil,commonutil)
 
 """
@@ -249,3 +249,15 @@ class StoreSerialized(serializers.ModelSerializer):
         #instance.save()
         return instance
 
+
+class LocationStockSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = InvItemLocations
+        fields = ['location_id','item_id','quantity','last_update_date','creation_date']
+
+    def create(self, validated_data):
+        data = {}
+        return InvItemLocations.objects.none()
+
+    def update(self, instance, validated_data):
+        return instance

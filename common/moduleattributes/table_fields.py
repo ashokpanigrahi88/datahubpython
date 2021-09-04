@@ -504,10 +504,11 @@ INV_ITEM_CATEGORIES = {
     'fields': ['last_update_date', 'last_updated_by', 'record_status', 'update_source', 'bu_id', 'delete_flag',
                'created_by', 'creation_date', 'category_id', 'category_name', 'category_code', 'bin_identifier',
                'category_markup', 'take_snapshot', 'key_words', 'picturename', 'amazon_percent', 'ebay_percent',
-               'description', 'attribute1', 'attribute2', ],
+               'description', 'attribute1', 'attribute2','on_home_page','active','tags','meta_title','picturename1' ],
     'headers': ['Last Update Date', 'Last Updated By', 'Record Status', 'Update Source', 'Bu Id', 'Delete Flag',
                 'Created By', 'Creation Date', 'ID', 'Category', 'Code', 'BIN', 'Markup', 'Snapshot', 'Key Words',
-                'Picture Name', 'Amazon %', 'ebay %', 'Description', 'Freetext1', 'Freetext2', ],
+                'Picture Name', 'Amazon %', 'ebay %', 'Description', 'Freetext1', 'Freetext2',
+                'On Home Page','Active','Tags','Meta Title','Picture Name' ],
 }
 INV_ITEM_MASTERS = {
     'fields': ['item_id', 'item_number', 'item_name', 'supplier_product_code', 'inner_qty', 'case_unit', 'pallet_qty',

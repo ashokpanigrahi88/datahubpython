@@ -238,13 +238,14 @@ class RESTUOMList(generics.ListCreateAPIView):
     def get(self, request, *args, **kwargs):
         self.inputparams = {}
         for key,value in self.request.GET.items():
-            self.inputparams[key] = value
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
         self.queryset = CmnUnitOfMeasurements.objects.filter()
         return self.list(request, *args, **kwargs)
 
 class RESTTaxCodesList(generics.ListCreateAPIView):
     lookup_field = 'tax_code'
-    queryset = CmnTaxCodes.objects.none()
+    queryset = CmnTaxCodes.objects.all()
     serializer_class = TaxcCodesSerialized
     inputparams = {}
     queryparams = {}
@@ -252,8 +253,9 @@ class RESTTaxCodesList(generics.ListCreateAPIView):
     def get1(self, request, *args, **kwargs):
         self.inputparams = {}
         for key,value in self.request.GET.items():
-            self.inputparams[key] = value
-        self.queryset = CmnTaxCodes.objects.filter()
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = CmnTaxCodes.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)
 
 
@@ -284,7 +286,8 @@ class RESTManfList(generics.ListCreateAPIView):
     def get(self, request, *args, **kwargs):
         self.inputparams = {}
         for key,value in self.request.GET.items():
-            self.inputparams[key] = value
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
         self.queryset = InvManufacturers.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)
 
@@ -302,4 +305,20 @@ class RESTStoreList(generics.ListCreateAPIView):
             if 'format' not in key and 'page' not in key:
                 self.inputparams[key] = value
         self.queryset = InvLocations.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTLocationStockList(generics.ListCreateAPIView):
+    lookup_field = 'location_id'
+    queryset = InvItemLocations.objects.none()
+    serializer_class = LocationStockSerialized
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = InvItemLocations.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)

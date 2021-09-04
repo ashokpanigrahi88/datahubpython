@@ -5657,7 +5657,7 @@ class InvItemCategories(models.Model):
                                             choices=populatelistitem('TRUE_FALSE'),
                                             blank=True, null=True, verbose_name=VN_C('active'))
     displayorder = models.SmallIntegerField(
-                                            blank=True, null=True, verbose_name=VN_C('on_home_page'))
+                                            blank=True, null=True, verbose_name=VN_C('display_order'))
     meta_title = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('meta_title'))
     tags = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('tags'))
     picturename1 = models.CharField(max_length=200, blank=True, null=True, verbose_name=VN_C('picturename1'))
@@ -6396,7 +6396,7 @@ class InvItemSubCategories(models.Model):
     active = models.SmallIntegerField( default=1,
                                             choices=populatelistitem('TRUE_FALSE'),
                                             blank=True, null=True, verbose_name=VN_C('active'))
-    displayorder = models.SmallIntegerField(blank=True, null=True, verbose_name=VN_C('on_home_page'))
+    displayorder = models.SmallIntegerField(blank=True, null=True, verbose_name=VN_C('display_order'))
     meta_title = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('meta_title'))
     tags = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('tags'))
     picturename1 = models.CharField(max_length=200, blank=True, null=True, verbose_name=VN_C('picturename1'))

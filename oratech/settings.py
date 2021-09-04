@@ -16,7 +16,7 @@ import cx_Oracle
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -196,10 +196,12 @@ PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH)
 STATIC_PATH = os.path.join(PROJECT_PATH,'static')
 LOCAL_FILE_DIR = os.path.join(PROJECT_PATH,'local')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 ADMIN_SCRIPTS_DIR = os.path.join(BASE_DIR, 'adminscripts')
 STATIC_URL = '/static/'
-print(STATIC_PATH)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+print(STATIC_PATH, STATIC_ROOT)
+
 
 # DataFlair #User_Uploaded_Files
 MEDIA_URL = '/media/'
@@ -207,6 +209,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'common.CmnUsers'
 
+DEBUG = False
 
 PUB_PAGE_LINES = 15
 

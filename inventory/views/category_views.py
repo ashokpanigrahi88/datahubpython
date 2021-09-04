@@ -44,7 +44,9 @@ class ParentForm(forms.ModelForm):
     class Meta:
         model = InvItemCategories
         fields = ['category_name','category_code','description','bin_identifier',
-                  'category_markup','take_snapshot','key_words','picturename','amazon_percent','ebay_percent','attribute1','attribute2']
+                  'category_markup','take_snapshot','key_words','picturename','amazon_percent',
+                  'ebay_percent','attribute1','attribute2','displayorder',
+                  'on_home_page','active','tags','meta_title','picturename1' ]
         #exclude = ['category_id']
 
     def __init__(self, *args, **kwargs):
@@ -68,7 +70,8 @@ class ChildForm(forms.ModelForm):
         model = InvItemSubCategories
         fields = ['sub_category_name','sub_category_code',
                   'bin_identifier','sub_category_markup','take_snapshot','key_words','picturename',
-                  'amazon_percent','ebay_percent','description','attribute1','attribute2']
+                  'amazon_percent','ebay_percent','description','attribute1','attribute2', 'displayorder',
+                  'on_home_page','active','tags','meta_title','picturename1' ]
         #exclude = ['sub_category_id']
 
     def __init__(self, *args, **kwargs):

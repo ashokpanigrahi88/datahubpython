@@ -29,5 +29,6 @@ urlpatterns = [
     url(r"^customer/$", RESTCustomersList.as_view(),name="customer_list"),
     url(r"^manf/$", RESTManfList.as_view(),name="manf_list"),
     url(r"^store/$", RESTStoreList.as_view(),name="store_list"),
+    url(r"^locationstock/$", RESTLocationStockList.as_view(),name="locationstock_list"),
 ]
 
