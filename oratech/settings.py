@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '8e28ogd@gf7!f!#d$km0a5pji_jx7))o2u=t)%!8yo598qxe=9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG',True)
 
 ALLOWED_HOSTS = [os.environ.get('DJANGO_ALLOWED_HOST','127.0.0.1'), '127.0.0.1']
 
@@ -209,7 +209,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'common.CmnUsers'
 
-DEBUG = False
+DEBUG = True
 
 PUB_PAGE_LINES = 15
 
