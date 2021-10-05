@@ -1,8 +1,5 @@
-from django.db import connection
-from common.models import (ArSalesorderHeaders,ArSalesorderLines)
-from common import dbfuncs as dbfuncs
-from common import commonutil as commonutil
-from common.models import (InvItemMasters, InvItemSalesUnits, InvItemPicklist, InvPriceTypes, InvItemBarcodes)
+from common import commonutil as commonutil, dbfuncs as dbfuncs
+from common.models import (InvItemMasters)
 
 
 def get_itemdetail(itemstring:str = "" , itemid:int = 0 , model = InvItemMasters):

@@ -1,13 +1,11 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
-from django.forms.boundfield import BoundField
 from django.utils.decorators import method_decorator
 from django.views.generic import FormView
 from mobile.forms import CreateGRNForm
 from common import (sessionfunc, commonutil, dbfuncs)
 from purchase import (pogrnutil)
-from inventory import (locationutil)
-from common.models import (PoOrderpadHeaders, PoLines, PoGrnLines, PoGrnHeaders, ApSuppliers)
+from common.models import (PoGrnHeaders, ApSuppliers)
 
 
 # specific to this view
@@ -119,7 +117,7 @@ class CreateGRNView(FormView):
         if commonutil.hasintvalue(self.grnid):
                 sql += """ AND g.GRN_ID = {0}   """.format(self.grnid)
         sql += """Order By g.last_Update_Date Desc"""
-        newgrns = dbfuncs.exec_sql(sql,'dict')
+        newgrns = dbfuncs.exec_sql(sql, 'dict')
         self.rows = newgrns
         if commonutil.hasintvalue(self.grnid) and commonutil.hasstrvalue(self.itemnumber):
             self.grnlineid , message = pogrnutil.additemtogrn(self.itemnumber, userid,

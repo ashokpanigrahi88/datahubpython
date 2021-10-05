@@ -1,9 +1,13 @@
 #-+- coding: UTF-8 -*-
 from __future__ import unicode_literals
 from django.contrib.auth.models import  Group
+from rest_framework import generics, status
+from rest_framework.response import Response
+
 from common.models import (CmnUsers, InvItemCategories, InvItemSubCategories, InvItemMasters, CmnBusinessSectors,
                             InvItemSalesUnits,InvItemBarcodes,
                            CmnUnitOfMeasurements, CmnTaxCodes, ArCustomerProfiles, ArCustomers)
+from common.submodels import(imp_models, ecomm_models)
 from rest_framework import (viewsets, permissions, generics)
 from rest_framework.generics import (CreateAPIView, ListAPIView, UpdateAPIView, DestroyAPIView)
 import django_filters
@@ -322,3 +326,81 @@ class RESTLocationStockList(generics.ListCreateAPIView):
                 self.inputparams[key] = value
         self.queryset = InvItemLocations.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)
+
+
+
+class RESTEcommOrderStatusCreate(generics.ListCreateAPIView):
+    lookup_field = 'orderid'
+    queryset = ecomm_models.EcommOrderstatusinfo.objects.none()
+    serializer_class = EcommOrderStatInfoSerializer
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = ecomm_models.EcommOrderstatusinfo.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+
+class RESTEcommOrderInfoCreate(generics.ListCreateAPIView):
+    lookup_field = 'orderid'
+    queryset = ecomm_models.EcommOrderinfo.objects.none()
+    serializer_class = EcommOrderInfoSerializer
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = ecomm_models.EcommOrderinfo.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        print('initial',serializer.initial_data)
+        serializer.is_valid(raise_exception=True)
+        print('validated',serializer.validated_data)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+
+class RESTEcommOrderDetailInfoCreate(generics.ListCreateAPIView):
+    lookup_field = 'orderid'
+    queryset = ecomm_models.EcommOrderdetailsinfo.objects.none()
+    serializer_class = EcommOrderDetailInfoSerializer
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = ecomm_models.EcommOrderdetailsinfo.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTEcommOrderAddressCreate(generics.ListCreateAPIView):
+    lookup_field = 'orderid'
+    queryset = ecomm_models.EcommOrderaddress.objects.none()
+    serializer_class = EcommOrderAddressSerializer
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = ecomm_models.EcommOrderaddress.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+

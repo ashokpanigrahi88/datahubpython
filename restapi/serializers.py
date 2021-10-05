@@ -6,6 +6,7 @@ from common.models import (InvItemCategories, InvItemSubCategories,InvItemMaster
                            CmnUnitOfMeasurements, CmnTaxCodes, ArCustomers,ArCustomerProfiles,
                            InvManufacturers, InvLocations,InvItemLocations)
 from common import (sysutil,commonutil)
+from common.submodels import (imp_models, ecomm_models)
 
 """
 First up we're going to define some serializers. Let's create a new module named 
@@ -261,3 +262,49 @@ class LocationStockSerialized(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         return instance
+
+## ecommerce section
+
+
+class EcommOrderStatInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.EcommOrderstatusinfo
+        fields = '__all__'
+    def create(self, validated_data):
+        data = validated_data
+        return ecomm_models.EcommOrderstatusinfo.objects.create(**data)
+
+class EcommOrderInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.EcommOrderinfo
+        fields = '__all__'
+    def create(self, validated_data):
+        data = validated_data
+        return ecomm_models.EcommOrderinfo.objects.create(**data)
+
+
+class EcommOrderDetailInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.EcommOrderdetailsinfo
+        fields = '__all__'
+    def create(self, validated_data):
+        data = validated_data
+        return ecomm_models.EcommOrderdetailsinfo.objects.create(**data)
+
+
+class EcommOrderAddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.EcommOrderaddress
+        fields = '__all__'
+    def create(self, validated_data):
+        data = validated_data
+        return ecomm_models.EcommOrderaddress.objects.create(**data)
+
+
+class EcommOrderPaymentInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.EcommOrderpaymentinfo
+        fields = '__all__'
+    def create(self, validated_data):
+        data = validated_data
+        return ecomm_models.EcommOrderpaymentinfo.objects.create(**data)

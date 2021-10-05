@@ -3,11 +3,11 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView
-from enquiry.forms import IteminLocationForm, FindDateForm, ModelFieldsForm
+from enquiry.forms import IteminLocationForm, FindDateForm
 from django.forms import ModelForm
 
 from common.models  import (InvItemMasters , InvItemSubLocations)
-from common import (commonutil,sysutil, dbfuncs)
+from common import (commonutil, sysutil, dbfuncs)
 from django import forms
 from enquiry import enquirygrids
 

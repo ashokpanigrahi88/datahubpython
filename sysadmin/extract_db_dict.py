@@ -1,12 +1,9 @@
 import os
-from django.db import (connection, connections)
+from django.db import (connection)
 from django.conf import settings
-from sysadmin import intf_config
-from common import (commonutil,sysutil,dbfuncs)
-from common.models import CmnUsers
+from common import (commonutil, dbfuncs)
 import numpy as np
 import pandas  as pd
-import csv
 
 DEFAULT_PARAMS = {
     'UPDATES_DIR' :  os.path.join(settings.ADMIN_SCRIPTS_DIR,'updates\\'),
@@ -392,7 +389,7 @@ def check_tables(p_compare:bool = True, p_filemode ='w'):
             cols += 1
             lines.append(line)
         else:
-            currcoldef = dbfuncs.get_col_def(table_name,column_name)
+            currcoldef = dbfuncs.get_col_def(table_name, column_name)
             if not currcoldef == val:
                 #add alter table statement
                 line = """Alter Table {} modify({} {}{} {} {});\n""".format(

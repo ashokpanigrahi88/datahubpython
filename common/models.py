@@ -8,7 +8,7 @@ from django.urls import reverse
 from common.sysutil  import *
 from common.translation import  (VN_C, VN_T)
 from common import commonutil
-
+from common.submodels import (imp_models, ecomm_models)
 
 class OratechUserManager(BaseUserManager):
     def create_user(self, user_name, user_full_name, email, password=None):

@@ -1,7 +1,5 @@
-from django.db import connection
 from common.models import (InvItemMasters)
-from common import (dbfuncs, commonutil)
-from common import sessionfunc as sessionfunc
+from common import (commonutil, dbfuncs)
 
 
 def get_locationid(request = None, defval:int = 0):
@@ -64,13 +62,13 @@ def move_item(p_movementtype:str = 'INTERNALTOINTERNAL',
     if itemnumber != "":
         item = get_item(itemnumber, mycontext)
         print(item, fromlocationid, fromsublocation, quantity)
-        fromsublocationid  = dbfuncs.get_sublocation_id( fromlocationid, fromsublocation)
+        fromsublocationid  = dbfuncs.get_sublocation_id(fromlocationid, fromsublocation)
         if tosublocation is not None:
             tosublocationid = dbfuncs.get_sublocation_id(tolocationid, tosublocation)
         else:
-            tosublocationid  = dbfuncs.get_default_sublocationid(tolocationid,item.item_id)
+            tosublocationid  = dbfuncs.get_default_sublocationid(tolocationid, item.item_id)
         message = dbfuncs.exec_str_func('mobile_pkg.Move_SingleItem',
-                    [p_userid , p_movementtype, fromlocationid,
+                                        [p_userid , p_movementtype, fromlocationid,
                      fromsublocationid, item.item_id, quantity, tolocationid, tosublocationid])
 
         return message

@@ -5,7 +5,6 @@ from mobile.forms import ExtMovementForm
 from inventory import locationutil as locationutil
 from common import (sessionfunc, commonutil, dbfuncs)
 
-
 # specific to this view
 
 

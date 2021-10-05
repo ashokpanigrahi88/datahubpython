@@ -1,6 +1,5 @@
 from django import forms
-from common import (dbfuncs, sysutil,commonutil)
-
+from common import (sysutil, commonutil)
 
 
 class IteminLocationForm(forms.Form):

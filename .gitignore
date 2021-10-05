@@ -80,3 +80,6 @@ myenv/
  __pycache__/
  *.pyc
 restapi/__pycache__/
+
+# igonre batch files
+*.bat

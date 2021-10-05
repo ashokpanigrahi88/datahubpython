@@ -1,8 +1,6 @@
 from django.db import (connection, models)
-from common.models import (ArSalesorderHeaders,ArSalesorderLines)
-from common import dbfuncs as dbfuncs
 from common import (commonutil, dbfuncs)
-from common.models import (ApSuppliers, PoOrderpadHeaders,PoLines, PoGrnHeaders, PoGrnLines)
+from common.models import (PoOrderpadHeaders, PoLines)
 
 
 def getpomodelrow(p_model = models.Model,p_colname:str ="", p_string:str = "", p_number:int = 0, records:int = 0):
@@ -85,7 +83,7 @@ def additemtogrn(p_itemnumber:str, p_userid:int, p_grnid:int, p_itemid:int, p_qu
         return -1,  message
 
     try:
-        message = dbfuncs.exec_str_func("Mobile_Pkg.GRN_SingleItem",[p_grnid, itemid, p_quantity])
+        message = dbfuncs.exec_str_func("Mobile_Pkg.GRN_SingleItem", [p_grnid, itemid, p_quantity])
         print(message)
         return 1, message
     except Exception as error:
@@ -142,7 +140,7 @@ def ceategrn_frompo(p_userid:int, p_poheaderid:int, p_ponumber:str):
         with connection.cursor() as cursor:
             outgrnid = cursor.var(int).var
             print('Creating Grn From PO')
-            message = dbfuncs.exec_str_func("GRN_PKG.Create_FromPO", [p_userid, p_poheaderid,  p_ponumber, outgrnid ])
+            message = dbfuncs.exec_str_func("GRN_PKG.Create_FromPO", [p_userid, p_poheaderid, p_ponumber, outgrnid])
             grnid = outgrnid.getvalue()
             return grnid, message
     except Exception as error:

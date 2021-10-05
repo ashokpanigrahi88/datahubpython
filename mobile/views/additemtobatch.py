@@ -3,9 +3,8 @@ from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import FormView
 from mobile.forms import AddToBatchForm
-from inventory import (locationutil, itemutil)
-from common import (commonutil, dbfuncs, querydict)
-
+from inventory import (itemutil)
+from common import (commonutil, querydict)
 
 # specific to this view
 

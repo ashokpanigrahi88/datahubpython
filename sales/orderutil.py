@@ -1,7 +1,5 @@
-from django.db import connection
 from common.models import (ArSalesorderHeaders,ArSalesorderLines)
-from common import dbfuncs as dbfuncs
-from common import commonutil as commonutil
+from common import commonutil as commonutil, dbfuncs as dbfuncs
 
 
 def get_pickingconfirmaton(**kwargs):
@@ -37,7 +35,7 @@ def get_barcodeqty(itemstring):
     return commonutil.nvl(qty,1)
 
 def get_ordertotalpicked(orderid, orderlineid):
-    qty = dbfuncs.select_sqlfunc("Nvl(SalOrder_Pkg.Get_TotalPicked({0},{1}),0)".format(orderid,orderlineid))
+    qty = dbfuncs.select_sqlfunc("Nvl(SalOrder_Pkg.Get_TotalPicked({0},{1}),0)".format(orderid, orderlineid))
     return commonutil.nvl(qty,0)
 
 
@@ -74,7 +72,7 @@ def pick_orderline(p_userid:int = 1,
                             where  Order_Header_Id = {0}
                             and Item_Id = {1}
                             And RowNum = 1; """.format(p_orderid, orderitemid)
-                orderline = dbfuncs.exec_sql(sql,'dixt')
+                orderline = dbfuncs.exec_sql(sql, 'dixt')
                 lineid = orderline['ORDER_LINE_ID']
         errorpos = '2A'
         if commonutil.hasstrvalue(orditemnumber):
@@ -133,7 +131,7 @@ def pick_orderline(p_userid:int = 1,
 
         errorpos = '6'
         message = dbfuncs.exec_str_func("MOBILE_PKG.SALORDPICK_SingleItem",
-                [p_userid, p_orderid, lineid, locationid, sublocationid,itemid,quantity, boxslno])
+                                        [p_userid, p_orderid, lineid, locationid, sublocationid,itemid,quantity, boxslno])
         return message
     except Exception as ex:
         return

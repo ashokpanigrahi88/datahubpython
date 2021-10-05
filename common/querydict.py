@@ -1,4 +1,5 @@
-from common import (dbfuncs, commonutil)
+from common import dbfuncs
+
 
 def get_rowset(p_namedquery:{}, p_param:[], p_rowprefix:str = 'row', **kwargs):
     sql = str()

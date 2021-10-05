@@ -1,7 +1,6 @@
 from django import forms
-from django.conf import settings
 from common.sysutil import CHOICES
-from common import (dbfuncs, sysutil)
+from common import (sysutil, dbfuncs)
 
 
 class PriceCheckForm(forms.Form):
@@ -43,12 +42,12 @@ class SalesOrderQueryForm(forms.Form):
 
 class ExtMovementForm(forms.Form):
     locationid = 0
-    from_ext_location = forms.CharField(max_length=30,label='From External Location',
+    from_ext_location = forms.CharField(max_length=30, label='From External Location',
                                         required=True, initial=dbfuncs.get_externallocation())
     item_number = forms.CharField(max_length=30,label='Item Number / Barcode',required=True);
     quantity = forms.IntegerField(max_value=1000,label='Quantity',required=True)
-    to_sub_location = forms.CharField(max_length=30,label='To  Sub Locaion',
-                                      initial=dbfuncs.get_primarysubloc('PRIMARY GRN',locationid),
+    to_sub_location = forms.CharField(max_length=30, label='To  Sub Locaion',
+                                      initial=dbfuncs.get_primarysubloc('PRIMARY GRN', locationid),
                                       required=False)
     movementtype = forms.CharField(widget=forms.HiddenInput, label="", initial="EXTERNALTOINTERNAL")
 
