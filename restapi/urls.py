@@ -27,15 +27,15 @@ urlpatterns = [
     url(r"^uom/$", RESTUOMList.as_view(),name="uom_list"),
     url(r"^taxcode/$", RESTTaxCodesList.as_view(),name="taxcode_list"),
     url(r"^customer/$", RESTCustomersList.as_view(),name="customer_list"),
+    url(r"^customer/(?P<pk>[0-9]+)/$", RESTCustomerDetail.as_view(),name="customer_detail"),
     url(r"^manf/$", RESTManfList.as_view(),name="manf_list"),
     url(r"^store/$", RESTStoreList.as_view(),name="store_list"),
     url(r"^locationstock/$", RESTLocationStockList.as_view(),name="locationstock_list"),
     url(r"^ecommorderinfo/$",RESTEcommOrderInfoCreate.as_view(),name="ecommorderinfo_list"),
     url(r"^ecommorderdetailinfo/$",RESTEcommOrderDetailInfoCreate.as_view(),name="ecommorderdetailinfo_list"),
-    url(r"^ecommorderaddress/$",RESTEcommOrderAddressCreate.as_view(),name="ecommorderaaddress_list"),
+    url(r"^ecommorderaddress/$",RESTEcommOrderAddressCreate.as_view(),name="ecommorderaddress_list"),
+    url(r"^ecommorderpayment/$",RESTEcommOrderPaymentInfoCreate.as_view(),name="ecommorderpayment_list"),
     url(r"^ecommorderstatus/$",RESTEcommOrderStatusCreate.as_view(),name="ecommorderstatus_list"),
-
-
-
+    url(r"^itemofferline/$",RESTItemOfferLines.as_view(),name="item_offer_lines"),
 ]
 

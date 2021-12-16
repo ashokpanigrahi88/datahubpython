@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import  Group
 from rest_framework import generics, status
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 
 from common.models import (CmnUsers, InvItemCategories, InvItemSubCategories, InvItemMasters, CmnBusinessSectors,
@@ -13,6 +14,16 @@ from rest_framework.generics import (CreateAPIView, ListAPIView, UpdateAPIView, 
 import django_filters
 from django_filters.rest_framework import DjangoFilterBackend
 from restapi.serializers import *
+
+class LargeResultsSetPagination(PageNumberPagination):
+    page_size = 1000
+    page_size_query_param = 'page_size'
+    max_page_size = 10000
+
+class StandardResultsSetPagination(PageNumberPagination):
+    page_size = 100
+    page_size_query_param = 'page_size'
+    max_page_size = 1000
 
 def process_params(p_params, p_allowedparams = []):
     inputparams = {}
@@ -46,6 +57,8 @@ class RESTCategoryList(generics.ListCreateAPIView):
     model = InvItemCategories
     queryset = model.objects.all()
     serializer_class = CategorySerializer
+    pagination_class = StandardResultsSetPagination
+    ordering = ('category_name',)
     def get(self, request, *args, **kwargs):
         self.inputparams = process_params(p_params=self.request.GET.items(),p_allowedparams=['category_id','category_name'])
         if self.inputparams != {}:
@@ -55,42 +68,50 @@ class RESTCategoryList(generics.ListCreateAPIView):
 class RESTCategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = InvItemCategories.objects.all()
     serializer_class = CategorySerializer
+    pagination_class = StandardResultsSetPagination
 
 class RESTSubcategoryList(generics.ListCreateAPIView):
     queryset = InvItemSubCategories.objects.all()
     print('going to Sub cat serializer')
     serializer_class = SubCategorySerializer
+    pagination_class = StandardResultsSetPagination
 
 class RESTSubcategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = InvItemSubCategories.objects.all()
     print('going to Sub cat serializer')
     serializer_class = SubCategorySerializer
+    pagination_class = StandardResultsSetPagination
 
 class ListBusinessSectorApiView(ListAPIView):
     """This endpoint list all of the available Business Sectors"""
     queryset = CmnBusinessSectors.objects.all()
     serializer_class = BusinessSectorSerializer
+    pagination_class = StandardResultsSetPagination
 
 
 class ListBsAPIView(ListAPIView):
     """This endpoint list all of the available Business Sectors"""
     queryset = CmnBusinessSectors.objects.all()
     serializer_class = BusinessSectorSerializer
+    pagination_class = StandardResultsSetPagination
 
 class CreateBsAPIView(CreateAPIView):
     """This endpoint allows for creation of a Business Sector"""
     queryset = CmnBusinessSectors.objects.all()
     serializer_class = BusinessSectorSerializer
+    pagination_class = StandardResultsSetPagination
 
 class UpdateBsAPIView(generics.RetrieveUpdateDestroyAPIView):
     """This endpoint allows for updating a specific Business Sectorby passing in the id of the todo to update"""
     queryset = CmnBusinessSectors.objects.all()
     serializer_class = BusinessSectorSerializer
+    pagination_class = StandardResultsSetPagination
 
 class DeleteBsAPIView(DestroyAPIView):
     """This endpoint allows for deletion of a specific Business Sector from the database"""
     queryset = CmnBusinessSectors.objects.all()
     serializer_class = BusinessSectorSerializer
+    pagination_class = StandardResultsSetPagination
 
 class ItemFilter(django_filters.FilterSet):
     class Meta:
@@ -104,6 +125,7 @@ class RESTItemList2(generics.ListCreateAPIView):
     #lookup_field = 'item_number'
     queryset = InvItemMasters.objects.all()
     serializer_class = ItemSerializer
+    pagination_class = StandardResultsSetPagination
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['item_number','item_name','last_update_date','last_update_date__gt','last_update_date__lt'
                 ,'item_name__startswith']
@@ -113,6 +135,7 @@ class RESTItemList(generics.ListCreateAPIView):
     lookup_field = 'item_number'
     queryset = InvItemMasters.objects.none()
     serializer_class = ItemSerializer
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -130,6 +153,7 @@ class RESTSalesUnitList(generics.ListCreateAPIView):
     lookup_field = 'sales_unit'
     queryset = InvItemSalesUnits.objects.none()
     serializer_class = SalesUnitsSerializer
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -147,6 +171,7 @@ class RESTBarcodeList(generics.ListCreateAPIView):
     lookup_field = 'barcode'
     queryset = InvItemBarcodes.objects.none()
     serializer_class = BarcodesSerializer
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -178,6 +203,7 @@ class RESTItemDetail(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = InvItemMasters.objects.all()
     serializer_class = ItemSerializer
+    pagination_class = StandardResultsSetPagination
 
 
 class RESTItemBatchList(generics.ListCreateAPIView):
@@ -185,6 +211,7 @@ class RESTItemBatchList(generics.ListCreateAPIView):
     model = InvItemBatches
     queryset = model.objects.all()
     serializer_class = ItemBatchSerialized
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -212,6 +239,7 @@ class RESTItemBatchDetail(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = model.objects.all()
     serializer_class = ItemSerializer
+    pagination_class = StandardResultsSetPagination
 
 
 class RESTItemBatchLines(generics.ListCreateAPIView):
@@ -219,6 +247,7 @@ class RESTItemBatchLines(generics.ListCreateAPIView):
     model = InvItemBatchLines
     queryset = model.objects.all()
     serializer_class = ItemBatchLinesSerialized
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -236,6 +265,7 @@ class RESTUOMList(generics.ListCreateAPIView):
     lookup_field = 'short_desc'
     queryset = CmnUnitOfMeasurements.objects.none()
     serializer_class = UOMSerialized
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -251,6 +281,7 @@ class RESTTaxCodesList(generics.ListCreateAPIView):
     lookup_field = 'tax_code'
     queryset = CmnTaxCodes.objects.all()
     serializer_class = TaxcCodesSerialized
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -267,6 +298,7 @@ class RESTCustomersList(generics.ListCreateAPIView):
     lookup_field = 'customer_id'
     queryset = ArCustomers.objects.none()
     serializer_class = CustomersSerialized
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -280,10 +312,16 @@ class RESTCustomersList(generics.ListCreateAPIView):
         return self.list(request, *args, **kwargs)
 
 
+class RESTCustomerDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ArCustomers.objects.all()
+    serializer_class = CustomersSerialized
+    pagination_class = StandardResultsSetPagination
+
 class RESTManfList(generics.ListCreateAPIView):
     lookup_field = 'manf_id'
     queryset = InvManufacturers.objects.none()
     serializer_class = ManfSerialized
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -300,6 +338,7 @@ class RESTStoreList(generics.ListCreateAPIView):
     lookup_field = 'location_id'
     queryset = InvLocations.objects.none()
     serializer_class = StoreSerialized
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -316,6 +355,8 @@ class RESTLocationStockList(generics.ListCreateAPIView):
     lookup_field = 'location_id'
     queryset = InvItemLocations.objects.none()
     serializer_class = LocationStockSerialized
+    pagination_class  = LargeResultsSetPagination
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -333,6 +374,7 @@ class RESTEcommOrderStatusCreate(generics.ListCreateAPIView):
     lookup_field = 'orderid'
     queryset = ecomm_models.EcommOrderstatusinfo.objects.none()
     serializer_class = EcommOrderStatInfoSerializer
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -350,6 +392,7 @@ class RESTEcommOrderInfoCreate(generics.ListCreateAPIView):
     lookup_field = 'orderid'
     queryset = ecomm_models.EcommOrderinfo.objects.none()
     serializer_class = EcommOrderInfoSerializer
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -375,6 +418,7 @@ class RESTEcommOrderDetailInfoCreate(generics.ListCreateAPIView):
     lookup_field = 'orderid'
     queryset = ecomm_models.EcommOrderdetailsinfo.objects.none()
     serializer_class = EcommOrderDetailInfoSerializer
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -391,6 +435,7 @@ class RESTEcommOrderAddressCreate(generics.ListCreateAPIView):
     lookup_field = 'orderid'
     queryset = ecomm_models.EcommOrderaddress.objects.none()
     serializer_class = EcommOrderAddressSerializer
+    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
@@ -403,4 +448,39 @@ class RESTEcommOrderAddressCreate(generics.ListCreateAPIView):
         return self.list(request, *args, **kwargs)
 
 
+
+class RESTEcommOrderPaymentInfoCreate(generics.ListCreateAPIView):
+    lookup_field = 'orderid'
+    queryset = ecomm_models.EcommOrderpaymentinfo.objects.none()
+    serializer_class = EcommOrderPaymentInfoSerializer
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = ecomm_models.EcommOrderpaymentinfo.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTItemOfferLines(generics.ListCreateAPIView):
+    lookup_field = 'offer_header_od'
+    model = InvItemOfferLines
+    queryset = model.objects.all()
+    serializer_class = ItemOfferLinesSerialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)
 

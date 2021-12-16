@@ -92,7 +92,7 @@ class EcommOrderinfo(models.Model):
 
 
 class EcommOrderaddress(models.Model):
-    orderaddressid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('orderaddressid'))
+    orderaddressid = models.BigIntegerField(blank=False, null=False, editable=True, primary_key=True, verbose_name=VN_C('orderaddressid'))
     billingaddressid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('billingaddressid'))
     billingaddress = models.CharField(max_length=400, blank=True, null=True, verbose_name=VN_C('billingaddress'))
     billingcity = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('billingcity'))
@@ -160,7 +160,7 @@ class EcommOrderdetailsinfo(models.Model):
     delete_flag = models.CharField(max_length=1, blank=True, null=True, default='N', editable=True, verbose_name=VN_C('delete_flag'))
     third_party_source = models.CharField(max_length=30, blank=True, null=True, default='THIS', verbose_name=VN_C('third_party_source'))
     third_party_source_ref = models.CharField(max_length=50, blank=True, null=True, default=-1, verbose_name=VN_C('third_party_source_ref'))
-    orderdetailsinfoid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('orderdetailsinfoid'))
+    orderdetailsinfoid = models.BigIntegerField(blank=False, null=False, editable=True, primary_key=True,  verbose_name=VN_C('orderdetailsinfoid'))
     orderid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('orderid'))
     serialno = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('serialno'))
     kitid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('kitid'))
@@ -201,7 +201,7 @@ class EcommOrderdetailsinfo(models.Model):
 
 
 class EcommOrderkitproducts(models.Model):
-    orderkitproductsid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('orderkitproductsid'))
+    orderkitproductsid = models.BigIntegerField(blank=False, null=False, editable=True, primary_key=True, verbose_name=VN_C('orderkitproductsid'))
     kitid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('kitid'))
     productid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('productid'))
     productname = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('productname'))
@@ -242,7 +242,7 @@ class EcommOrderkitproducts(models.Model):
 
 
 class EcommOrderpaymentinfo(models.Model):
-    paymentrefid = models.CharField(max_length=100, blank=True, null=True, editable=True, verbose_name=VN_C('paymentrefid'))
+    paymentrefid = models.BigIntegerField(max_length=100, blank=True, null=True, editable=True, verbose_name=VN_C('paymentrefid'))
     paymentamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('paymentamount'))
     paymentcurrencyid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('paymentcurrencyid'))
     paymentcurrency = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('paymentcurrency'))
@@ -250,6 +250,11 @@ class EcommOrderpaymentinfo(models.Model):
     refundamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('refundamount'))
     refundcurrencyid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('refundcurrencyid'))
     refundcurrency = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('refundcurrency'))
+    pointsredeemed = models.DecimalField(max_digits=20, decimal_places=0,blank=True, null=True, verbose_name=VN_C('pointsredeemed'))
+    redeemedamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('redeemedamount'))
+    loyaltytransactionid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('loyaltytransactionid'))
+    loyaltycardno = models.CharField(max_length=100, blank=True, null=True, editable=True, verbose_name=VN_C('loyaltycardno'))
+    receivedcash  = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('receivedcash'))
     attribute1 = models.CharField(max_length=400, blank=True, null=True, verbose_name=VN_C('attribute1'))
     attribute2 = models.CharField(max_length=400, blank=True, null=True, verbose_name=VN_C('attribute2'))
     attribute3 = models.CharField(max_length=400, blank=True, null=True, verbose_name=VN_C('attribute3'))
@@ -266,7 +271,7 @@ class EcommOrderpaymentinfo(models.Model):
     delete_flag = models.CharField(max_length=1, blank=True, null=True, default='N', editable=True, verbose_name=VN_C('delete_flag'))
     third_party_source = models.CharField(max_length=30, blank=True, null=True, default='THIS', verbose_name=VN_C('third_party_source'))
     third_party_source_ref = models.CharField(max_length=50, blank=True, null=True, default=-1, verbose_name=VN_C('third_party_source_ref'))
-    orderpaymentinfoid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('orderpaymentinfoid'))
+    orderpaymentinfoid = models.BigIntegerField(blank=False, null=False, editable=True, primary_key=True,verbose_name=VN_C('orderpaymentinfoid'))
     paymentmethod = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('paymentmethod'))
     orderrefid = models.CharField(max_length=100, blank=True, null=True, editable=True, verbose_name=VN_C('orderrefid'))
     orderamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('orderamount'))
@@ -286,7 +291,7 @@ class EcommOrderpaymentinfo(models.Model):
 
 
 class EcommOrdervariants(models.Model):
-    ordervariantsid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('ordervariantsid'))
+    ordervariantsid = models.BigIntegerField(blank=False, null=False, editable=True, primary_key=True,  verbose_name=VN_C('ordervariantsid'))
     orderdetailsinfoid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('orderdetailsinfoid'))
     productid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('productid'))
     serialno = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('serialno'))

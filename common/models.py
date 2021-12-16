@@ -378,6 +378,10 @@ class CmnCards(models.Model):
     description = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('description'))
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
     card_id = models.BigIntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('card_id'), primary_key=True)
+    card_name = models.CharField(max_length=50, blank=True, null=True
+        , verbose_name=VN_C('card_name'))
+    card_type = models.CharField(max_length=50, blank=True, null=True, default='LOYALTY'
+        , verbose_name=VN_C('card_type'))
 
     class Meta:
         managed = False
@@ -387,6 +391,84 @@ class CmnCards(models.Model):
     def __str__(self):
         return str(self.card_id)
 
+class CmnCardAssignments(models.Model):
+    record_status = models.CharField(max_length=1, blank=True, null=True, default='I'
+        , editable=False, verbose_name=VN_C('record_status'))
+    last_update_date = models.DateTimeField(auto_now=True, blank=True, null=True, editable=False, verbose_name=VN_C('last_update_date'))
+    creation_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, editable=False, verbose_name=VN_C('creation_date'))
+    bu_id = models.IntegerField(blank=True, null=True, default=1
+        , editable=False, verbose_name=VN_C('bu_id'))
+    update_source = models.CharField(max_length=30, blank=True, null=True, default='API'
+        , editable=False, verbose_name=VN_C('update_source'))
+    created_by = models.IntegerField(blank=True, null=True, default=-1
+        , editable=False, verbose_name=VN_C('created_by'))
+    last_updated_by = models.IntegerField(blank=True, null=True, default=-1
+        , editable=False, verbose_name=VN_C('last_updated_by'))
+    delete_flag = models.CharField(max_length=1, blank=True, null=True, default='N'
+        , editable=False, verbose_name=VN_C('delete_flag'))
+    third_party_source = models.CharField(max_length=30, blank=True, null=True, default='THIS'
+        , verbose_name=VN_C('third_party_source'))
+    third_party_source_ref = models.CharField(max_length=50, blank=True, null=True, default=-1
+        , verbose_name=VN_C('third_party_source_ref'))
+    #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
+    assignment_id = models.BigAutoField(blank=False, null=False, editable=False, verbose_name=VN_C('assignment_id'), primary_key=True)
+    card_id = models.ForeignKey(CmnCards, models.DO_NOTHING, blank=True, null=True, to_field='card_id', db_column='card_id')
+    card_number = models.CharField(max_length=30, blank=False, null=False
+        , verbose_name=VN_C('card_number'))
+    assigned_category = models.CharField(max_length=30, blank=True, null=True, default='CUSTOMER'
+        , verbose_name=VN_C('third_party_source_ref'))
+    assigned_to_id = models.BigIntegerField(blank=False, null=False
+        , verbose_name=VN_C('assigned_to_id'))
+
+    class Meta:
+        managed = False
+        db_table = 'cmn_card_assignments'
+        verbose_name=VN_T('cmn_card_assignments')
+        unique_together = (('card_number'),)
+
+    def __str__(self):
+        return str(self.assignment_id)
+
+
+class CmnCardTrans(models.Model):
+    trans_source_link = models.CharField(max_length=50, blank=True, null=True, verbose_name=VN_C('trans_source_link'))
+    trans_ref_details = models.CharField(max_length=255, blank=True, null=True, verbose_name=VN_C('trans_ref_details'))
+    trans_amount = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('trans_amount'))
+    trans_points = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('trans_points'))
+    attribute1 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute1'))
+    attribute2 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute2'))
+    attribute3 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute3'))
+    attribute4 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute4'))
+    attribute5 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute5'))
+    attribute6 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute6'))
+    record_status = models.CharField(max_length=1, blank=True, null=True, default='I'
+        , editable=False, verbose_name=VN_C('record_status'))
+    last_update_date = models.DateTimeField(auto_now=True, blank=True, null=True, editable=False, verbose_name=VN_C('last_update_date'))
+    creation_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, editable=False, verbose_name=VN_C('creation_date'))
+    bu_id = models.IntegerField(blank=True, null=True, default=1
+        , editable=False, verbose_name=VN_C('bu_id'))
+    update_source = models.CharField(max_length=30, blank=True, null=True, default='API'
+        , editable=False, verbose_name=VN_C('update_source'))
+    created_by = models.IntegerField(blank=True, null=True, default=-1
+        , editable=False, verbose_name=VN_C('created_by'))
+    last_updated_by = models.IntegerField(blank=True, null=True, default=-1
+        , editable=False, verbose_name=VN_C('last_updated_by'))
+    delete_flag = models.CharField(max_length=1, blank=True, null=True, default='N'
+        , editable=False, verbose_name=VN_C('delete_flag'))
+    third_party_source = models.CharField(max_length=30, blank=True, null=True, default='THIS'
+        , verbose_name=VN_C('third_party_source'))
+    third_party_source_ref = models.CharField(max_length=50, blank=True, null=True, default=-1
+        , verbose_name=VN_C('third_party_source_ref'))
+    #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
+    trans_id = models.BigAutoField(blank=False, null=False, editable=False, verbose_name=VN_C('trans_id'), primary_key=True)
+
+    class Meta:
+        managed = False
+        db_table = 'cmn_card_trans'
+        verbose_name=VN_T('cmn_card_trans')
+
+    def __str__(self):
+        return str(self.TRANS_ID)
 
 class CmnCardOptions(models.Model):
     askfor_pin = models.CharField(max_length=1, blank=True, null=True, default='N', verbose_name=VN_C('askfor_pin'))
@@ -3847,7 +3929,7 @@ class ArCustomers(models.Model):
     www_markupdown = models.DecimalField(max_digits=12, decimal_places=3, blank=True, null=True,
                                      verbose_name=VN_C('www_markupdown'))
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
-    customer_id = models.BigIntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('customer_id'), primary_key=True)
+    customer_id = models.BigIntegerField(blank=False, null=False, editable=True, verbose_name=VN_C('customer_id'), primary_key=True)
     # supplier_id = models.ForeignKey(ApSuppliers, models.DO_NOTHING, blank=True, null=True, to_field='supplier_id', db_column='supplier_id')
     supplier_id = models.IntegerField(blank=True, null=True,  db_column='supplier_id', verbose_name=VN_C('supplier_id'))
     cpt_cpt_id = models.ForeignKey(CmnPaymentTerms, models.DO_NOTHING, blank=True, null=True, to_field='cpt_id', db_column='cpt_cpt_id')

@@ -4,7 +4,7 @@ from rest_framework import serializers
 from common.models import (InvItemCategories, InvItemSubCategories,InvItemMasters, CmnBusinessSectors,
                            InvItemBatches, InvItemBatchLines, InvItemSalesUnits, InvItemBarcodes,
                            CmnUnitOfMeasurements, CmnTaxCodes, ArCustomers,ArCustomerProfiles,
-                           InvManufacturers, InvLocations,InvItemLocations)
+                           InvManufacturers, InvLocations,InvItemLocations, InvItemOfferHeaders, InvItemOfferLines)
 from common import (sysutil,commonutil)
 from common.submodels import (imp_models, ecomm_models)
 
@@ -47,6 +47,8 @@ class CategorySerializer(serializers.ModelSerializer):
         #fields = ['category_id', 'category_name']
         fields = '__all__'
         read_only_fields = ['category_id']
+        ordeer_by=['category_name']
+
     def create(self, validated_data):
         print('in category create')
         category = InvItemCategories(**validated_data)
@@ -58,6 +60,7 @@ class SubCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = InvItemSubCategories
         fields = '__all__'
+        order_by = ['iic_category_id','sub_category_name']
         # [f.name  for f in model._meta.get_fields()]+['category_name']
         read_only_fields = ['sub_category_id']
         #fields = fields + ['category_name']
@@ -308,3 +311,34 @@ class EcommOrderPaymentInfoSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         data = validated_data
         return ecomm_models.EcommOrderpaymentinfo.objects.create(**data)
+
+
+class REFItemOfferSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = InvItemOfferHeaders
+        fields = '__all__'
+        #fields = ['batch_id','item_batch_category']
+
+    def create(self, validated_data):
+        data = {}
+        return InvItemOfferHeaders.objects.create(**data)
+
+    def update(self, instance, validated_data):
+       return instance
+
+class ItemOfferLinesSerialized(serializers.ModelSerializer):
+    offer_header_id = REFItemOfferSerialized()
+    class Meta:
+        model = InvItemOfferLines
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return InvItemOfferLines.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance
+
