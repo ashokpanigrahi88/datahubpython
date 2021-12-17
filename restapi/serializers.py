@@ -4,7 +4,8 @@ from rest_framework import serializers
 from common.models import (InvItemCategories, InvItemSubCategories,InvItemMasters, CmnBusinessSectors,
                            InvItemBatches, InvItemBatchLines, InvItemSalesUnits, InvItemBarcodes,
                            CmnUnitOfMeasurements, CmnTaxCodes, ArCustomers,ArCustomerProfiles,
-                           InvManufacturers, InvLocations,InvItemLocations, InvItemOfferHeaders, InvItemOfferLines)
+                           InvManufacturers, InvLocations,InvItemLocations, InvItemOfferHeaders, InvItemOfferLines,
+                           CmnCards, CmnCardAssignments, CmnCardTrans, CmnLoyaltySummary)
 from common import (sysutil,commonutil)
 from common.submodels import (imp_models, ecomm_models)
 
@@ -342,3 +343,66 @@ class ItemOfferLinesSerialized(serializers.ModelSerializer):
         instance.save()
         return instance
 
+
+class CardsSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = CmnCards
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return CmnCards.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance
+
+
+class CardAssignmentsSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = CmnCardAssignments
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return CmnCardAssignments.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance
+
+
+class CardTransSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = CmnCardTrans
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return CmnCardTrans.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance
+
+
+class CardLoyaltySummaryialized(serializers.ModelSerializer):
+    class Meta:
+        model = CmnLoyaltySummary
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return CmnLoyaltySummary.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance

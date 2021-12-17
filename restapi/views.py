@@ -484,3 +484,78 @@ class RESTItemOfferLines(generics.ListCreateAPIView):
         print(self.queryset.query)
         return self.list(request, *args, **kwargs)
 
+
+class RESTCards(generics.ListCreateAPIView):
+    lookup_field = 'card_number'
+    model = CmnCards
+    queryset = model.objects.all()
+    serializer_class = CardsSerialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTCardAssignments(generics.ListCreateAPIView):
+    lookup_field = 'card_number'
+    model = CmnCardAssignments
+    queryset = model.objects.all()
+    serializer_class = CardAssignmentsSerialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTCardTrans(generics.ListCreateAPIView):
+    lookup_field = 'trans_id'
+    model = CmnCardTrans
+    queryset = model.objects.all()
+    serializer_class = CardTransSerialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTCardLoyaltySummary(generics.ListCreateAPIView):
+    lookup_field = 'trans_id'
+    model = CmnLoyaltySummary
+    queryset = model.objects.all()
+    serializer_class = CardLoyaltySummaryialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)

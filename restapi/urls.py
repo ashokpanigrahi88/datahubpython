@@ -37,5 +37,9 @@ urlpatterns = [
     url(r"^ecommorderpayment/$",RESTEcommOrderPaymentInfoCreate.as_view(),name="ecommorderpayment_list"),
     url(r"^ecommorderstatus/$",RESTEcommOrderStatusCreate.as_view(),name="ecommorderstatus_list"),
     url(r"^itemofferline/$",RESTItemOfferLines.as_view(),name="item_offer_lines"),
+    url(r"^loyaltycard/$",RESTCards.as_view(),name="cmn_cards"),
+    url(r"^loyaltycardassignment/$",RESTCardAssignments.as_view(),name="cmn_card_assignments"),
+    url(r"^loyaltycardtrans/$",RESTCardTrans.as_view(),name="cmn_card_trans"),
+    url(r"^loyaltycardsummary/$",RESTCardLoyaltySummary.as_view(),name="cmn_loyalty_summary"),
 ]
 

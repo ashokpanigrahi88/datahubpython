@@ -380,6 +380,8 @@ class CmnCards(models.Model):
     card_id = models.BigIntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('card_id'), primary_key=True)
     card_name = models.CharField(max_length=50, blank=True, null=True
         , verbose_name=VN_C('card_name'))
+    card_number = models.CharField(max_length=50, blank=True, null=True
+        , verbose_name=VN_C('card_number'))
     card_type = models.CharField(max_length=50, blank=True, null=True, default='LOYALTY'
         , verbose_name=VN_C('card_type'))
 
@@ -387,6 +389,7 @@ class CmnCards(models.Model):
         managed = False
         db_table = 'cmn_cards'
         verbose_name = verbose_name_plural = VN_T('cmn_cards')
+        unique_together = ('card_number',)
 
     def __str__(self):
         return str(self.card_id)
@@ -468,7 +471,51 @@ class CmnCardTrans(models.Model):
         verbose_name=VN_T('cmn_card_trans')
 
     def __str__(self):
-        return str(self.TRANS_ID)
+        return str(self.trans_id)
+
+class CmnLoyaltySummary(models.Model):
+    total_amount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('total_amount'))
+    total_points = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('total_points'))
+    total_refund_amount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('total_refund_amount'))
+    total_refund_points = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('total_refund_points'))
+    total_redeemed_points = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('total_redeemed_points'))
+    total_outstanding_points = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('total_outstanding_points'))
+    total_voucher_points = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('total_voucher_points'))
+    total_voucher_rdeemed = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('total_voucher_rdeemed'))
+    attribute1 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute1'))
+    attribute2 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute2'))
+    attribute3 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute3'))
+    attribute4 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute4'))
+    attribute5 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute5'))
+    attribute6 = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('attribute6'))
+    record_status = models.CharField(max_length=1, blank=True, null=True, default='I'
+    , editable=False, verbose_name=VN_C('record_status'))
+    last_update_date = models.DateTimeField(auto_now=True, blank=True, null=True, editable=False, verbose_name=VN_C('last_update_date'))
+    creation_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, editable=False, verbose_name=VN_C('creation_date'))
+    bu_id = models.IntegerField(blank=True, null=True, default=1
+    , editable=False, verbose_name=VN_C('bu_id'))
+    update_source = models.CharField(max_length=30, blank=True, null=True, default='API'
+    , editable=False, verbose_name=VN_C('update_source'))
+    created_by = models.IntegerField(blank=True, null=True, default=-1
+    , editable=False, verbose_name=VN_C('created_by'))
+    last_updated_by = models.IntegerField(blank=True, null=True, default=-1
+    , editable=False, verbose_name=VN_C('last_updated_by'))
+    delete_flag = models.CharField(max_length=1, blank=True, null=True, default='N'
+    , editable=False, verbose_name=VN_C('delete_flag'))
+    third_party_source = models.CharField(max_length=30, blank=True, null=True, default='THIS'
+    , verbose_name=VN_C('third_party_source'))
+    third_party_source_ref = models.CharField(max_length=50, blank=True, null=True, default=-1
+    , verbose_name=VN_C('third_party_source_ref'))
+    #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
+    summary_id = models.BigAutoField(blank=False, null=False, editable=False, verbose_name=VN_C('summary_id'), primary_key=True)
+
+    class Meta:
+        managed = False
+        db_table = 'cmn_loyalty_summary'
+        verbose_name=VN_T('cmn_loyalty_summary')
+
+    def __str__(self):
+        return str(self.summary_id)
 
 class CmnCardOptions(models.Model):
     askfor_pin = models.CharField(max_length=1, blank=True, null=True, default='N', verbose_name=VN_C('askfor_pin'))
