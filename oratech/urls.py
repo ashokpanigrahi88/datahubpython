@@ -28,6 +28,7 @@ urlpatterns = [
     path(r'setup/', include('setup.urls', namespace='setup'), name='setup'),
     path(r'mobile/', include('mobile.urls', namespace='mobile'), name='mobile'),
     path(r'enquiry/', include('enquiry.urls', namespace='enquiry'), name='enquiry'),
+    path(r'ecomm/', include('ecomm.urls', namespace='ecomm'), name='ecomm'),
     path(r'inventory/', include('inventory.urls', namespace='inventory'), name='inventory'),
     path(r'sales/', include('sales.urls', namespace='sales'), name='sales'),
     path(r'purchase/', include('purchase.urls', namespace='purcahse'), name='purchase'),

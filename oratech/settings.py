@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'enquiry.apps.EnquiryConfig',
     'sysadmin.apps.SysadminConfig',
     'pricing.apps.PricingConfig',
+    'ecomm.apps.EcommConfig',
     'rest_framework',
     'django_filters'
 ]

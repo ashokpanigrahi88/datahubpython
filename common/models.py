@@ -3988,6 +3988,7 @@ class ArCustomers(models.Model):
         managed = False
         db_table = 'ar_customers'
         verbose_name = verbose_name_plural = VN_T('ar_customers')
+        ordering = ['customer_name']
 
     def __str__(self):
         return self.customer_name
@@ -5795,6 +5796,7 @@ class InvItemCategories(models.Model):
         managed = False
         db_table = 'inv_item_categories_v'
         verbose_name = verbose_name_plural = VN_T('inv_item_categories')
+        ordering = ['category_name']
 
     def __str__(self):
         return self.category_name
@@ -6535,6 +6537,7 @@ class InvItemSubCategories(models.Model):
         db_table = 'inv_item_sub_categories_v'
         verbose_name = verbose_name_plural = VN_T('inv_item_sub_categories')
         unique_together = (('iic_category_id','sub_category_name'),)
+        ordering = ['iic_category_id','sub_category_name']
 
     def __str__(self):
         return "{}-{}".format(self.iic_category_id, self.sub_category_name)
@@ -6899,6 +6902,7 @@ class InvItemMasters(models.Model):
         managed = False
         db_table = 'inv_item_masters_v'
         verbose_name = verbose_name_plural = VN_T('inv_item_masters')
+        ordering = ['item_number']
 
     def __str__(self):
         return self.item_number

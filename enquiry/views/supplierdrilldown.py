@@ -62,6 +62,7 @@ class DrilldownView(ListView):
     parentid = None
 
     def get(self, request, *args, **kwargs):
+        self.inputparams = {}
         for key,value in self.request.GET.items():
             if key != 'csrfmiddlewaretoken':
                 self.inputparams[key] = value
