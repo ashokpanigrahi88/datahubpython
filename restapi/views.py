@@ -27,13 +27,17 @@ class StandardResultsSetPagination(PageNumberPagination):
 
 def process_params(p_params, p_allowedparams = []):
     inputparams = {}
-    for key,value in p_params:
-        if p_allowedparams != []:
-            if key in p_allowedparams:
+    try:
+        for key,value in p_params:
+            if p_allowedparams != []:
+                if key in p_allowedparams:
+                    inputparams[key] = value
+            else:
                 inputparams[key] = value
-        else:
-            inputparams[key] = value
-    return inputparams
+    except Exception as ex:
+        print('process params:',ex)
+    finally:
+        return inputparams
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -60,7 +64,7 @@ class RESTCategoryList(generics.ListCreateAPIView):
     pagination_class = StandardResultsSetPagination
     ordering = ('category_name',)
     def get(self, request, *args, **kwargs):
-        self.inputparams = process_params(p_params=self.request.GET.items(),p_allowedparams=['category_id','category_name'])
+        self.inputparams = process_params(p_params=self.request.GET.items(),p_allowedparams=['category_id','category_name','last_update_date'])
         if self.inputparams != {}:
             self.queryset = self.model.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)
@@ -75,6 +79,12 @@ class RESTSubcategoryList(generics.ListCreateAPIView):
     print('going to Sub cat serializer')
     serializer_class = SubCategorySerializer
     pagination_class = StandardResultsSetPagination
+    ordering = ('sub_category_name',)
+    def get(self, request, *args, **kwargs):
+        self.inputparams = process_params(p_params=self.request.GET.items(),p_allowedparams=['sub_category_id','sub_category_name','last_update_date'])
+        if self.inputparams != {}:
+            self.queryset = self.model.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
 
 class RESTSubcategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = InvItemSubCategories.objects.all()

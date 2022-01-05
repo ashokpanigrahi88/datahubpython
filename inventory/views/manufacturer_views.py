@@ -11,27 +11,34 @@ from django.views.generic.edit import ModelFormMixin
 
 from common import (sysutil, commonutil)
 # from setup.templates.commodities.commodities_forms import *
-from common.models import InvBarcodeRepository
 from django import forms
 from django.conf import settings
+from common.models import InvManufacturers
+from common.sysutil import get_sequenceval, get_form_context
+from common.table_gen import formfilter_queryset, general_exclude_list
+from common.moduleattributes.table_fields import INV_MANUFACTURERS
 
+MODEL = InvManufacturers
+MODEL_FIELD_LIST = INV_MANUFACTURERS
+PK_NAME, non_editable_list, exclude_list ,form_field_list,form_field_dict = get_form_context(MODEL,MODEL_FIELD_LIST)
 
-MODEL = InvBarcodeRepository
+MODEL = InvManufacturers
 # @method_decorator(login_required, name='dispatch')
 class MainForm(forms.ModelForm):
     class Meta:
         model = MODEL
-        fields = '__all__'
+        fields = form_field_dict
+        labels = form_field_dict
 
 APPNAME='inventory'
-URLPREFIX = '/'+APPNAME+'/barcoderep{0}/'
-SLUG_FIELD = 'repository_id'
+URLPREFIX = '/'+APPNAME+'/manf{0}/'
+SLUG_FIELD = 'manf_id'
 SLUG_URL_KWARG = SLUG_FIELD
-TEMPLATE_PREFIX = 'inventory/barcoderep-{0}.html'
-ORDERING = ('barcode')
+TEMPLATE_PREFIX = 'inventory/manf-{0}.html'
+ORDERING = ('manf_name')
 FORM_CLASS = MainForm
-REC_IN_PAGE = settings.PUB_PAGE_LINES
-REVERSE = "inventory:barcoderep"
+REC_IN_PAGE = settings.PUB_PAGE_LINES_SINGLEVIEW
+REVERSE = "inventory:manf"
 MYCONTEXT = {'create': URLPREFIX.format('_create'),
         'update': URLPREFIX.format('_update'),
         'delete': URLPREFIX.format('_delete'),
@@ -44,7 +51,7 @@ class ParentForm(forms.ModelForm):
     class Meta:
         model = MODEL
         fields = '__all__'
-        #exclude = ['barcoderep_id']
+        #exclude = ['manf_id']
 
     def __init__(self, *args, **kwargs):
         super(ParentForm, self).__init__(*args, **kwargs)
@@ -69,7 +76,7 @@ class ChildForm(forms.ModelForm):
     class Meta:
         model = MODEL
         fields ='__all__'
-        #exclude = ['sub_barcoderep_id']
+        #exclude = ['sub_manf_id']
 
     def __init__(self, *args, **kwargs):
         super(ChildForm, self).__init__(*args, **kwargs)
@@ -95,7 +102,7 @@ def _get_form(request, formcls, prefix):
     return formcls(data, prefix=prefix)
 
 @method_decorator(login_required, name='dispatch')
-class BarcoderepListView(ListView, ModelFormMixin):
+class ManfListView(ListView, ModelFormMixin):
     model = MODEL
     template_name = TEMPLATE_PREFIX.format('l')
     form_class = ParentForm
@@ -133,14 +140,14 @@ class BarcoderepListView(ListView, ModelFormMixin):
             try:
                 self.MYCONTEXT['IN_PARENT_SAVE'] = request.POST
                 if commonutil.hasintvalue(self.parentid):
-                    parent_inst = MODEL.objects.get(repository_id=self.parentid)
+                    parent_inst = MODEL.objects.get(manf_id=self.parentid)
                     parentform = ParentForm(self.request.POST, instance=parent_inst)
                     if parentform.is_valid():
                         parentform.save()
                 else:
                     parentform = ParentForm(self.request.POST)
                     parent_inst = parentform.save(commit=False)
-                    parent_inst.repository_id = sysutil.get_sequenceval('inv_barcode_repository_s.nextval')
+                    parent_inst.manf_id = sysutil.get_sequenceval('inv_manufacturers_s.nextval')
                     parentform.save()
             except Exception as ex:
                 self.MYCONTEXT['ERROR_PARENT_SAVE'] = ex
@@ -156,16 +163,16 @@ class BarcoderepListView(ListView, ModelFormMixin):
     def get_context_data(self, **kwargs):
         self.MYCONTEXT['errormessage'] = self.request.POST
         print('In context')
-        context = super(BarcoderepListView, self).get_context_data(**kwargs)
+        context = super(ManfListView, self).get_context_data(**kwargs)
         childrows = {}
-        rows = self.get_queryset().order_by('barcode')
+        rows = self.get_queryset().order_by('manf_name')
         if commonutil.hasstrvalue(self.nm):
-            rows = rows.filter(barcode__icontains=self.nm)
+            rows = rows.filter(manf_name__icontains=self.nm)
         if commonutil.hasintvalue(self.parentid):
-            rows = rows.filter(repository_id=self.parentid)
+            rows = rows.filter(manf_id=self.parentid)
         context['parentrows'] = rows[:MASTER_RECORDS]
         if len(rows) == 1:
-            self.parentid = rows[0].repository_id
+            self.parentid = rows[0].manf_id
         context['childrows'] = None
 
         if commonutil.nvl(self.operation,'none') == 'parent_new':
@@ -173,13 +180,13 @@ class BarcoderepListView(ListView, ModelFormMixin):
             self.childid = ""
             parentform = ParentForm()
             context['parentform'] = parentform
-            context['parentform_title'] = 'New Barcode'
+            context['parentform_title'] = 'New'
 
         if commonutil.hasintvalue(self.parentid):
-            parentrow = MODEL.objects.get(repository_id=self.parentid)
+            parentrow = MODEL.objects.get(manf_id=self.parentid)
             parentform = ParentForm(instance=parentrow)
             context['parentform'] = parentform
-            context['parentform_title'] = 'Barcode'
+            context['parentform_title'] = 'Manufacturer'
 
 
         context['MYCONTEXT'] = self.MYCONTEXT
@@ -188,15 +195,15 @@ class BarcoderepListView(ListView, ModelFormMixin):
         context['childid'] = ""
         context['nm'] = self.nm
         context['childnm'] = ""
-        context['parentlabel'] = 'Barcode'
+        context['parentlabel'] = 'Manufacturer'
         context['childlabel'] = ''
 
         return context
 
 
 
-class BarcoderepDeleteView(DeleteView):
-    model = InvBarcodeRepository
+class ManfDeleteView(DeleteView):
+    model = InvManufacturers
     slug_field = SLUG_FIELD
     slug_url_kwarg = SLUG_URL_KWARG
     template_name = 'common/confirm_delete.html'

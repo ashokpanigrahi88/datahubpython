@@ -1,0 +1,20 @@
+{% extends 'common/model_form.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block moduletitle %}
+<h2> {{class}} {{model}} </h2>
+{%  endblock %}
+
+{% if class == 'Edit' %}
+{% block deleteaction %}
+<a href="{{delete_href}}" style="text-decoration: none;">
+    <button class="delete-btn btn-delete" type="button">Delete</button>
+</a>
+{% endblock %}
+{% endif %}
+
+{% block cancelaction %} {{cancel_href}} {% endblock %}
+
+{% block postform %}
+{% endblock %}

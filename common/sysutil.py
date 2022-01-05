@@ -5,6 +5,7 @@ import random
 
 # begin List section
 from common.translation import VN_C
+from common.table_gen import formfilter_queryset, general_exclude_list
 
 AP_SUPPLIER_PROFILES_L = """ SELECT  to_char(sup_profile_ID) ID , sup_profile_name IdValue   from ap_supplier_profiles_v Order By 2"""
 CMN_COUNTRIES_L  =  """ SELECT   Country_Code ID , Country_name IdValue  from cmn_countries_v Order By 2"""
@@ -263,3 +264,14 @@ def dictfetchall(cursor):
         dict(zip(columns, row))
         for row in cursor.fetchall()
     ]
+
+def get_form_context(p_model, p_tablefields):
+    MODEL = p_model
+    PK_NAME = MODEL._meta.pk.name
+    MODEL_FIELD_LIST = p_tablefields
+    non_editable_list = [field.name for field in MODEL._meta.fields if not field.editable]
+    exclude_list = general_exclude_list + non_editable_list
+    form_field_list = [field for field in MODEL_FIELD_LIST['fields'] if field not in exclude_list]
+    form_field_dict = {x[0]: x[1] for x in list(zip(MODEL_FIELD_LIST['fields'], MODEL_FIELD_LIST['headers'])) if
+                       x[0] in form_field_list}
+    return PK_NAME, non_editable_list, exclude_list,form_field_list,form_field_dict

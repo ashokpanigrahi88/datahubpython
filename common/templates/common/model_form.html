@@ -16,7 +16,7 @@
     {% block moduletitle %}    {% endblock %} <br>
 </div>
     </br>
-  <form action="" method="POST">
+  <form  method="post">
     {% csrf_token %}
     {% for field in form %}
     {% cycle '<div class="row">' '<div class="row">' %}
@@ -64,7 +64,7 @@
                   <button class="cancel-btn cancel-button" type="button">Cancel</button>
               </a>
               <a href="" style="text-decoration: none;">
-                  <button class="save-btn">Save</button>
+                  <button type="submit" class="save-btn">Save</button>
               </a>
           </div>
       </div>

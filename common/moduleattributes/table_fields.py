@@ -950,17 +950,17 @@ WWW_SUB_SOURCES = {
                 'Last Updated By', 'Creation Date', 'Created By', 'Bu Id', 'Delete Flag', 'Update Source',
                 'Record Status', 'Sl No', 'Name', 'Country', 'Language', ],
 }
-
+# , 'mkuptemp_id',
 INV_MANUFACTURERS = {
     'fields': ['creation_date', 'created_by', 'bu_id', 'last_update_date', 'last_updated_by', 'record_status',
                'delete_flag', 'update_source', 'manf_id', 'manf_number', 'manf_name', 'manf_short_name', 'contact_name',
                'address_line1', 'city', 'county', 'post_code', 'country_code',
-               'phone1', 'phone2', 'fax', 'mobile', 'email', 'www', 'attribute1', 'attribute2', 'mkuptemp_id', ],
+               'phone1', 'phone2', 'fax', 'mobile', 'email', 'www', 'attribute1', 'attribute2' ],
     'headers': ['Creation Date', 'Created By', 'Bu Id', 'Last Update Date', 'Last Updated By', 'Record Status',
                 'Delete Flag', 'Update Source', 'ID', 'Number', 'Name', 'Short Name', 'Contact Name', 'Address ',
                 'City',
                 'County', 'Post Code', 'Country', 'Phone1', 'Phone2', 'Fax', 'Mobile', 'Email', 'WWW',
-                'Attribute1', 'Attribute2', 'Mark Up Temp Id', ],
+                'Attribute1', 'Attribute2', ],
 }
 
 AP_SUPPLIERS = {

@@ -1,8 +1,9 @@
 from django.conf.urls import url
 from django.urls import path, re_path
-from inventory.views import (category_views, location_views, barcoderep_views, item_search)
+from inventory.views import (category_views, location_views, barcoderep_views, item_search, manufacturer_views)
 from inventory.templates.inventory_options import inventoryoptions_views
 from inventory.templates.price_type import pricetypes_views
+from inventory.templates.manf import manf_views
 
 app_name = 'inventory'
 
@@ -28,5 +29,11 @@ urlpatterns = [
          name='pricetype_update'),
     path('pricetype_delete/<str:price_type_id>/', pricetypes_views.PriceTypeDeleteView.as_view(),
          name='pricetype_delete'),
-
+    ### MANUFACTURER
+    path('manf1/', manf_views.ManfListView.as_view(), name='manf_list'),
+    path('manf1_create/', manf_views.ManfCreateView.as_view(), name='manf_create'),
+    path('manf1_update/<str:manf_id>/', manf_views.ManfUpdateView.as_view(),
+         name='manf_update'),
+    re_path('^manf/$',manufacturer_views.ManfListView.as_view(), name='manf'),
+    path('manf_delete/<int:manf_id>/',manufacturer_views.ManfDeleteView.as_view(), name='manf_delete'),
 ]

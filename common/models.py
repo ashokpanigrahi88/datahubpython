@@ -136,11 +136,12 @@ class CmnUsers(AbstractBaseUser):
         if not userid:
             return 'no user'
         print('user:'+str(userid))
-        sql = """ SELECT distinct resp_id,resp_name,resp_description 
+        sql = """ SELECT distinct resp_id,resp_name,resp_description, user_resp_desc, www_menu_name 
                  FROM   cmn_responsibilities_va
                 WHERE   RESP_ID IN  ( SELECT cr_resp_id
                                    FROM cmn_user_responsibilities
                                    WHERE cu_user_id = {0})
+                AND www_category = 'ENABLED'
                 AND upper(resp_name) not like '1MOBILE%'""".format(userid)
 
         print('user:'+str(userid))
@@ -156,11 +157,12 @@ class CmnUsers(AbstractBaseUser):
         if not userid:
             return 'no user'
         print('user:'+str(userid))
-        sql = """ SELECT  resp_description, resp_id
+        sql = """ SELECT  www_menu_name  resp_description, resp_id, user_resp_desc 
                  FROM   cmn_responsibilities_va
                 WHERE   RESP_ID IN  ( SELECT cr_resp_id
                                    FROM cmn_user_responsibilities
                                    WHERE cu_user_id = {0})
+                AND www_category = 'ENABLED'
                 AND upper(resp_name) not like '1MOBILE%'""".format(userid)
 
         with connection.cursor() as cursor:
@@ -6029,26 +6031,27 @@ class InvItemSerialNumbers(models.Model):
 
 
 class InvManufacturers(models.Model):
-    manf_name = models.CharField(max_length=50, blank=False, null=False, unique=True, verbose_name=VN_C('manf_short_name'))
+    manf_number = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('manf_number'))
+    manf_name = models.CharField(max_length=50, blank=False, null=False, unique=True, verbose_name=VN_C('manf_name'))
     manf_short_name = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('manf_short_name'))
-    country_code = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('country_code'))
     contact_name = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('contact_name'))
-    www = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('www'))
     mobile = models.CharField(max_length=20, blank=True, null=True, verbose_name=VN_C('mobile'))
     email = models.EmailField(max_length=254,blank=True, null=True, verbose_name=VN_C('email'))
-    fax = models.CharField(max_length=20, blank=True, null=True, verbose_name=VN_C('fax'))
-    phone2 = models.CharField(max_length=20, blank=True, null=True, verbose_name=VN_C('phone2'))
-    phone1 = models.CharField(max_length=20, blank=True, null=True, verbose_name=VN_C('phone1'))
-    post_code = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('post_code'))
-    county = models.CharField(max_length=40, blank=True, null=True, verbose_name=VN_C('county'))
-    city = models.CharField(max_length=40, blank=True, null=True, verbose_name=VN_C('city'))
     address_line1 = models.CharField(max_length=255, blank=True, null=True, verbose_name=VN_C('address_line1'))
-    update_source = models.CharField(max_length=30, blank=True, null=True, editable=False, verbose_name=VN_C('update_source'))
-    attribute2 = models.CharField(max_length=1000, blank=True, null=True, verbose_name=VN_C('attribute2'))
+    city = models.CharField(max_length=40, blank=True, null=True, verbose_name=VN_C('city'))
+    county = models.CharField(max_length=40, blank=True, null=True, verbose_name=VN_C('county'))
+    post_code = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('post_code'))
+    country_code = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('country_code'))
+    phone1 = models.CharField(max_length=20, blank=True, null=True, verbose_name=VN_C('phone1'))
+    phone2 = models.CharField(max_length=20, blank=True, null=True, verbose_name=VN_C('phone2'))
+    fax = models.CharField(max_length=20, blank=True, null=True, verbose_name=VN_C('fax'))
+    www = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('www'))
     attribute1 = models.CharField(max_length=1000, blank=True, null=True, verbose_name=VN_C('attribute1'))
+    attribute2 = models.CharField(max_length=1000, blank=True, null=True, verbose_name=VN_C('attribute2'))
     mkuptemp_id = models.IntegerField(blank=True, null=True, editable=True,
                                       choices=populatelistitem(None,INV_MKUPTEMPLATES_l),
                                       verbose_name=VN_C('mkuptemp_id'))
+    update_source = models.CharField(max_length=30, blank=True, null=True, editable=False, verbose_name=VN_C('update_source'))
     record_status = models.CharField(max_length=1, blank=True, null=True, editable=False, verbose_name=VN_C('record_status'))
     last_updated_by = models.BigIntegerField(blank=True, null=True, editable=False, verbose_name=VN_C('last_updated_by'))
     last_update_date = models.DateTimeField(auto_now=True, blank=True, null=True, editable=False, verbose_name=VN_C('last_update_date'))
@@ -6065,8 +6068,8 @@ class InvManufacturers(models.Model):
         verbose_name = verbose_name_plural = VN_T('inv_manufacturers')
 
     def __str__(self):
-        return str(self.manf_id)
-        # unique_together = (('manf_number'),('manf_name'),)
+        return self.manf_name
+        # unique_together = (('manf_number'),)
 
 
 class InvMkuptempHeaders(models.Model):

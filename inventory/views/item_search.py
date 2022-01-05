@@ -143,11 +143,13 @@ class SummaryView(ListView):
                 print(queryset.query)
                 forcequery = True
 
-        if not forcequery and  not self.queryparams:
-            qs =  self.model.objects.none()
+        if not forcequery and not self.queryparams:
+            qs = self.model.objects.none()
         else:
+            print('QueryParams',self.queryparams)
             qs = queryset.filter(**self.queryparams)
             qs = qs.order_by('item_number')
+            print('items', qs.count())
             self.totals = None
             parentid = commonutil.get_key_value(self.inputparams,'item_id')
             if len(qs) == 1:
