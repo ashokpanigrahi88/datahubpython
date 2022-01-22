@@ -140,6 +140,10 @@ default_database = environ.get('DJANGO_DEFAULT_DATABASE','main')
 DATABASES['default'] = DATABASES[default_database]
 
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
     "DEFAULT_PERMISSIOIN_CLASSES": [
         "rest_framework.permissions", "Djangomodel.PermissiobsOrAnonReadonly"
         ],

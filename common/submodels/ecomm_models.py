@@ -254,6 +254,15 @@ class EcommOrderkitproducts(models.Model):
     productprice = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('productprice'))
     productqtytype = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('productqtytype'))
     productqtystep = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('productqtystep'))
+    sku = models.CharField(max_length=50, blank=True, null=True, verbose_name=VN_C('sku'))
+    productvariantid = models.BigIntegerField(blank=True, null=True, editable=False,
+                                               verbose_name=VN_C('productvariantid'))
+    productvariantamount = models.DecimalField(max_digits=20, decimal_places=3, blank=True, null=True,
+                                                verbose_name=VN_C('productvariantamount'))
+    productvariantquantity = models.DecimalField(max_digits=12, decimal_places=3, blank=True, null=True,
+                                                  verbose_name=VN_C('productvariantquantity'))
+    variantdetails = models.CharField(max_length=4000, blank=True, null=True, verbose_name=VN_C('variantdetails'))
+    uomdetails = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('uomdetails'))
     attribute1 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute1'))
     attribute2 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute2'))
     attribute3 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute3'))
@@ -396,3 +405,32 @@ class EcommOrdervariants(models.Model):
     def __str__(self):
         return str(self.ordervariantsid)
 
+
+class EcommOrderstatusupdatehistory(models.Model):
+    attribute1 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute1'))
+    attribute2 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute2'))
+    attribute3 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute3'))
+    attribute4 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute4'))
+    status = models.IntegerField(blank=True, null=True, default=1, verbose_name=VN_C('status'))
+    row_version = models.IntegerField(blank=True, null=True, verbose_name=VN_C('row_version'))
+    record_status = models.CharField(max_length=1, blank=True, null=True, default='I', editable=False, verbose_name=VN_C('record_status'))
+    last_update_date = models.DateTimeField(auto_now=True, blank=True, null=True, editable=False, verbose_name=VN_C('last_update_date'))
+    creation_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, editable=False, verbose_name=VN_C('creation_date'))
+    bu_id = models.IntegerField(blank=True, null=True, default=1, editable=False, verbose_name=VN_C('bu_id'))
+    update_source = models.CharField(max_length=30, blank=True, null=True, default='API', editable=False, verbose_name=VN_C('update_source'))
+    created_by = models.IntegerField(blank=True, null=True, default=-1, editable=False, verbose_name=VN_C('created_by'))
+    last_updated_by = models.IntegerField(blank=True, null=True, default=-1, editable=False, verbose_name=VN_C('last_updated_by'))
+    delete_flag = models.CharField(max_length=1, blank=True, null=True, default='N', editable=False, verbose_name=VN_C('delete_flag'))
+    third_party_source = models.CharField(max_length=30, blank=True, null=True, default='THIS', verbose_name=VN_C('third_party_source'))
+    third_party_source_ref = models.CharField(max_length=50, blank=True, null=True, default=-1, verbose_name=VN_C('third_party_source_ref'))
+    #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
+    orderstatusupdatehistoryid = models.BigAutoField(blank=False, null=False, editable=False, verbose_name=VN_C('orderstatusupdatehistoryid'), primary_key=True)
+    orderid = models.ForeignKey(EcommOrderinfo, models.DO_NOTHING, blank=True, null=True, to_field='orderid', db_column='orderid')
+
+    class Meta:
+        managed = False
+        db_table = 'ecomm_orderstatusupdatehistory'
+        verbose_name=VN_T('ecomm_orderstatusupdatehistory')
+
+    def __str__(self):
+        return str(self.ORDERSTATUSUPDATEHISTORYID)

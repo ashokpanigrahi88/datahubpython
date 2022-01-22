@@ -135,6 +135,17 @@ class CurrencyUpdateView(UpdateView):
         return reverse(REVERSE)
 
 
+class CurrencyUpdateView1(UpdateView):
+    model = CmnCurrencies
+    slug_field = SLUG_FIELD
+    slug_url_kwarg = SLUG_URL_KWARG
+    template_name = TEMPLATE_PREFIX.format('u')
+    context_object_name = 'form'
+
+    def get_success_url(self):
+        return reverse(REVERSE)
+
+
 class CurrencyDeleteView(DeleteView):
     model = MODEL
     slug_field = SLUG_FIELD

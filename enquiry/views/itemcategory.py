@@ -71,6 +71,7 @@ class SummaryView(ListView):
     rowset2_totals ={}
 
     def get(self, request, *args, **kwargs):
+        self.inputparams = {}
         for key,value in self.request.GET.items():
             if key != 'csrfmiddlewaretoken' :
                 self.inputparams[key] = value
@@ -120,7 +121,7 @@ class SummaryView(ListView):
         commonutil.filter_add(self.queryparams,commonutil.get_key_value(self.inputparams,'available_fields'),
                               commonutil.get_key_value(self.inputparams,'field_contains'),'icontains')
         print( self.queryparams)
-        if not self.queryparams:
+        if False or not self.queryparams :
             qs =  self.model.objects.none()
         else:
             qs = queryset.filter(**self.queryparams)

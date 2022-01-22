@@ -296,6 +296,14 @@ class EcommOrderDetailInfoSerializer(serializers.ModelSerializer):
         return ecomm_models.EcommOrderdetailsinfo.objects.create(**data)
 
 
+class EcommOrderKitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.EcommOrderkitproducts
+        fields = '__all__'
+    def create(self, validated_data):
+        data = validated_data
+        return ecomm_models.EcommOrderkitproducts.objects.create(**data)
+
 class EcommOrderAddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = ecomm_models.EcommOrderaddress
@@ -313,6 +321,14 @@ class EcommOrderPaymentInfoSerializer(serializers.ModelSerializer):
         data = validated_data
         return ecomm_models.EcommOrderpaymentinfo.objects.create(**data)
 
+
+class EcommOrderStatHistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.EcommOrderstatusupdatehistory
+        fields = '__all__'
+    def create(self, validated_data):
+        data = validated_data
+        return ecomm_models.EcommOrderstatusupdatehistory.objects.create(**data)
 
 class REFItemOfferSerialized(serializers.ModelSerializer):
     class Meta:

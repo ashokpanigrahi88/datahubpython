@@ -2072,7 +2072,7 @@ class GlAccountCodes(models.Model):
         verbose_name = verbose_name_plural = VN_T('gl_account_codes')
 
     def __str__(self):
-        return str(self.gl_account_code)
+        return "{} - {}".format(self.gl_account_code, self.short_name)
         #unique_together = (('orig_system_ref1','orig_system_ref2'),)
 
 class GlJeHeaders(models.Model):
@@ -8527,6 +8527,7 @@ class InvItemBatchLines(models.Model):
     attribute3 = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('attribute3'))
     attribute2 = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('attribute2'))
     attribute1 = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('attribute1'))
+    image_url = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('image_url'))
     quantity = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, default=1, verbose_name=VN_C('quantity'))
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
     batch_line_id = models.BigIntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('batch_line_id'), primary_key=True)

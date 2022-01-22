@@ -30,10 +30,10 @@ urlpatterns = [
     path('pricetype_delete/<str:price_type_id>/', pricetypes_views.PriceTypeDeleteView.as_view(),
          name='pricetype_delete'),
     ### MANUFACTURER
-    path('manf1/', manf_views.ManfListView.as_view(), name='manf_list'),
-    path('manf1_create/', manf_views.ManfCreateView.as_view(), name='manf_create'),
-    path('manf1_update/<str:manf_id>/', manf_views.ManfUpdateView.as_view(),
+    path('manf/', manf_views.ManfListView.as_view(), name='manf_list'),
+    path('manf_create/', manf_views.ManfCreateView.as_view(), name='manf_create'),
+    path('manf_update/<str:manf_id>/', manf_views.ManfUpdateView.as_view(),
          name='manf_update'),
-    re_path('^manf/$',manufacturer_views.ManfListView.as_view(), name='manf'),
+    re_path('^manf1/$',manufacturer_views.ManfListView.as_view(), name='manf'),
     path('manf_delete/<int:manf_id>/',manufacturer_views.ManfDeleteView.as_view(), name='manf_delete'),
 ]

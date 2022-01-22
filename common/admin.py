@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 from django.contrib.admin import AdminSite
 from django.utils.translation import ugettext_lazy
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, Permission
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
@@ -133,6 +133,9 @@ class CmnModulesAdmin(admin.ModelAdmin):
     inlines = [
         CmnFunctions,
     ]
+
+admin.site.register(Group)
+admin.site.register(Permission)
 
 #get all modules but register only sys nodels
 models = apps.get_models('common')

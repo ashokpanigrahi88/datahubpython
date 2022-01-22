@@ -30,8 +30,9 @@ def process_params(p_params, p_allowedparams = []):
     try:
         for key,value in p_params:
             if p_allowedparams != []:
-                if key in p_allowedparams:
-                    inputparams[key] = value
+                for param in p_allowedparams:
+                    if param in key:
+                        inputparams[key] = value
             else:
                 inputparams[key] = value
     except Exception as ex:
@@ -59,28 +60,33 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 class RESTCategoryList(generics.ListCreateAPIView):
     model = InvItemCategories
-    queryset = model.objects.all()
+    queryset = model.objects.none()
     serializer_class = CategorySerializer
     pagination_class = StandardResultsSetPagination
     ordering = ('category_name',)
     def get(self, request, *args, **kwargs):
+        self.inputparams = {}
         self.inputparams = process_params(p_params=self.request.GET.items(),p_allowedparams=['category_id','category_name','last_update_date'])
+        print('categoryapi',self.inputparams)
         if self.inputparams != {}:
             self.queryset = self.model.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)
 
 class RESTCategoryDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = InvItemCategories.objects.all()
+    model = InvItemCategories
+    queryset = model.objects.all()
     serializer_class = CategorySerializer
     pagination_class = StandardResultsSetPagination
 
 class RESTSubcategoryList(generics.ListCreateAPIView):
-    queryset = InvItemSubCategories.objects.all()
+    model = InvItemSubCategories
+    queryset = model.objects.none()
     print('going to Sub cat serializer')
     serializer_class = SubCategorySerializer
     pagination_class = StandardResultsSetPagination
     ordering = ('sub_category_name',)
     def get(self, request, *args, **kwargs):
+        self.inputparams = {}
         self.inputparams = process_params(p_params=self.request.GET.items(),p_allowedparams=['sub_category_id','sub_category_name','last_update_date'])
         if self.inputparams != {}:
             self.queryset = self.model.objects.filter(**self.inputparams)
@@ -475,6 +481,39 @@ class RESTEcommOrderPaymentInfoCreate(generics.ListCreateAPIView):
         self.queryset = ecomm_models.EcommOrderpaymentinfo.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)
 
+
+class RESTEcommOrderKitCreate(generics.ListCreateAPIView):
+    lookup_field = 'orderid'
+    queryset = ecomm_models.EcommOrderkitproducts.objects.none()
+    serializer_class = EcommOrderKitSerializer
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = ecomm_models.EcommOrderkitproducts.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTEcommOrderStatusHistCreate(generics.ListCreateAPIView):
+    lookup_field = 'orderid'
+    queryset = ecomm_models.EcommOrderstatusupdatehistory.objects.none()
+    serializer_class = EcommOrderStatHistSerializer
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = ecomm_models.EcommOrderstatusupdatehistory.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
 
 class RESTItemOfferLines(generics.ListCreateAPIView):
     lookup_field = 'offer_header_od'

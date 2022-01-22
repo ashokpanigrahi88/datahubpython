@@ -147,11 +147,11 @@ class ManfCreateView(CreateView):
 @method_decorator(login_required, name='dispatch')
 class ManfUpdateView(UpdateView):
     model = MODEL
-    #form_class = FORM_CLASS
+    form_class = FORM_CLASS
     template_name = TEMPLATE_PREFIX.format('form')
     slug_field = PK_NAME
     slug_url_kwarg = PK_NAME
-    fields = form_field_list
+    #fields = form_field_list
 
     def get_context_data(self, **kwargs):
         context = super(ManfUpdateView, self).get_context_data(**kwargs)
@@ -163,9 +163,6 @@ class ManfUpdateView(UpdateView):
         print(context)
         return context
 
-    def form_valid(self, form):
-        print('form valid',form.cleaned_data)
-        self.object.save()
 
     def get_success_url(self):
         return reverse(REVERSE)

@@ -10,13 +10,13 @@
 
     <div class="content" >
 
-<div class="row">
-        <div class="col-sm-1">
+        <div class="row">
+                <div class="col-sm-1">
+                </div>
+            {% block moduletitle %}    {% endblock %} <br>
         </div>
-    {% block moduletitle %}    {% endblock %} <br>
-</div>
     </br>
-  <form  method="post">
+  <form action="" method="POST">
     {% csrf_token %}
     {% for field in form %}
     {% cycle '<div class="row">' '<div class="row">' %}
@@ -32,9 +32,9 @@
             <sup>{{ field.help_text }}</sup>
             {% endif %}
             {% for error in field.errors %}
-            <div class="row">
-                <div class="alert alert-danger">{{error}}</div>
-            </div>
+                <div class="row">
+                    <div class="alert alert-danger">{{error}}</div>
+                </div>
             {% endfor %}
         </div>
         <div class="col-md-3 pull-left">
@@ -43,7 +43,9 @@
     {% cycle '</div>' '</div>' %}
 
     {% endfor %}
+  {% comment %}
   </form>
+    {% comment %}
     </div>
     </br>
 
@@ -58,20 +60,22 @@
               <a href="/app/model_delete/{{ object.pk }}/" style="text-decoration: none;">
                   <button class="delete-btn btn-delete" type="button">Delete</button>
               </a>
-              {% endcomment %}
               {% block deleteaction %} {% endblock %}
               <a href="{% block cancelaction %} {% endblock %}" style="text-decoration: none;">
                   <button class="cancel-btn cancel-button" type="button">Cancel</button>
               </a>
-              <a href="" style="text-decoration: none;">
-                  <button type="submit" class="save-btn">Save</button>
-              </a>
+
           </div>
       </div>
+              {% endcomment %}
 
-  </form>
+
         {% block postform %}
         {% endblock %}
+                  <button type="submit" class="save-btn">Save</button>
+  </form>
+
+
     </div>
     {% block modulefooter %}
         {% endblock %}
