@@ -4,6 +4,8 @@ from django.contrib.auth.models import  Group
 from rest_framework import generics, status
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 from common.models import (CmnUsers, InvItemCategories, InvItemSubCategories, InvItemMasters, CmnBusinessSectors,
                             InvItemSalesUnits,InvItemBarcodes,
@@ -282,6 +284,8 @@ class RESTUOMList(generics.ListCreateAPIView):
     queryset = CmnUnitOfMeasurements.objects.none()
     serializer_class = UOMSerialized
     pagination_class = StandardResultsSetPagination
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
     inputparams = {}
     queryparams = {}
 
@@ -596,6 +600,53 @@ class RESTCardLoyaltySummary(generics.ListCreateAPIView):
     model = CmnLoyaltySummary
     queryset = model.objects.all()
     serializer_class = CardLoyaltySummaryialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTVouchers(generics.ListCreateAPIView):
+    lookup_field = 'trans_id'
+    model = ecomm_models.EcommVouchers
+    queryset = model.objects.all()
+    serializer_class = VoucherSerialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTSimilarItems(generics.ListCreateAPIView):
+    lookup_field = 'item_number'
+    model = InvSimilarItems
+    queryset = model.objects.all()
+    serializer_class = SimilarItemsSerialized
     pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}

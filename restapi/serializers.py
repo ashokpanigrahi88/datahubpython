@@ -5,7 +5,7 @@ from common.models import (InvItemCategories, InvItemSubCategories,InvItemMaster
                            InvItemBatches, InvItemBatchLines, InvItemSalesUnits, InvItemBarcodes,
                            CmnUnitOfMeasurements, CmnTaxCodes, ArCustomers,ArCustomerProfiles,
                            InvManufacturers, InvLocations,InvItemLocations, InvItemOfferHeaders, InvItemOfferLines,
-                           CmnCards, CmnCardAssignments, CmnCardTrans, CmnLoyaltySummary)
+                           CmnCards, CmnCardAssignments, CmnCardTrans, CmnLoyaltySummary, InvSimilarItems)
 from common import (sysutil,commonutil)
 from common.submodels import (imp_models, ecomm_models)
 
@@ -421,4 +421,37 @@ class CardLoyaltySummaryialized(serializers.ModelSerializer):
         for fname, fvalue in validated_data.items():
             setattr(instance, fname, fvalue)
         instance.save()
+        return instance
+
+
+class VoucherSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.EcommVouchers
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return ecomm_models.EcommVouchers.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance
+
+
+
+class SimilarItemsSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = InvSimilarItems
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return {}
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        #instance.save()
         return instance

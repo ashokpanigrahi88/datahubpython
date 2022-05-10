@@ -231,6 +231,17 @@ class EcommOrderdetailsinfo(models.Model):
     refundapproveddate = models.DateTimeField(blank=True, null=True, verbose_name=VN_C('refundapproveddate'))
     refundapprovedby = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('refundapprovedby'))
     refundamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('refundamount'))
+    kitdiscount = models.DecimalField(max_digits=20, decimal_places=3, blank=True, null=True,
+                                      verbose_name=VN_C('Kit Discount'))
+    kitpromotionid = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('Kit Promotion Id'))
+    offerkitid = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('Offer Kit Id '))
+    productpromotionid = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('Product Promotion Id '))
+    productvariantid = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('Product Variant Id'))
+    offerproductid = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('Offer Product Id '))
+    offerproductvariantid = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('Offer Product Variant ID'))
+    packingstoreid = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('Picking Store ID'))
+    returncustomernotes = models.CharField(max_length=400, blank=True, null=True, verbose_name=VN_C('Return Customer Notes'))
+    returnimage = models.CharField(max_length=400, blank=True, null=True, verbose_name=VN_C('Return Image'))
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
     orderid = models.ForeignKey(EcommOrderinfo, models.DO_NOTHING, blank=True,
                                         null=True, to_field='orderid', db_column='orderid', verbose_name=VN_C('orderid'))
@@ -255,7 +266,7 @@ class EcommOrderkitproducts(models.Model):
     productqtytype = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('productqtytype'))
     productqtystep = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('productqtystep'))
     sku = models.CharField(max_length=50, blank=True, null=True, verbose_name=VN_C('sku'))
-    productvariantid = models.BigIntegerField(blank=True, null=True, editable=False,
+    productvariantid = models.BigIntegerField(blank=True, null=True, editable=True,
                                                verbose_name=VN_C('productvariantid'))
     productvariantamount = models.DecimalField(max_digits=20, decimal_places=3, blank=True, null=True,
                                                 verbose_name=VN_C('productvariantamount'))
@@ -296,7 +307,7 @@ class EcommOrderkitproducts(models.Model):
 
 
 class EcommOrderpaymentinfo(models.Model):
-    paymentrefid = models.BigIntegerField(max_length=100, blank=True, null=True, editable=True, verbose_name=VN_C('paymentrefid'))
+    paymentrefid = models.BigIntegerField( blank=True, null=True, editable=True, verbose_name=VN_C('paymentrefid'))
     paymentamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('paymentamount'))
     paymentcurrencyid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('paymentcurrencyid'))
     paymentcurrency = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('paymentcurrency'))
@@ -306,7 +317,7 @@ class EcommOrderpaymentinfo(models.Model):
     refundcurrency = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('refundcurrency'))
     pointsredeemed = models.DecimalField(max_digits=20, decimal_places=0,blank=True, null=True, verbose_name=VN_C('pointsredeemed'))
     redeemedamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('redeemedamount'))
-    loyaltytransactionid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('loyaltytransactionid'))
+    loyaltytransid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('loyaltytransid'))
     loyaltycardno = models.CharField(max_length=100, blank=True, null=True, editable=True, verbose_name=VN_C('loyaltycardno'))
     receivedcash  = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('receivedcash'))
     attribute1 = models.CharField(max_length=400, blank=True, null=True, verbose_name=VN_C('attribute1'))
@@ -329,10 +340,25 @@ class EcommOrderpaymentinfo(models.Model):
     paymentmethod = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('paymentmethod'))
     orderrefid = models.CharField(max_length=100, blank=True, null=True, editable=True, verbose_name=VN_C('orderrefid'))
     orderamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('orderamount'))
+    servicecharges = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('servicecharges'))
+    paymentcurrencyname = models.CharField(max_length=30, blank=True, null=True, default='THIS', verbose_name=VN_C('payment currency name'))
+    refundcurrencyname	 = models.CharField(max_length=30, blank=True, null=True, default='THIS', verbose_name=VN_C('refund currency name'))
+    loyaltypointsredeemed	= models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('loyalty points redeemed'))
+    loyaltyredeemedamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('loyalty redeemed amount'))
+    loyaltytransid	= models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('loyalt trans id'))
+    loyaltyconversionrate	= models.DecimalField(max_digits=20, decimal_places=6,blank=True, null=True, verbose_name=VN_C('loyalty conversion rate'))
+    refundloyaltypoints	= models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('refund loyalty points'))
+    refundloyaltyamount	= models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('refund loyalty amount'))
+    refundloyaltytransid	= models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('refund loyalty trans id'))
+    customervoucherid	= models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('customer voucher id'))
+    voucherno	= models.CharField(max_length=30, blank=True, null=True, default='THIS', verbose_name=VN_C('voucher no'))
+    voucheramount	= models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('voucher amount'))
+    refundvoucher	= models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('refund voucher'))
+    refundvoucherid	= models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('refund voucher id'))
+    refundvoucheramount	= models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('refund voucher amount'))
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
     orderid = models.ForeignKey(EcommOrderinfo, models.DO_NOTHING, blank=True,
                                         null=True, to_field='orderid', db_column='orderid', verbose_name=VN_C('orderid'))
-
 
     class Meta:
         managed = False
@@ -434,3 +460,42 @@ class EcommOrderstatusupdatehistory(models.Model):
 
     def __str__(self):
         return str(self.ORDERSTATUSUPDATEHISTORYID)
+
+class EcommVouchers(models.Model):
+    customerid = models.BigIntegerField(blank=True, null=True, editable=False, verbose_name=VN_C('customerid'))
+    voucherno = models.CharField(max_length=50, blank=True, null=True, verbose_name=VN_C('voucherno'))
+    vouchergeneratedon = models.DateTimeField(blank=True, null=True, verbose_name=VN_C('vouchergeneratedon'))
+    voucherstatus = models.IntegerField(blank=True, null=True, verbose_name=VN_C('voucherstatus'))
+    vouchersource = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('vouchersource'))
+    sourcecustomervoucherid = models.BigIntegerField(blank=True, null=True, editable=False, verbose_name=VN_C('sourcecustomervoucherid'))
+    vouchergiftfromcustomerid = models.BigIntegerField(blank=True, null=True, editable=False, verbose_name=VN_C('vouchergiftfromcustomerid'))
+    voucheramount = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('voucheramount'))
+    redeemedpoints = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('redeemedpoints'))
+    conversionrate = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('conversionrate'))
+    attribute1 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute1'))
+    attribute2 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute2'))
+    attribute3 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute3'))
+    attribute4 = models.CharField(max_length=100, blank=True, null=True, verbose_name=VN_C('attribute4'))
+    status = models.IntegerField(blank=True, null=True, default=1, verbose_name=VN_C('status'))
+    row_version = models.IntegerField(blank=True, null=True, verbose_name=VN_C('row_version'))
+    record_status = models.CharField(max_length=1, blank=True, null=True, default='I', editable=False, verbose_name=VN_C('record_status'))
+    last_update_date = models.DateTimeField(auto_now=True, blank=True, null=True, editable=False, verbose_name=VN_C('last_update_date'))
+    creation_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, editable=False, verbose_name=VN_C('creation_date'))
+    bu_id = models.IntegerField(blank=True, null=True, default=1, editable=False, verbose_name=VN_C('bu_id'))
+    update_source = models.CharField(max_length=30, blank=True, null=True, default='API', editable=False, verbose_name=VN_C('update_source'))
+    created_by = models.IntegerField(blank=True, null=True, default=-1, editable=False, verbose_name=VN_C('created_by'))
+    last_updated_by = models.IntegerField(blank=True, null=True, default=-1, editable=False, verbose_name=VN_C('last_updated_by'))
+    delete_flag = models.CharField(max_length=1, blank=True, null=True, default='N', editable=False, verbose_name=VN_C('delete_flag'))
+    third_party_source = models.CharField(max_length=30, blank=True, null=True, default='THIS', verbose_name=VN_C('third_party_source'))
+    third_party_source_ref = models.CharField(max_length=50, blank=True, null=True, default=-1, verbose_name=VN_C('third_party_source_ref'))
+    #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
+    customervoucherid = models.BigAutoField(blank=False, null=False, editable=False, verbose_name=VN_C('customervoucherid'), primary_key=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ecomm_vouchers'
+        verbose_name=VN_T('ecomm_vouchers')
+
+    def __str__(self):
+        return str(self.CUSTOMERVOUCHERID)
+

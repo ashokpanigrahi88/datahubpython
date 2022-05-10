@@ -43,5 +43,7 @@ urlpatterns = [
     url(r"^loyaltycardassignment/$",RESTCardAssignments.as_view(),name="cmn_card_assignments"),
     url(r"^loyaltycardtrans/$",RESTCardTrans.as_view(),name="cmn_card_trans"),
     url(r"^loyaltycardsummary/$",RESTCardLoyaltySummary.as_view(),name="cmn_loyalty_summary"),
+    url(r"^ecommvouchers/$",RESTVouchers.as_view(),name="ecommvouchers_list"),
+    url(r"^similaritems/$",RESTSimilarItems.as_view(),name="similar_items"),
 ]
 

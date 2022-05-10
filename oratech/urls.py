@@ -18,6 +18,7 @@ from django.contrib.auth import views
 from django.urls import include, path
 from rest_framework import routers
 from restapi import views as restapiviews
+from rest_framework.authtoken import views as tokenviews
 
 router = routers.DefaultRouter()
 router.register(r'users', restapiviews.UserViewSet)
@@ -40,6 +41,7 @@ urlpatterns = [
     #path('restapi/', include(router.urls)),
     #path('restapi/api-auth/', include('rest_framework.urls', namespace='rest_framework'),name='restapi'),
     path(r'rest-api/', include('restapi.urls', namespace='restapi'), name='restapi'),
+    path('api-token-auth/', tokenviews.obtain_auth_token, name='api-token-auth'),
     path(r'', include('common.urls', namespace='common'), name='main'),
 ]
 

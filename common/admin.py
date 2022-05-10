@@ -8,6 +8,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 from common.sysutil import *
 from django.apps import apps
+from rest_framework.authtoken.models import Token
 
 from common.models import CmnUsers, CmnModules, CmnFunctions
 
@@ -57,6 +58,10 @@ class UserCreationForm(forms.ModelForm):
         user.bu_id = 1
         if commit:
             user.save()
+            try:
+                token, created = Token.objects.get_or_create(user=user)
+            except Exception as ex:
+                print('Token Creation Exception:{}'.format(ex))
         return user
 
 
@@ -83,9 +88,13 @@ class UserChangeForm(forms.ModelForm):
         print('updating password')
         if not user.user_id:
            user.user_id = get_sequenceval('cmn_users_s.nextval')
-        user.set_password(self.cleaned_data["password1"])
-        print('Current Password')
-        user.user_password = self.cleaned_data["password1"]
+        try:
+            user.set_password(self.cleaned_data["password1"])
+            print('Current Password')
+            user.user_password = self.cleaned_data["password1"]
+        except Exception as ex:
+            print('save user exception:{}'.format(ex))
+
         #user.update_source = 'RESETPASSWORD'
         if commit:
             user.save()

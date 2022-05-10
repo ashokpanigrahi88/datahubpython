@@ -5941,6 +5941,7 @@ class InvItemOfferHeaders(models.Model):
     created_by = models.BigIntegerField(blank=True, null=True, editable=False, verbose_name=VN_C('created_by'))
     buy_qty = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('buy_qty'))
     offer_type_code = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('offer_type_code'))
+    location_id = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('Location ID'))
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
     offer_header_id = models.BigIntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('offer_header_id'), primary_key=True)
 
@@ -5975,6 +5976,8 @@ class InvItemOfferLines(models.Model):
     free_item_qty_price_type = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('free_item_qty_price_type'))
     free_item_qty = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('free_item_qty'))
     free_item_id = models.IntegerField(blank=True, null=True, editable=False, verbose_name=VN_C('free_item_id'))
+    offer_header_id = models.ForeignKey(InvItemOfferHeaders, models.CASCADE, blank=False, null=False, to_field='offer_header_id',
+                                        db_column='offer_header_id')
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
     offer_line_id = models.BigIntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('offer_line_id'), primary_key=True)
 
@@ -12875,3 +12878,39 @@ class ApDbnoteLines(models.Model):
 
     def __str__(self):
         return str(self.dbnote_line_id)
+
+
+class InvSimilarItems(models.Model):
+    active = models.CharField(max_length=1, blank=True, null=True, verbose_name=VN_C('active'))
+    record_status = models.CharField(max_length=1, blank=True, null=True, editable=False, verbose_name=VN_C('record_status'))
+    item_number = models.CharField(max_length=50, blank=False, null=False, verbose_name=VN_C('item_number'))
+    item_name = models.CharField(max_length=150, blank=False, null=False, verbose_name=VN_C('item_name'))
+    qty_instock = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('qty_instock'))
+    sup_supplier_id = models.IntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('sup_supplier_id'))
+    reorder_qty = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('reorder_qty'))
+    case_cp = models.DecimalField(max_digits=14, decimal_places=3,blank=True, null=True, verbose_name=VN_C('case_cp'))
+    unit_cp = models.DecimalField(max_digits=14, decimal_places=3,blank=True, null=True, verbose_name=VN_C('unit_cp'))
+    alternate_case_cp = models.DecimalField(max_digits=14, decimal_places=3,blank=True, null=True, verbose_name=VN_C('alternate_case_cp'))
+    alternate_unit_cp = models.DecimalField(max_digits=14, decimal_places=3,blank=True, null=True, verbose_name=VN_C('alternate_unit_cp'))
+    qty_inorder = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('qty_inorder'))
+    min_qty = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('min_qty'))
+    max_qty = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, verbose_name=VN_C('max_qty'))
+    supplier_name = models.CharField(max_length=600, blank=True, null=True, verbose_name=VN_C('supplier_name'))
+    currentucp = models.BigIntegerField(blank=True, null=True, verbose_name=VN_C('currentucp'))
+    sih_similar_item_id = models.BigIntegerField(blank=True, null=True, editable=False, verbose_name=VN_C('sih_similar_item_id'))
+    item_id = models.IntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('item_id'))
+    supplier_product_code = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('supplier_product_code'))
+    sub_category_name = models.CharField(max_length=50, blank=True, null=True, verbose_name=VN_C('sub_category_name'))
+    category_name = models.CharField(max_length=50, blank=True, null=True, verbose_name=VN_C('category_name'))
+    similar_item_category = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('similar_item_category'))
+    similar_item_concated = models.CharField(max_length=4000, blank=True, null=True, verbose_name=VN_C('similar_item_concated'))
+    include_in_po = models.CharField(max_length=1, blank=True, null=True, verbose_name=VN_C('include_in_po'))
+    #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
+
+    class Meta:
+        managed = False
+        db_table = 'inv_similar_items_va'
+        verbose_name=VN_T('inv_similar_items_va')
+
+    def __str__(self):
+        return str(self.item_name)
