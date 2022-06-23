@@ -6,6 +6,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from datetime import date, time, timedelta
 
 from common.models import (CmnUsers, InvItemCategories, InvItemSubCategories, InvItemMasters, CmnBusinessSectors,
                             InvItemSalesUnits,InvItemBarcodes,
@@ -284,8 +285,8 @@ class RESTUOMList(generics.ListCreateAPIView):
     queryset = CmnUnitOfMeasurements.objects.none()
     serializer_class = UOMSerialized
     pagination_class = StandardResultsSetPagination
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    # authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
     inputparams = {}
     queryparams = {}
 
@@ -376,16 +377,24 @@ class RESTLocationStockList(generics.ListCreateAPIView):
     queryset = InvItemLocations.objects.none()
     serializer_class = LocationStockSerialized
     pagination_class  = LargeResultsSetPagination
-    pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
     def get(self, request, *args, **kwargs):
+        dayschanged = 2
+        full = False
         self.inputparams = {}
         for key,value in self.request.GET.items():
-            if 'format' not in key and 'page' not in key:
+            if 'full' in key:
+                full = True
+            if 'days' in key:
+                dayschanged = int(value)
+            if 'format' not in key and 'page' not in key and 'full' not in key and 'days' not in key:
                 self.inputparams[key] = value
-        self.queryset = InvItemLocations.objects.filter(**self.inputparams)
+        if not full:
+            self.queryset = InvItemLocations.objects.filter(last_update_date__gt=date.today()-timedelta(days=dayschanged)).filter(**self.inputparams)
+        else:
+            self.queryset = InvItemLocations.objects.filter(**self.inputparams)
         return self.list(request, *args, **kwargs)
 
 
@@ -659,3 +668,28 @@ class RESTSimilarItems(generics.ListCreateAPIView):
         self.queryset = self.model.objects.filter(**self.inputparams)
         print(self.queryset.query)
         return self.list(request, *args, **kwargs)
+
+
+class RESTBOM(generics.ListCreateAPIView):
+    lookup_field = 'level0_item_id'
+    model = InvBom
+    queryset = model.objects.all()
+    serializer_class = BOMSerialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        print(self.queryset.query)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTVoucherDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ecomm_models.EcommVouchers.objects.all()
+    serializer_class = VoucherSerialized
+    pagination_class = StandardResultsSetPagination

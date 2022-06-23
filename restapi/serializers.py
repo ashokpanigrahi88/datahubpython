@@ -5,7 +5,8 @@ from common.models import (InvItemCategories, InvItemSubCategories,InvItemMaster
                            InvItemBatches, InvItemBatchLines, InvItemSalesUnits, InvItemBarcodes,
                            CmnUnitOfMeasurements, CmnTaxCodes, ArCustomers,ArCustomerProfiles,
                            InvManufacturers, InvLocations,InvItemLocations, InvItemOfferHeaders, InvItemOfferLines,
-                           CmnCards, CmnCardAssignments, CmnCardTrans, CmnLoyaltySummary, InvSimilarItems)
+                           CmnCards, CmnCardAssignments, CmnCardTrans, CmnLoyaltySummary, InvSimilarItems,
+                           InvBom)
 from common import (sysutil,commonutil)
 from common.submodels import (imp_models, ecomm_models)
 
@@ -444,6 +445,22 @@ class VoucherSerialized(serializers.ModelSerializer):
 class SimilarItemsSerialized(serializers.ModelSerializer):
     class Meta:
         model = InvSimilarItems
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return {}
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        #instance.save()
+        return instance
+
+
+class BOMSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = InvBom
         fields = '__all__'
 
     def create(self, validated_data):

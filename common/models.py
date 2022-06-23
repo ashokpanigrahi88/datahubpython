@@ -7074,6 +7074,15 @@ class InvLocations(models.Model):
                                      verbose_name=VN_C('take_snapshot'))
     noof_levels = models.IntegerField(blank=True, null=True, verbose_name=VN_C('noof_levels'))
     sub_loc_separator = models.CharField(max_length=1, blank=True, null=True, verbose_name=VN_C('sub_loc_separator'))
+    click_and_collect = models.CharField(max_length=1, blank=True, null=True,
+                                   choices=populatelistitem('YES_NO'),
+                                         verbose_name=VN_C('click_and_collect'))
+    delivery = models.CharField(max_length=1, blank=True, null=True,
+                                   choices=populatelistitem('YES_NO'),
+                                verbose_name=VN_C('delivery'))
+    in_store = models.CharField(max_length=1, blank=True, null=True,
+                                   choices=populatelistitem('YES_NO'),
+                                verbose_name=VN_C('delivery'))
 
     class Meta:
         managed = False
@@ -12905,6 +12914,7 @@ class InvSimilarItems(models.Model):
     similar_item_category = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('similar_item_category'))
     similar_item_concated = models.CharField(max_length=4000, blank=True, null=True, verbose_name=VN_C('similar_item_concated'))
     include_in_po = models.CharField(max_length=1, blank=True, null=True, verbose_name=VN_C('include_in_po'))
+    last_update_date = models.DateTimeField(auto_now=True, blank=True, null=True, editable=False, verbose_name=VN_C('last_update_date'))
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
 
     class Meta:
