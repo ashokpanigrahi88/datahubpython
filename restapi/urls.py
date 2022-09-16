@@ -47,5 +47,6 @@ urlpatterns = [
     url(r"^similaritems/$",RESTSimilarItems.as_view(),name="similar_items"),
     url(r"^kits/$",RESTBOM.as_view(),name="bom_items"),
     url(r"^ecommvoucher/(?P<pk>[0-9]+)/$", RESTVoucherDetail.as_view(),name="voucher_detail"),
+    url(r"^tpstocks/$",RESTTpStocksCreate.as_view(),name="tpstocks_list"),
 ]
 

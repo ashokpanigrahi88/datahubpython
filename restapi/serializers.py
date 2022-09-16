@@ -472,3 +472,24 @@ class BOMSerialized(serializers.ModelSerializer):
             setattr(instance, fname, fvalue)
         #instance.save()
         return instance
+
+
+
+class TpStockSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.TpStocks
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super(TpStockSerialized, self).__init__(many=True, *args, **kwargs)
+
+
+    def create(self, validated_data):
+        data = validated_data
+        return ecomm_models.TpStocks.objects.create(**data)
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        instance.save()
+        return instance

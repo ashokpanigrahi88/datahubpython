@@ -308,7 +308,7 @@ class EcommOrderkitproducts(models.Model):
 
 
 class EcommOrderpaymentinfo(models.Model):
-    paymentrefid = models.BigIntegerField( blank=True, null=True, editable=True, verbose_name=VN_C('paymentrefid'))
+    paymentrefid = models.CharField(max_length=100,blank=True,null=True, editable=True, verbose_name=VN_C('paymentrefid'))
     paymentamount = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True, verbose_name=VN_C('paymentamount'))
     paymentcurrencyid = models.BigIntegerField(blank=True, null=True, editable=True, verbose_name=VN_C('paymentcurrencyid'))
     paymentcurrency = models.CharField(max_length=10, blank=True, null=True, verbose_name=VN_C('paymentcurrency'))
@@ -500,3 +500,34 @@ class EcommVouchers(models.Model):
     def __str__(self):
         return str(self.CUSTOMERVOUCHERID)
 
+
+class TpStocks(models.Model):
+    tp_stock_id = models.BigIntegerField(blank=True, null=True, editable=False, primary_key=True, verbose_name=VN_C('ID'))
+    status = models.CharField(max_length=30, blank=True, null=True, verbose_name=VN_C('status'))
+    productGUID = models.CharField(max_length=100, blank=True, null=True, db_column='productguid', verbose_name=VN_C('product guid'))
+    storeGUID = models.CharField(max_length=100, blank=True, null=True,db_column='storeguid', verbose_name=VN_C('store guid'))
+    productName = models.CharField(max_length=150, blank=True, null=True,db_column='productname', verbose_name=VN_C('product name'))
+    storeName = models.CharField(max_length=150, blank=True, null=True, db_column='storename',verbose_name=VN_C('store name'))
+    internalReferenceCode = models.CharField(max_length=150, blank=True,db_column='internalreferencecode', null=True, verbose_name=VN_C('internal reference'))
+    integrationValue = models.BigIntegerField(blank=True,db_column='integrationvalue', null=True, verbose_name=VN_C('Location Id'))
+    quantity = models.DecimalField(max_digits=20, decimal_places=3,blank=True, null=True,  editable=True, verbose_name=VN_C('quantity'))
+    lastUpdatedDate = models.DateTimeField(auto_now=True, blank=True, null=True, editable=True,db_column='lastupdateddate', verbose_name=VN_C('last_update_date'))
+    record_status = models.CharField(max_length=1, blank=True, null=True, default='I', editable=True, verbose_name=VN_C('record_status'))
+    last_update_date = models.DateTimeField(auto_now=True, blank=True, null=True, editable=True, verbose_name=VN_C('last_update_date'))
+    creation_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, editable=True, verbose_name=VN_C('creation_date'))
+    bu_id = models.IntegerField(blank=True, null=True, default=1, editable=True, verbose_name=VN_C('bu_id'))
+    update_source = models.CharField(max_length=30, blank=True, null=True, default='API', editable=True, verbose_name=VN_C('update_source'))
+    created_by = models.IntegerField(blank=True, null=True, default=-1, editable=True, verbose_name=VN_C('created_by'))
+    last_updated_by = models.IntegerField(blank=True, null=True, default=-1, editable=True, verbose_name=VN_C('last_updated_by'))
+    delete_flag = models.CharField(max_length=1, blank=True, null=True, default='N', editable=True, verbose_name=VN_C('delete_flag'))
+    third_party_source = models.CharField(max_length=30, blank=True, null=True, default='THIS', verbose_name=VN_C('third_party_source'))
+    third_party_source_ref = models.CharField(max_length=50, blank=True, null=True, default=-1, verbose_name=VN_C('third_party_source_ref'))
+    #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
+
+    class Meta:
+        managed = False
+        db_table = 'tp_stocks'
+        verbose_name=VN_T('tp_stocks')
+
+    def __str__(self):
+        return str(self.tp_stock_id)

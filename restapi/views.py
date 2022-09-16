@@ -693,3 +693,31 @@ class RESTVoucherDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = ecomm_models.EcommVouchers.objects.all()
     serializer_class = VoucherSerialized
     pagination_class = StandardResultsSetPagination
+
+
+class RESTTpStocksCreate(generics.ListCreateAPIView):
+    lookup_field = 'tp_stock_id'
+    queryset = ecomm_models.TpStocks.objects.none()
+    serializer_class = TpStockSerialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = ecomm_models.TpStocks.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        print('initial',serializer.initial_data)
+        serializer.is_valid(raise_exception=True)
+        print('validated',serializer.validated_data)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+
