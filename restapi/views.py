@@ -18,6 +18,28 @@ import django_filters
 from django_filters.rest_framework import DjangoFilterBackend
 from restapi.serializers import *
 
+
+TARGET = ""
+def assign_target(p_key, p_value):
+    global TARGET
+    if p_key == 'target':
+       TARGET = p_value
+
+
+
+def get_target_filter(p_filtercolumn:str = 'ITEM_ID', p_target:str = ""):
+    target_filter = ""
+    print('target filter',TARGET)
+    if len(p_target) > 0:
+        target_filter  = """ {} in (SELECT x.item_id 
+                                            FROM inv_item_batches y, inv_item_batch_lines x
+                                            WHERE y.batch_id = x.batch_id 
+                                            AND   y.batch_name = upper('#{}')
+                                            ) """.format(p_filtercolumn, p_target)
+    print('targetfilter',target_filter)
+    return target_filter
+
+
 class LargeResultsSetPagination(PageNumberPagination):
     page_size = 1000
     page_size_query_param = 'page_size'
@@ -37,7 +59,10 @@ def process_params(p_params, p_allowedparams = []):
                     if param in key:
                         inputparams[key] = value
             else:
-                inputparams[key] = value
+                if key == 'target':
+                    TARGET = value
+                else:
+                    inputparams[key] = value
     except Exception as ex:
         print('process params:',ex)
     finally:
@@ -142,7 +167,12 @@ class ItemFilter(django_filters.FilterSet):
 
 class RESTItemList2(generics.ListCreateAPIView):
     #lookup_field = 'item_number'
-    queryset = InvItemMasters.objects.all()
+
+    def get_queryset(self):
+        queryset = InvItemMasters.objects.all()
+        return queryset
+
+
     serializer_class = ItemSerializer
     pagination_class = StandardResultsSetPagination
     filter_backends = [DjangoFilterBackend]
@@ -152,19 +182,24 @@ class RESTItemList2(generics.ListCreateAPIView):
 
 class RESTItemList(generics.ListCreateAPIView):
     lookup_field = 'item_number'
-    queryset = InvItemMasters.objects.none()
     serializer_class = ItemSerializer
     pagination_class = StandardResultsSetPagination
     inputparams = {}
     queryparams = {}
 
+    def get_queryset_old(self):
+        queryset = InvItemMasters.objects.none()
+        return queryset
+
     def get(self, request, *args, **kwargs):
         self.inputparams = {}
+        self.additional_where = ""
         for key,value in self.request.GET.items():
             if 'item_name' in key or 'item_number' in key or 'last_update_date' in key:
                 self.inputparams[key] = value
+            assign_target(key, value)
         if self.inputparams != {}:
-            self.queryset = InvItemMasters.objects.filter(**self.inputparams)
+            self.queryset = InvItemMasters.objects.filter(**self.inputparams).extra(where=[get_target_filter(p_target=TARGET)])
         return self.list(request, *args, **kwargs)
 
 
