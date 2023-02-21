@@ -20,6 +20,10 @@ from restapi.serializers import *
 
 
 TARGET = ""
+def init_target():
+    global TARGET
+    TARGET =""
+
 def assign_target(p_key, p_value):
     global TARGET
     if p_key == 'target':
@@ -27,7 +31,7 @@ def assign_target(p_key, p_value):
 
 
 
-def get_target_filter(p_filtercolumn:str = 'ITEM_ID', p_target:str = ""):
+def get_target_filterbatch(p_filtercolumn:str = 'ITEM_ID', p_target:str = "", p_queryset = None):
     target_filter = ""
     print('target filter',TARGET)
     if len(p_target) > 0:
@@ -37,7 +41,27 @@ def get_target_filter(p_filtercolumn:str = 'ITEM_ID', p_target:str = ""):
                                             AND   y.batch_name = upper('#{}')
                                             ) """.format(p_filtercolumn, p_target)
     print('targetfilter',target_filter)
-    return target_filter
+    if len(target_filter) > 0:
+        return p_queryset.extra(where=[target_filter])
+    return p_queryset
+
+
+def get_target_filter(p_filtercolumn:str = 'ITEM_ID', p_target:str = "", p_queryset = None):
+    target_filter = ""
+    print('target filter',TARGET)
+    if len(p_target) > 0:
+        target_filter  = """ {} in (SELECT x.item_id 
+                                            FROM  ar_cust_item_uploads x
+                                            WHERE x.customer_id  in  ( SELECT y.customer_id 
+                                                                        FROM ar_customers y
+                                                                        WHERE y.customer_name = upper('{}')
+                                                                     )
+                                            AND   x.upload_item  = 'Y' 
+                                            ) """.format(p_filtercolumn, p_target)
+    print('targetfilter',target_filter)
+    if len(target_filter) > 0:
+        return p_queryset.extra(where=[target_filter])
+    return p_queryset
 
 
 class LargeResultsSetPagination(PageNumberPagination):
@@ -194,12 +218,14 @@ class RESTItemList(generics.ListCreateAPIView):
     def get(self, request, *args, **kwargs):
         self.inputparams = {}
         self.additional_where = ""
+        init_target()
         for key,value in self.request.GET.items():
             if 'item_name' in key or 'item_number' in key or 'last_update_date' in key:
                 self.inputparams[key] = value
             assign_target(key, value)
         if self.inputparams != {}:
-            self.queryset = InvItemMasters.objects.filter(**self.inputparams).extra(where=[get_target_filter(p_target=TARGET)])
+            self.queryset = InvItemMasters.objects.filter(**self.inputparams)
+            self.queryset = get_target_filter(p_target=TARGET,p_queryset=self.queryset)
         return self.list(request, *args, **kwargs)
 
 

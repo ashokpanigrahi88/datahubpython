@@ -142,5 +142,6 @@ def load_data(p_lastupdatedate = None):
 
 def schedule_load_data(p_interval:int = 15*60):
     while True:
+        get_connection()
         load_data()
         sleep(p_interval)
