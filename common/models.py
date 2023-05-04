@@ -7083,6 +7083,7 @@ class InvLocations(models.Model):
     in_store = models.CharField(max_length=1, blank=True, null=True,
                                    choices=populatelistitem('YES_NO'),
                                 verbose_name=VN_C('delivery'))
+    paypal_client_id = models.CharField(max_length=255, blank=True, null=True, verbose_name=VN_C('paypal_client_id'))
 
     class Meta:
         managed = False
@@ -8539,7 +8540,8 @@ class InvItemBatchLines(models.Model):
     attribute3 = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('attribute3'))
     attribute2 = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('attribute2'))
     attribute1 = models.CharField(max_length=240, blank=True, null=True, verbose_name=VN_C('attribute1'))
-    image_url = models.CharField(max_length=2000, blank=True, null=True, verbose_name=VN_C('image_url'))
+    image_url = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('image_url'))
+    on_click_action = models.CharField(max_length=250, blank=True, null=True, verbose_name=VN_C('on_click_action'))
     quantity = models.DecimalField(max_digits=12, decimal_places=3,blank=True, null=True, default=1, verbose_name=VN_C('quantity'))
     #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
     batch_line_id = models.BigIntegerField(blank=False, null=False, editable=False, verbose_name=VN_C('batch_line_id'), primary_key=True)

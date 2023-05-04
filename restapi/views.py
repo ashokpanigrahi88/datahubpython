@@ -782,3 +782,38 @@ class RESTTpStocksCreate(generics.ListCreateAPIView):
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
+
+class RESTItemExport(generics.ListCreateAPIView):
+    lookup_field = 'item_id'
+    model = imp_models.ExpMiddlewareItemsexpV
+    queryset = model.objects.all()
+    serializer_class = ItemsExportSerialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)
+
+
+class RESTLocAttribute(generics.ListCreateAPIView):
+    lookup_field = 'item_id'
+    model = ecomm_models.WwwStockPercent
+    queryset = model.objects.all()
+    serializer_class = LocAttributeSerialized
+    pagination_class = StandardResultsSetPagination
+    inputparams = {}
+    queryparams = {}
+
+    def get(self, request, *args, **kwargs):
+        self.inputparams = {}
+        for key,value in self.request.GET.items():
+            if 'format' not in key and 'page' not in key:
+                self.inputparams[key] = value
+        self.queryset = self.model.objects.filter(**self.inputparams)
+        return self.list(request, *args, **kwargs)

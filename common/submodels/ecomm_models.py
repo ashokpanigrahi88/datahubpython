@@ -531,3 +531,37 @@ class TpStocks(models.Model):
 
     def __str__(self):
         return str(self.tp_stock_id)
+
+class WwwStockPercent(models.Model):
+    delivery = models.CharField(max_length=1, blank=True, null=True, verbose_name=VN_C('delivery'))
+    in_store = models.CharField(max_length=1, blank=True, null=True, verbose_name=VN_C('in_store'))
+    click_and_collect = models.CharField(max_length=1, blank=True, null=True, verbose_name=VN_C('click_and_collect'))
+    record_status = models.CharField(max_length=10, blank=True, null=True, default='I', editable=False, verbose_name=VN_C('record_status'))
+    update_source = models.CharField(max_length=30, blank=True, null=True, default='API', editable=False, verbose_name=VN_C('update_source'))
+    delete_flag = models.CharField(max_length=1, blank=True, null=True, default='N', editable=False, verbose_name=VN_C('delete_flag'))
+    bu_id = models.IntegerField(blank=True, null=True, default=1, editable=False, verbose_name=VN_C('bu_id'))
+    created_by = models.BigIntegerField(blank=True, null=True, default=-1, editable=False, verbose_name=VN_C('created_by'))
+    creation_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, editable=False, verbose_name=VN_C('creation_date'))
+    last_updated_by = models.BigIntegerField(blank=True, null=True, default=-1, editable=False, verbose_name=VN_C('last_updated_by'))
+    last_update_date = models.DateTimeField(auto_now=True, blank=True, null=True, editable=False, verbose_name=VN_C('last_update_date'))
+    stock_percent = models.DecimalField(max_digits=4, decimal_places=3,blank=True, null=True, default=.80, verbose_name=VN_C('stock_percent'))
+    third_party_source = models.CharField(max_length=30, blank=True, null=True, default='THIS', verbose_name=VN_C('third_party_source'))
+    third_party_source_ref = models.CharField(max_length=50, blank=True, null=True, default=-1, verbose_name=VN_C('third_party_source_ref'))
+    #tenant_id = models.IntegerField(blank=False, null=False,default=-1)
+    #category_id = models.ForeignKey(InvItemCategories, models.DO_NOTHING, blank=True, null=True, to_field='category_id', db_column='category_id')
+    #sub_category_id = models.ForeignKey(InvItemSubCategories, models.DO_NOTHING, blank=True, null=True, to_field='sub_category_id', db_column='sub_category_id')
+    #item_id = models.ForeignKey(InvItemMasters, models.DO_NOTHING, blank=True, null=True, to_field='item_id', db_column='item_id')
+    #location_id = models.ForeignKey(InvLocations, models.DO_NOTHING, blank=True, null=True, to_field='location_id', db_column='location_id')
+    category_id = models.BigIntegerField(blank=True, null=True,  editable=True, verbose_name=VN_C('category_id'))
+    sub_category_id = models.BigIntegerField(blank=True, null=True,  editable=True, verbose_name=VN_C('sub_category_id'))
+    item_id = models.BigIntegerField(blank=True, null=True,  editable=True, verbose_name=VN_C('item_id'))
+    location_id = models.BigIntegerField(blank=True, null=True,  editable=True, verbose_name=VN_C('location_id'))
+    www_stock_percent_id = models.BigIntegerField(blank=False, null=False, primary_key=True, editable=False, verbose_name=VN_C('ID'))
+
+    class Meta:
+        managed = False
+        db_table = 'www_stock_percent'
+        verbose_name=VN_T('www_stock_percent')
+
+    def __str__(self):
+        return str(self.www_stock_percent_id)

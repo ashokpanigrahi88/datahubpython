@@ -48,5 +48,7 @@ urlpatterns = [
     url(r"^kits/$",RESTBOM.as_view(),name="bom_items"),
     url(r"^ecommvoucher/(?P<pk>[0-9]+)/$", RESTVoucherDetail.as_view(),name="voucher_detail"),
     url(r"^tpstocks/$",RESTTpStocksCreate.as_view(),name="tpstocks_list"),
+    url(r"^itemexp/$",RESTItemExport.as_view(),name="item_export"),
+    url(r"^locattribute/$",RESTLocAttribute.as_view(),name="loc_attribute"),
 ]
 

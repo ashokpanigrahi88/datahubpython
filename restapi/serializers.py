@@ -493,3 +493,38 @@ class TpStockSerialized(serializers.ModelSerializer):
             setattr(instance, fname, fvalue)
         instance.save()
         return instance
+
+
+class ItemsExportSerialized(serializers.ModelSerializer):
+    salesunits = SalesUnitsSerializer(many=True, read_only=True)
+    barcodes = BarcodesSerializer(many=True, read_only=True)
+    class Meta:
+        model = imp_models.ExpMiddlewareItemsexpV
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return {}
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        #instance.save()
+        return instance
+
+
+
+class LocAttributeSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = ecomm_models.WwwStockPercent
+        fields = '__all__'
+
+    def create(self, validated_data):
+        data = validated_data
+        return {}
+
+    def update(self, instance, validated_data):
+        for fname, fvalue in validated_data.items():
+            setattr(instance, fname, fvalue)
+        #instance.save()
+        return instance
